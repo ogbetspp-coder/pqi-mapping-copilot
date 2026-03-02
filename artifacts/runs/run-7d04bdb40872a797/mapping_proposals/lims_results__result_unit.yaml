@@ -1,23 +1,26 @@
 candidates:
   -
-    confidence: 0.53125
+    confidence: 0.909231
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.5
         datatype_fit: 0.8
-        name_similarity: 0.375
-        value_pattern_fit: 0.0
+        name_similarity: 0.769231
+        value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - no binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Observation.valueQuantity.unit(+0.24)"
+          - "anchor_applied:result_unit"
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.375
+          - "token_overlap=['outcome', 'result', 'unit', 'units', 'uom', 'value']"
+          - text_similarity=0.769231
         value_pattern:
-
+          - units->quantity
       samples:
         - %
       top_values:
@@ -26,93 +29,16 @@ candidates:
           value: %
       units:
         - %
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: ObservationDefinition.component.code
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
-      resourceType: ObservationDefinition
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-codes"
-      conceptMapSuggested: null
-    transform:
-      name: to_quantity
-      params:
-        units_detected:
-          - %
-  -
-    confidence: 0.53
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.371429
-        value_pattern_fit: 0.0
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.3714
-        value_pattern:
+    flags:
 
-      samples:
-        - %
-      top_values:
-        -
-          count: 3
-          value: %
-      units:
-        - %
-    status: REQUIRES_REVIEW
+    label: AUTO_APPROVE_CANDIDATE
+    status: PROPOSED
     target:
-      elementPath: ObservationDefinition.code
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
-      resourceType: ObservationDefinition
+      elementPath: Observation.valueQuantity.unit
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-test-method-pq"
-      conceptMapSuggested: null
-    transform:
-      name: to_quantity
-      params:
-        units_detected:
-          - %
-  -
-    confidence: 0.522973
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.351351
-        value_pattern_fit: 0.0
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.3514
-        value_pattern:
-
-      samples:
-        - %
-      top_values:
-        -
-          count: 3
-          value: %
-      units:
-        - %
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: ActivityDefinition.code
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq"
-      resourceType: ActivityDefinition
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/procedure-code"
+      bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
       name: to_quantity
@@ -129,3 +55,10 @@ source:
   column: result_unit
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

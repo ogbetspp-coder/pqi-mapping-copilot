@@ -1,0 +1,473 @@
+{
+  "decisions": [
+    {
+      "decision_id": "D-001",
+      "proposed": [
+        {
+          "confidence": 0.555376,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.effectiveDateTime"
+        },
+        {
+          "confidence": 0.375555,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.code.text"
+        },
+        {
+          "confidence": 0.347826,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.code.coding.code"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "lims_results.analysis_time",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-002",
+      "proposed": [
+        {
+          "confidence": 0.494828,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.subject.reference"
+        }
+      ],
+      "question_for_sme": "Is this the regulatory lot number or an internal batch surrogate?",
+      "source": "lims_results.batch_id",
+      "why": "Field appears to be batch identifier; participates in 3 candidate joins across tables."
+    },
+    {
+      "decision_id": "D-003",
+      "proposed": [
+        {
+          "confidence": 0.646949,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "PROPOSED",
+          "target": "Observation.method.text"
+        },
+        {
+          "confidence": 0.575192,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.code.text"
+        },
+        {
+          "confidence": 0.57151,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.code.coding.code"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "lims_results.method",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-004",
+      "proposed": [
+        {
+          "confidence": 0.553054,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.referenceRange.high.value"
+        },
+        {
+          "confidence": 0.527692,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.referenceRange.low.value"
+        },
+        {
+          "confidence": 0.446552,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.valueQuantity.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "lims_results.spec_limit_high",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-005",
+      "proposed": [
+        {
+          "confidence": 0.550775,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.referenceRange.low.value"
+        },
+        {
+          "confidence": 0.538462,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.referenceRange.high.value"
+        },
+        {
+          "confidence": 0.447674,
+          "label": "REQUIRES_SME",
+          "resourceType": "Observation",
+          "status": "REQUIRES_REVIEW",
+          "target": "Observation.valueQuantity.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "lims_results.spec_limit_low",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-006",
+      "proposed": [
+        {
+          "confidence": 0.269149,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.241803,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.lotNumber"
+        },
+        {
+          "confidence": 0.22875,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "mes_steps.duration_hr",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-007",
+      "proposed": [
+        {
+          "confidence": 0.4675,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.436757,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.coding.code"
+        },
+        {
+          "confidence": 0.411852,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "mes_steps.equipment_id",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-008",
+      "proposed": [
+        {
+          "confidence": 0.393333,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.383051,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.lotNumber"
+        },
+        {
+          "confidence": 0.371795,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "mes_steps.step_name",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-009",
+      "proposed": [
+        {
+          "confidence": 0.372414,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.lotNumber"
+        },
+        {
+          "confidence": 0.363636,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.35,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.coding.code"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "qms_deviations.category",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-010",
+      "proposed": [
+        {
+          "confidence": 0.525833,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.474594,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.coding.code"
+        },
+        {
+          "confidence": 0.437778,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "qms_deviations.deviation_id",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-011",
+      "proposed": [
+        {
+          "confidence": 0.366667,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.3375,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.lotNumber"
+        },
+        {
+          "confidence": 0.337333,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "qms_deviations.status",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-012",
+      "proposed": [
+        {
+          "confidence": 0.352631,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.lotNumber"
+        },
+        {
+          "confidence": 0.325,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.coding.code"
+        },
+        {
+          "confidence": 0.312105,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "sap_batch.batch_quantity",
+      "why": "Field appears to be batch identifier; participates in 3 candidate joins across tables."
+    },
+    {
+      "decision_id": "D-013",
+      "proposed": [
+        {
+          "confidence": 0.3,
+          "label": "REQUIRES_SME",
+          "resourceType": "UNKNOWN",
+          "status": "REQUIRES_REVIEW",
+          "target": "UNKNOWN"
+        }
+      ],
+      "question_for_sme": "Should this be represented as UCUM-compatible Observation.valueQuantity.unit?",
+      "source": "sap_batch.batch_uom",
+      "why": "Field appears to be batch identifier; participates in 3 candidate joins across tables."
+    },
+    {
+      "decision_id": "D-014",
+      "proposed": [
+        {
+          "confidence": 0.52913,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.expirationDate"
+        },
+        {
+          "confidence": 0.247541,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.extension"
+        },
+        {
+          "confidence": 0.242647,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.lotNumber"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "sap_batch.manufacturing_date",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-015",
+      "proposed": [
+        {
+          "confidence": 0.469362,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.4475,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        },
+        {
+          "confidence": 0.447123,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.coding.code"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "sap_batch.material_id",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-016",
+      "proposed": [
+        {
+          "confidence": 0.513063,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.expirationDate"
+        },
+        {
+          "confidence": 0.234,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.code.text"
+        },
+        {
+          "confidence": 0.227119,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.extension"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "sap_batch.packaging_date",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    },
+    {
+      "decision_id": "D-017",
+      "proposed": [
+        {
+          "confidence": 0.520642,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.expirationDate"
+        },
+        {
+          "confidence": 0.219136,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.identifier.value"
+        },
+        {
+          "confidence": 0.217742,
+          "label": "REQUIRES_SME",
+          "resourceType": "Medication",
+          "status": "REQUIRES_REVIEW",
+          "target": "Medication.batch.lotNumber"
+        }
+      ],
+      "question_for_sme": "Which target path best matches regulatory intent for this field?",
+      "source": "sap_batch.release_date",
+      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
+    }
+  ],
+  "run_id": "run-7d04bdb40872a797",
+  "summary": {
+    "decision_count": 17
+  }
+}

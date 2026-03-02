@@ -6,6 +6,11 @@
           "lotNumber": "B-1001"
         },
         "id": "med-63f0af8cdceca3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+          ]
+        },
         "resourceType": "Medication"
       }
     },
@@ -15,6 +20,11 @@
           "lotNumber": "B-1002"
         },
         "id": "med-72be8d41933ecf",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+          ]
+        },
         "resourceType": "Medication"
       }
     },
@@ -32,11 +42,6 @@
         },
         "effectiveDateTime": "2026-01-19T11:15:00Z",
         "id": "obs-7e45284189055e",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-          ]
-        },
         "resourceType": "Observation",
         "status": "final",
         "subject": {
@@ -62,11 +67,6 @@
         },
         "effectiveDateTime": "2026-02-20T10:20:00Z",
         "id": "obs-8a7eca1a798968",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-          ]
-        },
         "resourceType": "Observation",
         "status": "final",
         "subject": {
@@ -92,11 +92,6 @@
         },
         "effectiveDateTime": "2026-01-19T11:00:00Z",
         "id": "obs-a3d3abc43dd0c3",
-        "meta": {
-          "profile": [
-            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-          ]
-        },
         "resourceType": "Observation",
         "status": "final",
         "subject": {

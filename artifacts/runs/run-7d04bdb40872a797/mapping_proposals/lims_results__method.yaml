@@ -1,21 +1,23 @@
 candidates:
   -
-    confidence: 0.766949
+    confidence: 0.646949
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
         name_similarity: 0.762712
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+
         name:
           - "token_overlap=['analysis', 'assay', 'method', 'procedure', 'protocol', 'test']"
-          - text_similarity=0.7627
+          - text_similarity=0.762712
         value_pattern:
           - code_like_values->coded_target
       samples:
@@ -30,35 +32,40 @@ candidates:
           value: KF
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: PROPOSED
     target:
-      elementPath: Observation.method
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      elementPath: Observation.method.text
+      profileUrl: BASE_FHIR_R5
       resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-methods"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: trim_string
       params:
 
   -
-    confidence: 0.742574
+    confidence: 0.575192
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.693069
+        name_similarity: 0.557692
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+
         name:
-          - "token_overlap=['method', 'procedure', 'protocol']"
-          - text_similarity=0.6931
+          - "token_overlap=['analysis', 'assay', 'method', 'test']"
+          - text_similarity=0.557692
         value_pattern:
           - code_like_values->coded_target
       samples:
@@ -73,35 +80,40 @@ candidates:
           value: KF
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Procedure.category
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
-      resourceType: Procedure
+      elementPath: Observation.code.text
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/procedure-category"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
-      name: trim_string
+      name: normalize_codeable_concept
       params:
-
+        system_required: true
   -
-    confidence: 0.74086
+    confidence: 0.57151
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.688172
+        name_similarity: 0.54717
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+
         name:
-          - "token_overlap=['method', 'procedure', 'protocol']"
-          - text_similarity=0.6882
+          - "token_overlap=['analysis', 'assay', 'method', 'test']"
+          - text_similarity=0.54717
         value_pattern:
           - code_like_values->coded_target
       samples:
@@ -116,18 +128,21 @@ candidates:
           value: KF
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Procedure.bodySite
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
-      resourceType: Procedure
+      elementPath: Observation.code.coding.code
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/body-site"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
-      name: trim_string
+      name: normalize_codeable_concept
       params:
-
+        system_required: true
 domain:
   primary: batch_analysis
   scores:
@@ -138,3 +153,10 @@ source:
   column: method
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

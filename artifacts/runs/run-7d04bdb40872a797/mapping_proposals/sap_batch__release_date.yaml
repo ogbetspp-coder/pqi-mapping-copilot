@@ -1,11 +1,11 @@
 candidates:
   -
-    confidence: 0.584615
+    confidence: 0.520642
     evidence:
       component_scores:
         binding_fit: 0.5
         datatype_fit: 1.0
-        name_similarity: 0.384615
+        name_similarity: 0.201835
         value_pattern_fit: 0.5
       inferred_type: date
       rules_fired:
@@ -13,9 +13,11 @@ candidates:
           - no binding
         datatype:
           - date/datetime compatible
+        hard_rules:
+
         name:
           - "token_overlap=['date']"
-          - text_similarity=0.3846
+          - text_similarity=0.201835
         value_pattern:
           - date_type->date_path
       samples:
@@ -30,11 +32,14 @@ candidates:
           value: 2026-02-19
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: ObservationDefinition.date
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
-      resourceType: ObservationDefinition
+      elementPath: Medication.batch.expirationDate
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -46,24 +51,26 @@ candidates:
           - YYYY-MM
           - ISO-8601
   -
-    confidence: 0.578571
+    confidence: 0.219136
     evidence:
       component_scores:
         binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.367347
-        value_pattern_fit: 0.5
+        datatype_fit: 0.2
+        name_similarity: 0.197531
+        value_pattern_fit: 0.0
       inferred_type: date
       rules_fired:
         binding:
           - no binding
         datatype:
-          - date/datetime compatible
+          - weak type fit
+        hard_rules:
+
         name:
-          - "token_overlap=['date']"
-          - text_similarity=0.3673
+          - "token_overlap=[]"
+          - text_similarity=0.197531
         value_pattern:
-          - date_type->date_path
+
       samples:
         - 2026-01-18
         - 2026-02-19
@@ -76,11 +83,14 @@ candidates:
           value: 2026-02-19
       units:
 
+    flags:
+      - no_token_overlap_and_weak_datatype_cap_0_55
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: ActivityDefinition.date
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq"
-      resourceType: ActivityDefinition
+      elementPath: Medication.identifier.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -92,24 +102,26 @@ candidates:
           - YYYY-MM
           - ISO-8601
   -
-    confidence: 0.576
+    confidence: 0.217742
     evidence:
       component_scores:
         binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.36
-        value_pattern_fit: 0.5
+        datatype_fit: 0.2
+        name_similarity: 0.193548
+        value_pattern_fit: 0.0
       inferred_type: date
       rules_fired:
         binding:
           - no binding
         datatype:
-          - date/datetime compatible
+          - weak type fit
+        hard_rules:
+
         name:
-          - "token_overlap=['date']"
-          - text_similarity=0.36
+          - "token_overlap=[]"
+          - text_similarity=0.193548
         value_pattern:
-          - date_type->date_path
+
       samples:
         - 2026-01-18
         - 2026-02-19
@@ -122,11 +134,14 @@ candidates:
           value: 2026-02-19
       units:
 
+    flags:
+      - no_token_overlap_and_weak_datatype_cap_0_55
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: "Specimen.processing.time[x]"
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-      resourceType: Specimen
+      elementPath: Medication.batch.lotNumber
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -147,3 +162,10 @@ source:
   column: release_date
   file: data/examples/sap_batch.csv
   table: sap_batch
+table_model:
+  primary_resource: Medication
+  resource_scores:
+    DiagnosticReport: 0.0
+    Medication: 1.0
+    Observation: 0.0
+    Specimen: 0.0

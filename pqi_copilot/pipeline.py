@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from pqi_copilot.classify.domain_classifier import classify_domains
+from pqi_copilot.classify.resource_classifier import classify_table_resources
 from pqi_copilot.common import normalize_token, stable_hash_obj, write_json, write_yaml
 from pqi_copilot.governance.store import (
     compute_input_hashes,
@@ -18,6 +19,7 @@ from pqi_copilot.governance.store import (
 from pqi_copilot.ig.ig_loader import build_and_save_catalog, load_catalog
 from pqi_copilot.ingest.normalize import ingest_folder
 from pqi_copilot.profiler.stats import profile_markdown, profile_normalized
+from pqi_copilot.propose.decisions import build_decisions
 from pqi_copilot.propose.mapping import build_mapping_proposals
 from pqi_copilot.propose.relationships import propose_relationships
 from pqi_copilot.terminology.scaffold import build_terminology_scaffold
@@ -42,8 +44,17 @@ def propose_run(input_dir: Path) -> dict[str, Any]:
     ingested = ingest_folder(input_dir)
     profile = profile_normalized(ingested)
     classification = classify_domains(profile)
-    proposals = build_mapping_proposals(run_id, profile, classification, catalog, top_k=3)
+    resource_classification = classify_table_resources(profile, classification)
+    proposals = build_mapping_proposals(
+        run_id,
+        profile,
+        classification,
+        catalog,
+        top_k=3,
+        resource_classification=resource_classification,
+    )
     relationships = propose_relationships(ingested, profile)
+    decisions = build_decisions(run_id, proposals, relationships)
     validation = validate_mapping_proposals(proposals)
     terminology = build_terminology_scaffold(run_id, proposals)
 
@@ -51,8 +62,10 @@ def propose_run(input_dir: Path) -> dict[str, Any]:
     write_run_artifact(run_id, "profile.json", profile)
     write_run_text(run_id, "profile.md", profile_markdown(profile))
     write_run_artifact(run_id, "domain_classification.json", classification)
+    write_run_artifact(run_id, "resource_classification.json", resource_classification)
     write_run_artifact(run_id, "mapping_proposals.json", proposals)
     write_run_artifact(run_id, "relationship_proposals.json", relationships)
+    write_run_artifact(run_id, "decisions.json", decisions)
     write_run_artifact(run_id, "validation.json", validation)
     write_run_artifact(run_id, "terminology_scaffold.json", terminology)
 

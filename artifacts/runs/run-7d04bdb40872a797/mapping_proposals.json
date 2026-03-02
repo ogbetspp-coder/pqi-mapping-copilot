@@ -1,15 +1,15 @@
 {
-  "hash": "9eefb5a20ebe5c9d842f6ca5fdcd4dbbcda7d50234eebd90c6308295c938cf86",
+  "hash": "b10300aa79341f04fe1a3555478478aba1c698191d87c3bae40cc1ea7dca1d49",
   "proposals": [
     {
       "candidates": [
         {
-          "confidence": 0.610919,
+          "confidence": 0.555376,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.45977,
+              "name_similarity": 0.301075,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "datetime",
@@ -20,9 +20,10 @@
               "datatype": [
                 "date/datetime compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['time']",
-                "text_similarity=0.4598"
+                "text_similarity=0.301075"
               ],
               "value_pattern": [
                 "date_type->date_path"
@@ -49,11 +50,13 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.receivedTime",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Observation.effectiveDateTime",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -71,13 +74,13 @@
           }
         },
         {
-          "confidence": 0.581884,
+          "confidence": 0.375555,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.376812,
-              "value_pattern_fit": 0.5
+              "datatype_fit": 0.2,
+              "name_similarity": 0.644444,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "datetime",
             "rules_fired": {
@@ -85,15 +88,14 @@
                 "no binding"
               ],
               "datatype": [
-                "date/datetime compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['time']",
-                "text_similarity=0.3768"
+                "token_overlap=['analysis', 'assay', 'method', 'test']",
+                "text_similarity=0.644444"
               ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
+              "value_pattern": []
             },
             "samples": [
               "2026-01-19T11:00:00Z",
@@ -116,11 +118,13 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.processing.time[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Observation.code.text",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -138,13 +142,13 @@
           }
         },
         {
-          "confidence": 0.578947,
+          "confidence": 0.347826,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.368421,
-              "value_pattern_fit": 0.5
+              "datatype_fit": 0.2,
+              "name_similarity": 0.565217,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "datetime",
             "rules_fired": {
@@ -152,15 +156,14 @@
                 "no binding"
               ],
               "datatype": [
-                "date/datetime compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=[]",
-                "text_similarity=0.3684"
+                "token_overlap=['analysis', 'assay', 'method', 'test']",
+                "text_similarity=0.565217"
               ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
+              "value_pattern": []
             },
             "samples": [
               "2026-01-19T11:00:00Z",
@@ -183,11 +186,13 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "SpecimenDefinition.date",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq",
-            "resourceType": "SpecimenDefinition"
+            "elementPath": "Observation.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -217,33 +222,45 @@
         "column": "analysis_time",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.671304,
+          "confidence": 0.494828,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.26087,
-              "value_pattern_fit": 0.9
+              "binding_fit": 0.4,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.413793,
+              "value_pattern_fit": 0.4
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
-                "string compatible"
+                "weak type fit"
+              ],
+              "hard_rules": [
+                "boost:Observation.subject.reference(+0.14)",
+                "anchor_applied:batch_lot_id"
               ],
               "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2609"
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.413793"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
                 "id_column->identifier_or_reference"
               ]
             },
@@ -263,130 +280,16 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.referenceRange.appliesTo",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+            "elementPath": "Observation.subject.reference",
+            "profileUrl": "BASE_FHIR_R5",
             "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
-          }
-        },
-        {
-          "confidence": 0.668889,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.253968,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.254"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "B-1001",
-              "B-1002"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "B-1001"
-              },
-              {
-                "count": 1,
-                "value": "B-1002"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Organization.identifier.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq",
-            "resourceType": "Organization"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/identifier-type",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "trim_string",
-            "params": {}
-          }
-        },
-        {
-          "confidence": 0.66046,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.229885,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2299"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "B-1001",
-              "B-1002"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "B-1001"
-              },
-              {
-                "count": 1,
-                "value": "B-1002"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Observation.referenceRange.normalValue",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -409,15 +312,24 @@
         "column": "batch_id",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.766949,
+          "confidence": 0.646949,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
               "name_similarity": 0.762712,
               "value_pattern_fit": 0.5
@@ -425,14 +337,15 @@
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['analysis', 'assay', 'method', 'procedure', 'protocol', 'test']",
-                "text_similarity=0.7627"
+                "text_similarity=0.762712"
               ],
               "value_pattern": [
                 "code_like_values->coded_target"
@@ -454,14 +367,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.method",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+            "elementPath": "Observation.method.text",
+            "profileUrl": "BASE_FHIR_R5",
             "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-methods",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -470,25 +385,26 @@
           }
         },
         {
-          "confidence": 0.742574,
+          "confidence": 0.575192,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.693069,
+              "name_similarity": 0.557692,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['method', 'procedure', 'protocol']",
-                "text_similarity=0.6931"
+                "token_overlap=['analysis', 'assay', 'method', 'test']",
+                "text_similarity=0.557692"
               ],
               "value_pattern": [
                 "code_like_values->coded_target"
@@ -510,41 +426,46 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Procedure.category",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq",
-            "resourceType": "Procedure"
+            "elementPath": "Observation.code.text",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/procedure-category",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "trim_string",
-            "params": {}
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
           }
         },
         {
-          "confidence": 0.74086,
+          "confidence": 0.57151,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.688172,
+              "name_similarity": 0.54717,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['method', 'procedure', 'protocol']",
-                "text_similarity=0.6882"
+                "token_overlap=['analysis', 'assay', 'method', 'test']",
+                "text_similarity=0.54717"
               ],
               "value_pattern": [
                 "code_like_values->coded_target"
@@ -566,19 +487,23 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Procedure.bodySite",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq",
-            "resourceType": "Procedure"
+            "elementPath": "Observation.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/body-site",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "trim_string",
-            "params": {}
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
           }
         }
       ],
@@ -594,87 +519,47 @@
         "column": "method",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.53125,
+          "confidence": 0.909231,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.375,
-              "value_pattern_fit": 0.0
+              "name_similarity": 0.769231,
+              "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.375"
+              "hard_rules": [
+                "boost:Observation.valueQuantity.unit(+0.24)",
+                "anchor_applied:result_unit"
               ],
-              "value_pattern": []
-            },
-            "samples": [
-              "%"
-            ],
-            "top_values": [
-              {
-                "count": 3,
-                "value": "%"
-              }
-            ],
-            "units": [
-              "%"
-            ]
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "ObservationDefinition.component.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-codes",
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "to_quantity",
-            "params": {
-              "units_detected": [
-                "%"
+              "name": [
+                "token_overlap=['outcome', 'result', 'unit', 'units', 'uom', 'value']",
+                "text_similarity=0.769231"
+              ],
+              "value_pattern": [
+                "units->quantity"
               ]
-            }
-          }
-        },
-        {
-          "confidence": 0.53,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.371429,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.3714"
-              ],
-              "value_pattern": []
             },
             "samples": [
               "%"
@@ -689,69 +574,16 @@
               "%"
             ]
           },
-          "status": "REQUIRES_REVIEW",
+          "flags": [],
+          "label": "AUTO_APPROVE_CANDIDATE",
+          "status": "PROPOSED",
           "target": {
-            "elementPath": "ObservationDefinition.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
+            "elementPath": "Observation.valueQuantity.unit",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-test-method-pq",
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "to_quantity",
-            "params": {
-              "units_detected": [
-                "%"
-              ]
-            }
-          }
-        },
-        {
-          "confidence": 0.522973,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.351351,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.3514"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "%"
-            ],
-            "top_values": [
-              {
-                "count": 3,
-                "value": "%"
-              }
-            ],
-            "units": [
-              "%"
-            ]
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "ActivityDefinition.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq",
-            "resourceType": "ActivityDefinition"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/procedure-code",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -776,17 +608,26 @@
         "column": "result_unit",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.604546,
+          "confidence": 0.852898,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.727273,
+              "name_similarity": 0.57971,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -797,9 +638,13 @@
               "datatype": [
                 "numeric compatible"
               ],
+              "hard_rules": [
+                "boost:Observation.valueQuantity.value(+0.3)",
+                "anchor_applied:result_value_numeric"
+              ],
               "name": [
                 "token_overlap=['outcome', 'result', 'value']",
-                "text_similarity=0.7273"
+                "text_similarity=0.57971"
               ],
               "value_pattern": []
             },
@@ -824,28 +669,32 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "AUTO_APPROVE_CANDIDATE",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Extension.value[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-pq",
-            "resourceType": "Extension"
+            "elementPath": "Observation.valueQuantity.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "identity",
-            "params": {}
+            "name": "to_quantity",
+            "params": {
+              "units_detected": []
+            }
           }
         },
         {
-          "confidence": 0.604546,
+          "confidence": 0.352174,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.727273,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.434783,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -854,11 +703,15 @@
                 "no binding"
               ],
               "datatype": [
-                "numeric compatible"
+                "weak type fit"
+              ],
+              "hard_rules": [
+                "boost:Observation.valueCodeableConcept.text(+0.05)",
+                "anchor_applied:result_value_numeric"
               ],
               "name": [
                 "token_overlap=['outcome', 'result', 'value']",
-                "text_similarity=0.7273"
+                "text_similarity=0.434783"
               ],
               "value_pattern": []
             },
@@ -883,78 +736,23 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Extension.value[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-unfiltered-pq",
-            "resourceType": "Extension"
+            "elementPath": "Observation.valueCodeableConcept.text",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "identity",
-            "params": {}
-          }
-        },
-        {
-          "confidence": 0.604546,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.727273,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "number",
-            "rules_fired": {
-              "binding": [
-                "no binding"
-              ],
-              "datatype": [
-                "numeric compatible"
-              ],
-              "name": [
-                "token_overlap=['outcome', 'result', 'value']",
-                "text_similarity=0.7273"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "1.9",
-              "98.7",
-              "99.1"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "1.9"
-              },
-              {
-                "count": 1,
-                "value": "98.7"
-              },
-              {
-                "count": 1,
-                "value": "99.1"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Extension.value[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
-            "resourceType": "Extension"
-          },
-          "terminology": {
-            "bindingValueSetUrl": null,
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "identity",
-            "params": {}
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
           }
         }
       ],
@@ -970,17 +768,26 @@
         "column": "result_value",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.545588,
+          "confidence": 0.553054,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.558824,
+              "name_similarity": 0.580153,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -991,9 +798,10 @@
               "datatype": [
                 "numeric compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['criteria', 'high', 'limit', 'spec', 'specification']",
-                "text_similarity=0.5588"
+                "text_similarity=0.580153"
               ],
               "value_pattern": []
             },
@@ -1013,28 +821,32 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ObservationDefinition.qualifiedValue.range.high",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
+            "elementPath": "Observation.referenceRange.high.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "identity",
-            "params": {}
+            "name": "to_reference",
+            "params": {
+              "lookup": "REQUIRES_REVIEW"
+            }
           }
         },
         {
-          "confidence": 0.531482,
+          "confidence": 0.527692,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.518519,
+              "name_similarity": 0.507692,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -1045,9 +857,10 @@
               "datatype": [
                 "numeric compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['criteria', 'limit', 'spec', 'specification']",
-                "text_similarity=0.5185"
+                "text_similarity=0.507692"
               ],
               "value_pattern": []
             },
@@ -1067,28 +880,32 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ObservationDefinition.qualifiedValue.range.low",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
+            "elementPath": "Observation.referenceRange.low.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "identity",
-            "params": {}
+            "name": "to_reference",
+            "params": {
+              "lookup": "REQUIRES_REVIEW"
+            }
           }
         },
         {
-          "confidence": 0.480667,
+          "confidence": 0.446552,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.373333,
+              "name_similarity": 0.275862,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -1099,9 +916,10 @@
               "datatype": [
                 "numeric compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.3733"
+                "text_similarity=0.275862"
               ],
               "value_pattern": []
             },
@@ -1121,11 +939,13 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.container.specimenQuantity",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Observation.valueQuantity.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -1151,17 +971,26 @@
         "column": "spec_limit_high",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.543284,
+          "confidence": 0.550775,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.552239,
+              "name_similarity": 0.573643,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -1172,9 +1001,10 @@
               "datatype": [
                 "numeric compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['criteria', 'limit', 'low', 'spec', 'specification']",
-                "text_similarity=0.5522"
+                "text_similarity=0.573643"
               ],
               "value_pattern": []
             },
@@ -1194,28 +1024,32 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ObservationDefinition.qualifiedValue.range.low",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
+            "elementPath": "Observation.referenceRange.low.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "identity",
-            "params": {}
+            "name": "to_reference",
+            "params": {
+              "lookup": "REQUIRES_REVIEW"
+            }
           }
         },
         {
-          "confidence": 0.531482,
+          "confidence": 0.538462,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.518519,
+              "name_similarity": 0.538462,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -1226,9 +1060,10 @@
               "datatype": [
                 "numeric compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['criteria', 'limit', 'spec', 'specification']",
-                "text_similarity=0.5185"
+                "text_similarity=0.538462"
               ],
               "value_pattern": []
             },
@@ -1248,28 +1083,32 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ObservationDefinition.qualifiedValue.range.high",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
+            "elementPath": "Observation.referenceRange.high.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "identity",
-            "params": {}
+            "name": "to_reference",
+            "params": {
+              "lookup": "REQUIRES_REVIEW"
+            }
           }
         },
         {
-          "confidence": 0.482432,
+          "confidence": 0.447674,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.378378,
+              "name_similarity": 0.27907,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -1280,9 +1119,10 @@
               "datatype": [
                 "numeric compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.3784"
+                "text_similarity=0.27907"
               ],
               "value_pattern": []
             },
@@ -1302,11 +1142,13 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.container.specimenQuantity",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Observation.valueQuantity.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -1332,86 +1174,43 @@
         "column": "spec_limit_low",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.695192,
+          "confidence": 0.86587,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.557692,
+              "name_similarity": 0.673913,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
-              "name": [
-                "token_overlap=['analysis', 'assay', 'method', 'test']",
-                "text_similarity=0.5577"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target"
-              ]
-            },
-            "samples": [
-              "ASSAY",
-              "WATER"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "ASSAY"
-              },
-              {
-                "count": 1,
-                "value": "WATER"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Observation.method",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-methods",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "trim_string",
-            "params": {}
-          }
-        },
-        {
-          "confidence": 0.6736,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.496,
-              "value_pattern_fit": 0.5
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
+              "hard_rules": [
+                "boost:Observation.code.coding.code(+0.25)",
+                "anchor_applied:test_code"
               ],
               "name": [
                 "token_overlap=['analysis', 'assay', 'code', 'method', 'test']",
-                "text_similarity=0.496"
+                "text_similarity=0.673913"
               ],
               "value_pattern": [
                 "code_like_values->coded_target"
@@ -1433,14 +1232,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "AUTO_APPROVE_CANDIDATE",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "DiagnosticReport.conclusionCode",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq",
-            "resourceType": "DiagnosticReport"
+            "elementPath": "Observation.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/clinical-findings",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -1451,25 +1252,29 @@
           }
         },
         {
-          "confidence": 0.672131,
+          "confidence": 0.741111,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.491803,
+              "name_similarity": 0.688889,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [
+                "boost:Observation.code.text(+0.12)",
+                "anchor_applied:test_code"
+              ],
               "name": [
-                "token_overlap=['analysis', 'assay', 'method', 'test']",
-                "text_similarity=0.4918"
+                "token_overlap=['analysis', 'assay', 'code', 'method', 'test']",
+                "text_similarity=0.688889"
               ],
               "value_pattern": [
                 "code_like_values->coded_target"
@@ -1491,19 +1296,23 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "GOOD_CANDIDATE",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Specimen.collection.method",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Observation.code.text",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/specimen-collection-method",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "trim_string",
-            "params": {}
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
           }
         }
       ],
@@ -1519,30 +1328,43 @@
         "column": "test_code",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.5568,
+          "confidence": 0.763044,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.448,
+              "name_similarity": 0.608696,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
+              ],
+              "hard_rules": [
+                "boost:Observation.code.coding.code(+0.25)",
+                "anchor_applied:test_code"
               ],
               "name": [
                 "token_overlap=['analysis', 'assay', 'method', 'test']",
-                "text_similarity=0.448"
+                "text_similarity=0.608696"
               ],
               "value_pattern": []
             },
@@ -1562,14 +1384,16 @@
             ],
             "units": []
           },
-          "status": "REQUIRES_REVIEW",
+          "flags": [],
+          "label": "GOOD_CANDIDATE",
+          "status": "PROPOSED",
           "target": {
-            "elementPath": "DiagnosticReport.conclusionCode",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq",
-            "resourceType": "DiagnosticReport"
+            "elementPath": "Observation.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/clinical-findings",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -1580,25 +1404,29 @@
           }
         },
         {
-          "confidence": 0.51831,
+          "confidence": 0.637778,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.338028,
+              "name_similarity": 0.622222,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [
+                "boost:Observation.code.text(+0.12)",
+                "anchor_applied:test_code"
+              ],
               "name": [
-                "token_overlap=[]",
-                "text_similarity=0.338"
+                "token_overlap=['analysis', 'assay', 'method', 'test']",
+                "text_similarity=0.622222"
               ],
               "value_pattern": []
             },
@@ -1618,70 +1446,16 @@
             ],
             "units": []
           },
-          "status": "REQUIRES_REVIEW",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "PROPOSED",
           "target": {
-            "elementPath": "Medication.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
-            "resourceType": "Medication"
+            "elementPath": "Observation.code.text",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Observation"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/medication-codes",
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "normalize_codeable_concept",
-            "params": {
-              "system_required": true
-            }
-          }
-        },
-        {
-          "confidence": 0.518072,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.337349,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=['method']",
-                "text_similarity=0.3373"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "Assay",
-              "Water"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "Assay"
-              },
-              {
-                "count": 1,
-                "value": "Water"
-              }
-            ],
-            "units": []
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "Procedure.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq",
-            "resourceType": "Procedure"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-process-validation-procedure-pq",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -1704,35 +1478,45 @@
         "column": "test_name",
         "file": "data/examples/lims_results.csv",
         "table": "lims_results"
+      },
+      "table_model": {
+        "primary_resource": "Observation",
+        "resource_scores": {
+          "DiagnosticReport": 0.05891,
+          "Medication": 0.076583,
+          "Observation": 0.846834,
+          "Specimen": 0.017673
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.671304,
+          "confidence": 0.73,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.26087,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.485714,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2609"
+              "hard_rules": [
+                "boost:Medication.batch.lotNumber(+0.28)",
+                "anchor_applied:batch_lot_id"
               ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
+              "name": [
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.485714"
+              ],
+              "value_pattern": []
             },
             "samples": [
               "B-1001",
@@ -1750,73 +1534,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "GOOD_CANDIDATE",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.referenceRange.appliesTo",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
-          }
-        },
-        {
-          "confidence": 0.668889,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.253968,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.254"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "B-1001",
-              "B-1002"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "B-1001"
-              },
-              {
-                "count": 1,
-                "value": "B-1002"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Organization.identifier.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq",
-            "resourceType": "Organization"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/identifier-type",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -1825,28 +1552,31 @@
           }
         },
         {
-          "confidence": 0.66046,
+          "confidence": 0.617303,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.229885,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.449438,
+              "value_pattern_fit": 0.4
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [
+                "boost:Medication.identifier.value(+0.1)",
+                "anchor_applied:batch_lot_id"
+              ],
               "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2299"
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.449438"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
                 "id_column->identifier_or_reference"
               ]
             },
@@ -1866,21 +1596,21 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.referenceRange.normalValue",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
+            "name": "trim_string",
+            "params": {}
           }
         }
       ],
@@ -1896,17 +1626,26 @@
         "column": "batch_id",
         "file": "data/examples/mes_steps.json",
         "table": "mes_steps"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.471154,
+          "confidence": 0.269149,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.346154,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.340426,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -1915,11 +1654,12 @@
                 "no binding"
               ],
               "datatype": [
-                "numeric compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.3462"
+                "text_similarity=0.340426"
               ],
               "value_pattern": []
             },
@@ -1939,82 +1679,34 @@
             ],
             "units": []
           },
+          "flags": [
+            "no_token_overlap_and_weak_datatype_cap_0_55"
+          ],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.value[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": null,
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "identity",
-            "params": {}
-          }
-        },
-        {
-          "confidence": 0.458889,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 0.6,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.253968,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "number",
-            "rules_fired": {
-              "binding": [
-                "binding available but source not clearly code-like"
-              ],
-              "datatype": [
-                "numeric compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.254"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "2.4",
-              "2.5"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "2.4"
-              },
-              {
-                "count": 1,
-                "value": "2.5"
-              }
-            ],
-            "units": []
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "Medication.ingredient.strength[x]",
+            "elementPath": "Medication.code.text",
             "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
             "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/medication-ingredientstrength",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "identity",
-            "params": {}
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
           }
         },
         {
-          "confidence": 0.453704,
+          "confidence": 0.241803,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.296296,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.262295,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -2023,11 +1715,12 @@
                 "no binding"
               ],
               "datatype": [
-                "numeric compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2963"
+                "text_similarity=0.262295"
               ],
               "value_pattern": []
             },
@@ -2047,21 +1740,82 @@
             ],
             "units": []
           },
+          "flags": [
+            "no_token_overlap_and_weak_datatype_cap_0_55"
+          ],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.referenceRange.low",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
+            "name": "identity",
+            "params": {}
+          }
+        },
+        {
+          "confidence": 0.22875,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.5,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.225,
+              "value_pattern_fit": 0.0
+            },
+            "inferred_type": "number",
+            "rules_fired": {
+              "binding": [
+                "no binding"
+              ],
+              "datatype": [
+                "weak type fit"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=[]",
+                "text_similarity=0.225"
+              ],
+              "value_pattern": []
+            },
+            "samples": [
+              "2.4",
+              "2.5"
+            ],
+            "top_values": [
+              {
+                "count": 1,
+                "value": "2.4"
+              },
+              {
+                "count": 1,
+                "value": "2.5"
+              }
+            ],
+            "units": []
+          },
+          "flags": [
+            "no_token_overlap_and_weak_datatype_cap_0_55"
+          ],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": null
+          },
+          "transform": {
+            "name": "identity",
+            "params": {}
           }
         }
       ],
@@ -2077,33 +1831,154 @@
         "column": "duration_hr",
         "file": "data/examples/mes_steps.json",
         "table": "mes_steps"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.681818,
+          "confidence": 0.4675,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.290909,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.25,
+              "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2909"
+                "text_similarity=0.25"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
+                "code_like_values->coded_target"
+              ]
+            },
+            "samples": [
+              "EQ-12"
+            ],
+            "top_values": [
+              {
+                "count": 2,
+                "value": "EQ-12"
+              }
+            ],
+            "units": []
+          },
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.code.text",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
+          },
+          "transform": {
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
+          }
+        },
+        {
+          "confidence": 0.436757,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.4,
+              "datatype_fit": 0.8,
+              "name_similarity": 0.162162,
+              "value_pattern_fit": 0.5
+            },
+            "inferred_type": "string",
+            "rules_fired": {
+              "binding": [
+                "code-like source without explicit binding"
+              ],
+              "datatype": [
+                "string compatible"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=[]",
+                "text_similarity=0.162162"
+              ],
+              "value_pattern": [
+                "code_like_values->coded_target"
+              ]
+            },
+            "samples": [
+              "EQ-12"
+            ],
+            "top_values": [
+              {
+                "count": 2,
+                "value": "EQ-12"
+              }
+            ],
+            "units": []
+          },
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
+          },
+          "transform": {
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
+          }
+        },
+        {
+          "confidence": 0.411852,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.4,
+              "datatype_fit": 0.8,
+              "name_similarity": 0.148148,
+              "value_pattern_fit": 0.4
+            },
+            "inferred_type": "string",
+            "rules_fired": {
+              "binding": [
+                "code-like source without explicit binding"
+              ],
+              "datatype": [
+                "string compatible"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=[]",
+                "text_similarity=0.148148"
+              ],
+              "value_pattern": [
                 "id_column->identifier_or_reference"
               ]
             },
@@ -2118,127 +1993,21 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Organization.identifier.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq",
-            "resourceType": "Organization"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/identifier-type",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
             "name": "trim_string",
             "params": {}
-          }
-        },
-        {
-          "confidence": 0.670741,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.259259,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2593"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "EQ-12"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "EQ-12"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Observation.referenceRange.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-meaning",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
-          }
-        },
-        {
-          "confidence": 0.648852,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.196721,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.1967"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "EQ-12"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "EQ-12"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Observation.referenceRange.appliesTo",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
           }
         }
       ],
@@ -2254,30 +2023,40 @@
         "column": "equipment_id",
         "file": "data/examples/mes_steps.json",
         "table": "mes_steps"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.508889,
+          "confidence": 0.393333,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.311111,
+              "name_similarity": 0.266667,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['name']",
-                "text_similarity=0.3111"
+                "token_overlap=[]",
+                "text_similarity=0.266667"
               ],
               "value_pattern": []
             },
@@ -2292,14 +2071,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "DiagnosticReport.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq",
-            "resourceType": "DiagnosticReport"
+            "elementPath": "Medication.code.text",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -2310,25 +2091,26 @@
           }
         },
         {
-          "confidence": 0.506061,
+          "confidence": 0.383051,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.30303,
+              "name_similarity": 0.237288,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.303"
+                "text_similarity=0.237288"
               ],
               "value_pattern": []
             },
@@ -2343,43 +2125,44 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "normalize_codeable_concept",
-            "params": {
-              "system_required": true
-            }
+            "name": "trim_string",
+            "params": {}
           }
         },
         {
-          "confidence": 0.4875,
+          "confidence": 0.371795,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.25,
+              "name_similarity": 0.205128,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.25"
+                "text_similarity=0.205128"
               ],
               "value_pattern": []
             },
@@ -2394,21 +2177,21 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ActivityDefinition.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq",
-            "resourceType": "ActivityDefinition"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/procedure-code",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "normalize_codeable_concept",
-            "params": {
-              "system_required": true
-            }
+            "name": "trim_string",
+            "params": {}
           }
         }
       ],
@@ -2424,35 +2207,45 @@
         "column": "step_name",
         "file": "data/examples/mes_steps.json",
         "table": "mes_steps"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.671304,
+          "confidence": 0.73,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.26087,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.485714,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2609"
+              "hard_rules": [
+                "boost:Medication.batch.lotNumber(+0.28)",
+                "anchor_applied:batch_lot_id"
               ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
+              "name": [
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.485714"
+              ],
+              "value_pattern": []
             },
             "samples": [
               "B-1001",
@@ -2470,73 +2263,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "GOOD_CANDIDATE",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.referenceRange.appliesTo",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
-          }
-        },
-        {
-          "confidence": 0.668889,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.253968,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.254"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "B-1001",
-              "B-1002"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "B-1001"
-              },
-              {
-                "count": 1,
-                "value": "B-1002"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Organization.identifier.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq",
-            "resourceType": "Organization"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/identifier-type",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -2545,28 +2281,31 @@
           }
         },
         {
-          "confidence": 0.66046,
+          "confidence": 0.617303,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.229885,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.449438,
+              "value_pattern_fit": 0.4
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [
+                "boost:Medication.identifier.value(+0.1)",
+                "anchor_applied:batch_lot_id"
+              ],
               "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2299"
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.449438"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
                 "id_column->identifier_or_reference"
               ]
             },
@@ -2586,21 +2325,21 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.referenceRange.normalValue",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
+            "name": "trim_string",
+            "params": {}
           }
         }
       ],
@@ -2616,30 +2355,40 @@
         "column": "batch_id",
         "file": "data/examples/qms_deviations.xml",
         "table": "qms_deviations"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.4875,
+          "confidence": 0.372414,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.25,
+              "name_similarity": 0.206897,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.25"
+                "text_similarity=0.206897"
               ],
               "value_pattern": []
             },
@@ -2659,14 +2408,73 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq",
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": null
+          },
+          "transform": {
+            "name": "trim_string",
+            "params": {}
+          }
+        },
+        {
+          "confidence": 0.363636,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.5,
+              "datatype_fit": 0.8,
+              "name_similarity": 0.181818,
+              "value_pattern_fit": 0.0
+            },
+            "inferred_type": "string",
+            "rules_fired": {
+              "binding": [
+                "no binding"
+              ],
+              "datatype": [
+                "string compatible"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=[]",
+                "text_similarity=0.181818"
+              ],
+              "value_pattern": []
+            },
+            "samples": [
+              "analytical",
+              "process"
+            ],
+            "top_values": [
+              {
+                "count": 1,
+                "value": "analytical"
+              },
+              {
+                "count": 1,
+                "value": "process"
+              }
+            ],
+            "units": []
+          },
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.code.text",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -2677,25 +2485,26 @@
           }
         },
         {
-          "confidence": 0.479546,
+          "confidence": 0.35,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.227273,
+              "name_similarity": 0.142857,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2273"
+                "text_similarity=0.142857"
               ],
               "value_pattern": []
             },
@@ -2715,70 +2524,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "DiagnosticReport.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq",
-            "resourceType": "DiagnosticReport"
+            "elementPath": "Medication.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq",
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "normalize_codeable_concept",
-            "params": {
-              "system_required": true
-            }
-          }
-        },
-        {
-          "confidence": 0.47,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.2,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "analytical",
-              "process"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "analytical"
-              },
-              {
-                "count": 1,
-                "value": "process"
-              }
-            ],
-            "units": []
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "Procedure.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq",
-            "resourceType": "Procedure"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-process-validation-procedure-pq",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -2801,33 +2556,164 @@
         "column": "category",
         "file": "data/examples/qms_deviations.xml",
         "table": "qms_deviations"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.707273,
+          "confidence": 0.525833,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.363636,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.416667,
+              "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.3636"
+                "text_similarity=0.416667"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
+                "code_like_values->coded_target"
+              ]
+            },
+            "samples": [
+              "DEV-100",
+              "DEV-101"
+            ],
+            "top_values": [
+              {
+                "count": 1,
+                "value": "DEV-100"
+              },
+              {
+                "count": 1,
+                "value": "DEV-101"
+              }
+            ],
+            "units": []
+          },
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.code.text",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
+          },
+          "transform": {
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
+          }
+        },
+        {
+          "confidence": 0.474594,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.4,
+              "datatype_fit": 0.8,
+              "name_similarity": 0.27027,
+              "value_pattern_fit": 0.5
+            },
+            "inferred_type": "string",
+            "rules_fired": {
+              "binding": [
+                "code-like source without explicit binding"
+              ],
+              "datatype": [
+                "string compatible"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=[]",
+                "text_similarity=0.27027"
+              ],
+              "value_pattern": [
+                "code_like_values->coded_target"
+              ]
+            },
+            "samples": [
+              "DEV-100",
+              "DEV-101"
+            ],
+            "top_values": [
+              {
+                "count": 1,
+                "value": "DEV-100"
+              },
+              {
+                "count": 1,
+                "value": "DEV-101"
+              }
+            ],
+            "units": []
+          },
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
+          },
+          "transform": {
+            "name": "normalize_codeable_concept",
+            "params": {
+              "system_required": true
+            }
+          }
+        },
+        {
+          "confidence": 0.437778,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.4,
+              "datatype_fit": 0.8,
+              "name_similarity": 0.222222,
+              "value_pattern_fit": 0.4
+            },
+            "inferred_type": "string",
+            "rules_fired": {
+              "binding": [
+                "code-like source without explicit binding"
+              ],
+              "datatype": [
+                "string compatible"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=[]",
+                "text_similarity=0.222222"
+              ],
+              "value_pattern": [
                 "id_column->identifier_or_reference"
               ]
             },
@@ -2847,137 +2733,21 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Organization.identifier.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq",
-            "resourceType": "Organization"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/identifier-type",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
             "name": "trim_string",
             "params": {}
-          }
-        },
-        {
-          "confidence": 0.696667,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.333333,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.3333"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "DEV-100",
-              "DEV-101"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "DEV-100"
-              },
-              {
-                "count": 1,
-                "value": "DEV-101"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Observation.referenceRange.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-meaning",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
-          }
-        },
-        {
-          "confidence": 0.683279,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.295082,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2951"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "DEV-100",
-              "DEV-101"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "DEV-100"
-              },
-              {
-                "count": 1,
-                "value": "DEV-101"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Observation.referenceRange.appliesTo",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
           }
         }
       ],
@@ -2993,30 +2763,40 @@
         "column": "deviation_id",
         "file": "data/examples/qms_deviations.xml",
         "table": "qms_deviations"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.483333,
+          "confidence": 0.366667,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.238095,
+              "name_similarity": 0.190476,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2381"
+                "text_similarity=0.190476"
               ],
               "value_pattern": []
             },
@@ -3036,70 +2816,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "DiagnosticReport.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq",
-            "resourceType": "DiagnosticReport"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq",
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "normalize_codeable_concept",
-            "params": {
-              "system_required": true
-            }
-          }
-        },
-        {
-          "confidence": 0.476087,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.217391,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2174"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "closed",
-              "open"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "closed"
-              },
-              {
-                "count": 1,
-                "value": "open"
-              }
-            ],
-            "units": []
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "Medication.code",
+            "elementPath": "Medication.code.text",
             "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
             "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/medication-codes",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -3110,25 +2836,26 @@
           }
         },
         {
-          "confidence": 0.47,
+          "confidence": 0.3375,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.5,
               "datatype_fit": 0.8,
-              "name_similarity": 0.2,
+              "name_similarity": 0.107143,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "no binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2"
+                "text_similarity=0.107143"
               ],
               "value_pattern": []
             },
@@ -3148,21 +2875,78 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "normalize_codeable_concept",
-            "params": {
-              "system_required": true
-            }
+            "name": "trim_string",
+            "params": {}
+          }
+        },
+        {
+          "confidence": 0.337333,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.5,
+              "datatype_fit": 0.8,
+              "name_similarity": 0.106667,
+              "value_pattern_fit": 0.0
+            },
+            "inferred_type": "string",
+            "rules_fired": {
+              "binding": [
+                "no binding"
+              ],
+              "datatype": [
+                "string compatible"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=[]",
+                "text_similarity=0.106667"
+              ],
+              "value_pattern": []
+            },
+            "samples": [
+              "closed",
+              "open"
+            ],
+            "top_values": [
+              {
+                "count": 1,
+                "value": "closed"
+              },
+              {
+                "count": 1,
+                "value": "open"
+              }
+            ],
+            "units": []
+          },
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": null
+          },
+          "transform": {
+            "name": "trim_string",
+            "params": {}
           }
         }
       ],
@@ -3178,35 +2962,45 @@
         "column": "status",
         "file": "data/examples/qms_deviations.xml",
         "table": "qms_deviations"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.671304,
+          "confidence": 0.73,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.26087,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.485714,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2609"
+              "hard_rules": [
+                "boost:Medication.batch.lotNumber(+0.28)",
+                "anchor_applied:batch_lot_id"
               ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
+              "name": [
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.485714"
+              ],
+              "value_pattern": []
             },
             "samples": [
               "B-1001",
@@ -3224,73 +3018,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "GOOD_CANDIDATE",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.referenceRange.appliesTo",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
-          }
-        },
-        {
-          "confidence": 0.668889,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.253968,
-              "value_pattern_fit": 0.9
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.254"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
-              ]
-            },
-            "samples": [
-              "B-1001",
-              "B-1002"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "B-1001"
-              },
-              {
-                "count": 1,
-                "value": "B-1002"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Organization.identifier.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq",
-            "resourceType": "Organization"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/identifier-type",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -3299,28 +3036,31 @@
           }
         },
         {
-          "confidence": 0.66046,
+          "confidence": 0.617303,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.229885,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.449438,
+              "value_pattern_fit": 0.4
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [
+                "boost:Medication.identifier.value(+0.1)",
+                "anchor_applied:batch_lot_id"
+              ],
               "name": [
-                "token_overlap=[]",
-                "text_similarity=0.2299"
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.449438"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
                 "id_column->identifier_or_reference"
               ]
             },
@@ -3340,21 +3080,21 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.referenceRange.normalValue",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "to_reference",
-            "params": {
-              "lookup": "REQUIRES_REVIEW"
-            }
+            "name": "trim_string",
+            "params": {}
           }
         }
       ],
@@ -3370,30 +3110,40 @@
         "column": "batch_id",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.495641,
+          "confidence": 0.352631,
           "evidence": {
             "component_scores": {
-              "binding_fit": 0.6,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.358974,
+              "binding_fit": 0.5,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.578947,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
             "rules_fired": {
               "binding": [
-                "binding available but source not clearly code-like"
+                "no binding"
               ],
               "datatype": [
-                "numeric compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['quantity']",
-                "text_similarity=0.359"
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.578947"
               ],
               "value_pattern": []
             },
@@ -3413,14 +3163,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Medication.ingredient.strength[x]",
+            "elementPath": "Medication.batch.lotNumber",
             "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
             "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/medication-ingredientstrength",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
@@ -3429,12 +3181,12 @@
           }
         },
         {
-          "confidence": 0.488028,
+          "confidence": 0.325,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.394366,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.5,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -3443,11 +3195,12 @@
                 "no binding"
               ],
               "datatype": [
-                "numeric compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['quantity']",
-                "text_similarity=0.3944"
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.5"
               ],
               "value_pattern": []
             },
@@ -3467,30 +3220,32 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.collection.quantity",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Medication.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "to_quantity",
+            "name": "normalize_codeable_concept",
             "params": {
-              "units_detected": []
+              "system_required": true
             }
           }
         },
         {
-          "confidence": 0.483333,
+          "confidence": 0.312105,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.380952,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.463158,
               "value_pattern_fit": 0.0
             },
             "inferred_type": "number",
@@ -3499,11 +3254,12 @@
                 "no binding"
               ],
               "datatype": [
-                "numeric compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['quantity']",
-                "text_similarity=0.381"
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.463158"
               ],
               "value_pattern": []
             },
@@ -3523,21 +3279,21 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.container.specimenQuantity",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "to_quantity",
-            "params": {
-              "units_detected": []
-            }
+            "name": "identity",
+            "params": {}
           }
         }
       ],
@@ -3553,175 +3309,43 @@
         "column": "batch_quantity",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.520863,
+          "confidence": 0.3,
           "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.345324,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=['unit', 'units', 'uom']",
-                "text_similarity=0.3453"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "tablet"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "tablet"
-              }
-            ],
-            "units": [
-              "tablet"
-            ]
+            "component_scores": {},
+            "reason": "No candidate remained after hard-rule filtering",
+            "rules_fired": {}
           },
+          "flags": [
+            "no_viable_candidate"
+          ],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "PackagedProductDefinition.packaging.property.value[x].code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq",
-            "resourceType": "PackagedProductDefinition"
+            "elementPath": "UNKNOWN",
+            "profileUrl": "UNKNOWN",
+            "resourceType": "UNKNOWN"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://terminology.hl7.org/ValueSet/v3-UnitsOfMeasureCaseSensitive",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": null
           },
           "transform": {
-            "name": "to_quantity",
-            "params": {
-              "units_detected": [
-                "tablet"
-              ]
-            }
-          }
-        },
-        {
-          "confidence": 0.51708,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 0.6,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.277372,
-              "value_pattern_fit": 0.5
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available but source not clearly code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=['unit', 'units', 'uom']",
-                "text_similarity=0.2774"
-              ],
-              "value_pattern": [
-                "units->quantity"
-              ]
-            },
-            "samples": [
-              "tablet"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "tablet"
-              }
-            ],
-            "units": [
-              "tablet"
-            ]
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "ManufacturedItemDefinition.unitOfPresentation",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq",
-            "resourceType": "ManufacturedItemDefinition"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/unit-of-presentation",
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "to_quantity",
-            "params": {
-              "units_detected": [
-                "tablet"
-              ]
-            }
-          }
-        },
-        {
-          "confidence": 0.509091,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.311688,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.3117"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "tablet"
-            ],
-            "top_values": [
-              {
-                "count": 2,
-                "value": "tablet"
-              }
-            ],
-            "units": [
-              "tablet"
-            ]
-          },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "ObservationDefinition.component.code",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-codes",
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "to_quantity",
-            "params": {
-              "units_detected": [
-                "tablet"
-              ]
-            }
+            "name": "identity",
+            "params": {}
           }
         }
       ],
@@ -3737,33 +3361,46 @@
         "column": "batch_uom",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.62,
+          "confidence": 0.887027,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.342857,
+              "name_similarity": 0.648649,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [
+                "boost:Medication.batch.lotNumber(+0.28)",
+                "anchor_applied:batch_lot_id"
+              ],
               "name": [
-                "token_overlap=[]",
-                "text_similarity=0.3429"
+                "token_overlap=['batch', 'batchid', 'lot', 'number']",
+                "text_similarity=0.648649"
               ],
               "value_pattern": [
-                "code_like_values->coded_target"
+                "batch_pattern->batch_path"
               ]
             },
             "samples": [
@@ -3782,14 +3419,16 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "AUTO_APPROVE_CANDIDATE",
           "status": "PROPOSED",
           "target": {
-            "elementPath": "Observation.interpretation",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-interpretation",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -3798,29 +3437,31 @@
           }
         },
         {
-          "confidence": 0.618644,
+          "confidence": 0.553118,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.338983,
-              "value_pattern_fit": 0.5
+              "name_similarity": 0.494624,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.339"
+              "hard_rules": [
+                "boost:Medication.identifier.value(+0.1)",
+                "anchor_applied:batch_lot_id"
               ],
-              "value_pattern": [
-                "code_like_values->coded_target"
-              ]
+              "name": [
+                "token_overlap=['batch', 'batchid', 'lot']",
+                "text_similarity=0.494624"
+              ],
+              "value_pattern": []
             },
             "samples": [
               "LOT-77A",
@@ -3838,70 +3479,16 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.bodySite",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/body-site",
-            "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
-          },
-          "transform": {
-            "name": "trim_string",
-            "params": {}
-          }
-        },
-        {
-          "confidence": 0.614925,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 1.0,
-              "datatype_fit": 0.8,
-              "name_similarity": 0.328358,
-              "value_pattern_fit": 0.5
-            },
-            "inferred_type": "string",
-            "rules_fired": {
-              "binding": [
-                "binding available and source appears code-like"
-              ],
-              "datatype": [
-                "string compatible"
-              ],
-              "name": [
-                "token_overlap=[]",
-                "text_similarity=0.3284"
-              ],
-              "value_pattern": [
-                "code_like_values->coded_target"
-              ]
-            },
-            "samples": [
-              "LOT-77A",
-              "LOT-77B"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "LOT-77A"
-              },
-              {
-                "count": 1,
-                "value": "LOT-77B"
-              }
-            ],
-            "units": []
-          },
-          "status": "PROPOSED",
-          "target": {
-            "elementPath": "Observation.category",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-category",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -3922,17 +3509,26 @@
         "column": "lot_number",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.575,
+          "confidence": 0.52913,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.357143,
+              "name_similarity": 0.226087,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "date",
@@ -3943,9 +3539,10 @@
               "datatype": [
                 "date/datetime compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['date']",
-                "text_similarity=0.3571"
+                "text_similarity=0.226087"
               ],
               "value_pattern": [
                 "date_type->date_path"
@@ -3967,11 +3564,13 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.processing.time[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Medication.batch.expirationDate",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -3989,13 +3588,13 @@
           }
         },
         {
-          "confidence": 0.551818,
+          "confidence": 0.247541,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.290909,
-              "value_pattern_fit": 0.5
+              "datatype_fit": 0.2,
+              "name_similarity": 0.278689,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "date",
             "rules_fired": {
@@ -4003,15 +3602,14 @@
                 "no binding"
               ],
               "datatype": [
-                "date/datetime compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['date']",
-                "text_similarity=0.2909"
+                "token_overlap=['manufacturing']",
+                "text_similarity=0.278689"
               ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
+              "value_pattern": []
             },
             "samples": [
               "2026-01-04",
@@ -4029,11 +3627,13 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ActivityDefinition.date",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq",
-            "resourceType": "ActivityDefinition"
+            "elementPath": "Medication.batch.extension",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -4051,13 +3651,13 @@
           }
         },
         {
-          "confidence": 0.55,
+          "confidence": 0.242647,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.285714,
-              "value_pattern_fit": 0.5
+              "datatype_fit": 0.2,
+              "name_similarity": 0.264706,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "date",
             "rules_fired": {
@@ -4065,15 +3665,14 @@
                 "no binding"
               ],
               "datatype": [
-                "date/datetime compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['date']",
-                "text_similarity=0.2857"
+                "token_overlap=[]",
+                "text_similarity=0.264706"
               ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
+              "value_pattern": []
             },
             "samples": [
               "2026-01-04",
@@ -4091,11 +3690,15 @@
             ],
             "units": []
           },
+          "flags": [
+            "no_token_overlap_and_weak_datatype_cap_0_55"
+          ],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "SpecimenDefinition.date",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq",
-            "resourceType": "SpecimenDefinition"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -4125,34 +3728,43 @@
         "column": "manufacturing_date",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.660769,
+          "confidence": 0.469362,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.230769,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.255319,
+              "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2308"
+                "text_similarity=0.255319"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
+                "code_like_values->coded_target"
               ]
             },
             "samples": [
@@ -4166,46 +3778,48 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.referenceRange.normalValue",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.code.text",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "to_reference",
+            "name": "normalize_codeable_concept",
             "params": {
-              "lookup": "REQUIRES_REVIEW"
+              "system_required": true
             }
           }
         },
         {
-          "confidence": 0.657778,
+          "confidence": 0.4475,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.222222,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.25,
+              "value_pattern_fit": 0.4
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2222"
+                "text_similarity=0.25"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
                 "id_column->identifier_or_reference"
               ]
             },
@@ -4220,14 +3834,16 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Organization.identifier.type",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq",
-            "resourceType": "Organization"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/identifier-type",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
@@ -4236,29 +3852,29 @@
           }
         },
         {
-          "confidence": 0.65,
+          "confidence": 0.447123,
           "evidence": {
             "component_scores": {
-              "binding_fit": 1.0,
+              "binding_fit": 0.4,
               "datatype_fit": 0.8,
-              "name_similarity": 0.2,
-              "value_pattern_fit": 0.9
+              "name_similarity": 0.191781,
+              "value_pattern_fit": 0.5
             },
             "inferred_type": "string",
             "rules_fired": {
               "binding": [
-                "binding available and source appears code-like"
+                "code-like source without explicit binding"
               ],
               "datatype": [
                 "string compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=[]",
-                "text_similarity=0.2"
+                "text_similarity=0.191781"
               ],
               "value_pattern": [
-                "code_like_values->coded_target",
-                "id_column->identifier_or_reference"
+                "code_like_values->coded_target"
               ]
             },
             "samples": [
@@ -4272,20 +3888,22 @@
             ],
             "units": []
           },
-          "status": "PROPOSED",
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Observation.referenceRange.appliesTo",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
-            "resourceType": "Observation"
+            "elementPath": "Medication.code.coding.code",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
-            "bindingValueSetUrl": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
+            "bindingValueSetUrl": null,
             "conceptMapSuggested": "LOCAL_TO_PQI_REQUIRES_REVIEW"
           },
           "transform": {
-            "name": "to_reference",
+            "name": "normalize_codeable_concept",
             "params": {
-              "lookup": "REQUIRES_REVIEW"
+              "system_required": true
             }
           }
         }
@@ -4302,17 +3920,26 @@
         "column": "material_id",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.584615,
+          "confidence": 0.513063,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.384615,
+              "name_similarity": 0.18018,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "date",
@@ -4323,9 +3950,10 @@
               "datatype": [
                 "date/datetime compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['date']",
-                "text_similarity=0.3846"
+                "text_similarity=0.18018"
               ],
               "value_pattern": [
                 "date_type->date_path"
@@ -4347,68 +3975,8 @@
             ],
             "units": []
           },
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "Specimen.processing.time[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
-          },
-          "terminology": {
-            "bindingValueSetUrl": null,
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "parse_date",
-            "params": {
-              "accepted_formats": [
-                "YYYY-MM-DD",
-                "YYYY-MM",
-                "ISO-8601"
-              ]
-            }
-          }
-        },
-        {
-          "confidence": 0.552667,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.293333,
-              "value_pattern_fit": 0.5
-            },
-            "inferred_type": "date",
-            "rules_fired": {
-              "binding": [
-                "no binding"
-              ],
-              "datatype": [
-                "date/datetime compatible"
-              ],
-              "name": [
-                "token_overlap=['date']",
-                "text_similarity=0.2933"
-              ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
-            },
-            "samples": [
-              "2026-01-20",
-              "2026-02-21"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "2026-01-20"
-              },
-              {
-                "count": 1,
-                "value": "2026-02-21"
-              }
-            ],
-            "units": []
-          },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
             "elementPath": "Medication.batch.expirationDate",
@@ -4431,13 +3999,13 @@
           }
         },
         {
-          "confidence": 0.546078,
+          "confidence": 0.234,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.27451,
-              "value_pattern_fit": 0.5
+              "datatype_fit": 0.2,
+              "name_similarity": 0.24,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "date",
             "rules_fired": {
@@ -4445,15 +4013,14 @@
                 "no binding"
               ],
               "datatype": [
-                "date/datetime compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['date']",
-                "text_similarity=0.2745"
+                "token_overlap=[]",
+                "text_similarity=0.24"
               ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
+              "value_pattern": []
             },
             "samples": [
               "2026-01-20",
@@ -4471,11 +4038,78 @@
             ],
             "units": []
           },
+          "flags": [
+            "no_token_overlap_and_weak_datatype_cap_0_55"
+          ],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ActivityDefinition.date",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq",
-            "resourceType": "ActivityDefinition"
+            "elementPath": "Medication.code.text",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
+          },
+          "terminology": {
+            "bindingValueSetUrl": null,
+            "conceptMapSuggested": null
+          },
+          "transform": {
+            "name": "parse_date",
+            "params": {
+              "accepted_formats": [
+                "YYYY-MM-DD",
+                "YYYY-MM",
+                "ISO-8601"
+              ]
+            }
+          }
+        },
+        {
+          "confidence": 0.227119,
+          "evidence": {
+            "component_scores": {
+              "binding_fit": 0.5,
+              "datatype_fit": 0.2,
+              "name_similarity": 0.220339,
+              "value_pattern_fit": 0.0
+            },
+            "inferred_type": "date",
+            "rules_fired": {
+              "binding": [
+                "no binding"
+              ],
+              "datatype": [
+                "weak type fit"
+              ],
+              "hard_rules": [],
+              "name": [
+                "token_overlap=['packaging']",
+                "text_similarity=0.220339"
+              ],
+              "value_pattern": []
+            },
+            "samples": [
+              "2026-01-20",
+              "2026-02-21"
+            ],
+            "top_values": [
+              {
+                "count": 1,
+                "value": "2026-01-20"
+              },
+              {
+                "count": 1,
+                "value": "2026-02-21"
+              }
+            ],
+            "units": []
+          },
+          "flags": [],
+          "label": "REQUIRES_SME",
+          "status": "REQUIRES_REVIEW",
+          "target": {
+            "elementPath": "Medication.batch.extension",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -4505,17 +4139,26 @@
         "column": "packaging_date",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     },
     {
       "candidates": [
         {
-          "confidence": 0.584615,
+          "confidence": 0.520642,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
               "datatype_fit": 1.0,
-              "name_similarity": 0.384615,
+              "name_similarity": 0.201835,
               "value_pattern_fit": 0.5
             },
             "inferred_type": "date",
@@ -4526,9 +4169,10 @@
               "datatype": [
                 "date/datetime compatible"
               ],
+              "hard_rules": [],
               "name": [
                 "token_overlap=['date']",
-                "text_similarity=0.3846"
+                "text_similarity=0.201835"
               ],
               "value_pattern": [
                 "date_type->date_path"
@@ -4550,11 +4194,13 @@
             ],
             "units": []
           },
+          "flags": [],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ObservationDefinition.date",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
-            "resourceType": "ObservationDefinition"
+            "elementPath": "Medication.batch.expirationDate",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -4572,13 +4218,13 @@
           }
         },
         {
-          "confidence": 0.578571,
+          "confidence": 0.219136,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.367347,
-              "value_pattern_fit": 0.5
+              "datatype_fit": 0.2,
+              "name_similarity": 0.197531,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "date",
             "rules_fired": {
@@ -4586,15 +4232,14 @@
                 "no binding"
               ],
               "datatype": [
-                "date/datetime compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['date']",
-                "text_similarity=0.3673"
+                "token_overlap=[]",
+                "text_similarity=0.197531"
               ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
+              "value_pattern": []
             },
             "samples": [
               "2026-01-18",
@@ -4612,11 +4257,15 @@
             ],
             "units": []
           },
+          "flags": [
+            "no_token_overlap_and_weak_datatype_cap_0_55"
+          ],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "ActivityDefinition.date",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq",
-            "resourceType": "ActivityDefinition"
+            "elementPath": "Medication.identifier.value",
+            "profileUrl": "BASE_FHIR_R5",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -4634,13 +4283,13 @@
           }
         },
         {
-          "confidence": 0.576,
+          "confidence": 0.217742,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
-              "datatype_fit": 1.0,
-              "name_similarity": 0.36,
-              "value_pattern_fit": 0.5
+              "datatype_fit": 0.2,
+              "name_similarity": 0.193548,
+              "value_pattern_fit": 0.0
             },
             "inferred_type": "date",
             "rules_fired": {
@@ -4648,15 +4297,14 @@
                 "no binding"
               ],
               "datatype": [
-                "date/datetime compatible"
+                "weak type fit"
               ],
+              "hard_rules": [],
               "name": [
-                "token_overlap=['date']",
-                "text_similarity=0.36"
+                "token_overlap=[]",
+                "text_similarity=0.193548"
               ],
-              "value_pattern": [
-                "date_type->date_path"
-              ]
+              "value_pattern": []
             },
             "samples": [
               "2026-01-18",
@@ -4674,11 +4322,15 @@
             ],
             "units": []
           },
+          "flags": [
+            "no_token_overlap_and_weak_datatype_cap_0_55"
+          ],
+          "label": "REQUIRES_SME",
           "status": "REQUIRES_REVIEW",
           "target": {
-            "elementPath": "Specimen.processing.time[x]",
-            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
-            "resourceType": "Specimen"
+            "elementPath": "Medication.batch.lotNumber",
+            "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+            "resourceType": "Medication"
           },
           "terminology": {
             "bindingValueSetUrl": null,
@@ -4708,11 +4360,25 @@
         "column": "release_date",
         "file": "data/examples/sap_batch.csv",
         "table": "sap_batch"
+      },
+      "table_model": {
+        "primary_resource": "Medication",
+        "resource_scores": {
+          "DiagnosticReport": 0.0,
+          "Medication": 1.0,
+          "Observation": 0.0,
+          "Specimen": 0.0
+        }
       }
     }
   ],
   "summary": {
+    "label_counts": {
+      "AUTO_APPROVE_CANDIDATE": 4,
+      "GOOD_CANDIDATE": 5,
+      "REQUIRES_SME": 53
+    },
     "proposal_count": 25,
-    "requires_review": 41
+    "requires_review": 48
   }
 }

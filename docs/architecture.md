@@ -1,84 +1,60 @@
-# Product CMC Digital Twin MVP Architecture (PQI / FHIR R5)
+# PQI Mapping Copilot Architecture (pqi_copilot)
 
-## Defaults Chosen
-- Canonical semantic contract: HL7 FHIR R5 + PQI STU1 package `hl7.fhir.uv.pharm-quality#1.0.0`.
-- Execution mode: deterministic local batch pipeline.
-- Governance mode: Git-friendly JSON artifact store with immutable approved snapshots.
-- Validation mode: local structural + terminology + business rules, with external validator hook stub.
+## ROI Goal
+Accelerate consultant mapping workshops for PQI Step I-III exchange by producing explainable, governed mapping proposals for two wedge domains:
+- Batch/Lot Information
+- Batch Analysis
 
-## PQI Step I-III Alignment
+## Core Principles
+- Semantic contract: HL7 FHIR R5 + PQI (`hl7.fhir.uv.pharm-quality#1.0.0`).
+- Local-first execution: no network calls.
+- Deterministic artifacts: stable ordering + stable hashes.
+- Governance-as-product: immutable approved versions.
 
-### Step I: Partner/System Exchange (Ingest)
-- Inputs: raw CSV/JSON/XML from SAP, LIMS, MES, QMS, PLM, RIM (synthetic examples included).
-- Component: `pqi_twin.profiler`
-- Outputs:
-  - schema/data-type inference
-  - code distributions
-  - unit detection
-  - candidate keys/joins with overlap evidence
+## Pipeline
+1. Ingest (`pqi_copilot.ingest.normalize`)
+- Read CSV/JSON/XML.
+- Normalize into row tables with clear unsupported guidance.
 
-### Step II: Collate into Discrete PQI Resources/Profiles
-- Components:
-  - `pqi_twin.ig_loader` (PQI IG index: profiles, required elements, bindings, examples)
-  - `pqi_twin.domain_classifier` (PQ1..PQ14 confidence + evidence)
-  - `pqi_twin.mapping_recommender` (source->target proposals + relationship graph)
-  - `pqi_twin.terminology` (CodeSystem/ValueSet/ConceptMap scaffolds + CodeableConcept recommendations)
-  - `pqi_twin.governance` (lifecycle + versioned immutable artifacts)
-- Outputs:
-  - MappingProposalSet JSON
-  - Relationship graph
-  - terminology scaffolds
-  - governed/approved versions for downstream generation
+2. Profile (`pqi_copilot.profiler.stats`)
+- Infer types, null/unique rates, top values, units, regex hits, ID likelihood.
 
-### Step III: Bundle / Submittable Extraction & Transform-Ready Packaging
-- Components:
-  - `pqi_twin.generator` (approved mappings -> PQI-aligned FHIR Bundles)
-  - `pqi_twin.validator` (structural/terminology/business checks)
-  - `pqi_twin.evidence` (hash manifest + canonicalization/signing hooks)
-- Outputs:
-  - PQI-style collection bundles (R5 JSON)
-  - validation report
-  - evidence manifest (input hashes, mapping/terminology versions, validator version, output hashes)
+3. Domain classify (`pqi_copilot.classify.domain_classifier`)
+- Score each table for wedge domains with explainable rationale.
 
-## Repository Plan
-- `src/pqi_twin/ig_loader.py`: parses package.tgz or full-ig.zip, builds IG catalog.
-- `src/pqi_twin/profiler.py`: profiles extracts, infers schema + joins.
-- `src/pqi_twin/domain_classifier.py`: classifies tables/fields into PQ domains.
-- `src/pqi_twin/mapping_recommender.py`: produces MappingProposal artifacts + relationship graph.
-- `src/pqi_twin/terminology.py`: builds local terminology scaffolds + coding recommendations.
-- `src/pqi_twin/governance.py`: lifecycle state management and versioned immutable store.
-- `src/pqi_twin/generator.py`: emits deterministic PQI-aligned bundles (definition + instance resources).
-- `src/pqi_twin/validator.py`: local validator + external validator integration stub.
-- `src/pqi_twin/evidence.py`: deterministic evidence manifest builder.
-- `src/pqi_twin/pipeline.py`: orchestration.
-- `src/pqi_twin/cli.py`: CLI (`pqi-twin run-mvp ...`).
-- `data/synthetic/`: sample inputs.
-- `examples/out/`: generated example artifacts.
-- `governance/`: mapping/terminology versions.
-- `tests/`: determinism, golden bundle, mapping stability.
+4. Resource classify (`pqi_copilot.classify.resource_classifier`)
+- Assign primary resource model per table (Medication/Observation/DiagnosticReport/Specimen).
 
-## Determinism Controls
-- Stable ordering of files/tables/columns/resources.
-- Stable JSON serialization (sorted keys).
-- Stable IDs from SHA-256 over semantic keys.
-- No runtime timestamps in generated content.
-- Manifest run ID derived from canonical manifest hash.
+5. Propose mappings (`pqi_copilot.propose.mapping`)
+- Constrained candidate universe using curated target spaces (`pqi_copilot.propose.target_spaces`).
+- Hard anchor rules (`pqi_copilot.propose.hard_rules`) enforce consultant-safe behavior.
+- Confidence calibration labels:
+  - `AUTO_APPROVE_CANDIDATE`
+  - `GOOD_CANDIDATE`
+  - `REQUIRES_SME`
 
-## Validation Model
-1. Structural validation
-   - resource basics (`resourceType`, `id`, bundle shape)
-   - profile reference existence in local IG catalog
-   - MVP required element checks from profile metadata
-2. Terminology validation
-   - all codings enforce explicit `system`, `code`, `display`
-   - unresolved bindings flagged `REQUIRES_REVIEW`
-3. Business-rule validation
-   - `Medication.batch.lotNumber` required
-   - `Observation.subject` and `Observation.value[x]` required
-   - `DiagnosticReport.result` required
+6. Propose relationships (`pqi_copilot.propose.relationships`)
+- Key-based join suggestions with match rates.
 
-## Governance Rules
-- Lifecycle: `proposed -> reviewed -> approved -> deprecated`.
-- Approved snapshots are immutable.
-- Any content change after approval creates a new version.
-- Version artifacts are JSON files under `governance/{mappings|terminology}/{artifactId}/vN.json`.
+7. Generate decisions (`pqi_copilot.propose.decisions`)
+- Decision objects for SME review with top options + question prompts.
+
+8. Report (`pqi_copilot.report.render`)
+- Markdown + HTML stakeholder report with decisions first-class.
+
+9. Govern approvals (`pqi_copilot.governance.store`)
+- `PROPOSED -> APPROVED` artifact versions.
+- Manual override support for source-level picks.
+- Immutable versioned library artifacts.
+
+10. Optional generate (`pqi_copilot.generate.bundle`)
+- Minimal wedge bundle from approved mappings + manifest hashes.
+
+## Key Paths
+- IG catalog: `artifacts/library/ig_catalog.json`
+- Run artifacts: `artifacts/runs/<run_id>/...`
+- Library mappings: `artifacts/library/mappings/<mapping_name>/vX.Y.Z/approved.yaml`
+
+## Legacy Note
+- `src/pqi_twin/` is legacy from an earlier prototype and is deprecated for active development.
+- All active implementation for this tool is under `pqi_copilot/`.

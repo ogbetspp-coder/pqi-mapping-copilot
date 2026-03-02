@@ -1,11 +1,11 @@
 candidates:
   -
-    confidence: 0.604546
+    confidence: 0.852898
     evidence:
       component_scores:
         binding_fit: 0.5
         datatype_fit: 1.0
-        name_similarity: 0.727273
+        name_similarity: 0.57971
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
@@ -13,9 +13,12 @@ candidates:
           - no binding
         datatype:
           - numeric compatible
+        hard_rules:
+          - "boost:Observation.valueQuantity.value(+0.3)"
+          - "anchor_applied:result_value_numeric"
         name:
           - "token_overlap=['outcome', 'result', 'value']"
-          - text_similarity=0.7273
+          - text_similarity=0.57971
         value_pattern:
 
       samples:
@@ -34,35 +37,42 @@ candidates:
           value: 99.1
       units:
 
+    flags:
+
+    label: AUTO_APPROVE_CANDIDATE
     status: PROPOSED
     target:
-      elementPath: "Extension.value[x]"
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-pq"
-      resourceType: Extension
+      elementPath: Observation.valueQuantity.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
-      name: identity
+      name: to_quantity
       params:
+        units_detected:
 
   -
-    confidence: 0.604546
+    confidence: 0.352174
     evidence:
       component_scores:
         binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.727273
+        datatype_fit: 0.2
+        name_similarity: 0.434783
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
         binding:
           - no binding
         datatype:
-          - numeric compatible
+          - weak type fit
+        hard_rules:
+          - "boost:Observation.valueCodeableConcept.text(+0.05)"
+          - "anchor_applied:result_value_numeric"
         name:
           - "token_overlap=['outcome', 'result', 'value']"
-          - text_similarity=0.7273
+          - text_similarity=0.434783
         value_pattern:
 
       samples:
@@ -81,65 +91,21 @@ candidates:
           value: 99.1
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: "Extension.value[x]"
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-unfiltered-pq"
-      resourceType: Extension
+      elementPath: Observation.valueCodeableConcept.text
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
-      name: identity
+      name: normalize_codeable_concept
       params:
-
-  -
-    confidence: 0.604546
-    evidence:
-      component_scores:
-        binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.727273
-        value_pattern_fit: 0.0
-      inferred_type: number
-      rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - numeric compatible
-        name:
-          - "token_overlap=['outcome', 'result', 'value']"
-          - text_similarity=0.7273
-        value_pattern:
-
-      samples:
-        - 1.9
-        - 98.7
-        - 99.1
-      top_values:
-        -
-          count: 1
-          value: 1.9
-        -
-          count: 1
-          value: 98.7
-        -
-          count: 1
-          value: 99.1
-      units:
-
-    status: PROPOSED
-    target:
-      elementPath: "Extension.value[x]"
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq"
-      resourceType: Extension
-    terminology:
-      bindingValueSetUrl: null
-      conceptMapSuggested: null
-    transform:
-      name: identity
-      params:
-
+        system_required: true
 domain:
   primary: batch_analysis
   scores:
@@ -150,3 +116,10 @@ source:
   column: result_value
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

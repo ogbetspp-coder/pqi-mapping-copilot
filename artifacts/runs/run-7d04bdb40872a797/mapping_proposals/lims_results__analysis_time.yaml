@@ -1,11 +1,11 @@
 candidates:
   -
-    confidence: 0.610919
+    confidence: 0.555376
     evidence:
       component_scores:
         binding_fit: 0.5
         datatype_fit: 1.0
-        name_similarity: 0.45977
+        name_similarity: 0.301075
         value_pattern_fit: 0.5
       inferred_type: datetime
       rules_fired:
@@ -13,9 +13,11 @@ candidates:
           - no binding
         datatype:
           - date/datetime compatible
+        hard_rules:
+
         name:
           - "token_overlap=['time']"
-          - text_similarity=0.4598
+          - text_similarity=0.301075
         value_pattern:
           - date_type->date_path
       samples:
@@ -34,11 +36,14 @@ candidates:
           value: "2026-02-20T10:20:00Z"
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Specimen.receivedTime
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-      resourceType: Specimen
+      elementPath: Observation.effectiveDateTime
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -50,24 +55,26 @@ candidates:
           - YYYY-MM
           - ISO-8601
   -
-    confidence: 0.581884
+    confidence: 0.375555
     evidence:
       component_scores:
         binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.376812
-        value_pattern_fit: 0.5
+        datatype_fit: 0.2
+        name_similarity: 0.644444
+        value_pattern_fit: 0.0
       inferred_type: datetime
       rules_fired:
         binding:
           - no binding
         datatype:
-          - date/datetime compatible
+          - weak type fit
+        hard_rules:
+
         name:
-          - "token_overlap=['time']"
-          - text_similarity=0.3768
+          - "token_overlap=['analysis', 'assay', 'method', 'test']"
+          - text_similarity=0.644444
         value_pattern:
-          - date_type->date_path
+
       samples:
         - "2026-01-19T11:00:00Z"
         - "2026-01-19T11:15:00Z"
@@ -84,11 +91,14 @@ candidates:
           value: "2026-02-20T10:20:00Z"
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: "Specimen.processing.time[x]"
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-      resourceType: Specimen
+      elementPath: Observation.code.text
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -100,24 +110,26 @@ candidates:
           - YYYY-MM
           - ISO-8601
   -
-    confidence: 0.578947
+    confidence: 0.347826
     evidence:
       component_scores:
         binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.368421
-        value_pattern_fit: 0.5
+        datatype_fit: 0.2
+        name_similarity: 0.565217
+        value_pattern_fit: 0.0
       inferred_type: datetime
       rules_fired:
         binding:
           - no binding
         datatype:
-          - date/datetime compatible
+          - weak type fit
+        hard_rules:
+
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.3684
+          - "token_overlap=['analysis', 'assay', 'method', 'test']"
+          - text_similarity=0.565217
         value_pattern:
-          - date_type->date_path
+
       samples:
         - "2026-01-19T11:00:00Z"
         - "2026-01-19T11:15:00Z"
@@ -134,11 +146,14 @@ candidates:
           value: "2026-02-20T10:20:00Z"
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: SpecimenDefinition.date
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
-      resourceType: SpecimenDefinition
+      elementPath: Observation.code.coding.code
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -159,3 +174,10 @@ source:
   column: analysis_time
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

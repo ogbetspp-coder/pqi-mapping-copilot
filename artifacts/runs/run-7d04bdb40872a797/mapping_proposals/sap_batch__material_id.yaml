@@ -1,24 +1,25 @@
 candidates:
   -
-    confidence: 0.660769
+    confidence: 0.469362
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.230769
-        value_pattern_fit: 0.9
+        name_similarity: 0.255319
+        value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+
         name:
           - "token_overlap=[]"
-          - text_similarity=0.2308
+          - text_similarity=0.255319
         value_pattern:
           - code_like_values->coded_target
-          - id_column->identifier_or_reference
       samples:
         - MAT-001
       top_values:
@@ -27,37 +28,41 @@ candidates:
           value: MAT-001
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Observation.referenceRange.normalValue
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
+      elementPath: Medication.code.text
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
-      name: to_reference
+      name: normalize_codeable_concept
       params:
-        lookup: REQUIRES_REVIEW
+        system_required: true
   -
-    confidence: 0.657778
+    confidence: 0.4475
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.222222
-        value_pattern_fit: 0.9
+        name_similarity: 0.25
+        value_pattern_fit: 0.4
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+
         name:
           - "token_overlap=[]"
-          - text_similarity=0.2222
+          - text_similarity=0.25
         value_pattern:
-          - code_like_values->coded_target
           - id_column->identifier_or_reference
       samples:
         - MAT-001
@@ -67,38 +72,42 @@ candidates:
           value: MAT-001
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Organization.identifier.type
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-      resourceType: Organization
+      elementPath: Medication.identifier.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/identifier-type"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: trim_string
       params:
 
   -
-    confidence: 0.65
+    confidence: 0.447123
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.2
-        value_pattern_fit: 0.9
+        name_similarity: 0.191781
+        value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+
         name:
           - "token_overlap=[]"
-          - text_similarity=0.2
+          - text_similarity=0.191781
         value_pattern:
           - code_like_values->coded_target
-          - id_column->identifier_or_reference
       samples:
         - MAT-001
       top_values:
@@ -107,18 +116,21 @@ candidates:
           value: MAT-001
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Observation.referenceRange.appliesTo
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
+      elementPath: Medication.code.coding.code
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/referencerange-appliesto"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
-      name: to_reference
+      name: normalize_codeable_concept
       params:
-        lookup: REQUIRES_REVIEW
+        system_required: true
 domain:
   primary: batch_lot_information
   scores:
@@ -129,3 +141,10 @@ source:
   column: material_id
   file: data/examples/sap_batch.csv
   table: sap_batch
+table_model:
+  primary_resource: Medication
+  resource_scores:
+    DiagnosticReport: 0.0
+    Medication: 1.0
+    Observation: 0.0
+    Specimen: 0.0

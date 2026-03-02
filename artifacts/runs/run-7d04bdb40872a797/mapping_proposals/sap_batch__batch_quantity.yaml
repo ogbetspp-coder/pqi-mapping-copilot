@@ -1,21 +1,23 @@
 candidates:
   -
-    confidence: 0.495641
+    confidence: 0.352631
     evidence:
       component_scores:
-        binding_fit: 0.6
-        datatype_fit: 1.0
-        name_similarity: 0.358974
+        binding_fit: 0.5
+        datatype_fit: 0.2
+        name_similarity: 0.578947
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
         binding:
-          - binding available but source not clearly code-like
+          - no binding
         datatype:
-          - numeric compatible
+          - weak type fit
+        hard_rules:
+
         name:
-          - "token_overlap=['quantity']"
-          - text_similarity=0.359
+          - "token_overlap=['batch', 'batchid', 'lot']"
+          - text_similarity=0.578947
         value_pattern:
 
       samples:
@@ -30,35 +32,40 @@ candidates:
           value: 125000
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: "Medication.ingredient.strength[x]"
+      elementPath: Medication.batch.lotNumber
       profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
       resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/medication-ingredientstrength"
+      bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
       name: identity
       params:
 
   -
-    confidence: 0.488028
+    confidence: 0.325
     evidence:
       component_scores:
         binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.394366
+        datatype_fit: 0.2
+        name_similarity: 0.5
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
         binding:
           - no binding
         datatype:
-          - numeric compatible
+          - weak type fit
+        hard_rules:
+
         name:
-          - "token_overlap=['quantity']"
-          - text_similarity=0.3944
+          - "token_overlap=['batch', 'batchid', 'lot']"
+          - text_similarity=0.5
         value_pattern:
 
       samples:
@@ -73,36 +80,40 @@ candidates:
           value: 125000
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: Specimen.collection.quantity
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-      resourceType: Specimen
+      elementPath: Medication.code.coding.code
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
-      name: to_quantity
+      name: normalize_codeable_concept
       params:
-        units_detected:
-
+        system_required: true
   -
-    confidence: 0.483333
+    confidence: 0.312105
     evidence:
       component_scores:
         binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.380952
+        datatype_fit: 0.2
+        name_similarity: 0.463158
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
         binding:
           - no binding
         datatype:
-          - numeric compatible
+          - weak type fit
+        hard_rules:
+
         name:
-          - "token_overlap=['quantity']"
-          - text_similarity=0.381
+          - "token_overlap=['batch', 'batchid', 'lot']"
+          - text_similarity=0.463158
         value_pattern:
 
       samples:
@@ -117,18 +128,20 @@ candidates:
           value: 125000
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: Specimen.container.specimenQuantity
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-      resourceType: Specimen
+      elementPath: Medication.identifier.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
-      name: to_quantity
+      name: identity
       params:
-        units_detected:
 
 domain:
   primary: batch_lot_information
@@ -140,3 +153,10 @@ source:
   column: batch_quantity
   file: data/examples/sap_batch.csv
   table: sap_batch
+table_model:
+  primary_resource: Medication
+  resource_scores:
+    DiagnosticReport: 0.0
+    Medication: 1.0
+    Observation: 0.0
+    Specimen: 0.0

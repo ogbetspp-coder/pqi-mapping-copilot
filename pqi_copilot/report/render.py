@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import html
-from pathlib import Path
 from typing import Any
 
 from pqi_copilot.common import read_json, write_text
@@ -24,24 +23,22 @@ def _table_overview(profile: dict[str, Any]) -> list[dict[str, Any]]:
     return out
 
 
-def _classification_map(classification: dict[str, Any]) -> dict[str, Any]:
-    out = {}
-    for table in classification.get("tables", []):
-        out[str(table.get("table"))] = table
-    return out
-
-
 def _top_candidates(proposals: dict[str, Any], k: int = 1) -> list[dict[str, Any]]:
     out = []
     for p in proposals.get("proposals", []):
         candidates = sorted(
             p.get("candidates", []),
-            key=lambda c: (-float(c.get("confidence", 0.0)), str(c.get("target", {}).get("elementPath", "")),),
+            key=lambda c: (
+                -float(c.get("confidence", 0.0)),
+                str(c.get("target", {}).get("resourceType", "")),
+                str(c.get("target", {}).get("elementPath", "")),
+            ),
         )
         out.append(
             {
                 "source": p.get("source", {}),
                 "domain": p.get("domain", {}),
+                "table_model": p.get("table_model", {}),
                 "candidates": candidates[:k],
             }
         )
@@ -52,11 +49,12 @@ def generate_markdown_report(run_id: str) -> str:
     base = run_dir(run_id)
     profile = read_json(base / "profile.json")
     classification = read_json(base / "domain_classification.json")
+    resource_classification = read_json(base / "resource_classification.json")
     proposals = read_json(base / "mapping_proposals.json")
     relationships = read_json(base / "relationship_proposals.json")
+    decisions = read_json(base / "decisions.json")
 
-    class_map = _classification_map(classification)
-    tops = _top_candidates(proposals, k=2)
+    tops = _top_candidates(proposals, k=3)
 
     lines = [f"# PQI Mapping Copilot Report - {run_id}", ""]
     lines.append("## Dataset Overview")
@@ -84,19 +82,60 @@ def generate_markdown_report(run_id: str) -> str:
         )
 
     lines.append("")
+    lines.append("## Table-to-Resource Model")
+    lines.append("")
+    lines.append("| Table | Primary Resource | Resource Scores | Rationale (top) |")
+    lines.append("|---|---|---|---|")
+    for table in resource_classification.get("tables", []):
+        scores = table.get("resource_scores", {})
+        score_text = ", ".join(f"{k}={v:.2f}" for k, v in sorted(scores.items()))
+        rat = table.get("rationale", {})
+        top = []
+        for resource, reasons in rat.items():
+            if reasons:
+                top.append(f"{resource}:{reasons[0]}")
+        lines.append(
+            f"| {table.get('table')} | {table.get('primary_resource')} | {score_text} | {'; '.join(top[:2])} |"
+        )
+
+    lines.append("")
+    lines.append("## Decisions Required From SMEs")
+    lines.append("")
+    lines.append("| Decision | Source | Why | Top Option | Question |")
+    lines.append("|---|---|---|---|---|")
+    if decisions.get("decisions"):
+        for d in decisions.get("decisions", []):
+            options = d.get("proposed", [])
+            if options:
+                top_opt = options[0]
+                option_text = f"{top_opt.get('target')} ({float(top_opt.get('confidence', 0.0)):.2f})"
+            else:
+                option_text = "(none)"
+            lines.append(
+                f"| {d.get('decision_id')} | {d.get('source')} | {d.get('why')} | {option_text} | {d.get('question_for_sme')} |"
+            )
+    else:
+        lines.append("| - | - | No SME decisions required | - | - |")
+
+    lines.append("")
     lines.append("## Top Mapping Candidates")
     lines.append("")
-    lines.append("| Source | Domain | Candidate Target | Confidence | Status | Evidence |")
-    lines.append("|---|---|---|---:|---|---|")
+    lines.append("| Source | Domain | Table Resource | Candidate Target | Confidence | Label | Status | Evidence |")
+    lines.append("|---|---|---|---|---:|---|---|---|")
     unresolved = []
     for item in tops:
         source = item.get("source", {})
         source_label = f"{source.get('table')}.{source.get('column')}"
         domain = item.get("domain", {}).get("primary")
+        table_resource = item.get("table_model", {}).get("primary_resource")
+
         if not item.get("candidates"):
             unresolved.append(source_label)
-            lines.append(f"| {source_label} | {domain} | (none) | 0.00 | REQUIRES_REVIEW | no candidates |")
+            lines.append(
+                f"| {source_label} | {domain} | {table_resource} | (none) | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | no candidates |"
+            )
             continue
+
         best = item["candidates"][0]
         target = best.get("target", {})
         evidence = best.get("evidence", {})
@@ -105,13 +144,15 @@ def generate_markdown_report(run_id: str) -> str:
             [
                 *(rules.get("name", [])[:1] if isinstance(rules.get("name"), list) else []),
                 *(rules.get("datatype", [])[:1] if isinstance(rules.get("datatype"), list) else []),
+                *(rules.get("hard_rules", [])[:1] if isinstance(rules.get("hard_rules"), list) else []),
             ]
         )
+
         lines.append(
-            f"| {source_label} | {domain} | {target.get('resourceType')}::{target.get('elementPath')} | "
-            f"{float(best.get('confidence', 0.0)):.2f} | {best.get('status')} | {brief} |"
+            f"| {source_label} | {domain} | {table_resource} | {target.get('resourceType')}::{target.get('elementPath')} | "
+            f"{float(best.get('confidence', 0.0)):.2f} | {best.get('label')} | {best.get('status')} | {brief} |"
         )
-        if best.get("status") == "REQUIRES_REVIEW":
+        if best.get("status") == "REQUIRES_REVIEW" or best.get("label") == "REQUIRES_SME":
             unresolved.append(source_label)
 
     lines.append("")
@@ -132,15 +173,6 @@ def generate_markdown_report(run_id: str) -> str:
             lines.append(f"- {u}")
     else:
         lines.append("- None")
-
-    lines.append("")
-    lines.append("## Decisions Required From SMEs")
-    lines.append("")
-    if unresolved:
-        lines.append("- Confirm target profile/element for unresolved columns listed above.")
-        lines.append("- Confirm terminology mapping for code-like fields lacking ValueSet bindings.")
-    else:
-        lines.append("- Validate high-confidence mappings before approval.")
 
     return "\n".join(lines) + "\n"
 

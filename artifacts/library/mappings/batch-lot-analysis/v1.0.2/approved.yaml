@@ -1,0 +1,705 @@
+approval_rules:
+  confidence_threshold: 0.72
+  require_status_proposed: true
+content_hash: d928e0c645cd21ee09f36f3c3e893713cf2ebd1e25071fe7c9a552ce248ef497
+created_at_utc: deterministic
+decisions_required:
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: analysis_time
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_id
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: method
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: spec_limit_high
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: spec_limit_low
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: duration_hr
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: equipment_id
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: step_name
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: category
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: deviation_id
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: status
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_quantity
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_uom
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: manufacturing_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: material_id
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: packaging_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: release_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+deterministic_id: bf35c275da0f9cfb
+entries:
+  -
+    selected: null
+    source:
+      column: analysis_time
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_id
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: method
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected:
+      confidence: 0.909231
+      evidence:
+        component_scores:
+          binding_fit: 0.5
+          datatype_fit: 0.8
+          name_similarity: 0.769231
+          value_pattern_fit: 0.5
+        inferred_type: string
+        rules_fired:
+          binding:
+            - no binding
+          datatype:
+            - string compatible
+          hard_rules:
+            - "boost:Observation.valueQuantity.unit(+0.24)"
+            - "anchor_applied:result_unit"
+          name:
+            - "token_overlap=['outcome', 'result', 'unit', 'units', 'uom', 'value']"
+            - text_similarity=0.769231
+          value_pattern:
+            - units->quantity
+        samples:
+          - %
+        top_values:
+          -
+            count: 3
+            value: %
+        units:
+          - %
+      flags:
+
+      label: AUTO_APPROVE_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Observation.valueQuantity.unit
+        profileUrl: BASE_FHIR_R5
+        resourceType: Observation
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: null
+      transform:
+        name: to_quantity
+        params:
+          units_detected:
+            - %
+    source:
+      column: result_unit
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: APPROVED_OVERRIDE
+  -
+    selected:
+      confidence: 0.852898
+      evidence:
+        component_scores:
+          binding_fit: 0.5
+          datatype_fit: 1.0
+          name_similarity: 0.57971
+          value_pattern_fit: 0.0
+        inferred_type: number
+        rules_fired:
+          binding:
+            - no binding
+          datatype:
+            - numeric compatible
+          hard_rules:
+            - "boost:Observation.valueQuantity.value(+0.3)"
+            - "anchor_applied:result_value_numeric"
+          name:
+            - "token_overlap=['outcome', 'result', 'value']"
+            - text_similarity=0.57971
+          value_pattern:
+
+        samples:
+          - 1.9
+          - 98.7
+          - 99.1
+        top_values:
+          -
+            count: 1
+            value: 1.9
+          -
+            count: 1
+            value: 98.7
+          -
+            count: 1
+            value: 99.1
+        units:
+
+      flags:
+
+      label: AUTO_APPROVE_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Observation.valueQuantity.value
+        profileUrl: BASE_FHIR_R5
+        resourceType: Observation
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: null
+      transform:
+        name: to_quantity
+        params:
+          units_detected:
+
+    source:
+      column: result_value
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: APPROVED
+  -
+    selected: null
+    source:
+      column: spec_limit_high
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: spec_limit_low
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected:
+      confidence: 0.86587
+      evidence:
+        component_scores:
+          binding_fit: 0.4
+          datatype_fit: 0.8
+          name_similarity: 0.673913
+          value_pattern_fit: 0.5
+        inferred_type: string
+        rules_fired:
+          binding:
+            - code-like source without explicit binding
+          datatype:
+            - string compatible
+          hard_rules:
+            - "boost:Observation.code.coding.code(+0.25)"
+            - "anchor_applied:test_code"
+          name:
+            - "token_overlap=['analysis', 'assay', 'code', 'method', 'test']"
+            - text_similarity=0.673913
+          value_pattern:
+            - code_like_values->coded_target
+        samples:
+          - ASSAY
+          - WATER
+        top_values:
+          -
+            count: 2
+            value: ASSAY
+          -
+            count: 1
+            value: WATER
+        units:
+
+      flags:
+
+      label: AUTO_APPROVE_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Observation.code.coding.code
+        profileUrl: BASE_FHIR_R5
+        resourceType: Observation
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+      transform:
+        name: normalize_codeable_concept
+        params:
+          system_required: true
+    source:
+      column: test_code
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: APPROVED
+  -
+    selected:
+      confidence: 0.763044
+      evidence:
+        component_scores:
+          binding_fit: 0.5
+          datatype_fit: 0.8
+          name_similarity: 0.608696
+          value_pattern_fit: 0.0
+        inferred_type: string
+        rules_fired:
+          binding:
+            - no binding
+          datatype:
+            - string compatible
+          hard_rules:
+            - "boost:Observation.code.coding.code(+0.25)"
+            - "anchor_applied:test_code"
+          name:
+            - "token_overlap=['analysis', 'assay', 'method', 'test']"
+            - text_similarity=0.608696
+          value_pattern:
+
+        samples:
+          - Assay
+          - Water
+        top_values:
+          -
+            count: 2
+            value: Assay
+          -
+            count: 1
+            value: Water
+        units:
+
+      flags:
+
+      label: GOOD_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Observation.code.coding.code
+        profileUrl: BASE_FHIR_R5
+        resourceType: Observation
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: null
+      transform:
+        name: normalize_codeable_concept
+        params:
+          system_required: true
+    source:
+      column: test_name
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: APPROVED
+  -
+    selected:
+      confidence: 0.73
+      evidence:
+        component_scores:
+          binding_fit: 0.4
+          datatype_fit: 0.8
+          name_similarity: 0.485714
+          value_pattern_fit: 0.0
+        inferred_type: string
+        rules_fired:
+          binding:
+            - code-like source without explicit binding
+          datatype:
+            - string compatible
+          hard_rules:
+            - "boost:Medication.batch.lotNumber(+0.28)"
+            - "anchor_applied:batch_lot_id"
+          name:
+            - "token_overlap=['batch', 'batchid', 'lot']"
+            - text_similarity=0.485714
+          value_pattern:
+
+        samples:
+          - B-1001
+          - B-1002
+        top_values:
+          -
+            count: 1
+            value: B-1001
+          -
+            count: 1
+            value: B-1002
+        units:
+
+      flags:
+
+      label: GOOD_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Medication.batch.lotNumber
+        profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+        resourceType: Medication
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+      transform:
+        name: trim_string
+        params:
+
+    source:
+      column: batch_id
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: APPROVED
+  -
+    selected: null
+    source:
+      column: duration_hr
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: equipment_id
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: step_name
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    selected:
+      confidence: 0.73
+      evidence:
+        component_scores:
+          binding_fit: 0.4
+          datatype_fit: 0.8
+          name_similarity: 0.485714
+          value_pattern_fit: 0.0
+        inferred_type: string
+        rules_fired:
+          binding:
+            - code-like source without explicit binding
+          datatype:
+            - string compatible
+          hard_rules:
+            - "boost:Medication.batch.lotNumber(+0.28)"
+            - "anchor_applied:batch_lot_id"
+          name:
+            - "token_overlap=['batch', 'batchid', 'lot']"
+            - text_similarity=0.485714
+          value_pattern:
+
+        samples:
+          - B-1001
+          - B-1002
+        top_values:
+          -
+            count: 1
+            value: B-1001
+          -
+            count: 1
+            value: B-1002
+        units:
+
+      flags:
+
+      label: GOOD_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Medication.batch.lotNumber
+        profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+        resourceType: Medication
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+      transform:
+        name: trim_string
+        params:
+
+    source:
+      column: batch_id
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: APPROVED
+  -
+    selected: null
+    source:
+      column: category
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: deviation_id
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: status
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    selected:
+      confidence: 0.73
+      evidence:
+        component_scores:
+          binding_fit: 0.4
+          datatype_fit: 0.8
+          name_similarity: 0.485714
+          value_pattern_fit: 0.0
+        inferred_type: string
+        rules_fired:
+          binding:
+            - code-like source without explicit binding
+          datatype:
+            - string compatible
+          hard_rules:
+            - "boost:Medication.batch.lotNumber(+0.28)"
+            - "anchor_applied:batch_lot_id"
+          name:
+            - "token_overlap=['batch', 'batchid', 'lot']"
+            - text_similarity=0.485714
+          value_pattern:
+
+        samples:
+          - B-1001
+          - B-1002
+        top_values:
+          -
+            count: 1
+            value: B-1001
+          -
+            count: 1
+            value: B-1002
+        units:
+
+      flags:
+
+      label: GOOD_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Medication.batch.lotNumber
+        profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+        resourceType: Medication
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+      transform:
+        name: trim_string
+        params:
+
+    source:
+      column: batch_id
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: APPROVED_OVERRIDE
+  -
+    selected: null
+    source:
+      column: batch_quantity
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_uom
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected:
+      confidence: 0.887027
+      evidence:
+        component_scores:
+          binding_fit: 0.4
+          datatype_fit: 0.8
+          name_similarity: 0.648649
+          value_pattern_fit: 0.5
+        inferred_type: string
+        rules_fired:
+          binding:
+            - code-like source without explicit binding
+          datatype:
+            - string compatible
+          hard_rules:
+            - "boost:Medication.batch.lotNumber(+0.28)"
+            - "anchor_applied:batch_lot_id"
+          name:
+            - "token_overlap=['batch', 'batchid', 'lot', 'number']"
+            - text_similarity=0.648649
+          value_pattern:
+            - batch_pattern->batch_path
+        samples:
+          - LOT-77A
+          - LOT-77B
+        top_values:
+          -
+            count: 1
+            value: LOT-77A
+          -
+            count: 1
+            value: LOT-77B
+        units:
+
+      flags:
+
+      label: AUTO_APPROVE_CANDIDATE
+      status: PROPOSED
+      target:
+        elementPath: Medication.batch.lotNumber
+        profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+        resourceType: Medication
+      terminology:
+        bindingValueSetUrl: null
+        conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+      transform:
+        name: trim_string
+        params:
+
+    source:
+      column: lot_number
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: APPROVED
+  -
+    selected: null
+    source:
+      column: manufacturing_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: material_id
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: packaging_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: release_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+lifecycle: APPROVED
+mapping_name: batch-lot-analysis
+overrides_applied:
+  -
+    select:
+      elementPath: Observation.valueQuantity.unit
+      resourceType: Observation
+    source: lims_results.result_unit
+  -
+    select:
+      elementPath: Medication.batch.lotNumber
+      resourceType: Medication
+    source: sap_batch.batch_id
+overrides_file: data/examples/approval_overrides.yaml
+run_id: run-7d04bdb40872a797
+version: v1.0.2
+version_id: "batch-lot-analysis:v1.0.2"

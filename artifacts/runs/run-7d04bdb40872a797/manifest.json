@@ -1,5 +1,5 @@
 {
-  "approved_mapping_version_id": "batch-lot-analysis:v1.0.1",
+  "approved_mapping_version_id": null,
   "determinism_contract": "Same inputs + same approved mapping version + same terminology version => identical outputs.",
   "generated_at_utc": "deterministic",
   "ig_catalog_hash": "ae3f09f6804458ffadbdb8cf18877a2c91e16bd5397b83ae3e5f2c9d81850a3f",
@@ -9,13 +9,9 @@
     "qms_deviations.xml": "d67a50fb9fae69e05d4281412f131c4fd7c691451738e86265d890ffabc6caf9",
     "sap_batch.csv": "f3523e96a289b899644035444966e8c5a6d4415b972a758e5d3936c4500e2ab9"
   },
-  "manifest_hash": "7d16555c60fb169a11cfc55d6a8900a7c10e3593460ef97827b9cff59e3d8e79",
-  "mapping_proposal_hash": "9eefb5a20ebe5c9d842f6ca5fdcd4dbbcda7d50234eebd90c6308295c938cf86",
-  "output_hashes": {
-    "artifacts/runs/run-7d04bdb40872a797/outputs/bundle.json": "81db71aba31a91d310e046902984e85a37c6ed0bfbe737fec1b804fc9c4ed0ac",
-    "artifacts/runs/run-7d04bdb40872a797/outputs/bundle_validation.json": "086f4b3c48f3b370742ebabab8ca6662e2643ca4773a4ab04a0720bd1ae2cc44",
-    "artifacts/runs/run-7d04bdb40872a797/outputs/generation_manifest.json": "75b337cadec80125092dc2581e3720c780f469ceb484612c2e574392c0fa7b53"
-  },
+  "manifest_hash": "1acc332dfe1164188f2deb1b3dc0a32230dbb375baaa8b200ffe2c26992468ba",
+  "mapping_proposal_hash": "b10300aa79341f04fe1a3555478478aba1c698191d87c3bae40cc1ea7dca1d49",
+  "output_hashes": {},
   "run_id": "run-7d04bdb40872a797",
   "terminology_version_id": null
 }

@@ -1,21 +1,24 @@
 candidates:
   -
-    confidence: 0.5568
+    confidence: 0.763044
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.5
         datatype_fit: 0.8
-        name_similarity: 0.448
+        name_similarity: 0.608696
         value_pattern_fit: 0.0
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - no binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Observation.code.coding.code(+0.25)"
+          - "anchor_applied:test_code"
         name:
           - "token_overlap=['analysis', 'assay', 'method', 'test']"
-          - text_similarity=0.448
+          - text_similarity=0.608696
         value_pattern:
 
       samples:
@@ -30,35 +33,41 @@ candidates:
           value: Water
       units:
 
-    status: REQUIRES_REVIEW
+    flags:
+
+    label: GOOD_CANDIDATE
+    status: PROPOSED
     target:
-      elementPath: DiagnosticReport.conclusionCode
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
-      resourceType: DiagnosticReport
+      elementPath: Observation.code.coding.code
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/clinical-findings"
+      bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
       name: normalize_codeable_concept
       params:
         system_required: true
   -
-    confidence: 0.51831
+    confidence: 0.637778
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.5
         datatype_fit: 0.8
-        name_similarity: 0.338028
+        name_similarity: 0.622222
         value_pattern_fit: 0.0
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - no binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Observation.code.text(+0.12)"
+          - "anchor_applied:test_code"
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.338
+          - "token_overlap=['analysis', 'assay', 'method', 'test']"
+          - text_similarity=0.622222
         value_pattern:
 
       samples:
@@ -73,56 +82,16 @@ candidates:
           value: Water
       units:
 
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: Medication.code
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
-      resourceType: Medication
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/medication-codes"
-      conceptMapSuggested: null
-    transform:
-      name: normalize_codeable_concept
-      params:
-        system_required: true
-  -
-    confidence: 0.518072
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.337349
-        value_pattern_fit: 0.0
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=['method']"
-          - text_similarity=0.3373
-        value_pattern:
+    flags:
 
-      samples:
-        - Assay
-        - Water
-      top_values:
-        -
-          count: 2
-          value: Assay
-        -
-          count: 1
-          value: Water
-      units:
-
-    status: REQUIRES_REVIEW
+    label: REQUIRES_SME
+    status: PROPOSED
     target:
-      elementPath: Procedure.code
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
-      resourceType: Procedure
+      elementPath: Observation.code.text
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-process-validation-procedure-pq"
+      bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
       name: normalize_codeable_concept
@@ -138,3 +107,10 @@ source:
   column: test_name
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

@@ -1,6 +1,6 @@
 {
   "mapping_name": "batch-lot-analysis",
-  "mapping_version": "batch-lot-analysis:v1.0.1",
+  "mapping_version": "batch-lot-analysis:v1.0.2",
   "profileMissing": false,
   "resource_counts": {
     "Medication": 2,

@@ -8,28 +8,13 @@
       },
       {
         "code": "b_1001",
-        "definition": "Derived from lims_results.batch_id",
+        "definition": "Derived from mes_steps.batch_id",
         "display": "B-1001"
       },
       {
         "code": "b_1002",
-        "definition": "Derived from lims_results.batch_id",
+        "definition": "Derived from mes_steps.batch_id",
         "display": "B-1002"
-      },
-      {
-        "code": "dev_100",
-        "definition": "Derived from qms_deviations.deviation_id",
-        "display": "DEV-100"
-      },
-      {
-        "code": "dev_101",
-        "definition": "Derived from qms_deviations.deviation_id",
-        "display": "DEV-101"
-      },
-      {
-        "code": "eq_12",
-        "definition": "Derived from mes_steps.equipment_id",
-        "display": "EQ-12"
       },
       {
         "code": "hplc",
@@ -52,11 +37,6 @@
         "display": "LOT-77B"
       },
       {
-        "code": "mat_001",
-        "definition": "Derived from sap_batch.material_id",
-        "display": "MAT-001"
-      },
-      {
         "code": "water",
         "definition": "Derived from lims_results.test_code",
         "display": "WATER"
@@ -73,71 +53,11 @@
       {
         "element": [
           {
-            "code": "b_1001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1002",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1002",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1002",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
             "code": "hplc",
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.method",
+                "comment": "Candidate mapping to Observation.method.text",
                 "equivalence": "relatedto"
               }
             ]
@@ -147,47 +67,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.method",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "hplc",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Procedure.category",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "kf",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Procedure.category",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "hplc",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Procedure.bodySite",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "kf",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Procedure.bodySite",
+                "comment": "Candidate mapping to Observation.method.text",
                 "equivalence": "relatedto"
               }
             ]
@@ -197,7 +77,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.method",
+                "comment": "Candidate mapping to Observation.code.coding.code",
                 "equivalence": "relatedto"
               }
             ]
@@ -207,7 +87,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.method",
+                "comment": "Candidate mapping to Observation.code.coding.code",
                 "equivalence": "relatedto"
               }
             ]
@@ -217,7 +97,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to DiagnosticReport.conclusionCode",
+                "comment": "Candidate mapping to Observation.code.text",
                 "equivalence": "relatedto"
               }
             ]
@@ -227,27 +107,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to DiagnosticReport.conclusionCode",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "assay",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Specimen.collection.method",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "water",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Specimen.collection.method",
+                "comment": "Candidate mapping to Observation.code.text",
                 "equivalence": "relatedto"
               }
             ]
@@ -257,7 +117,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -267,7 +127,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -277,7 +137,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
+                "comment": "Candidate mapping to Medication.identifier.value",
                 "equivalence": "relatedto"
               }
             ]
@@ -287,7 +147,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
+                "comment": "Candidate mapping to Medication.identifier.value",
                 "equivalence": "relatedto"
               }
             ]
@@ -297,7 +157,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -307,37 +167,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "eq_12",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "eq_12",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "eq_12",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -347,7 +177,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
+                "comment": "Candidate mapping to Medication.identifier.value",
                 "equivalence": "relatedto"
               }
             ]
@@ -357,7 +187,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
+                "comment": "Candidate mapping to Medication.identifier.value",
                 "equivalence": "relatedto"
               }
             ]
@@ -367,7 +197,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -377,7 +207,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -387,7 +217,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
+                "comment": "Candidate mapping to Medication.identifier.value",
                 "equivalence": "relatedto"
               }
             ]
@@ -397,127 +227,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "dev_100",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "dev_101",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "dev_100",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "dev_101",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "dev_100",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "dev_101",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1002",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1002",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "b_1002",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
+                "comment": "Candidate mapping to Medication.identifier.value",
                 "equivalence": "relatedto"
               }
             ]
@@ -527,7 +237,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.interpretation",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -537,77 +247,7 @@
             "target": [
               {
                 "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.interpretation",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "lot_77a",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.bodySite",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "lot_77b",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.bodySite",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "lot_77a",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.category",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "lot_77b",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.category",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "mat_001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.normalValue",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "mat_001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Organization.identifier.type",
-                "equivalence": "relatedto"
-              }
-            ]
-          },
-          {
-            "code": "mat_001",
-            "target": [
-              {
-                "code": "REQUIRES_REVIEW",
-                "comment": "Candidate mapping to Observation.referenceRange.appliesTo",
+                "comment": "Candidate mapping to Medication.batch.lotNumber",
                 "equivalence": "relatedto"
               }
             ]
@@ -624,332 +264,128 @@
   },
   "mappingHints": [
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "b_1001",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "b_1002",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
-      "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
-      "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-methods",
+      "binding_valueset": null,
       "source_code": "hplc",
-      "target_path": "Observation.method",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Observation.method.text",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-methods",
+      "binding_valueset": null,
       "source_code": "kf",
-      "target_path": "Observation.method",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Observation.method.text",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/procedure-category",
-      "source_code": "hplc",
-      "target_path": "Procedure.category",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/procedure-category",
-      "source_code": "kf",
-      "target_path": "Procedure.category",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/body-site",
-      "source_code": "hplc",
-      "target_path": "Procedure.bodySite",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/body-site",
-      "source_code": "kf",
-      "target_path": "Procedure.bodySite",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-methods",
+      "binding_valueset": null,
       "source_code": "assay",
-      "target_path": "Observation.method",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Observation.code.coding.code",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-methods",
+      "binding_valueset": null,
       "source_code": "water",
-      "target_path": "Observation.method",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Observation.code.coding.code",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/clinical-findings",
+      "binding_valueset": null,
       "source_code": "assay",
-      "target_path": "DiagnosticReport.conclusionCode",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+      "target_path": "Observation.code.text",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/clinical-findings",
+      "binding_valueset": null,
       "source_code": "water",
-      "target_path": "DiagnosticReport.conclusionCode",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+      "target_path": "Observation.code.text",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/specimen-collection-method",
-      "source_code": "assay",
-      "target_path": "Specimen.collection.method",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/specimen-collection-method",
-      "source_code": "water",
-      "target_path": "Specimen.collection.method",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
+      "binding_valueset": null,
       "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
+      "binding_valueset": null,
       "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
+      "binding_valueset": null,
       "source_code": "b_1001",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+      "target_path": "Medication.identifier.value",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
+      "binding_valueset": null,
       "source_code": "b_1002",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+      "target_path": "Medication.identifier.value",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+      "binding_valueset": null,
       "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+      "binding_valueset": null,
       "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "eq_12",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-meaning",
-      "source_code": "eq_12",
-      "target_path": "Observation.referenceRange.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "eq_12",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
+      "binding_valueset": null,
       "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.identifier.value",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
+      "binding_valueset": null,
       "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.identifier.value",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
+      "binding_valueset": null,
       "source_code": "b_1001",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
+      "binding_valueset": null,
       "source_code": "b_1002",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+      "binding_valueset": null,
       "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.identifier.value",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
+      "binding_valueset": null,
       "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.identifier.value",
+      "target_profile": "BASE_FHIR_R5"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "dev_100",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "dev_101",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-meaning",
-      "source_code": "dev_100",
-      "target_path": "Observation.referenceRange.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-meaning",
-      "source_code": "dev_101",
-      "target_path": "Observation.referenceRange.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "dev_100",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "dev_101",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "b_1001",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "b_1002",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
-      "source_code": "b_1001",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
-      "source_code": "b_1002",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-interpretation",
+      "binding_valueset": null,
       "source_code": "lot_77a",
-      "target_path": "Observation.interpretation",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     },
     {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-interpretation",
+      "binding_valueset": null,
       "source_code": "lot_77b",
-      "target_path": "Observation.interpretation",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/body-site",
-      "source_code": "lot_77a",
-      "target_path": "Observation.bodySite",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/body-site",
-      "source_code": "lot_77b",
-      "target_path": "Observation.bodySite",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-category",
-      "source_code": "lot_77a",
-      "target_path": "Observation.category",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-category",
-      "source_code": "lot_77b",
-      "target_path": "Observation.category",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue",
-      "source_code": "mat_001",
-      "target_path": "Observation.referenceRange.normalValue",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/identifier-type",
-      "source_code": "mat_001",
-      "target_path": "Organization.identifier.type",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-    },
-    {
-      "binding_valueset": "http://hl7.org/fhir/ValueSet/referencerange-appliesto",
-      "source_code": "mat_001",
-      "target_path": "Observation.referenceRange.appliesTo",
-      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      "target_path": "Medication.batch.lotNumber",
+      "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
     }
   ],
   "run_id": "run-7d04bdb40872a797",
-  "terminology_hash": "9cf61a132acc72273fb943209ddefc81f1a831254c9c90b02d5e201f1c8fd304",
+  "terminology_hash": "b6fb469c2598b1b8c14aa975ef5f570068c1aef8a19d4d880a6929ef91f7c83b",
   "valueSet": {
     "compose": {
       "include": [
@@ -968,18 +404,6 @@
               "display": "B-1002"
             },
             {
-              "code": "dev_100",
-              "display": "DEV-100"
-            },
-            {
-              "code": "dev_101",
-              "display": "DEV-101"
-            },
-            {
-              "code": "eq_12",
-              "display": "EQ-12"
-            },
-            {
               "code": "hplc",
               "display": "HPLC"
             },
@@ -994,10 +418,6 @@
             {
               "code": "lot_77b",
               "display": "LOT-77B"
-            },
-            {
-              "code": "mat_001",
-              "display": "MAT-001"
             },
             {
               "code": "water",

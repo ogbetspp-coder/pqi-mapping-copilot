@@ -1,23 +1,112 @@
 candidates:
   -
-    confidence: 0.681818
+    confidence: 0.4675
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.290909
-        value_pattern_fit: 0.9
+        name_similarity: 0.25
+        value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+
         name:
           - "token_overlap=[]"
-          - text_similarity=0.2909
+          - text_similarity=0.25
         value_pattern:
           - code_like_values->coded_target
+      samples:
+        - EQ-12
+      top_values:
+        -
+          count: 2
+          value: EQ-12
+      units:
+
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Medication.code.text
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+  -
+    confidence: 0.436757
+    evidence:
+      component_scores:
+        binding_fit: 0.4
+        datatype_fit: 0.8
+        name_similarity: 0.162162
+        value_pattern_fit: 0.5
+      inferred_type: string
+      rules_fired:
+        binding:
+          - code-like source without explicit binding
+        datatype:
+          - string compatible
+        hard_rules:
+
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.162162
+        value_pattern:
+          - code_like_values->coded_target
+      samples:
+        - EQ-12
+      top_values:
+        -
+          count: 2
+          value: EQ-12
+      units:
+
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Medication.code.coding.code
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+  -
+    confidence: 0.411852
+    evidence:
+      component_scores:
+        binding_fit: 0.4
+        datatype_fit: 0.8
+        name_similarity: 0.148148
+        value_pattern_fit: 0.4
+      inferred_type: string
+      rules_fired:
+        binding:
+          - code-like source without explicit binding
+        datatype:
+          - string compatible
+        hard_rules:
+
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.148148
+        value_pattern:
           - id_column->identifier_or_reference
       samples:
         - EQ-12
@@ -27,98 +116,21 @@ candidates:
           value: EQ-12
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Organization.identifier.type
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-      resourceType: Organization
+      elementPath: Medication.identifier.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/identifier-type"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: trim_string
       params:
 
-  -
-    confidence: 0.670741
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.259259
-        value_pattern_fit: 0.9
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.2593
-        value_pattern:
-          - code_like_values->coded_target
-          - id_column->identifier_or_reference
-      samples:
-        - EQ-12
-      top_values:
-        -
-          count: 2
-          value: EQ-12
-      units:
-
-    status: PROPOSED
-    target:
-      elementPath: Observation.referenceRange.type
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/referencerange-meaning"
-      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
-    transform:
-      name: to_reference
-      params:
-        lookup: REQUIRES_REVIEW
-  -
-    confidence: 0.648852
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.196721
-        value_pattern_fit: 0.9
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.1967
-        value_pattern:
-          - code_like_values->coded_target
-          - id_column->identifier_or_reference
-      samples:
-        - EQ-12
-      top_values:
-        -
-          count: 2
-          value: EQ-12
-      units:
-
-    status: PROPOSED
-    target:
-      elementPath: Observation.referenceRange.appliesTo
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/referencerange-appliesto"
-      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
-    transform:
-      name: to_reference
-      params:
-        lookup: REQUIRES_REVIEW
 domain:
   primary: batch_lot_information
   scores:
@@ -129,3 +141,10 @@ source:
   column: equipment_id
   file: data/examples/mes_steps.json
   table: mes_steps
+table_model:
+  primary_resource: Medication
+  resource_scores:
+    DiagnosticReport: 0.0
+    Medication: 1.0
+    Observation: 0.0
+    Specimen: 0.0

@@ -1,24 +1,26 @@
 candidates:
   -
-    confidence: 0.671304
+    confidence: 0.73
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.26087
-        value_pattern_fit: 0.9
+        name_similarity: 0.485714
+        value_pattern_fit: 0.0
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Medication.batch.lotNumber(+0.28)"
+          - "anchor_applied:batch_lot_id"
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.2609
+          - "token_overlap=['batch', 'batchid', 'lot']"
+          - text_similarity=0.485714
         value_pattern:
-          - code_like_values->coded_target
-          - id_column->identifier_or_reference
+
       samples:
         - B-1001
         - B-1002
@@ -31,81 +33,42 @@ candidates:
           value: B-1002
       units:
 
-    status: PROPOSED
-    target:
-      elementPath: Observation.referenceRange.appliesTo
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/referencerange-appliesto"
-      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
-    transform:
-      name: to_reference
-      params:
-        lookup: REQUIRES_REVIEW
-  -
-    confidence: 0.668889
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.253968
-        value_pattern_fit: 0.9
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.254
-        value_pattern:
-          - code_like_values->coded_target
-          - id_column->identifier_or_reference
-      samples:
-        - B-1001
-        - B-1002
-      top_values:
-        -
-          count: 1
-          value: B-1001
-        -
-          count: 1
-          value: B-1002
-      units:
+    flags:
 
+    label: GOOD_CANDIDATE
     status: PROPOSED
     target:
-      elementPath: Organization.identifier.type
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-      resourceType: Organization
+      elementPath: Medication.batch.lotNumber
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/identifier-type"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: trim_string
       params:
 
   -
-    confidence: 0.66046
+    confidence: 0.617303
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.229885
-        value_pattern_fit: 0.9
+        name_similarity: 0.449438
+        value_pattern_fit: 0.4
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Medication.identifier.value(+0.1)"
+          - "anchor_applied:batch_lot_id"
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.2299
+          - "token_overlap=['batch', 'batchid', 'lot']"
+          - text_similarity=0.449438
         value_pattern:
-          - code_like_values->coded_target
           - id_column->identifier_or_reference
       samples:
         - B-1001
@@ -119,18 +82,21 @@ candidates:
           value: B-1002
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: PROPOSED
     target:
-      elementPath: Observation.referenceRange.normalValue
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
+      elementPath: Medication.identifier.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
-      name: to_reference
+      name: trim_string
       params:
-        lookup: REQUIRES_REVIEW
+
 domain:
   primary: batch_lot_information
   scores:
@@ -141,3 +107,10 @@ source:
   column: batch_id
   file: data/examples/sap_batch.csv
   table: sap_batch
+table_model:
+  primary_resource: Medication
+  resource_scores:
+    DiagnosticReport: 0.0
+    Medication: 1.0
+    Observation: 0.0
+    Specimen: 0.0

@@ -218,6 +218,7 @@ def build_arg_parser() -> argparse.ArgumentParser:
     p = sub.add_parser("approve", help="Approve proposals from run")
     p.add_argument("run_id", help="Run ID")
     p.add_argument("--rules", required=True, help="Path to approval config YAML")
+    p.add_argument("--overrides", default=None, help="Optional path to manual approval overrides YAML")
     p.add_argument("--mapping-name", default="batch-lot-analysis", help="Library mapping name")
 
     lib = sub.add_parser("library", help="Library operations")

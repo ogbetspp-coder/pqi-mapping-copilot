@@ -109,7 +109,63 @@ def _proposal_id(proposal: dict[str, Any]) -> str:
     return f"{source.get('table', 'unknown')}.{source.get('column', 'unknown')}"
 
 
-def approve_run(run_id: str, rules_path: Path, mapping_name: str) -> dict[str, Any]:
+def _load_overrides(path: Path | None) -> dict[str, Any]:
+    if path is None:
+        return {}
+    if not path.exists():
+        raise FileNotFoundError(f"Overrides file not found: {path}")
+
+    text = path.read_text(encoding="utf-8").strip()
+    if not text:
+        return {}
+
+    try:
+        payload = json.loads(text)
+        return payload.get("overrides", {}) if isinstance(payload, dict) else {}
+    except Exception:
+        pass
+
+    overrides: dict[str, Any] = {}
+    current_source: str | None = None
+    in_select = False
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        if "#" in raw_line:
+            raw_line = raw_line.split("#", 1)[0]
+        if not raw_line.strip():
+            continue
+
+        indent = len(raw_line) - len(raw_line.lstrip(" "))
+        line = raw_line.strip()
+
+        if line == "overrides:":
+            continue
+
+        if indent == 2 and line.endswith(":"):
+            current_source = line[:-1].strip().strip("'\"")
+            overrides[current_source] = {}
+            in_select = False
+            continue
+
+        if indent == 4 and line.startswith("select:") and current_source:
+            overrides[current_source]["select"] = {}
+            in_select = True
+            continue
+
+        if indent >= 6 and in_select and current_source and ":" in line:
+            key, value = line.split(":", 1)
+            key = key.strip()
+            value = value.strip().strip("'\"")
+            overrides[current_source]["select"][key] = value
+
+    return overrides
+
+
+def approve_run(
+    run_id: str,
+    rules_path: Path,
+    mapping_name: str,
+    overrides_path: Path | None = None,
+) -> dict[str, Any]:
     run_path = run_dir(run_id)
     proposals_path = run_path / "mapping_proposals.json"
     if not proposals_path.exists():
@@ -118,13 +174,56 @@ def approve_run(run_id: str, rules_path: Path, mapping_name: str) -> dict[str, A
     rules = read_simple_yaml(rules_path)
     threshold = float(rules.get("confidence_threshold", 0.75))
     require_proposed = bool(rules.get("require_status_proposed", True))
+    overrides = _load_overrides(overrides_path)
 
     proposals_payload = read_json(proposals_path)
     approved_entries = []
     decisions_required = []
+    overrides_applied = []
 
     for proposal in proposals_payload.get("proposals", []):
+        source_id = _proposal_id(proposal)
         candidates = proposal.get("candidates", [])
+
+        override = overrides.get(source_id, {})
+        select_target = override.get("select", {}) if isinstance(override, dict) else {}
+        if select_target:
+            selected = None
+            for candidate in candidates:
+                target = candidate.get("target", {})
+                if (
+                    str(target.get("resourceType")) == str(select_target.get("resourceType"))
+                    and str(target.get("elementPath")) == str(select_target.get("elementPath"))
+                ):
+                    selected = candidate
+                    break
+
+            if selected is None:
+                selected = {
+                    "target": {
+                        "profileUrl": str(select_target.get("profileUrl", "MANUAL_OVERRIDE")),
+                        "resourceType": str(select_target.get("resourceType", "UNKNOWN")),
+                        "elementPath": str(select_target.get("elementPath", "UNKNOWN")),
+                    },
+                    "transform": {"name": "identity", "params": {"manual_override": True}},
+                    "terminology": {},
+                    "confidence": 1.0,
+                    "status": "PROPOSED",
+                    "label": "MANUAL_OVERRIDE",
+                    "evidence": {"reason": "Selected via approval override"},
+                    "flags": ["manual_override_not_in_candidates"],
+                }
+
+            overrides_applied.append({"source": source_id, "select": select_target})
+            approved_entries.append(
+                {
+                    "source": proposal.get("source"),
+                    "status": "APPROVED_OVERRIDE",
+                    "selected": selected,
+                }
+            )
+            continue
+
         best = None
         for candidate in sorted(candidates, key=lambda c: (-float(c.get("confidence", 0.0)), str(c.get("target")))):
             if require_proposed and candidate.get("status") != "PROPOSED":
@@ -134,7 +233,6 @@ def approve_run(run_id: str, rules_path: Path, mapping_name: str) -> dict[str, A
             best = candidate
             break
 
-        source_id = _proposal_id(proposal)
         if best is None:
             decisions_required.append(
                 {
@@ -164,6 +262,8 @@ def approve_run(run_id: str, rules_path: Path, mapping_name: str) -> dict[str, A
         "run_id": run_id,
         "mapping_name": mapping_name,
         "approval_rules": rules,
+        "overrides_file": str(overrides_path) if overrides_path else None,
+        "overrides_applied": overrides_applied,
         "entries": approved_entries,
         "decisions_required": decisions_required,
         "created_at_utc": "deterministic",

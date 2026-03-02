@@ -1,23 +1,25 @@
 candidates:
   -
-    confidence: 0.671304
+    confidence: 0.494828
     evidence:
       component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.26087
-        value_pattern_fit: 0.9
+        binding_fit: 0.4
+        datatype_fit: 0.2
+        name_similarity: 0.413793
+        value_pattern_fit: 0.4
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
-          - string compatible
+          - weak type fit
+        hard_rules:
+          - "boost:Observation.subject.reference(+0.14)"
+          - "anchor_applied:batch_lot_id"
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.2609
+          - "token_overlap=['batch', 'batchid', 'lot']"
+          - text_similarity=0.413793
         value_pattern:
-          - code_like_values->coded_target
           - id_column->identifier_or_reference
       samples:
         - B-1001
@@ -31,101 +33,16 @@ candidates:
           value: B-1002
       units:
 
-    status: PROPOSED
+    flags:
+
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Observation.referenceRange.appliesTo
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      elementPath: Observation.subject.reference
+      profileUrl: BASE_FHIR_R5
       resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/referencerange-appliesto"
-      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
-    transform:
-      name: to_reference
-      params:
-        lookup: REQUIRES_REVIEW
-  -
-    confidence: 0.668889
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.253968
-        value_pattern_fit: 0.9
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.254
-        value_pattern:
-          - code_like_values->coded_target
-          - id_column->identifier_or_reference
-      samples:
-        - B-1001
-        - B-1002
-      top_values:
-        -
-          count: 2
-          value: B-1001
-        -
-          count: 1
-          value: B-1002
-      units:
-
-    status: PROPOSED
-    target:
-      elementPath: Organization.identifier.type
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
-      resourceType: Organization
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/identifier-type"
-      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
-    transform:
-      name: trim_string
-      params:
-
-  -
-    confidence: 0.66046
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.229885
-        value_pattern_fit: 0.9
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.2299
-        value_pattern:
-          - code_like_values->coded_target
-          - id_column->identifier_or_reference
-      samples:
-        - B-1001
-        - B-1002
-      top_values:
-        -
-          count: 2
-          value: B-1001
-        -
-          count: 1
-          value: B-1002
-      units:
-
-    status: PROPOSED
-    target:
-      elementPath: Observation.referenceRange.normalValue
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: to_reference
@@ -141,3 +58,10 @@ source:
   column: batch_id
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

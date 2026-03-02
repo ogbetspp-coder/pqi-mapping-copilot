@@ -1,11 +1,11 @@
 candidates:
   -
-    confidence: 0.545588
+    confidence: 0.553054
     evidence:
       component_scores:
         binding_fit: 0.5
         datatype_fit: 1.0
-        name_similarity: 0.558824
+        name_similarity: 0.580153
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
@@ -13,9 +13,11 @@ candidates:
           - no binding
         datatype:
           - numeric compatible
+        hard_rules:
+
         name:
           - "token_overlap=['criteria', 'high', 'limit', 'spec', 'specification']"
-          - text_similarity=0.5588
+          - text_similarity=0.580153
         value_pattern:
 
       samples:
@@ -30,25 +32,28 @@ candidates:
           value: 3
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: ObservationDefinition.qualifiedValue.range.high
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
-      resourceType: ObservationDefinition
+      elementPath: Observation.referenceRange.high.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
-      name: identity
+      name: to_reference
       params:
-
+        lookup: REQUIRES_REVIEW
   -
-    confidence: 0.531482
+    confidence: 0.527692
     evidence:
       component_scores:
         binding_fit: 0.5
         datatype_fit: 1.0
-        name_similarity: 0.518519
+        name_similarity: 0.507692
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
@@ -56,9 +61,11 @@ candidates:
           - no binding
         datatype:
           - numeric compatible
+        hard_rules:
+
         name:
           - "token_overlap=['criteria', 'limit', 'spec', 'specification']"
-          - text_similarity=0.5185
+          - text_similarity=0.507692
         value_pattern:
 
       samples:
@@ -73,25 +80,28 @@ candidates:
           value: 3
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: ObservationDefinition.qualifiedValue.range.low
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
-      resourceType: ObservationDefinition
+      elementPath: Observation.referenceRange.low.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
-      name: identity
+      name: to_reference
       params:
-
+        lookup: REQUIRES_REVIEW
   -
-    confidence: 0.480667
+    confidence: 0.446552
     evidence:
       component_scores:
         binding_fit: 0.5
         datatype_fit: 1.0
-        name_similarity: 0.373333
+        name_similarity: 0.275862
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
@@ -99,9 +109,11 @@ candidates:
           - no binding
         datatype:
           - numeric compatible
+        hard_rules:
+
         name:
           - "token_overlap=[]"
-          - text_similarity=0.3733
+          - text_similarity=0.275862
         value_pattern:
 
       samples:
@@ -116,11 +128,14 @@ candidates:
           value: 3
       units:
 
+    flags:
+
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: Specimen.container.specimenQuantity
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-      resourceType: Specimen
+      elementPath: Observation.valueQuantity.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -139,3 +154,10 @@ source:
   column: spec_limit_high
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

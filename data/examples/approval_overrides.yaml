@@ -1,0 +1,9 @@
+overrides:
+  sap_batch.batch_id:
+    select:
+      resourceType: Medication
+      elementPath: Medication.batch.lotNumber
+  lims_results.result_unit:
+    select:
+      resourceType: Observation
+      elementPath: Observation.valueQuantity.unit

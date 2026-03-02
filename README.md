@@ -10,12 +10,13 @@ Scope of this MVP wedge:
 
 ## Key Guarantees
 - Local-first: no external calls
-- Constrained target model: PQI catalog + base FHIR fallback only
+- Constrained target model: curated domain target spaces + PQI catalog + base FHIR fallback only
 - No hallucinated semantics: every candidate has evidence + confidence
 - Uncertain mappings are marked `REQUIRES_REVIEW` with confidence `< 0.6`
 - Governance lifecycle: `PROPOSED -> REVIEWED -> APPROVED -> DEPRECATED`
 - Approved mapping versions are immutable
 - Deterministic runs: same inputs + same approved mapping version + same terminology version => same outputs
+- Confidence labels: `AUTO_APPROVE_CANDIDATE`, `GOOD_CANDIDATE`, `REQUIRES_SME`
 
 ## Repository Layout
 - `pqi_copilot/`
@@ -34,6 +35,20 @@ Scope of this MVP wedge:
 - `artifacts/` run outputs + library versions
 - `ig/` fallback package location (`ig/pqi-package.tgz`)
 - `tests/` pytest tests
+
+Legacy note:
+- `src/pqi_twin/` is deprecated legacy code and not used for active `pqi_copilot` workflows.
+
+## Mapping Quality Controls
+- Curated target spaces per wedge domain:
+  - `pqi_copilot/propose/target_spaces.py`
+- Hard anchor rules for high-ROI columns:
+  - `pqi_copilot/propose/hard_rules.py`
+  - anchors include `batch_id`, `lot_number`, `test_code`, `result_value`, `result_unit`
+- Table-level resource classifier:
+  - `pqi_copilot/classify/resource_classifier.py`
+- Decision artifact generation for workshops:
+  - `pqi_copilot/propose/decisions.py`
 
 ## Installation
 Python 3.11+
@@ -86,6 +101,14 @@ python3 -m pqi_copilot report <run_id>
 python3 -m pqi_copilot approve <run_id> --rules data/examples/approval_config.yaml --mapping-name batch-lot-analysis
 ```
 
+### 6b) Approve with explicit manual overrides
+```bash
+python3 -m pqi_copilot approve <run_id> \
+  --rules data/examples/approval_config.yaml \
+  --overrides data/examples/approval_overrides.yaml \
+  --mapping-name batch-lot-analysis
+```
+
 ### 7) List mapping library
 ```bash
 python3 -m pqi_copilot library list
@@ -106,18 +129,34 @@ require_status_proposed: true
 Approval behavior:
 - Chooses exactly one candidate per source column if threshold criteria met
 - Otherwise marks source column as `UNMAPPED`
+- Manual overrides can force explicit target picks by `table.column`
 - Writes immutable approved mapping artifact to:
   - `artifacts/library/mappings/<mapping_name>/vX.Y.Z/approved.yaml`
   - plus `approved.json`
+
+Override file example:
+```yaml
+overrides:
+  sap_batch.batch_id:
+    select:
+      resourceType: Medication
+      elementPath: Medication.batch.lotNumber
+  lims_results.result_unit:
+    select:
+      resourceType: Observation
+      elementPath: Observation.valueQuantity.unit
+```
 
 ## Output Artifacts (per run)
 `artifacts/runs/<run_id>/`
 - `ingest.json`
 - `profile.json`, `profile.md`
 - `domain_classification.json`
+- `resource_classification.json`
 - `mapping_proposals.json`
 - `mapping_proposals/*.yaml` (one per source column)
 - `relationship_proposals.json`
+- `decisions.json`
 - `terminology_scaffold.json`
 - `report.md`, `report.html`
 - `manifest.json`
@@ -127,6 +166,10 @@ Approval behavior:
 - Synonyms and scoring keywords:
   - `pqi_copilot/propose/mapping.py` (`SYNONYMS`, scoring logic)
   - `pqi_copilot/classify/domain_classifier.py` (`DOMAIN_SIGNALS`)
+- Curated allowed target paths:
+  - `pqi_copilot/propose/target_spaces.py`
+- Anchor constraints/boosts/bans:
+  - `pqi_copilot/propose/hard_rules.py`
 
 ## Artifact Versioning
 - Library path: `artifacts/library/`
@@ -140,6 +183,8 @@ Pytest tests include:
 - determinism test
 - golden hash test for example dataset
 - mapping proposal schema validation
+- anchor mapping quality tests (`batch_id` / `lot_number`)
+- override selection tests
 
 Run (once pytest is available):
 ```bash

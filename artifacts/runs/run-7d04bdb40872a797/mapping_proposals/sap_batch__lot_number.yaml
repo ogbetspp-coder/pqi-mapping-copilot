@@ -1,23 +1,26 @@
 candidates:
   -
-    confidence: 0.62
+    confidence: 0.887027
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.342857
+        name_similarity: 0.648649
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Medication.batch.lotNumber(+0.28)"
+          - "anchor_applied:batch_lot_id"
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.3429
+          - "token_overlap=['batch', 'batchid', 'lot', 'number']"
+          - text_similarity=0.648649
         value_pattern:
-          - code_like_values->coded_target
+          - batch_pattern->batch_path
       samples:
         - LOT-77A
         - LOT-77B
@@ -30,37 +33,43 @@ candidates:
           value: LOT-77B
       units:
 
+    flags:
+
+    label: AUTO_APPROVE_CANDIDATE
     status: PROPOSED
     target:
-      elementPath: Observation.interpretation
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
+      elementPath: Medication.batch.lotNumber
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-interpretation"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: trim_string
       params:
 
   -
-    confidence: 0.618644
+    confidence: 0.553118
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.338983
-        value_pattern_fit: 0.5
+        name_similarity: 0.494624
+        value_pattern_fit: 0.0
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Medication.identifier.value(+0.1)"
+          - "anchor_applied:batch_lot_id"
         name:
-          - "token_overlap=[]"
-          - text_similarity=0.339
+          - "token_overlap=['batch', 'batchid', 'lot']"
+          - text_similarity=0.494624
         value_pattern:
-          - code_like_values->coded_target
+
       samples:
         - LOT-77A
         - LOT-77B
@@ -73,56 +82,16 @@ candidates:
           value: LOT-77B
       units:
 
-    status: PROPOSED
-    target:
-      elementPath: Observation.bodySite
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/body-site"
-      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
-    transform:
-      name: trim_string
-      params:
+    flags:
 
-  -
-    confidence: 0.614925
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.328358
-        value_pattern_fit: 0.5
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.3284
-        value_pattern:
-          - code_like_values->coded_target
-      samples:
-        - LOT-77A
-        - LOT-77B
-      top_values:
-        -
-          count: 1
-          value: LOT-77A
-        -
-          count: 1
-          value: LOT-77B
-      units:
-
-    status: PROPOSED
+    label: REQUIRES_SME
+    status: REQUIRES_REVIEW
     target:
-      elementPath: Observation.category
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
+      elementPath: Medication.identifier.value
+      profileUrl: BASE_FHIR_R5
+      resourceType: Medication
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-category"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: trim_string
@@ -138,3 +107,10 @@ source:
   column: lot_number
   file: data/examples/sap_batch.csv
   table: sap_batch
+table_model:
+  primary_resource: Medication
+  resource_scores:
+    DiagnosticReport: 0.0
+    Medication: 1.0
+    Observation: 0.0
+    Specimen: 0.0

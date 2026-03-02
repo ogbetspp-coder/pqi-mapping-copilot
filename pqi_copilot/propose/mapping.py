@@ -1,12 +1,13 @@
-"""Evidence-driven mapping proposer constrained by PQI catalog."""
+"""Evidence-driven mapping proposer with constrained target spaces and hard rules."""
 
 from __future__ import annotations
 
-from collections import defaultdict
 from typing import Any
 
 from pqi_copilot.common import normalize_token, similarity, split_identifier, stable_hash_obj
 from pqi_copilot.models import validate_mapping_proposal_payload
+from pqi_copilot.propose.hard_rules import apply_hard_rules
+from pqi_copilot.propose.target_spaces import curated_targets_for_domain, is_denied_target_path
 
 TRANSFORM_WHITELIST = {
     "identity",
@@ -46,6 +47,7 @@ BASE_FHIR_FALLBACK = [
         "types": ["string"],
         "bindingValueSetUrl": None,
         "description": "Base fallback for batch/lot",
+        "from_curated_target_space": False,
     },
     {
         "profileUrl": "BASE_FHIR_R5",
@@ -54,6 +56,7 @@ BASE_FHIR_FALLBACK = [
         "types": ["Quantity"],
         "bindingValueSetUrl": None,
         "description": "Base fallback for analytical result value",
+        "from_curated_target_space": False,
     },
     {
         "profileUrl": "BASE_FHIR_R5",
@@ -62,6 +65,7 @@ BASE_FHIR_FALLBACK = [
         "types": ["code"],
         "bindingValueSetUrl": None,
         "description": "Base fallback for analytical test code",
+        "from_curated_target_space": False,
     },
 ]
 
@@ -77,8 +81,13 @@ def _expand_tokens(text: str) -> set[str]:
     return {t for t in expanded if t}
 
 
-def _element_candidates(catalog: dict[str, Any], domain: str) -> list[dict[str, Any]]:
+def _catalog_fallback_candidates(
+    catalog: dict[str, Any],
+    domain: str,
+    preferred_resource_type: str | None,
+) -> list[dict[str, Any]]:
     candidates: list[dict[str, Any]] = []
+
     domain_keywords = set(WEDGE_KEYWORDS)
     if domain == "batch_lot_information":
         domain_keywords.update({"release", "packaging", "yield", "medication"})
@@ -86,6 +95,11 @@ def _element_candidates(catalog: dict[str, Any], domain: str) -> list[dict[str, 
         domain_keywords.update({"diagnostic", "report", "specimen", "method"})
 
     for profile in catalog.get("profiles", []):
+        resource_type = str(profile.get("resourceType", ""))
+        if preferred_resource_type and preferred_resource_type != "REQUIRES_REVIEW":
+            if resource_type != preferred_resource_type:
+                continue
+
         profile_text = " ".join(
             str(profile.get(k, "")).lower() for k in ("url", "name", "description", "resourceType")
         )
@@ -94,28 +108,50 @@ def _element_candidates(catalog: dict[str, Any], domain: str) -> list[dict[str, 
 
         bindings = {b.get("path"): b for b in profile.get("bindings", []) if isinstance(b, dict)}
         for element in profile.get("elements", []):
-            path = element.get("path")
-            if not isinstance(path, str):
-                continue
-            if path.count(".") < 1:
+            path = str(element.get("path", ""))
+            if not path or path.count(".") < 1:
                 continue
             if path.endswith(".id") or path.endswith(".meta"):
+                continue
+            if is_denied_target_path(path):
                 continue
 
             candidates.append(
                 {
                     "profileUrl": profile.get("url"),
-                    "resourceType": profile.get("resourceType", "UNKNOWN"),
+                    "resourceType": resource_type,
                     "elementPath": path,
-                    "types": element.get("types", []),
+                    "types": [str(t) for t in element.get("types", [])],
                     "bindingValueSetUrl": (bindings.get(path) or {}).get("valueSetUrl"),
-                    "description": element.get("short") or element.get("definition") or profile.get("description") or "",
+                    "description": element.get("short")
+                    or element.get("definition")
+                    or profile.get("description")
+                    or "",
+                    "from_curated_target_space": False,
                 }
             )
 
     if not candidates:
         return list(BASE_FHIR_FALLBACK)
+
+    candidates.sort(key=lambda c: (str(c.get("resourceType", "")), str(c.get("elementPath", "")), str(c.get("profileUrl", ""))))
     return candidates
+
+
+def _element_candidates(
+    catalog: dict[str, Any],
+    domain: str,
+    preferred_resource_type: str | None,
+) -> list[dict[str, Any]]:
+    curated = curated_targets_for_domain(domain, catalog, preferred_resource_type=preferred_resource_type)
+    if curated:
+        return curated
+
+    fallback = _catalog_fallback_candidates(catalog, domain, preferred_resource_type)
+    if fallback:
+        return fallback
+
+    return list(BASE_FHIR_FALLBACK)
 
 
 def _code_like(stats: dict[str, Any]) -> bool:
@@ -126,16 +162,15 @@ def _code_like(stats: dict[str, Any]) -> bool:
     return len(uppercase_short) >= max(1, len(samples) // 3)
 
 
-def _name_similarity(source_col: str, target_path: str, description: str) -> tuple[float, list[str]]:
+def _name_similarity(source_col: str, target_path: str, description: str) -> tuple[float, list[str], float]:
     source_tokens = _expand_tokens(source_col)
     target_tokens = _expand_tokens(target_path + " " + description)
 
-    overlap = source_tokens & target_tokens
+    overlap = sorted(source_tokens & target_tokens)
     overlap_score = len(overlap) / max(1, len(source_tokens | target_tokens))
     sim_score = similarity(" ".join(sorted(source_tokens)), " ".join(sorted(target_tokens)))
     score = max(overlap_score, sim_score)
-    rationale = [f"token_overlap={sorted(overlap)}", f"text_similarity={round(sim_score, 4)}"]
-    return min(1.0, round(score, 6)), rationale
+    return min(1.0, round(score, 6)), overlap, round(sim_score, 6)
 
 
 def _datatype_fit(source_type: str, target_types: list[str], target_path: str) -> tuple[float, str]:
@@ -143,19 +178,23 @@ def _datatype_fit(source_type: str, target_types: list[str], target_path: str) -
     targets = {t.lower() for t in target_types}
 
     if not targets:
-        if "date" in target_path.lower():
-            targets = {"date", "datetime"}
+        if "date" in target_path.lower() or "time" in target_path.lower():
+            targets = {"date", "datetime", "instant"}
         elif "quantity" in target_path.lower() or "value" in target_path.lower():
             targets = {"quantity", "decimal", "integer", "codeableconcept"}
+        elif "reference" in target_path.lower():
+            targets = {"reference"}
         else:
             targets = {"string", "code", "codeableconcept"}
 
-    if source in {"date", "datetime"} and ("date" in targets or "datetime" in targets):
+    if source in {"date", "datetime"} and ("date" in targets or "datetime" in targets or "instant" in targets):
         return 1.0, "date/datetime compatible"
     if source == "number" and ({"quantity", "decimal", "integer"} & targets):
         return 1.0, "numeric compatible"
     if source == "string" and ("string" in targets or "code" in targets or "codeableconcept" in targets):
         return 0.8, "string compatible"
+    if source == "string" and "reference" in targets and source.endswith("id"):
+        return 0.6, "string id -> reference weak fit"
     if source == "unknown":
         return 0.3, "unknown source type"
     return 0.2, "weak type fit"
@@ -242,46 +281,107 @@ def _domain_lookup(classification: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return out
 
 
+def _resource_lookup(resource_classification: dict[str, Any] | None) -> dict[str, dict[str, Any]]:
+    if not resource_classification:
+        return {}
+    out: dict[str, dict[str, Any]] = {}
+    for table in resource_classification.get("tables", []):
+        out[str(table.get("table"))] = {
+            "primary_resource": table.get("primary_resource", "REQUIRES_REVIEW"),
+            "scores": table.get("resource_scores", {}),
+            "rationale": table.get("rationale", {}),
+        }
+    return out
+
+
+def _calibration_label(confidence: float, status: str, flags: list[str]) -> str:
+    if status == "PROPOSED" and confidence >= 0.80 and not flags:
+        return "AUTO_APPROVE_CANDIDATE"
+    if status == "PROPOSED" and confidence >= 0.65:
+        return "GOOD_CANDIDATE"
+    return "REQUIRES_SME"
+
+
+def _unknown_candidate(reason: str) -> dict[str, Any]:
+    return {
+        "target": {
+            "profileUrl": "UNKNOWN",
+            "resourceType": "UNKNOWN",
+            "elementPath": "UNKNOWN",
+        },
+        "transform": {"name": "identity", "params": {}},
+        "terminology": {
+            "bindingValueSetUrl": None,
+            "conceptMapSuggested": None,
+        },
+        "confidence": 0.3,
+        "evidence": {
+            "reason": reason,
+            "rules_fired": {},
+            "component_scores": {},
+        },
+        "flags": ["no_viable_candidate"],
+        "label": "REQUIRES_SME",
+        "status": "REQUIRES_REVIEW",
+    }
+
+
 def build_mapping_proposals(
     run_id: str,
     profile: dict[str, Any],
     classification: dict[str, Any],
     catalog: dict[str, Any],
     top_k: int = 3,
+    resource_classification: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     domain_by_table = _domain_lookup(classification)
+    resource_by_table = _resource_lookup(resource_classification)
     proposals = []
 
     for table in sorted(profile.get("tables", []), key=lambda t: str(t.get("table", ""))):
         table_name = str(table.get("table"))
         domain_info = domain_by_table.get(table_name, {"primary": "REQUIRES_REVIEW", "scores": {}})
         primary_domain = domain_info["primary"]
-        element_candidates = _element_candidates(catalog, primary_domain)
+
+        resource_info = resource_by_table.get(
+            table_name,
+            {
+                "primary_resource": "REQUIRES_REVIEW",
+                "scores": {},
+                "rationale": {},
+            },
+        )
+        primary_resource = str(resource_info.get("primary_resource", "REQUIRES_REVIEW"))
+
+        element_candidates = _element_candidates(catalog, primary_domain, primary_resource)
 
         for column, stats in sorted(table.get("columns", {}).items()):
             scored_candidates = []
 
             for target in element_candidates:
-                name_score, name_rationale = _name_similarity(
+                target_path = str(target.get("elementPath", ""))
+                target_types = [str(t) for t in target.get("types", [])]
+
+                name_score, overlap_tokens, text_similarity = _name_similarity(
                     column,
-                    str(target.get("elementPath", "")),
+                    target_path,
                     str(target.get("description", "")),
                 )
                 dtype_score, dtype_reason = _datatype_fit(
                     str(stats.get("inferred_type", "unknown")),
-                    [str(t) for t in target.get("types", [])],
-                    str(target.get("elementPath", "")),
+                    target_types,
+                    target_path,
                 )
                 value_score, value_reason = _value_pattern_fit(
                     column,
                     stats,
-                    str(target.get("elementPath", "")),
-                    [str(t) for t in target.get("types", [])],
+                    target_path,
+                    target_types,
                 )
                 binding_score, binding_reason = _binding_fit(
                     stats,
                     target.get("bindingValueSetUrl"),
-                    str(target.get("elementPath", "")),
+                    target_path,
                 )
 
                 confidence = round(
@@ -291,7 +391,37 @@ def build_mapping_proposals(
                     + 0.20 * binding_score,
                     6,
                 )
+
+                confidence, hard_notes, hard_banned, filtered_by_required = apply_hard_rules(
+                    source_column=column,
+                    stats=stats,
+                    candidate={
+                        "elementPath": target_path,
+                        "resourceType": target.get("resourceType"),
+                    },
+                    confidence=confidence,
+                )
+
+                if hard_banned or filtered_by_required:
+                    continue
+
+                flags: list[str] = []
+
+                if not bool(target.get("from_curated_target_space", False)):
+                    confidence = min(confidence, 0.45)
+                    flags.append("outside_curated_target_space_cap_0_45")
+
+                if not overlap_tokens and dtype_score <= 0.4:
+                    confidence = min(confidence, 0.55)
+                    flags.append("no_token_overlap_and_weak_datatype_cap_0_55")
+
+                if is_denied_target_path(target_path):
+                    confidence = min(confidence, 0.30)
+                    flags.append("structural_noise_cap_0_30")
+
+                confidence = round(max(0.0, min(1.0, confidence)), 6)
                 status = "PROPOSED" if confidence >= 0.6 else "REQUIRES_REVIEW"
+                label = _calibration_label(confidence, status, flags)
 
                 evidence = {
                     "samples": stats.get("sample_values", [])[:5],
@@ -299,10 +429,14 @@ def build_mapping_proposals(
                     "inferred_type": stats.get("inferred_type"),
                     "units": stats.get("units", []),
                     "rules_fired": {
-                        "name": name_rationale,
+                        "name": [
+                            f"token_overlap={overlap_tokens}",
+                            f"text_similarity={text_similarity}",
+                        ],
                         "datatype": [dtype_reason],
                         "value_pattern": value_reason,
                         "binding": [binding_reason],
+                        "hard_rules": hard_notes,
                     },
                     "component_scores": {
                         "name_similarity": name_score,
@@ -317,7 +451,7 @@ def build_mapping_proposals(
                         "target": {
                             "profileUrl": target.get("profileUrl") or "BASE_FHIR_R5",
                             "resourceType": target.get("resourceType", "UNKNOWN"),
-                            "elementPath": target.get("elementPath", "UNKNOWN"),
+                            "elementPath": target_path,
                         },
                         "transform": _select_transform(stats, target),
                         "terminology": {
@@ -328,6 +462,8 @@ def build_mapping_proposals(
                         },
                         "confidence": confidence,
                         "evidence": evidence,
+                        "flags": flags,
+                        "label": label,
                         "status": status,
                     }
                 )
@@ -335,10 +471,14 @@ def build_mapping_proposals(
             scored_candidates.sort(
                 key=lambda c: (
                     -float(c["confidence"]),
-                    str(c["target"]["profileUrl"]),
+                    str(c["target"]["resourceType"]),
                     str(c["target"]["elementPath"]),
+                    str(c["target"]["profileUrl"]),
                 )
             )
+
+            if not scored_candidates:
+                scored_candidates = [_unknown_candidate("No candidate remained after hard-rule filtering")]
 
             proposal = {
                 "run_id": run_id,
@@ -351,21 +491,37 @@ def build_mapping_proposals(
                     "primary": primary_domain,
                     "scores": domain_info.get("scores", {}),
                 },
+                "table_model": {
+                    "primary_resource": primary_resource,
+                    "resource_scores": resource_info.get("scores", {}),
+                },
                 "candidates": scored_candidates[:top_k],
             }
             proposals.append(proposal)
 
+    proposals.sort(
+        key=lambda p: (
+            str(p.get("source", {}).get("table", "")),
+            str(p.get("source", {}).get("column", "")),
+        )
+    )
+
     payload = {"proposals": proposals}
     payload = validate_mapping_proposal_payload(payload)
 
+    labels = {}
+    requires_review = 0
+    for proposal in payload.get("proposals", []):
+        for candidate in proposal.get("candidates", []):
+            label = candidate.get("label", "REQUIRES_SME")
+            labels[label] = labels.get(label, 0) + 1
+            if candidate.get("status") == "REQUIRES_REVIEW":
+                requires_review += 1
+
     payload["summary"] = {
         "proposal_count": len(payload["proposals"]),
-        "requires_review": sum(
-            1
-            for p in payload["proposals"]
-            for c in p.get("candidates", [])
-            if c.get("status") == "REQUIRES_REVIEW"
-        ),
+        "requires_review": requires_review,
+        "label_counts": labels,
     }
     payload["hash"] = stable_hash_obj(payload)
     return payload

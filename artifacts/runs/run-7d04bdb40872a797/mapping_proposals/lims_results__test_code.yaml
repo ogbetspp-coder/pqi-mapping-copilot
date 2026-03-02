@@ -1,64 +1,24 @@
 candidates:
   -
-    confidence: 0.695192
+    confidence: 0.86587
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.557692
+        name_similarity: 0.673913
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
-        name:
-          - "token_overlap=['analysis', 'assay', 'method', 'test']"
-          - text_similarity=0.5577
-        value_pattern:
-          - code_like_values->coded_target
-      samples:
-        - ASSAY
-        - WATER
-      top_values:
-        -
-          count: 2
-          value: ASSAY
-        -
-          count: 1
-          value: WATER
-      units:
-
-    status: PROPOSED
-    target:
-      elementPath: Observation.method
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
-      resourceType: Observation
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-methods"
-      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
-    transform:
-      name: trim_string
-      params:
-
-  -
-    confidence: 0.6736
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.496
-        value_pattern_fit: 0.5
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
+        hard_rules:
+          - "boost:Observation.code.coding.code(+0.25)"
+          - "anchor_applied:test_code"
         name:
           - "token_overlap=['analysis', 'assay', 'code', 'method', 'test']"
-          - text_similarity=0.496
+          - text_similarity=0.673913
         value_pattern:
           - code_like_values->coded_target
       samples:
@@ -73,35 +33,41 @@ candidates:
           value: WATER
       units:
 
+    flags:
+
+    label: AUTO_APPROVE_CANDIDATE
     status: PROPOSED
     target:
-      elementPath: DiagnosticReport.conclusionCode
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
-      resourceType: DiagnosticReport
+      elementPath: Observation.code.coding.code
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/clinical-findings"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
       name: normalize_codeable_concept
       params:
         system_required: true
   -
-    confidence: 0.672131
+    confidence: 0.741111
     evidence:
       component_scores:
-        binding_fit: 1.0
+        binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.491803
+        name_similarity: 0.688889
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
         binding:
-          - binding available and source appears code-like
+          - code-like source without explicit binding
         datatype:
           - string compatible
+        hard_rules:
+          - "boost:Observation.code.text(+0.12)"
+          - "anchor_applied:test_code"
         name:
-          - "token_overlap=['analysis', 'assay', 'method', 'test']"
-          - text_similarity=0.4918
+          - "token_overlap=['analysis', 'assay', 'code', 'method', 'test']"
+          - text_similarity=0.688889
         value_pattern:
           - code_like_values->coded_target
       samples:
@@ -116,18 +82,21 @@ candidates:
           value: WATER
       units:
 
+    flags:
+
+    label: GOOD_CANDIDATE
     status: PROPOSED
     target:
-      elementPath: Specimen.collection.method
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
-      resourceType: Specimen
+      elementPath: Observation.code.text
+      profileUrl: BASE_FHIR_R5
+      resourceType: Observation
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/specimen-collection-method"
+      bindingValueSetUrl: null
       conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
     transform:
-      name: trim_string
+      name: normalize_codeable_concept
       params:
-
+        system_required: true
 domain:
   primary: batch_analysis
   scores:
@@ -138,3 +107,10 @@ source:
   column: test_code
   file: data/examples/lims_results.csv
   table: lims_results
+table_model:
+  primary_resource: Observation
+  resource_scores:
+    DiagnosticReport: 0.05891
+    Medication: 0.076583
+    Observation: 0.846834
+    Specimen: 0.017673

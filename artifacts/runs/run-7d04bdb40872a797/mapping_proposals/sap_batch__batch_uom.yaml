@@ -1,124 +1,27 @@
 candidates:
   -
-    confidence: 0.520863
+    confidence: 0.3
     evidence:
       component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.345324
-        value_pattern_fit: 0.0
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=['unit', 'units', 'uom']"
-          - text_similarity=0.3453
-        value_pattern:
 
-      samples:
-        - tablet
-      top_values:
-        -
-          count: 2
-          value: tablet
-      units:
-        - tablet
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: "PackagedProductDefinition.packaging.property.value[x].code"
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
-      resourceType: PackagedProductDefinition
-    terminology:
-      bindingValueSetUrl: "http://terminology.hl7.org/ValueSet/v3-UnitsOfMeasureCaseSensitive"
-      conceptMapSuggested: null
-    transform:
-      name: to_quantity
-      params:
-        units_detected:
-          - tablet
-  -
-    confidence: 0.51708
-    evidence:
-      component_scores:
-        binding_fit: 0.6
-        datatype_fit: 0.8
-        name_similarity: 0.277372
-        value_pattern_fit: 0.5
-      inferred_type: string
+      reason: No candidate remained after hard-rule filtering
       rules_fired:
-        binding:
-          - binding available but source not clearly code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=['unit', 'units', 'uom']"
-          - text_similarity=0.2774
-        value_pattern:
-          - units->quantity
-      samples:
-        - tablet
-      top_values:
-        -
-          count: 2
-          value: tablet
-      units:
-        - tablet
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: ManufacturedItemDefinition.unitOfPresentation
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq"
-      resourceType: ManufacturedItemDefinition
-    terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/unit-of-presentation"
-      conceptMapSuggested: null
-    transform:
-      name: to_quantity
-      params:
-        units_detected:
-          - tablet
-  -
-    confidence: 0.509091
-    evidence:
-      component_scores:
-        binding_fit: 1.0
-        datatype_fit: 0.8
-        name_similarity: 0.311688
-        value_pattern_fit: 0.0
-      inferred_type: string
-      rules_fired:
-        binding:
-          - binding available and source appears code-like
-        datatype:
-          - string compatible
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.3117
-        value_pattern:
 
-      samples:
-        - tablet
-      top_values:
-        -
-          count: 2
-          value: tablet
-      units:
-        - tablet
+    flags:
+      - no_viable_candidate
+    label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: ObservationDefinition.component.code
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
-      resourceType: ObservationDefinition
+      elementPath: UNKNOWN
+      profileUrl: UNKNOWN
+      resourceType: UNKNOWN
     terminology:
-      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-codes"
+      bindingValueSetUrl: null
       conceptMapSuggested: null
     transform:
-      name: to_quantity
+      name: identity
       params:
-        units_detected:
-          - tablet
+
 domain:
   primary: batch_lot_information
   scores:
@@ -129,3 +32,10 @@ source:
   column: batch_uom
   file: data/examples/sap_batch.csv
   table: sap_batch
+table_model:
+  primary_resource: Medication
+  resource_scores:
+    DiagnosticReport: 0.0
+    Medication: 1.0
+    Observation: 0.0
+    Specimen: 0.0

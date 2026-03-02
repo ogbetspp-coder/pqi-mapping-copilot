@@ -87,7 +87,8 @@ def _handle_report(args: Any) -> int:
 
 
 def _handle_approve(args: Any) -> int:
-    result = approve_run(args.run_id, Path(args.rules), args.mapping_name)
+    overrides_path = Path(args.overrides) if getattr(args, "overrides", None) else None
+    result = approve_run(args.run_id, Path(args.rules), args.mapping_name, overrides_path=overrides_path)
 
     update_manifest_with_outputs(
         run_id=args.run_id,
@@ -103,6 +104,7 @@ def _handle_approve(args: Any) -> int:
             "reused": result.get("reused"),
             "path": result.get("path"),
             "decisions_required": len(result.get("approved", {}).get("decisions_required", [])),
+            "overrides_applied": len(result.get("approved", {}).get("overrides_applied", [])),
         }
     )
     return 0
@@ -153,10 +155,6 @@ def _handle_generate(args: Any) -> int:
 
 
 def main(argv: list[str] | None = None) -> int:
-    if TYPER_AVAILABLE and argv is None:
-        app()
-        return 0
-
     parser = build_arg_parser()
     args = parser.parse_args(argv)
 
@@ -205,12 +203,17 @@ if TYPER_AVAILABLE:
         _handle_report(type("Args", (), {"run_id": run_id}))
 
     @app.command("approve")
-    def approve(run_id: str, rules: str, mapping_name: str = "batch-lot-analysis") -> None:
+    def approve(
+        run_id: str,
+        rules: str,
+        mapping_name: str = "batch-lot-analysis",
+        overrides: str | None = None,
+    ) -> None:
         _handle_approve(
             type(
                 "Args",
                 (),
-                {"run_id": run_id, "rules": rules, "mapping_name": mapping_name},
+                {"run_id": run_id, "rules": rules, "mapping_name": mapping_name, "overrides": overrides},
             )
         )
 
