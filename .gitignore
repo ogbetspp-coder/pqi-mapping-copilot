@@ -5,6 +5,7 @@ __pycache__/
 # Local scratch/temp
 .tmp/
 .venv/
+.workspaces/
 
 # Runtime run outputs (deterministic examples can still be committed explicitly)
 artifacts/runs/
