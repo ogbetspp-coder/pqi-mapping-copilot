@@ -9,7 +9,7 @@ from typing import Any
 from pqi_copilot.common import build_arg_parser, file_sha256, write_json
 from pqi_copilot.generate.bundle import generate_minimal_bundle
 from pqi_copilot.governance.store import approve_run, list_library, run_dir
-from pqi_copilot.ig.ig_loader import build_and_save_catalog, list_profiles, load_catalog, show_profile
+from pqi_copilot.ig.ig_loader import build_and_save_catalog, catalog_path, list_profiles, load_catalog, show_profile
 from pqi_copilot.pipeline import ensure_catalog, propose_run, update_manifest_with_outputs
 from pqi_copilot.report.render import render_report_files
 from pqi_copilot.validate.validator import validate_bundle_minimal
@@ -33,7 +33,7 @@ def _handle_ig(args: Any) -> int:
         catalog = build_and_save_catalog(ig_override=ig_source)
         _print(
             {
-                "catalog": "artifacts/library/ig_catalog.json",
+                "catalog": str(catalog_path()),
                 "source": catalog.get("source"),
                 "profiles": len(catalog.get("profiles", [])),
                 "valueSets": len(catalog.get("valueSets", {})),
@@ -77,7 +77,7 @@ def _handle_ig(args: Any) -> int:
 def _handle_propose(args: Any) -> int:
     ig_source = Path(args.ig_source) if getattr(args, "ig_source", None) else None
     ensure_catalog(ig_source=ig_source)
-    result = propose_run(Path(args.input_dir))
+    result = propose_run(Path(args.input_dir), ig_source=ig_source)
     _print(result)
     return 0
 

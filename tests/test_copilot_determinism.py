@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from pqi_copilot.common import file_sha256
 from pqi_copilot.pipeline import propose_run
 
 
@@ -16,5 +17,6 @@ def test_propose_deterministic() -> None:
     mapping = json.loads((run_dir / "mapping_proposals.json").read_text(encoding="utf-8"))
     manifest = json.loads((run_dir / "manifest.json").read_text(encoding="utf-8"))
 
-    assert mapping.get("hash") == manifest.get("mapping_proposal_hash")
+    assert file_sha256(run_dir / "mapping_proposals.json") == manifest.get("mapping_proposal_hash")
+    assert "hash" in mapping
     assert manifest.get("generated_at_utc") == "deterministic"

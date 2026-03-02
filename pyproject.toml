@@ -18,6 +18,10 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.2"]
+ui = [
+  "streamlit>=1.32",
+  "pyyaml>=6.0"
+]
 
 [project.scripts]
 pqi-copilot = "pqi_copilot.cli:main"

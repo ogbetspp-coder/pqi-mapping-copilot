@@ -7,6 +7,7 @@ from typing import Any
 
 from pqi_copilot.common import read_json, write_text
 from pqi_copilot.governance.store import run_dir
+from pqi_copilot.propose.mapping import candidate_sort_key
 
 
 def _table_overview(profile: dict[str, Any]) -> list[dict[str, Any]]:
@@ -28,11 +29,7 @@ def _top_candidates(proposals: dict[str, Any], k: int = 1) -> list[dict[str, Any
     for p in proposals.get("proposals", []):
         candidates = sorted(
             p.get("candidates", []),
-            key=lambda c: (
-                -float(c.get("confidence", 0.0)),
-                str(c.get("target", {}).get("resourceType", "")),
-                str(c.get("target", {}).get("elementPath", "")),
-            ),
+            key=candidate_sort_key,
         )
         out.append(
             {
@@ -163,8 +160,11 @@ def generate_markdown_report(run_id: str) -> str:
         disposition = str(item.get("disposition", "IN_SCOPE"))
 
         if disposition == "OUT_OF_SCOPE":
+            out_label = "OUT_OF_SCOPE"
+            if item.get("candidates"):
+                out_label = str(item["candidates"][0].get("label", "OUT_OF_SCOPE"))
             lines.append(
-                f"| {source_label} | {domain} | {table_resource} | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |"
+                f"| {source_label} | {domain} | {table_resource} | OUT_OF_SCOPE | 0.00 | {out_label} | REQUIRES_REVIEW | out_of_scope_non_anchor |"
             )
             continue
 

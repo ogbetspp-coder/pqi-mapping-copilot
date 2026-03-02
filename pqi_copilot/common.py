@@ -6,19 +6,30 @@ import argparse
 import csv
 import hashlib
 import json
+import os
 import re
 from dataclasses import asdict, is_dataclass
 from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+ENV_ARTIFACTS_ROOT = "PQI_ARTIFACTS_ROOT"
+
+
+def artifacts_root() -> Path:
+    return Path(os.environ.get(ENV_ARTIFACTS_ROOT, "artifacts"))
+
 
 def stable_json_dumps(value: Any) -> str:
     return json.dumps(value, sort_keys=True, separators=(",", ":"), ensure_ascii=True)
 
 
+def stable_json_bytes(value: Any) -> bytes:
+    return stable_json_dumps(value).encode("utf-8")
+
+
 def stable_hash_obj(value: Any) -> str:
-    return hashlib.sha256(stable_json_dumps(value).encode("utf-8")).hexdigest()
+    return hashlib.sha256(stable_json_bytes(value)).hexdigest()
 
 
 def stable_hash_text(value: str) -> str:
@@ -93,8 +104,7 @@ def obj_to_dict(value: Any) -> Any:
 def write_json(path: Path, payload: Any) -> None:
     ensure_dir(path.parent)
     serializable = obj_to_dict(payload)
-    with path.open("w", encoding="utf-8") as f:
-        json.dump(serializable, f, indent=2, sort_keys=True)
+    path.write_bytes(stable_json_bytes(serializable))
 
 
 def write_text(path: Path, text: str) -> None:

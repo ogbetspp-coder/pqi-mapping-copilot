@@ -91,17 +91,22 @@ def propose_relationships(ingested: dict[str, Any], profile: dict[str, Any]) -> 
 
     proposals.sort(
         key=lambda p: (
-            -float(p["match_rate"]),
-            -int(p["overlap_count"]),
             str(p["child"]["table"]),
             str(p["parent"]["table"]),
+            str(p["child"]["column"]),
+            str(p["parent"]["column"]),
+            -float(p["match_rate"]),
+            -int(p["overlap_count"]),
         )
     )
+
+    for proposal in proposals:
+        proposal["match_rate"] = round(float(proposal.get("match_rate", 0.0)), 6)
 
     return {
         "relationship_proposals": proposals,
         "summary": {
             "proposal_count": len(proposals),
-            "high_confidence": sum(1 for p in proposals if p["match_rate"] >= 0.9),
+            "high_confidence": sum(1 for p in proposals if float(p["match_rate"]) >= 0.9),
         },
     }

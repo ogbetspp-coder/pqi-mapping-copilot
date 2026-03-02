@@ -57,4 +57,7 @@ Accelerate consultant mapping workshops for PQI Step I-III exchange by producing
 - Run artifacts: `artifacts/runs/<run_id>/...`
 - Library mappings: `artifacts/library/mappings/<mapping_name>/vX.Y.Z/approved.yaml`
 
+Runtime path note:
+- All run/library paths resolve from `PQI_ARTIFACTS_ROOT` (default `artifacts`).
+
 All active implementation for this tool is under `pqi_copilot/`.

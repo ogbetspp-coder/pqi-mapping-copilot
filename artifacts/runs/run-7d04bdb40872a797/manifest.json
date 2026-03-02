@@ -1,17 +1,1 @@
-{
-  "approved_mapping_version_id": null,
-  "determinism_contract": "Same inputs + same approved mapping version + same terminology version => identical outputs.",
-  "generated_at_utc": "deterministic",
-  "ig_catalog_hash": "ae3f09f6804458ffadbdb8cf18877a2c91e16bd5397b83ae3e5f2c9d81850a3f",
-  "input_hashes": {
-    "lims_results.csv": "1b620f1f2a81a808b71e4e12ddbb3e90b3f1770cf1a5768991642879be63996b",
-    "mes_steps.json": "b5cd3137cc9b930ebeb2ab018522ff8cff044338cb89bfa213801eab46c0acec",
-    "qms_deviations.xml": "d67a50fb9fae69e05d4281412f131c4fd7c691451738e86265d890ffabc6caf9",
-    "sap_batch.csv": "f3523e96a289b899644035444966e8c5a6d4415b972a758e5d3936c4500e2ab9"
-  },
-  "manifest_hash": "76ed7cc50951aec318982fa86f1b2f0bbafb5ae7b5ab03314ebfd4442e52bd53",
-  "mapping_proposal_hash": "872fea11e034296493400ae2d83324100edd467aef7ee43ab7bd5acbd23ea494",
-  "output_hashes": {},
-  "run_id": "run-7d04bdb40872a797",
-  "terminology_version_id": null
-}
+{"approved_mapping_version_id":null,"determinism_contract":"Same inputs + same approved mapping version + same terminology version => identical outputs.","generated_at_utc":"deterministic","ig_catalog_hash":"ae3f09f6804458ffadbdb8cf18877a2c91e16bd5397b83ae3e5f2c9d81850a3f","input_hashes":{"lims_results.csv":"1b620f1f2a81a808b71e4e12ddbb3e90b3f1770cf1a5768991642879be63996b","mes_steps.json":"b5cd3137cc9b930ebeb2ab018522ff8cff044338cb89bfa213801eab46c0acec","qms_deviations.xml":"d67a50fb9fae69e05d4281412f131c4fd7c691451738e86265d890ffabc6caf9","sap_batch.csv":"f3523e96a289b899644035444966e8c5a6d4415b972a758e5d3936c4500e2ab9"},"manifest_hash":"625000088f4c79d6fcb8ad8630f4c3b557a91d3c6c2eafa46907f8b2bb7fac18","mapping_proposal_hash":"362c5f00e1621c95ba17f13528f93a6d9ab0b4ee5806fe60dd117b50699fce5c","output_hashes":{},"run_id":"run-7d04bdb40872a797","terminology_version_id":null}

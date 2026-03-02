@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from pqi_copilot.pipeline import propose_run
+from pqi_copilot.report.render import render_report_files
 
 
 def _proposal_index(payload: dict) -> dict[tuple[str, str], dict]:
@@ -83,3 +84,12 @@ def test_out_of_scope_tables_emit_out_of_scope_non_anchor() -> None:
     top = target["candidates"][0]
     assert top.get("label") == "OUT_OF_SCOPE"
     assert "out_of_scope_non_anchor" in top.get("flags", [])
+
+
+def test_report_renders_out_of_scope_label() -> None:
+    result = propose_run(Path("data/examples"))
+    run_id = result["run_id"]
+    report_paths = render_report_files(run_id)
+    markdown = Path(report_paths["markdown"]).read_text(encoding="utf-8")
+    assert "qms_deviations.status" in markdown
+    assert "| OUT_OF_SCOPE | 0.00 | OUT_OF_SCOPE | REQUIRES_REVIEW | out_of_scope_non_anchor |" in markdown

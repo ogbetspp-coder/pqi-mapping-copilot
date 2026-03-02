@@ -69,6 +69,30 @@ BASE_FHIR_FALLBACK = [
     },
 ]
 
+LABEL_RANK = {
+    "AUTO_APPROVE_CANDIDATE": 4,
+    "GOOD_CANDIDATE": 3,
+    "REQUIRES_SME": 2,
+    "OUT_OF_SCOPE": 1,
+}
+
+
+def _quantize_confidence(value: float) -> float:
+    return round(float(value), 6)
+
+
+def candidate_sort_key(candidate: dict[str, Any]) -> tuple[float, float, str, str, str]:
+    target = candidate.get("target", {})
+    label = str(candidate.get("label", "REQUIRES_SME"))
+    label_rank = LABEL_RANK.get(label, 0)
+    return (
+        -float(label_rank),
+        -float(candidate.get("confidence", 0.0)),
+        str(target.get("resourceType", "")),
+        str(target.get("elementPath", "")),
+        str(target.get("profileUrl", "")),
+    )
+
 
 def _expand_tokens(text: str) -> set[str]:
     tokens = {normalize_token(tok) for tok in split_identifier(text)}
@@ -460,7 +484,7 @@ def build_mapping_proposals(
                     confidence = min(confidence, hard_cap)
                     flags.append(f"hard_rule_confidence_cap_{hard_cap}")
 
-                confidence = round(max(0.0, min(1.0, confidence)), 6)
+                confidence = _quantize_confidence(max(0.0, min(1.0, confidence)))
                 status = "PROPOSED" if confidence >= 0.6 else "REQUIRES_REVIEW"
                 label = _calibration_label(confidence, status, flags)
 
@@ -501,7 +525,7 @@ def build_mapping_proposals(
                             if _code_like(stats)
                             else None,
                         },
-                        "confidence": confidence,
+                        "confidence": _quantize_confidence(confidence),
                         "evidence": evidence,
                         "flags": flags,
                         "label": label,
@@ -509,14 +533,7 @@ def build_mapping_proposals(
                     }
                 )
 
-            scored_candidates.sort(
-                key=lambda c: (
-                    -float(c["confidence"]),
-                    str(c["target"]["resourceType"]),
-                    str(c["target"]["elementPath"]),
-                    str(c["target"]["profileUrl"]),
-                )
-            )
+            scored_candidates.sort(key=candidate_sort_key)
 
             if not scored_candidates:
                 scored_candidates = [_unknown_candidate("No candidate remained after hard-rule filtering")]
@@ -558,6 +575,7 @@ def build_mapping_proposals(
         if proposal.get("disposition") == "OUT_OF_SCOPE":
             out_of_scope += 1
         for candidate in proposal.get("candidates", []):
+            candidate["confidence"] = _quantize_confidence(candidate.get("confidence", 0.0))
             label = candidate.get("label", "REQUIRES_SME")
             labels[label] = labels.get(label, 0) + 1
             if candidate.get("status") == "REQUIRES_REVIEW":
@@ -569,7 +587,12 @@ def build_mapping_proposals(
         "label_counts": labels,
         "out_of_scope": out_of_scope,
     }
-    payload["hash"] = stable_hash_obj(payload)
+    payload["hash"] = stable_hash_obj(
+        {
+            "proposals": payload.get("proposals", []),
+            "summary": payload.get("summary", {}),
+        }
+    )
     return payload
 
 

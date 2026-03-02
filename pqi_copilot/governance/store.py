@@ -8,6 +8,7 @@ from pathlib import Path
 from typing import Any
 
 from pqi_copilot.common import (
+    artifacts_root,
     ensure_dir,
     file_sha256,
     read_json,
@@ -19,11 +20,25 @@ from pqi_copilot.common import (
     write_yaml,
 )
 
-RUNS_ROOT = Path("artifacts/runs")
-LIB_ROOT = Path("artifacts/library")
-MAP_LIB_ROOT = LIB_ROOT / "mappings"
-TERM_LIB_ROOT = LIB_ROOT / "terminology"
-CHANGELOG = LIB_ROOT / "CHANGELOG.md"
+
+def runs_root() -> Path:
+    return artifacts_root() / "runs"
+
+
+def library_root() -> Path:
+    return artifacts_root() / "library"
+
+
+def mappings_root() -> Path:
+    return library_root() / "mappings"
+
+
+def terminology_root() -> Path:
+    return library_root() / "terminology"
+
+
+def changelog_path() -> Path:
+    return library_root() / "CHANGELOG.md"
 
 
 def _utc_now() -> str:
@@ -36,7 +51,7 @@ def compute_run_id(input_hashes: dict[str, str], ig_catalog_hash: str) -> str:
 
 
 def run_dir(run_id: str) -> Path:
-    return RUNS_ROOT / run_id
+    return runs_root() / run_id
 
 
 def write_run_artifact(run_id: str, name: str, payload: Any) -> Path:
@@ -76,7 +91,7 @@ def run_manifest(
 
 
 def _load_versions(mapping_name: str) -> list[str]:
-    base = MAP_LIB_ROOT / mapping_name
+    base = mappings_root() / mapping_name
     if not base.exists():
         return []
     versions = []
@@ -151,6 +166,13 @@ def _load_overrides(path: Path | None) -> dict[str, Any]:
             in_select = True
             continue
 
+        if indent == 4 and current_source and ":" in line and not line.startswith("select:"):
+            key, value = line.split(":", 1)
+            key = key.strip()
+            value = value.strip().strip("'\"")
+            overrides[current_source][key] = value
+            continue
+
         if indent >= 6 and in_select and current_source and ":" in line:
             key, value = line.split(":", 1)
             key = key.strip()
@@ -181,11 +203,39 @@ def approve_run(
     decisions_required = []
     overrides_applied = []
 
-    for proposal in proposals_payload.get("proposals", []):
+    for proposal in sorted(
+        proposals_payload.get("proposals", []),
+        key=lambda p: (
+            str(p.get("source", {}).get("table", "")),
+            str(p.get("source", {}).get("column", "")),
+        ),
+    ):
         source_id = _proposal_id(proposal)
         candidates = proposal.get("candidates", [])
 
         override = overrides.get(source_id, {})
+        if isinstance(override, dict):
+            action = str(override.get("action", "")).upper()
+            if action == "UNMAPPED":
+                reason = str(override.get("reason", "Manual override marked as UNMAPPED"))
+                overrides_applied.append({"source": source_id, "action": "UNMAPPED", "reason": reason})
+                decisions_required.append(
+                    {
+                        "source": proposal.get("source"),
+                        "reason": reason,
+                        "status": "UNMAPPED",
+                    }
+                )
+                approved_entries.append(
+                    {
+                        "source": proposal.get("source"),
+                        "status": "UNMAPPED",
+                        "selected": None,
+                        "override_reason": reason,
+                    }
+                )
+                continue
+
         select_target = override.get("select", {}) if isinstance(override, dict) else {}
         if select_target:
             selected = None
@@ -273,7 +323,7 @@ def approve_run(
     existing_versions = _load_versions(mapping_name)
     # If identical content exists, reuse version id
     for version in existing_versions:
-        candidate_path = MAP_LIB_ROOT / mapping_name / f"v{version}" / "approved.yaml"
+        candidate_path = mappings_root() / mapping_name / f"v{version}" / "approved.yaml"
         if candidate_path.exists():
             raw = candidate_path.read_text(encoding="utf-8")
             if approved_payload["content_hash"] in raw:
@@ -287,7 +337,7 @@ def approve_run(
                 }
 
     next_version = _next_patch_version(existing_versions)
-    version_dir = MAP_LIB_ROOT / mapping_name / f"v{next_version}"
+    version_dir = mappings_root() / mapping_name / f"v{next_version}"
     ensure_dir(version_dir)
     approved_payload["version"] = f"v{next_version}"
     approved_payload["version_id"] = f"{mapping_name}:v{next_version}"
@@ -299,10 +349,11 @@ def approve_run(
     write_yaml(out_path, approved_payload)
     write_json(version_dir / "approved.json", approved_payload)
 
-    ensure_dir(CHANGELOG.parent)
-    if not CHANGELOG.exists():
-        CHANGELOG.write_text("# Artifact Library Changelog\n\n", encoding="utf-8")
-    with CHANGELOG.open("a", encoding="utf-8") as f:
+    changelog = changelog_path()
+    ensure_dir(changelog.parent)
+    if not changelog.exists():
+        changelog.write_text("# Artifact Library Changelog\n\n", encoding="utf-8")
+    with changelog.open("a", encoding="utf-8") as f:
         f.write(
             f"- { _utc_now() }: approved mapping `{mapping_name}` version `v{next_version}` "
             f"from run `{run_id}` (entries={len(approved_entries)}).\n"
@@ -319,21 +370,23 @@ def approve_run(
 
 def list_library() -> dict[str, Any]:
     mappings = []
-    if MAP_LIB_ROOT.exists():
-        for mapping_name in sorted(p.name for p in MAP_LIB_ROOT.iterdir() if p.is_dir()):
+    map_root = mappings_root()
+    if map_root.exists():
+        for mapping_name in sorted(p.name for p in map_root.iterdir() if p.is_dir()):
             versions = _load_versions(mapping_name)
             mappings.append({"mapping_name": mapping_name, "versions": [f"v{v}" for v in versions]})
 
     terminology = []
-    if TERM_LIB_ROOT.exists():
-        for pack in sorted(p.name for p in TERM_LIB_ROOT.iterdir() if p.is_dir()):
-            versions = [p.name for p in sorted((TERM_LIB_ROOT / pack).iterdir()) if p.is_dir()]
+    term_root = terminology_root()
+    if term_root.exists():
+        for pack in sorted(p.name for p in term_root.iterdir() if p.is_dir()):
+            versions = [p.name for p in sorted((term_root / pack).iterdir()) if p.is_dir()]
             terminology.append({"package": pack, "versions": versions})
 
     return {
         "mappings": mappings,
         "terminology": terminology,
-        "changelog": str(CHANGELOG),
+        "changelog": str(changelog_path()),
     }
 
 
@@ -342,10 +395,10 @@ def latest_approved_mapping(mapping_name: str) -> dict[str, Any] | None:
     if not versions:
         return None
     latest = sorted(versions, key=_parse_semver)[-1]
-    json_path = MAP_LIB_ROOT / mapping_name / f"v{latest}" / "approved.json"
+    json_path = mappings_root() / mapping_name / f"v{latest}" / "approved.json"
     if json_path.exists():
         return read_json(json_path)
-    yaml_path = MAP_LIB_ROOT / mapping_name / f"v{latest}" / "approved.yaml"
+    yaml_path = mappings_root() / mapping_name / f"v{latest}" / "approved.yaml"
     if not yaml_path.exists():
         return None
     # Fallback: best-effort tiny YAML parse for top-level keys only.

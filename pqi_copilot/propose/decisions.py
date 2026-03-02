@@ -6,6 +6,7 @@ from typing import Any
 
 from pqi_copilot.common import normalize_token
 from pqi_copilot.propose.hard_rules import candidate_question_hint, matched_anchor
+from pqi_copilot.propose.mapping import candidate_sort_key
 
 
 def _source_id(source: dict[str, Any]) -> str:
@@ -55,7 +56,6 @@ def build_decisions(
     relationships: dict[str, Any],
 ) -> dict[str, Any]:
     decisions = []
-    decision_counter = 1
 
     for proposal in mapping_proposals.get("proposals", []):
         if proposal.get("disposition") == "OUT_OF_SCOPE":
@@ -65,7 +65,7 @@ def build_decisions(
         source_id = _source_id(source)
         candidates = sorted(
             proposal.get("candidates", []),
-            key=lambda c: (-float(c.get("confidence", 0.0)), str(c.get("target", {}).get("elementPath", ""))),
+            key=candidate_sort_key,
         )
 
         top = candidates[0] if candidates else None
@@ -89,7 +89,7 @@ def build_decisions(
                 {
                     "target": str(target.get("elementPath")),
                     "resourceType": str(target.get("resourceType", "UNKNOWN")),
-                    "confidence": float(cand.get("confidence", 0.0)),
+                    "confidence": round(float(cand.get("confidence", 0.0)), 6),
                     "status": cand.get("status"),
                     "label": cand.get("label"),
                 }
@@ -97,14 +97,17 @@ def build_decisions(
 
         decisions.append(
             {
-                "decision_id": f"D-{decision_counter:03d}",
+                "decision_id": "PENDING",
                 "source": source_id,
                 "why": _decision_reason(source, proposal, relationships),
                 "proposed": options,
                 "question_for_sme": candidate_question_hint(str(source.get("column", ""))),
             }
         )
-        decision_counter += 1
+
+    decisions.sort(key=lambda d: tuple(str(d.get("source", ".")).split(".", 1)))
+    for idx, decision in enumerate(decisions, start=1):
+        decision["decision_id"] = f"D-{idx:03d}"
 
     return {
         "run_id": run_id,

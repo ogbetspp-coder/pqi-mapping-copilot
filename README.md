@@ -55,6 +55,12 @@ Python 3.11+
 
 Recommended dependencies (declared in `pyproject.toml`):
 - `typer`, `pydantic`, `pandas`, `python-dateutil`, `rapidfuzz`, `jinja2`, `pytest`
+- optional UI: `streamlit`, `pyyaml`
+
+Reproducible install (recommended):
+```bash
+pip install -e ".[dev,ui]" -c constraints.txt
+```
 
 ## IG Loading Priority
 `pqi-copilot` follows this order:
@@ -65,6 +71,15 @@ Recommended dependencies (declared in `pyproject.toml`):
 Override options:
 - Environment variable: `PQI_IG_SOURCE=/absolute/path/to/package.tgz`
 - CLI option: `--ig-source /absolute/path/to/package.tgz`
+
+## Artifacts Root
+By default artifacts are written to `./artifacts`. Set this to isolate runs per workspace:
+
+```bash
+export PQI_ARTIFACTS_ROOT=/absolute/path/to/artifacts
+```
+
+All runtime run/library paths derive from `PQI_ARTIFACTS_ROOT`.
 
 If neither is available, place the package manually:
 - `ig/pqi-package.tgz` containing `hl7.fhir.uv.pharm-quality#1.0.0`
@@ -132,6 +147,18 @@ python3 -m pqi_copilot library list
 ```bash
 python3 -m pqi_copilot generate <run_id> --mapping-name batch-lot-analysis
 ```
+
+### 9) Local Streamlit demo
+```bash
+streamlit run streamlit_app.py
+```
+
+The Streamlit app uses per-session local workspaces:
+- `.workspaces/<session_id>/inputs`
+- `.workspaces/<session_id>/artifacts`
+- `.workspaces/<session_id>/exports`
+
+Inside the app, `PQI_ARTIFACTS_ROOT` is set to that session workspace so demo runs do not pollute repo-level artifacts.
 
 ## Approval Rules File (`.yaml`)
 Example:

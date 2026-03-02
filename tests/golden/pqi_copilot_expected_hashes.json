@@ -1,9 +1,9 @@
 {
   "hashes": {
-    "domain_classification": "a495d60cc00c8188ad72598b783da851a9c310623f6cd0ec30545b99af926c72",
-    "manifest": "6738c6520269df15d7788c6c13e0f2c055242e9c40896a8cecdb650f6c567490",
-    "mapping_proposals": "05fa9dfd8a004e7a0c46c5e31e55bca111cd01e6e8dce09921e5cbfd885bec00",
-    "relationship_proposals": "5e203dff591cfbff0003f143565a2ed41a27e4f4de0bd3cefa9b8cd91e488b26"
+    "domain_classification": "740ae2b40b422a4287b2e39d8c0243334676bb8905890fa5cf914279d72c0d77",
+    "manifest": "bc60ef515838321bb4ebaaf8a65a5e51335d1c9c9032c6761672b0571259f69b",
+    "mapping_proposals": "362c5f00e1621c95ba17f13528f93a6d9ab0b4ee5806fe60dd117b50699fce5c",
+    "relationship_proposals": "6a9332715fa63351bb51d86b0be47b062b6fde752f2855705fc6d7b5d76aba90"
   },
   "run_id": "run-7d04bdb40872a797"
 }

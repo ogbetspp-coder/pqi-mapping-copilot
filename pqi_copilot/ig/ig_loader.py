@@ -10,13 +10,16 @@ import zipfile
 from pathlib import Path
 from typing import Any, Iterable
 
-from pqi_copilot.common import ensure_dir, stable_hash_obj, write_json
+from pqi_copilot.common import artifacts_root, ensure_dir, stable_hash_obj, write_json
 
 ENV_IG_SOURCE = "PQI_IG_SOURCE"
 PRIMARY_PACKAGE = Path("ig/pqi-package.tgz")
 SECONDARY_PACKAGE = Path("assets/pqi/package.tgz")
 DEFAULT_IG_ZIP = Path("/mnt/data/full-ig.zip")
-CATALOG_PATH = Path("artifacts/library/ig_catalog.json")
+
+
+def catalog_path() -> Path:
+    return artifacts_root() / "library" / "ig_catalog.json"
 
 
 def _iter_json_from_tar_bytes(blob: bytes) -> Iterable[tuple[str, dict[str, Any]]]:
@@ -283,8 +286,10 @@ def build_and_save_catalog(
     primary_package: Path = PRIMARY_PACKAGE,
     secondary_package: Path = SECONDARY_PACKAGE,
     fallback_zip: Path = DEFAULT_IG_ZIP,
-    output_path: Path = CATALOG_PATH,
+    output_path: Path | None = None,
 ) -> dict[str, Any]:
+    if output_path is None:
+        output_path = catalog_path()
     resources, source = discover_ig_resources(
         ig_override=ig_override,
         primary_package=primary_package,
@@ -303,7 +308,9 @@ def build_and_save_catalog(
     return catalog
 
 
-def load_catalog(path: Path = CATALOG_PATH) -> dict[str, Any]:
+def load_catalog(path: Path | None = None) -> dict[str, Any]:
+    if path is None:
+        path = catalog_path()
     if not path.exists():
         return build_and_save_catalog(output_path=path)
     return json.loads(path.read_text(encoding="utf-8"))

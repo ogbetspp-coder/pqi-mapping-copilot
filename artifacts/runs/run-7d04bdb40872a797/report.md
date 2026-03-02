@@ -71,13 +71,13 @@
 | lims_results.test_code | batch_analysis | Observation | Observation::Observation.code.coding.code | 0.87 | AUTO_APPROVE_CANDIDATE | PROPOSED | token_overlap=['analysis', 'assay', 'code', 'method', 'test']; string compatible; boost:Observation.code.coding.code(+0.25) |
 | lims_results.test_name | batch_analysis | Observation | Observation::Observation.code.coding.code | 0.76 | GOOD_CANDIDATE | PROPOSED | token_overlap=['analysis', 'assay', 'method', 'test']; string compatible; boost:Observation.code.coding.code(+0.25) |
 | mes_steps.batch_id | batch_lot_information | Medication | Medication::Medication.batch.lotNumber | 0.73 | GOOD_CANDIDATE | PROPOSED | token_overlap=['batch', 'batchid', 'lot']; string compatible; boost:Medication.batch.lotNumber(+0.28) |
-| mes_steps.duration_hr | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |
-| mes_steps.equipment_id | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |
-| mes_steps.step_name | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |
+| mes_steps.duration_hr | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | OUT_OF_SCOPE | REQUIRES_REVIEW | out_of_scope_non_anchor |
+| mes_steps.equipment_id | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | OUT_OF_SCOPE | REQUIRES_REVIEW | out_of_scope_non_anchor |
+| mes_steps.step_name | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | OUT_OF_SCOPE | REQUIRES_REVIEW | out_of_scope_non_anchor |
 | qms_deviations.batch_id | batch_lot_information | Medication | Medication::Medication.batch.lotNumber | 0.73 | GOOD_CANDIDATE | PROPOSED | token_overlap=['batch', 'batchid', 'lot']; string compatible; boost:Medication.batch.lotNumber(+0.28) |
-| qms_deviations.category | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |
-| qms_deviations.deviation_id | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |
-| qms_deviations.status | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |
+| qms_deviations.category | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | OUT_OF_SCOPE | REQUIRES_REVIEW | out_of_scope_non_anchor |
+| qms_deviations.deviation_id | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | OUT_OF_SCOPE | REQUIRES_REVIEW | out_of_scope_non_anchor |
+| qms_deviations.status | out_of_scope | Medication | OUT_OF_SCOPE | 0.00 | OUT_OF_SCOPE | REQUIRES_REVIEW | out_of_scope_non_anchor |
 | sap_batch.batch_id | batch_lot_information | Medication | Medication::Medication.batch.lotNumber | 0.73 | GOOD_CANDIDATE | PROPOSED | token_overlap=['batch', 'batchid', 'lot']; string compatible; boost:Medication.batch.lotNumber(+0.28) |
 | sap_batch.batch_quantity | batch_lot_information | Medication | Medication::Medication.batch.extension | 0.51 | REQUIRES_SME | REQUIRES_REVIEW | token_overlap=['batch', 'batchid', 'lot']; weak type fit; boost:Medication.batch.extension(+0.24) |
 | sap_batch.batch_uom | batch_lot_information | Medication | UNKNOWN::UNKNOWN | 0.30 | REQUIRES_SME | REQUIRES_REVIEW |  |
