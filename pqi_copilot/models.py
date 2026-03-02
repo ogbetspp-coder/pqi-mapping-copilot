@@ -6,15 +6,20 @@ from dataclasses import dataclass, field
 from typing import Any
 
 try:
-    from pydantic import BaseModel, Field, field_validator  # type: ignore
+    from pydantic import BaseModel, ConfigDict, Field, field_validator  # type: ignore
 
-    class MappingCandidate(BaseModel):
+    class _Base(BaseModel):
+        model_config = ConfigDict(extra="allow")
+
+    class MappingCandidate(_Base):
         target: dict[str, Any]
         transform: dict[str, Any]
         terminology: dict[str, Any]
         confidence: float = Field(ge=0.0, le=1.0)
         evidence: dict[str, Any]
         status: str
+        flags: list[str] = Field(default_factory=list)
+        label: str | None = None
 
         @field_validator("status")
         @classmethod
@@ -24,14 +29,17 @@ try:
                 raise ValueError(f"Invalid status: {value}")
             return value
 
-    class MappingProposal(BaseModel):
+    class MappingProposal(_Base):
         run_id: str
         source: dict[str, str]
         domain: dict[str, Any]
+        table_model: dict[str, Any] = Field(default_factory=dict)
         candidates: list[MappingCandidate]
 
-    class MappingProposalSet(BaseModel):
+    class MappingProposalSet(_Base):
         proposals: list[MappingProposal]
+        summary: dict[str, Any] = Field(default_factory=dict)
+        hash: str | None = None
 
     PYDANTIC_AVAILABLE = True
 
@@ -45,6 +53,8 @@ except Exception:
         confidence: float
         evidence: dict[str, Any]
         status: str
+        flags: list[str] = field(default_factory=list)
+        label: str | None = None
 
         def model_dump(self) -> dict[str, Any]:
             return {
@@ -54,6 +64,8 @@ except Exception:
                 "confidence": self.confidence,
                 "evidence": self.evidence,
                 "status": self.status,
+                "flags": self.flags,
+                "label": self.label,
             }
 
     @dataclass
@@ -61,6 +73,7 @@ except Exception:
         run_id: str
         source: dict[str, str]
         domain: dict[str, Any]
+        table_model: dict[str, Any] = field(default_factory=dict)
         candidates: list[MappingCandidate] = field(default_factory=list)
 
         def model_dump(self) -> dict[str, Any]:
@@ -68,15 +81,22 @@ except Exception:
                 "run_id": self.run_id,
                 "source": self.source,
                 "domain": self.domain,
+                "table_model": self.table_model,
                 "candidates": [c.model_dump() for c in self.candidates],
             }
 
     @dataclass
     class MappingProposalSet:
         proposals: list[MappingProposal] = field(default_factory=list)
+        summary: dict[str, Any] = field(default_factory=dict)
+        hash: str | None = None
 
         def model_dump(self) -> dict[str, Any]:
-            return {"proposals": [p.model_dump() for p in self.proposals]}
+            return {
+                "proposals": [p.model_dump() for p in self.proposals],
+                "summary": self.summary,
+                "hash": self.hash,
+            }
 
     PYDANTIC_AVAILABLE = False
 

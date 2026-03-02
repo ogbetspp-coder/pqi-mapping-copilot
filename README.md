@@ -5,6 +5,7 @@ A consultant-facing mapping workbench that ingests raw pharma extracts (CSV/JSON
 Scope of this MVP wedge:
 - Domain A: Batch/Lot Information
 - Domain B: Batch Analysis
+- Domain triage: Out-of-scope (wedge) for low-signal/administrative tables
 - Output focus: profiling, explainable mapping candidates, governance approval, and deterministic artifacts
 - Out of scope: regulator submission formatting
 
@@ -13,10 +14,12 @@ Scope of this MVP wedge:
 - Constrained target model: curated domain target spaces + PQI catalog + base FHIR fallback only
 - No hallucinated semantics: every candidate has evidence + confidence
 - Uncertain mappings are marked `REQUIRES_REVIEW` with confidence `< 0.6`
+- Out-of-scope non-anchor fields are explicitly emitted as out-of-scope instead of noisy candidate lists
 - Governance lifecycle: `PROPOSED -> REVIEWED -> APPROVED -> DEPRECATED`
 - Approved mapping versions are immutable
 - Deterministic runs: same inputs + same approved mapping version + same terminology version => same outputs
 - Confidence labels: `AUTO_APPROVE_CANDIDATE`, `GOOD_CANDIDATE`, `REQUIRES_SME`
+- Mapping artifacts preserve candidate `flags`, `label`, `table_model`, `summary`, and `hash` through schema validation
 
 ## Repository Layout
 - `pqi_copilot/`

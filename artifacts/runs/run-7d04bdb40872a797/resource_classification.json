@@ -46,12 +46,11 @@
       "table": "lims_results"
     },
     {
-      "domain_primary": "batch_lot_information",
+      "domain_primary": "out_of_scope",
       "primary_resource": "Medication",
       "rationale": {
         "DiagnosticReport": [],
         "Medication": [
-          "domain-boost:batch_lot_information(+0.90)",
           "column:batch_id:keyword:batch(+1.30)",
           "cooccurrence:batch_id_without_test(+0.40)"
         ],
@@ -68,12 +67,11 @@
       "table": "mes_steps"
     },
     {
-      "domain_primary": "batch_lot_information",
+      "domain_primary": "out_of_scope",
       "primary_resource": "Medication",
       "rationale": {
         "DiagnosticReport": [],
         "Medication": [
-          "domain-boost:batch_lot_information(+0.90)",
           "column:batch_id:keyword:batch(+1.30)",
           "cooccurrence:batch_id_without_test(+0.40)"
         ],

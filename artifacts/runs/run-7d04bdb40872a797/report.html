@@ -3,6 +3,13 @@
 </head><body>
 <h1>PQI Mapping Copilot Report - run-7d04bdb40872a797</h1>
 <br/>
+<h2>Workshop Summary</h2>
+<br/>
+<p>&bull; Auto-approve candidates: 4</p>
+<p>&bull; Good candidates: 4</p>
+<p>&bull; SME decisions required: 11</p>
+<p>&bull; Out-of-scope fields: 6</p>
+<br/>
 <h2>Dataset Overview</h2>
 <br/>
 <table>
@@ -16,41 +23,42 @@
 <br/>
 <table>
 <tr><th>Table</th><th>Primary Domain</th><th>Scores</th><th>Rationale (top)</th></tr>
-<tr><th>lims_results</th><th>batch_analysis</th><th>batch_analysis=0.91, batch_lot_information=0.09</th><th>batch_analysis:table-keyword:result(+0.90); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
-<tr><th>mes_steps</th><th>batch_lot_information</th><th>batch_analysis=0.33, batch_lot_information=0.67</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
-<tr><th>qms_deviations</th><th>batch_lot_information</th><th>batch_analysis=0.33, batch_lot_information=0.67</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
-<tr><th>sap_batch</th><th>batch_lot_information</th><th>batch_analysis=0.13, batch_lot_information=0.87</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:table-keyword:batch(+0.90)</th></tr>
+<tr><th>lims_results</th><th>batch_analysis</th><th>batch_analysis=0.91, batch_lot_information=0.09, out_of_scope=0.09</th><th>batch_analysis:table-keyword:result(+0.90); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
+<tr><th>mes_steps</th><th>out_of_scope</th><th>batch_analysis=0.33, batch_lot_information=0.67, out_of_scope=0.65</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
+<tr><th>qms_deviations</th><th>out_of_scope</th><th>batch_analysis=0.33, batch_lot_information=0.67, out_of_scope=0.65</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
+<tr><th>sap_batch</th><th>batch_lot_information</th><th>batch_analysis=0.13, batch_lot_information=0.87, out_of_scope=0.13</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:table-keyword:batch(+0.90)</th></tr>
 </table>
 <h2>Table-to-Resource Model</h2>
 <br/>
 <table>
 <tr><th>Table</th><th>Primary Resource</th><th>Resource Scores</th><th>Rationale (top)</th></tr>
 <tr><th>lims_results</th><th>Observation</th><th>DiagnosticReport=0.06, Medication=0.08, Observation=0.85, Specimen=0.02</th><th>DiagnosticReport:domain-boost:batch_analysis(+0.40); Medication:column:batch_id:keyword:batch(+1.30)</th></tr>
-<tr><th>mes_steps</th><th>Medication</th><th>DiagnosticReport=0.00, Medication=1.00, Observation=0.00, Specimen=0.00</th><th>Medication:domain-boost:batch_lot_information(+0.90)</th></tr>
-<tr><th>qms_deviations</th><th>Medication</th><th>DiagnosticReport=0.00, Medication=1.00, Observation=0.00, Specimen=0.00</th><th>Medication:domain-boost:batch_lot_information(+0.90)</th></tr>
+<tr><th>mes_steps</th><th>Medication</th><th>DiagnosticReport=0.00, Medication=1.00, Observation=0.00, Specimen=0.00</th><th>Medication:column:batch_id:keyword:batch(+1.30)</th></tr>
+<tr><th>qms_deviations</th><th>Medication</th><th>DiagnosticReport=0.00, Medication=1.00, Observation=0.00, Specimen=0.00</th><th>Medication:column:batch_id:keyword:batch(+1.30)</th></tr>
 <tr><th>sap_batch</th><th>Medication</th><th>DiagnosticReport=0.00, Medication=1.00, Observation=0.00, Specimen=0.00</th><th>Medication:table-keyword:batch(+0.98)</th></tr>
+</table>
+<h2>Out-of-Scope Tables</h2>
+<br/>
+<table>
+<tr><th>Table</th><th>Reason (top)</th></tr>
+<tr><th>mes_steps</th><th>admin_signal_ratio=0.60 and no analysis keywords</th></tr>
+<tr><th>qms_deviations</th><th>admin_signal_ratio=0.80 and no analysis keywords</th></tr>
 </table>
 <h2>Decisions Required From SMEs</h2>
 <br/>
 <table>
 <tr><th>Decision</th><th>Source</th><th>Why</th><th>Top Option</th><th>Question</th></tr>
 <tr><th>D-001</th><th>lims_results.analysis_time</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Observation.effectiveDateTime (0.56)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-002</th><th>lims_results.batch_id</th><th>Field appears to be batch identifier; participates in 3 candidate joins across tables.</th><th>Observation.subject.reference (0.49)</th><th>Is this the regulatory lot number or an internal batch surrogate?</th></tr>
+<tr><th>D-002</th><th>lims_results.batch_id</th><th>Field is a likely batch/lot join key; appears in 3 cross-table join proposals.</th><th>Observation.subject.reference (0.49)</th><th>Is this the regulatory lot number or an internal batch surrogate?</th></tr>
 <tr><th>D-003</th><th>lims_results.method</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Observation.method.text (0.65)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
 <tr><th>D-004</th><th>lims_results.spec_limit_high</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Observation.referenceRange.high.value (0.55)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
 <tr><th>D-005</th><th>lims_results.spec_limit_low</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Observation.referenceRange.low.value (0.55)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-006</th><th>mes_steps.duration_hr</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.code.text (0.27)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-007</th><th>mes_steps.equipment_id</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.code.text (0.47)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-008</th><th>mes_steps.step_name</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.code.text (0.39)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-009</th><th>qms_deviations.category</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.batch.lotNumber (0.37)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-010</th><th>qms_deviations.deviation_id</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.code.text (0.53)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-011</th><th>qms_deviations.status</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.code.text (0.37)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-012</th><th>sap_batch.batch_quantity</th><th>Field appears to be batch identifier; participates in 3 candidate joins across tables.</th><th>Medication.batch.lotNumber (0.35)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-013</th><th>sap_batch.batch_uom</th><th>Field appears to be batch identifier; participates in 3 candidate joins across tables.</th><th>UNKNOWN (0.30)</th><th>Should this be represented as UCUM-compatible Observation.valueQuantity.unit?</th></tr>
-<tr><th>D-014</th><th>sap_batch.manufacturing_date</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.batch.expirationDate (0.53)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-015</th><th>sap_batch.material_id</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.code.text (0.47)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-016</th><th>sap_batch.packaging_date</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.batch.expirationDate (0.51)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
-<tr><th>D-017</th><th>sap_batch.release_date</th><th>Field has multiple plausible targets requiring SME choice for regulatory intent.</th><th>Medication.batch.expirationDate (0.52)</th><th>Which target path best matches regulatory intent for this field?</th></tr>
+<tr><th>D-006</th><th>sap_batch.batch_quantity</th><th>Field appears to represent quantitative batch context that should be bound to explicit units.</th><th>Medication.batch.extension (0.51)</th><th>Should this quantity be represented in a PQI batch extension with explicit UOM linkage?</th></tr>
+<tr><th>D-007</th><th>sap_batch.batch_uom</th><th>Field appears to represent unit-of-measure semantics that need controlled coding/UOM treatment.</th><th>UNKNOWN (0.30)</th><th>Should this be represented as UCUM-compatible Observation.valueQuantity.unit?</th></tr>
+<tr><th>D-008</th><th>sap_batch.manufacturing_date</th><th>Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics.</th><th>Medication.batch.extension (0.53)</th><th>Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it?</th></tr>
+<tr><th>D-009</th><th>sap_batch.material_id</th><th>Field appears to be a material/product identifier requiring business meaning confirmation.</th><th>Medication.code.coding.code (0.63)</th><th>Is this a product code, material master code, or an internal identifier?</th></tr>
+<tr><th>D-010</th><th>sap_batch.packaging_date</th><th>Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics.</th><th>Medication.batch.extension (0.51)</th><th>Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it?</th></tr>
+<tr><th>D-011</th><th>sap_batch.release_date</th><th>Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics.</th><th>Medication.batch.extension (0.50)</th><th>Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it?</th></tr>
 </table>
 <h2>Top Mapping Candidates</h2>
 <br/>
@@ -66,21 +74,21 @@
 <tr><th>lims_results.test_code</th><th>batch_analysis</th><th>Observation</th><th>Observation::Observation.code.coding.code</th><th>0.87</th><th>AUTO_APPROVE_CANDIDATE</th><th>PROPOSED</th><th>token_overlap=[&#x27;analysis&#x27;, &#x27;assay&#x27;, &#x27;code&#x27;, &#x27;method&#x27;, &#x27;test&#x27;]; string compatible; boost:Observation.code.coding.code(+0.25)</th></tr>
 <tr><th>lims_results.test_name</th><th>batch_analysis</th><th>Observation</th><th>Observation::Observation.code.coding.code</th><th>0.76</th><th>GOOD_CANDIDATE</th><th>PROPOSED</th><th>token_overlap=[&#x27;analysis&#x27;, &#x27;assay&#x27;, &#x27;method&#x27;, &#x27;test&#x27;]; string compatible; boost:Observation.code.coding.code(+0.25)</th></tr>
 <tr><th>mes_steps.batch_id</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.lotNumber</th><th>0.73</th><th>GOOD_CANDIDATE</th><th>PROPOSED</th><th>token_overlap=[&#x27;batch&#x27;, &#x27;batchid&#x27;, &#x27;lot&#x27;]; string compatible; boost:Medication.batch.lotNumber(+0.28)</th></tr>
-<tr><th>mes_steps.duration_hr</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.code.text</th><th>0.27</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; weak type fit</th></tr>
-<tr><th>mes_steps.equipment_id</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.code.text</th><th>0.47</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
-<tr><th>mes_steps.step_name</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.code.text</th><th>0.39</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>mes_steps.duration_hr</th><th>out_of_scope</th><th>Medication</th><th>OUT_OF_SCOPE</th><th>0.00</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>out_of_scope_non_anchor</th></tr>
+<tr><th>mes_steps.equipment_id</th><th>out_of_scope</th><th>Medication</th><th>OUT_OF_SCOPE</th><th>0.00</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>out_of_scope_non_anchor</th></tr>
+<tr><th>mes_steps.step_name</th><th>out_of_scope</th><th>Medication</th><th>OUT_OF_SCOPE</th><th>0.00</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>out_of_scope_non_anchor</th></tr>
 <tr><th>qms_deviations.batch_id</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.lotNumber</th><th>0.73</th><th>GOOD_CANDIDATE</th><th>PROPOSED</th><th>token_overlap=[&#x27;batch&#x27;, &#x27;batchid&#x27;, &#x27;lot&#x27;]; string compatible; boost:Medication.batch.lotNumber(+0.28)</th></tr>
-<tr><th>qms_deviations.category</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.lotNumber</th><th>0.37</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
-<tr><th>qms_deviations.deviation_id</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.code.text</th><th>0.53</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
-<tr><th>qms_deviations.status</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.code.text</th><th>0.37</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>qms_deviations.category</th><th>out_of_scope</th><th>Medication</th><th>OUT_OF_SCOPE</th><th>0.00</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>out_of_scope_non_anchor</th></tr>
+<tr><th>qms_deviations.deviation_id</th><th>out_of_scope</th><th>Medication</th><th>OUT_OF_SCOPE</th><th>0.00</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>out_of_scope_non_anchor</th></tr>
+<tr><th>qms_deviations.status</th><th>out_of_scope</th><th>Medication</th><th>OUT_OF_SCOPE</th><th>0.00</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>out_of_scope_non_anchor</th></tr>
 <tr><th>sap_batch.batch_id</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.lotNumber</th><th>0.73</th><th>GOOD_CANDIDATE</th><th>PROPOSED</th><th>token_overlap=[&#x27;batch&#x27;, &#x27;batchid&#x27;, &#x27;lot&#x27;]; string compatible; boost:Medication.batch.lotNumber(+0.28)</th></tr>
-<tr><th>sap_batch.batch_quantity</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.lotNumber</th><th>0.35</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;batch&#x27;, &#x27;batchid&#x27;, &#x27;lot&#x27;]; weak type fit</th></tr>
+<tr><th>sap_batch.batch_quantity</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.extension</th><th>0.51</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;batch&#x27;, &#x27;batchid&#x27;, &#x27;lot&#x27;]; weak type fit; boost:Medication.batch.extension(+0.24)</th></tr>
 <tr><th>sap_batch.batch_uom</th><th>batch_lot_information</th><th>Medication</th><th>UNKNOWN::UNKNOWN</th><th>0.30</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th></th></tr>
 <tr><th>sap_batch.lot_number</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.lotNumber</th><th>0.89</th><th>AUTO_APPROVE_CANDIDATE</th><th>PROPOSED</th><th>token_overlap=[&#x27;batch&#x27;, &#x27;batchid&#x27;, &#x27;lot&#x27;, &#x27;number&#x27;]; string compatible; boost:Medication.batch.lotNumber(+0.28)</th></tr>
-<tr><th>sap_batch.manufacturing_date</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.expirationDate</th><th>0.53</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;date&#x27;]; date/datetime compatible</th></tr>
-<tr><th>sap_batch.material_id</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.code.text</th><th>0.47</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
-<tr><th>sap_batch.packaging_date</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.expirationDate</th><th>0.51</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;date&#x27;]; date/datetime compatible</th></tr>
-<tr><th>sap_batch.release_date</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.expirationDate</th><th>0.52</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;date&#x27;]; date/datetime compatible</th></tr>
+<tr><th>sap_batch.manufacturing_date</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.extension</th><th>0.53</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;manufacturing&#x27;]; weak type fit; boost:Medication.batch.extension(+0.28)</th></tr>
+<tr><th>sap_batch.material_id</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.code.coding.code</th><th>0.63</th><th>REQUIRES_SME</th><th>PROPOSED</th><th>token_overlap=[]; string compatible; boost:Medication.code.coding.code(+0.18)</th></tr>
+<tr><th>sap_batch.packaging_date</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.extension</th><th>0.51</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;packaging&#x27;]; weak type fit; boost:Medication.batch.extension(+0.28)</th></tr>
+<tr><th>sap_batch.release_date</th><th>batch_lot_information</th><th>Medication</th><th>Medication::Medication.batch.extension</th><th>0.50</th><th>REQUIRES_SME</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;release&#x27;]; weak type fit; boost:Medication.batch.extension(+0.28)</th></tr>
 </table>
 <h2>Relationship Suggestions</h2>
 <br/>
@@ -100,12 +108,6 @@
 <p>&bull; lims_results.method</p>
 <p>&bull; lims_results.spec_limit_high</p>
 <p>&bull; lims_results.spec_limit_low</p>
-<p>&bull; mes_steps.duration_hr</p>
-<p>&bull; mes_steps.equipment_id</p>
-<p>&bull; mes_steps.step_name</p>
-<p>&bull; qms_deviations.category</p>
-<p>&bull; qms_deviations.deviation_id</p>
-<p>&bull; qms_deviations.status</p>
 <p>&bull; sap_batch.batch_quantity</p>
 <p>&bull; sap_batch.batch_uom</p>
 <p>&bull; sap_batch.manufacturing_date</p>

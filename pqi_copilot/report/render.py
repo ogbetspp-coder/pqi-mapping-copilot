@@ -39,6 +39,7 @@ def _top_candidates(proposals: dict[str, Any], k: int = 1) -> list[dict[str, Any
                 "source": p.get("source", {}),
                 "domain": p.get("domain", {}),
                 "table_model": p.get("table_model", {}),
+                "disposition": p.get("disposition", "IN_SCOPE"),
                 "candidates": candidates[:k],
             }
         )
@@ -55,8 +56,26 @@ def generate_markdown_report(run_id: str) -> str:
     decisions = read_json(base / "decisions.json")
 
     tops = _top_candidates(proposals, k=3)
+    top_labels: dict[str, int] = {}
+    out_of_scope_fields = 0
+    for item in tops:
+        if item.get("disposition") == "OUT_OF_SCOPE":
+            out_of_scope_fields += 1
+            continue
+        candidates = item.get("candidates", [])
+        if not candidates:
+            continue
+        label = str(candidates[0].get("label", "REQUIRES_SME"))
+        top_labels[label] = top_labels.get(label, 0) + 1
 
     lines = [f"# PQI Mapping Copilot Report - {run_id}", ""]
+    lines.append("## Workshop Summary")
+    lines.append("")
+    lines.append(f"- Auto-approve candidates: {top_labels.get('AUTO_APPROVE_CANDIDATE', 0)}")
+    lines.append(f"- Good candidates: {top_labels.get('GOOD_CANDIDATE', 0)}")
+    lines.append(f"- SME decisions required: {int(decisions.get('summary', {}).get('decision_count', 0))}")
+    lines.append(f"- Out-of-scope fields: {out_of_scope_fields}")
+    lines.append("")
     lines.append("## Dataset Overview")
     lines.append("")
     lines.append("| Table | Source File | Rows | Columns |")
@@ -99,6 +118,19 @@ def generate_markdown_report(run_id: str) -> str:
         )
 
     lines.append("")
+    lines.append("## Out-of-Scope Tables")
+    lines.append("")
+    lines.append("| Table | Reason (top) |")
+    lines.append("|---|---|")
+    out_tables = [t for t in classification.get("tables", []) if t.get("primary_domain") == "out_of_scope"]
+    if out_tables:
+        for table in out_tables:
+            reasons = table.get("rationale", {}).get("out_of_scope", [])
+            lines.append(f"| {table.get('table')} | {('; '.join(reasons[:2]) if reasons else 'n/a')} |")
+    else:
+        lines.append("| (none) | - |")
+
+    lines.append("")
     lines.append("## Decisions Required From SMEs")
     lines.append("")
     lines.append("| Decision | Source | Why | Top Option | Question |")
@@ -128,6 +160,13 @@ def generate_markdown_report(run_id: str) -> str:
         source_label = f"{source.get('table')}.{source.get('column')}"
         domain = item.get("domain", {}).get("primary")
         table_resource = item.get("table_model", {}).get("primary_resource")
+        disposition = str(item.get("disposition", "IN_SCOPE"))
+
+        if disposition == "OUT_OF_SCOPE":
+            lines.append(
+                f"| {source_label} | {domain} | {table_resource} | OUT_OF_SCOPE | 0.00 | REQUIRES_SME | REQUIRES_REVIEW | out_of_scope_non_anchor |"
+            )
+            continue
 
         if not item.get("candidates"):
             unresolved.append(source_label)

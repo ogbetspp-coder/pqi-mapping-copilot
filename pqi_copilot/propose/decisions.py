@@ -5,7 +5,7 @@ from __future__ import annotations
 from typing import Any
 
 from pqi_copilot.common import normalize_token
-from pqi_copilot.propose.hard_rules import candidate_question_hint
+from pqi_copilot.propose.hard_rules import candidate_question_hint, matched_anchor
 
 
 def _source_id(source: dict[str, Any]) -> str:
@@ -13,9 +13,12 @@ def _source_id(source: dict[str, Any]) -> str:
 
 
 def _decision_reason(source: dict[str, Any], proposal: dict[str, Any], relationships: dict[str, Any]) -> str:
-    source_id = _source_id(source)
     col = normalize_token(str(source.get("column", "")))
     table = str(source.get("table", ""))
+    inferred_type = str(
+        (proposal.get("candidates", [{}])[0].get("evidence", {}) or {}).get("inferred_type", "unknown")
+    ).lower()
+    anchor = matched_anchor(str(source.get("column", "")), {"inferred_type": inferred_type})
 
     rel_hits = []
     for rel in relationships.get("relationship_proposals", []):
@@ -23,14 +26,26 @@ def _decision_reason(source: dict[str, Any], proposal: dict[str, Any], relations
         if table in join:
             rel_hits.append(join)
 
-    if "batch" in col or "lot" in col:
+    if anchor == "batch_lot_id":
         return (
-            f"Field appears to be batch identifier; participates in {len(rel_hits)} candidate joins across tables."
+            f"Field is a likely batch/lot join key; appears in {len(rel_hits)} cross-table join proposals."
         )
-    if "test" in col or "assay" in col or "code" in col:
+    if anchor == "test_code":
         return "Field appears code-like and likely identifies analytical test semantics."
-    if "result" in col or "value" in col:
+    if anchor == "result_value_numeric":
         return "Field appears to carry analytical result payload that may require units and limits context."
+    if anchor == "result_unit":
+        return "Field appears to represent unit-of-measure semantics that need controlled coding/UOM treatment."
+    if anchor == "process_event_date":
+        return "Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics."
+    if anchor == "expiration_date":
+        return "Field appears to represent expiration/retest timing requiring regulatory confirmation."
+    if anchor == "quantity_value":
+        return "Field appears to represent quantitative batch context that should be bound to explicit units."
+    if anchor == "material_id":
+        return "Field appears to be a material/product identifier requiring business meaning confirmation."
+    if "batch" in col or "lot" in col:
+        return f"Field contains batch/lot semantics but lacks strong anchor confidence; appears in {len(rel_hits)} joins."
     return "Field has multiple plausible targets requiring SME choice for regulatory intent."
 
 
@@ -43,6 +58,9 @@ def build_decisions(
     decision_counter = 1
 
     for proposal in mapping_proposals.get("proposals", []):
+        if proposal.get("disposition") == "OUT_OF_SCOPE":
+            continue
+
         source = proposal.get("source", {})
         source_id = _source_id(source)
         candidates = sorted(

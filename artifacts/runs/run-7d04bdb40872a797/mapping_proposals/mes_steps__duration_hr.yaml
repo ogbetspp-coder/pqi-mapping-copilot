@@ -1,93 +1,20 @@
 candidates:
   -
-    confidence: 0.269149
+    confidence: 0.3
     evidence:
       component_scores:
-        binding_fit: 0.5
-        datatype_fit: 0.2
-        name_similarity: 0.340426
-        value_pattern_fit: 0.0
-      inferred_type: number
+
+      reason: Table classified out_of_scope and column has no wedge anchor
       rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - weak type fit
-        hard_rules:
-
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.340426
-        value_pattern:
-
-      samples:
-        - 2.4
-        - 2.5
-      top_values:
-        -
-          count: 1
-          value: 2.4
-        -
-          count: 1
-          value: 2.5
-      units:
 
     flags:
-      - no_token_overlap_and_weak_datatype_cap_0_55
+      - out_of_scope_non_anchor
     label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: Medication.code.text
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
-      resourceType: Medication
-    terminology:
-      bindingValueSetUrl: null
-      conceptMapSuggested: null
-    transform:
-      name: normalize_codeable_concept
-      params:
-        system_required: true
-  -
-    confidence: 0.241803
-    evidence:
-      component_scores:
-        binding_fit: 0.5
-        datatype_fit: 0.2
-        name_similarity: 0.262295
-        value_pattern_fit: 0.0
-      inferred_type: number
-      rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - weak type fit
-        hard_rules:
-
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.262295
-        value_pattern:
-
-      samples:
-        - 2.4
-        - 2.5
-      top_values:
-        -
-          count: 1
-          value: 2.4
-        -
-          count: 1
-          value: 2.5
-      units:
-
-    flags:
-      - no_token_overlap_and_weak_datatype_cap_0_55
-    label: REQUIRES_SME
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: Medication.batch.lotNumber
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
-      resourceType: Medication
+      elementPath: UNKNOWN
+      profileUrl: UNKNOWN
+      resourceType: UNKNOWN
     terminology:
       bindingValueSetUrl: null
       conceptMapSuggested: null
@@ -95,59 +22,13 @@ candidates:
       name: identity
       params:
 
-  -
-    confidence: 0.22875
-    evidence:
-      component_scores:
-        binding_fit: 0.5
-        datatype_fit: 0.2
-        name_similarity: 0.225
-        value_pattern_fit: 0.0
-      inferred_type: number
-      rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - weak type fit
-        hard_rules:
-
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.225
-        value_pattern:
-
-      samples:
-        - 2.4
-        - 2.5
-      top_values:
-        -
-          count: 1
-          value: 2.4
-        -
-          count: 1
-          value: 2.5
-      units:
-
-    flags:
-      - no_token_overlap_and_weak_datatype_cap_0_55
-    label: REQUIRES_SME
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: Medication.identifier.value
-      profileUrl: BASE_FHIR_R5
-      resourceType: Medication
-    terminology:
-      bindingValueSetUrl: null
-      conceptMapSuggested: null
-    transform:
-      name: identity
-      params:
-
+disposition: OUT_OF_SCOPE
 domain:
-  primary: batch_lot_information
+  primary: out_of_scope
   scores:
     batch_analysis: 0.333333
     batch_lot_information: 0.666667
+    out_of_scope: 0.65
 run_id: run-7d04bdb40872a797
 source:
   column: duration_hr

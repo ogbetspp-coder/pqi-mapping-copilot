@@ -97,11 +97,13 @@ candidates:
       name: trim_string
       params:
 
+disposition: ANCHOR_MAPPED_FROM_OUT_OF_SCOPE
 domain:
   primary: batch_lot_information
   scores:
     batch_analysis: 0.333333
     batch_lot_information: 0.666667
+    out_of_scope: 0.65
 run_id: run-7d04bdb40872a797
 source:
   column: batch_id

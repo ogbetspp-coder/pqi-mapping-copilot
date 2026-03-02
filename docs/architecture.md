@@ -4,6 +4,7 @@
 Accelerate consultant mapping workshops for PQI Step I-III exchange by producing explainable, governed mapping proposals for two wedge domains:
 - Batch/Lot Information
 - Batch Analysis
+- Plus explicit `out_of_scope` triage for low-signal administrative tables/columns
 
 ## Core Principles
 - Semantic contract: HL7 FHIR R5 + PQI (`hl7.fhir.uv.pharm-quality#1.0.0`).
@@ -28,6 +29,7 @@ Accelerate consultant mapping workshops for PQI Step I-III exchange by producing
 5. Propose mappings (`pqi_copilot.propose.mapping`)
 - Constrained candidate universe using curated target spaces (`pqi_copilot.propose.target_spaces`).
 - Hard anchor rules (`pqi_copilot.propose.hard_rules`) enforce consultant-safe behavior.
+- Out-of-scope non-anchor fields are emitted explicitly as out-of-scope (not noisy mappings).
 - Confidence calibration labels:
   - `AUTO_APPROVE_CANDIDATE`
   - `GOOD_CANDIDATE`

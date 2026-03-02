@@ -13,8 +13,15 @@ def test_mapping_proposal_schema_validation() -> None:
     validated = validate_mapping_proposal_payload(payload)
 
     assert "proposals" in validated
+    assert "summary" in validated
+    assert "hash" in validated
     assert len(validated["proposals"]) > 0
     for proposal in validated["proposals"]:
         assert "source" in proposal
         assert "candidates" in proposal
+        assert "table_model" in proposal
         assert isinstance(proposal["candidates"], list)
+        if proposal["candidates"]:
+            candidate = proposal["candidates"][0]
+            assert "label" in candidate
+            assert "flags" in candidate

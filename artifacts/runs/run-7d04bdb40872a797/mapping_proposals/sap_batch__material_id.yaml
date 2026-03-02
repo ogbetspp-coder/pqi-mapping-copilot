@@ -1,11 +1,11 @@
 candidates:
   -
-    confidence: 0.469362
+    confidence: 0.627123
     evidence:
       component_scores:
         binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.255319
+        name_similarity: 0.191781
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
@@ -14,10 +14,11 @@ candidates:
         datatype:
           - string compatible
         hard_rules:
-
+          - "boost:Medication.code.coding.code(+0.18)"
+          - "anchor_applied:material_id"
         name:
           - "token_overlap=[]"
-          - text_similarity=0.255319
+          - text_similarity=0.191781
         value_pattern:
           - code_like_values->coded_target
       samples:
@@ -31,10 +32,10 @@ candidates:
     flags:
 
     label: REQUIRES_SME
-    status: REQUIRES_REVIEW
+    status: PROPOSED
     target:
-      elementPath: Medication.code.text
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      elementPath: Medication.code.coding.code
+      profileUrl: BASE_FHIR_R5
       resourceType: Medication
     terminology:
       bindingValueSetUrl: null
@@ -44,7 +45,7 @@ candidates:
       params:
         system_required: true
   -
-    confidence: 0.4475
+    confidence: 0.5675
     evidence:
       component_scores:
         binding_fit: 0.4
@@ -58,7 +59,8 @@ candidates:
         datatype:
           - string compatible
         hard_rules:
-
+          - "boost:Medication.identifier.value(+0.12)"
+          - "anchor_applied:material_id"
         name:
           - "token_overlap=[]"
           - text_similarity=0.25
@@ -88,12 +90,12 @@ candidates:
       params:
 
   -
-    confidence: 0.447123
+    confidence: 0.469362
     evidence:
       component_scores:
         binding_fit: 0.4
         datatype_fit: 0.8
-        name_similarity: 0.191781
+        name_similarity: 0.255319
         value_pattern_fit: 0.5
       inferred_type: string
       rules_fired:
@@ -102,10 +104,10 @@ candidates:
         datatype:
           - string compatible
         hard_rules:
-
+          - "anchor_applied:material_id"
         name:
           - "token_overlap=[]"
-          - text_similarity=0.191781
+          - text_similarity=0.255319
         value_pattern:
           - code_like_values->coded_target
       samples:
@@ -121,8 +123,8 @@ candidates:
     label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: Medication.code.coding.code
-      profileUrl: BASE_FHIR_R5
+      elementPath: Medication.code.text
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
       resourceType: Medication
     terminology:
       bindingValueSetUrl: null
@@ -131,11 +133,13 @@ candidates:
       name: normalize_codeable_concept
       params:
         system_required: true
+disposition: IN_SCOPE
 domain:
   primary: batch_lot_information
   scores:
     batch_analysis: 0.134021
     batch_lot_information: 0.865979
+    out_of_scope: 0.134021
 run_id: run-7d04bdb40872a797
 source:
   column: material_id

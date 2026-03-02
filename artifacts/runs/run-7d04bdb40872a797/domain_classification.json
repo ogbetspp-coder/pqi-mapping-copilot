@@ -1,17 +1,20 @@
 {
   "domains": {
     "batch_analysis": "Batch Analysis",
-    "batch_lot_information": "Batch/Lot Information"
+    "batch_lot_information": "Batch/Lot Information",
+    "out_of_scope": "Out of Scope (Wedge)"
   },
   "summary": {
     "classified_tables": 4,
+    "out_of_scope": 2,
     "requires_review": 0
   },
   "tables": [
     {
       "domain_scores": {
         "batch_analysis": 0.910448,
-        "batch_lot_information": 0.089552
+        "batch_lot_information": 0.089552,
+        "out_of_scope": 0.089552
       },
       "primary_domain": "batch_analysis",
       "rationale": {
@@ -35,7 +38,8 @@
         ],
         "batch_lot_information": [
           "batch_id:keyword:batch(+1.2)"
-        ]
+        ],
+        "out_of_scope": []
       },
       "source_file": "data/examples/lims_results.csv",
       "table": "lims_results"
@@ -43,9 +47,10 @@
     {
       "domain_scores": {
         "batch_analysis": 0.333333,
-        "batch_lot_information": 0.666667
+        "batch_lot_information": 0.666667,
+        "out_of_scope": 0.65
       },
-      "primary_domain": "batch_lot_information",
+      "primary_domain": "out_of_scope",
       "rationale": {
         "batch_analysis": [
           "batch_id:value-pattern:test_code_like(+0.3)",
@@ -53,6 +58,9 @@
         ],
         "batch_lot_information": [
           "batch_id:keyword:batch(+1.2)"
+        ],
+        "out_of_scope": [
+          "admin_signal_ratio=0.60 and no analysis keywords"
         ]
       },
       "source_file": "data/examples/mes_steps.json",
@@ -61,9 +69,10 @@
     {
       "domain_scores": {
         "batch_analysis": 0.333333,
-        "batch_lot_information": 0.666667
+        "batch_lot_information": 0.666667,
+        "out_of_scope": 0.65
       },
-      "primary_domain": "batch_lot_information",
+      "primary_domain": "out_of_scope",
       "rationale": {
         "batch_analysis": [
           "batch_id:value-pattern:test_code_like(+0.3)",
@@ -71,6 +80,9 @@
         ],
         "batch_lot_information": [
           "batch_id:keyword:batch(+1.2)"
+        ],
+        "out_of_scope": [
+          "admin_signal_ratio=0.80 and no analysis keywords"
         ]
       },
       "source_file": "data/examples/qms_deviations.xml",
@@ -79,7 +91,8 @@
     {
       "domain_scores": {
         "batch_analysis": 0.134021,
-        "batch_lot_information": 0.865979
+        "batch_lot_information": 0.865979,
+        "out_of_scope": 0.134021
       },
       "primary_domain": "batch_lot_information",
       "rationale": {
@@ -100,7 +113,8 @@
           "material_id:keyword:material(+0.3)",
           "packaging_date:keyword:packaging(+0.5)",
           "release_date:keyword:release(+0.8)"
-        ]
+        ],
+        "out_of_scope": []
       },
       "source_file": "data/examples/sap_batch.csv",
       "table": "sap_batch"

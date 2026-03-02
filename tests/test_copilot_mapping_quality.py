@@ -40,3 +40,35 @@ def test_anchor_batch_columns_do_not_drift_to_noise_targets() -> None:
             continue
         for candidate in proposal.get("candidates", []):
             assert candidate.get("target", {}).get("elementPath") != "Observation.referenceRange.type"
+
+
+def test_batch_lifecycle_dates_and_quantities_require_extension_review() -> None:
+    result = propose_run(Path("data/examples"))
+    payload = json.loads((Path(result["run_dir"]) / "mapping_proposals.json").read_text(encoding="utf-8"))
+    idx = _proposal_index(payload)
+
+    for col in ("manufacturing_date", "packaging_date", "release_date"):
+        cand = idx[("sap_batch", col)]["candidates"][0]
+        assert cand["target"]["elementPath"] == "Medication.batch.extension"
+        assert cand["status"] == "REQUIRES_REVIEW"
+
+    qty = idx[("sap_batch", "batch_quantity")]["candidates"][0]
+    assert qty["target"]["elementPath"] == "Medication.batch.extension"
+    assert "date" not in qty["target"]["elementPath"].lower()
+
+
+def test_out_of_scope_tables_emit_out_of_scope_non_anchor() -> None:
+    result = propose_run(Path("data/examples"))
+    payload = json.loads((Path(result["run_dir"]) / "mapping_proposals.json").read_text(encoding="utf-8"))
+
+    target = None
+    for proposal in payload.get("proposals", []):
+        src = proposal.get("source", {})
+        if src.get("table") == "qms_deviations" and src.get("column") == "status":
+            target = proposal
+            break
+
+    assert target is not None
+    assert target.get("disposition") == "OUT_OF_SCOPE"
+    top = target["candidates"][0]
+    assert "out_of_scope_non_anchor" in top.get("flags", [])

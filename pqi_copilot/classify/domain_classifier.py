@@ -9,6 +9,7 @@ from pqi_copilot.common import normalize_token
 DOMAINS = {
     "batch_lot_information": "Batch/Lot Information",
     "batch_analysis": "Batch Analysis",
+    "out_of_scope": "Out of Scope (Wedge)",
 }
 
 DOMAIN_SIGNALS = {
@@ -48,6 +49,41 @@ DOMAIN_SIGNALS = {
     },
 }
 
+ADMIN_KEYWORDS = {
+    "deviation",
+    "status",
+    "category",
+    "workflow",
+    "owner",
+    "equipment",
+    "step",
+    "action",
+}
+
+ANALYSIS_KEYWORDS = {"test", "result", "assay", "analysis", "spec", "limit"}
+
+
+def _looks_out_of_scope(table_name: str, columns: list[str]) -> tuple[bool, list[str]]:
+    table_token = normalize_token(table_name)
+    column_tokens = [normalize_token(c) for c in columns]
+    all_tokens = [table_token, *column_tokens]
+
+    admin_hits = 0
+    analysis_hits = 0
+    rationale: list[str] = []
+
+    for token in all_tokens:
+        if any(k in token for k in ADMIN_KEYWORDS):
+            admin_hits += 1
+        if any(k in token for k in ANALYSIS_KEYWORDS):
+            analysis_hits += 1
+
+    ratio = admin_hits / max(1, len(all_tokens))
+    if ratio >= 0.35 and analysis_hits == 0:
+        rationale.append(f"admin_signal_ratio={ratio:.2f} and no analysis keywords")
+        return True, rationale
+    return False, rationale
+
 
 def _column_score(column_name: str, column_profile: dict[str, Any], domain: str) -> tuple[float, list[str]]:
     score = 0.0
@@ -80,20 +116,22 @@ def _column_score(column_name: str, column_profile: dict[str, Any], domain: str)
 
 def classify_domains(profile: dict[str, Any]) -> dict[str, Any]:
     tables_out: list[dict[str, Any]] = []
+    wedge_domains = [d for d in DOMAINS.keys() if d != "out_of_scope"]
 
     for table in profile.get("tables", []):
-        by_domain: dict[str, float] = {d: 0.0 for d in DOMAINS.keys()}
+        by_domain: dict[str, float] = {d: 0.0 for d in wedge_domains}
         rationale: dict[str, list[str]] = {d: [] for d in DOMAINS.keys()}
 
         table_name = normalize_token(str(table.get("table", "")))
-        for domain in DOMAINS.keys():
+        for domain in wedge_domains:
             for keyword, weight in DOMAIN_SIGNALS[domain]["keywords"].items():
                 if keyword in table_name:
                     by_domain[domain] += weight * 0.75
                     rationale[domain].append(f"table-keyword:{keyword}(+{weight * 0.75:.2f})")
 
+        columns = sorted(table.get("columns", {}).keys())
         for column_name, stats in sorted(table.get("columns", {}).items()):
-            for domain in DOMAINS.keys():
+            for domain in wedge_domains:
                 col_score, col_reason = _column_score(column_name, stats, domain)
                 by_domain[domain] += col_score
                 for reason in col_reason:
@@ -101,12 +139,32 @@ def classify_domains(profile: dict[str, Any]) -> dict[str, Any]:
 
         total = sum(max(v, 0.0) for v in by_domain.values())
         if total <= 0:
-            domain_scores = {d: 0.0 for d in DOMAINS.keys()}
-            primary = "REQUIRES_REVIEW"
+            domain_scores = {d: 0.0 for d in wedge_domains}
+            domain_scores["out_of_scope"] = 1.0
+            primary = "out_of_scope"
+            rationale["out_of_scope"].append("no_domain_signals_detected")
         else:
             domain_scores = {d: round(max(v, 0.0) / total, 6) for d, v in by_domain.items()}
             ranked = sorted(domain_scores.items(), key=lambda item: (-item[1], item[0]))
             primary = ranked[0][0]
+            top_score = float(ranked[0][1])
+            second_score = float(ranked[1][1]) if len(ranked) > 1 else 0.0
+            margin = top_score - second_score
+            out_of_scope, oo_rationale = _looks_out_of_scope(str(table.get("table", "")), columns)
+            rationale["out_of_scope"].extend(oo_rationale)
+
+            if top_score < 0.55:
+                out_of_scope = True
+                rationale["out_of_scope"].append(f"top_score_below_threshold({top_score:.2f}<0.55)")
+            if margin < 0.15:
+                out_of_scope = True
+                rationale["out_of_scope"].append(f"domain_margin_low({margin:.2f}<0.15)")
+
+            if out_of_scope:
+                primary = "out_of_scope"
+                domain_scores["out_of_scope"] = round(max(0.65, 1.0 - top_score), 6)
+            else:
+                domain_scores["out_of_scope"] = round(max(0.0, 1.0 - top_score), 6)
 
         tables_out.append(
             {
@@ -126,5 +184,6 @@ def classify_domains(profile: dict[str, Any]) -> dict[str, Any]:
         "summary": {
             "classified_tables": len(tables_out),
             "requires_review": sum(1 for t in tables_out if t.get("primary_domain") == "REQUIRES_REVIEW"),
+            "out_of_scope": sum(1 for t in tables_out if t.get("primary_domain") == "out_of_scope"),
         },
     }

@@ -37,6 +37,11 @@
         "display": "LOT-77B"
       },
       {
+        "code": "mat_001",
+        "definition": "Derived from sap_batch.material_id",
+        "display": "MAT-001"
+      },
+      {
         "code": "water",
         "definition": "Derived from lims_results.test_code",
         "display": "WATER"
@@ -251,6 +256,16 @@
                 "equivalence": "relatedto"
               }
             ]
+          },
+          {
+            "code": "mat_001",
+            "target": [
+              {
+                "code": "REQUIRES_REVIEW",
+                "comment": "Candidate mapping to Medication.code.coding.code",
+                "equivalence": "relatedto"
+              }
+            ]
           }
         ],
         "source": "http://example.org/fhir/CodeSystem/local-cmc-run-7d04bdb40872a797",
@@ -382,10 +397,16 @@
       "source_code": "lot_77b",
       "target_path": "Medication.batch.lotNumber",
       "target_profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+    },
+    {
+      "binding_valueset": null,
+      "source_code": "mat_001",
+      "target_path": "Medication.code.coding.code",
+      "target_profile": "BASE_FHIR_R5"
     }
   ],
   "run_id": "run-7d04bdb40872a797",
-  "terminology_hash": "b6fb469c2598b1b8c14aa975ef5f570068c1aef8a19d4d880a6929ef91f7c83b",
+  "terminology_hash": "b9ac4f9df4a0ad5c560f7205f0124fb5ac59566d2791578d0eb8a41fcb0e3106",
   "valueSet": {
     "compose": {
       "include": [
@@ -418,6 +439,10 @@
             {
               "code": "lot_77b",
               "display": "LOT-77B"
+            },
+            {
+              "code": "mat_001",
+              "display": "MAT-001"
             },
             {
               "code": "water",

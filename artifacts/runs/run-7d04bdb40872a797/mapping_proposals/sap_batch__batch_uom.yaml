@@ -22,11 +22,13 @@ candidates:
       name: identity
       params:
 
+disposition: IN_SCOPE
 domain:
   primary: batch_lot_information
   scores:
     batch_analysis: 0.134021
     batch_lot_information: 0.865979
+    out_of_scope: 0.134021
 run_id: run-7d04bdb40872a797
 source:
   column: batch_uom

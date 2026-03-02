@@ -1,57 +1,6 @@
 candidates:
   -
-    confidence: 0.52913
-    evidence:
-      component_scores:
-        binding_fit: 0.5
-        datatype_fit: 1.0
-        name_similarity: 0.226087
-        value_pattern_fit: 0.5
-      inferred_type: date
-      rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - date/datetime compatible
-        hard_rules:
-
-        name:
-          - "token_overlap=['date']"
-          - text_similarity=0.226087
-        value_pattern:
-          - date_type->date_path
-      samples:
-        - 2026-01-04
-        - 2026-02-05
-      top_values:
-        -
-          count: 1
-          value: 2026-01-04
-        -
-          count: 1
-          value: 2026-02-05
-      units:
-
-    flags:
-
-    label: REQUIRES_SME
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: Medication.batch.expirationDate
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
-      resourceType: Medication
-    terminology:
-      bindingValueSetUrl: null
-      conceptMapSuggested: null
-    transform:
-      name: parse_date
-      params:
-        accepted_formats:
-          - YYYY-MM-DD
-          - YYYY-MM
-          - ISO-8601
-  -
-    confidence: 0.247541
+    confidence: 0.527541
     evidence:
       component_scores:
         binding_fit: 0.5
@@ -65,7 +14,8 @@ candidates:
         datatype:
           - weak type fit
         hard_rules:
-
+          - "boost:Medication.batch.extension(+0.28)"
+          - "anchor_applied:process_event_date"
         name:
           - "token_overlap=['manufacturing']"
           - text_similarity=0.278689
@@ -84,7 +34,7 @@ candidates:
       units:
 
     flags:
-
+      - hard_rule_confidence_cap_0.59
     label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
@@ -101,62 +51,13 @@ candidates:
           - YYYY-MM-DD
           - YYYY-MM
           - ISO-8601
-  -
-    confidence: 0.242647
-    evidence:
-      component_scores:
-        binding_fit: 0.5
-        datatype_fit: 0.2
-        name_similarity: 0.264706
-        value_pattern_fit: 0.0
-      inferred_type: date
-      rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - weak type fit
-        hard_rules:
-
-        name:
-          - "token_overlap=[]"
-          - text_similarity=0.264706
-        value_pattern:
-
-      samples:
-        - 2026-01-04
-        - 2026-02-05
-      top_values:
-        -
-          count: 1
-          value: 2026-01-04
-        -
-          count: 1
-          value: 2026-02-05
-      units:
-
-    flags:
-      - no_token_overlap_and_weak_datatype_cap_0_55
-    label: REQUIRES_SME
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: Medication.batch.lotNumber
-      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
-      resourceType: Medication
-    terminology:
-      bindingValueSetUrl: null
-      conceptMapSuggested: null
-    transform:
-      name: parse_date
-      params:
-        accepted_formats:
-          - YYYY-MM-DD
-          - YYYY-MM
-          - ISO-8601
+disposition: IN_SCOPE
 domain:
   primary: batch_lot_information
   scores:
     batch_analysis: 0.134021
     batch_lot_information: 0.865979
+    out_of_scope: 0.134021
 run_id: run-7d04bdb40872a797
 source:
   column: manufacturing_date

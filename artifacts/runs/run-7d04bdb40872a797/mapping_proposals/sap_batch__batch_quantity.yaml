@@ -1,11 +1,11 @@
 candidates:
   -
-    confidence: 0.352631
+    confidence: 0.513846
     evidence:
       component_scores:
         binding_fit: 0.5
         datatype_fit: 0.2
-        name_similarity: 0.578947
+        name_similarity: 0.353846
         value_pattern_fit: 0.0
       inferred_type: number
       rules_fired:
@@ -14,10 +14,11 @@ candidates:
         datatype:
           - weak type fit
         hard_rules:
-
+          - "boost:Medication.batch.extension(+0.24)"
+          - "anchor_applied:quantity_value"
         name:
           - "token_overlap=['batch', 'batchid', 'lot']"
-          - text_similarity=0.578947
+          - text_similarity=0.353846
         value_pattern:
 
       samples:
@@ -37,7 +38,7 @@ candidates:
     label: REQUIRES_SME
     status: REQUIRES_REVIEW
     target:
-      elementPath: Medication.batch.lotNumber
+      elementPath: Medication.batch.extension
       profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
       resourceType: Medication
     terminology:
@@ -47,107 +48,13 @@ candidates:
       name: identity
       params:
 
-  -
-    confidence: 0.325
-    evidence:
-      component_scores:
-        binding_fit: 0.5
-        datatype_fit: 0.2
-        name_similarity: 0.5
-        value_pattern_fit: 0.0
-      inferred_type: number
-      rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - weak type fit
-        hard_rules:
-
-        name:
-          - "token_overlap=['batch', 'batchid', 'lot']"
-          - text_similarity=0.5
-        value_pattern:
-
-      samples:
-        - 124500
-        - 125000
-      top_values:
-        -
-          count: 1
-          value: 124500
-        -
-          count: 1
-          value: 125000
-      units:
-
-    flags:
-
-    label: REQUIRES_SME
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: Medication.code.coding.code
-      profileUrl: BASE_FHIR_R5
-      resourceType: Medication
-    terminology:
-      bindingValueSetUrl: null
-      conceptMapSuggested: null
-    transform:
-      name: normalize_codeable_concept
-      params:
-        system_required: true
-  -
-    confidence: 0.312105
-    evidence:
-      component_scores:
-        binding_fit: 0.5
-        datatype_fit: 0.2
-        name_similarity: 0.463158
-        value_pattern_fit: 0.0
-      inferred_type: number
-      rules_fired:
-        binding:
-          - no binding
-        datatype:
-          - weak type fit
-        hard_rules:
-
-        name:
-          - "token_overlap=['batch', 'batchid', 'lot']"
-          - text_similarity=0.463158
-        value_pattern:
-
-      samples:
-        - 124500
-        - 125000
-      top_values:
-        -
-          count: 1
-          value: 124500
-        -
-          count: 1
-          value: 125000
-      units:
-
-    flags:
-
-    label: REQUIRES_SME
-    status: REQUIRES_REVIEW
-    target:
-      elementPath: Medication.identifier.value
-      profileUrl: BASE_FHIR_R5
-      resourceType: Medication
-    terminology:
-      bindingValueSetUrl: null
-      conceptMapSuggested: null
-    transform:
-      name: identity
-      params:
-
+disposition: IN_SCOPE
 domain:
   primary: batch_lot_information
   scores:
     batch_analysis: 0.134021
     batch_lot_information: 0.865979
+    out_of_scope: 0.134021
 run_id: run-7d04bdb40872a797
 source:
   column: batch_quantity

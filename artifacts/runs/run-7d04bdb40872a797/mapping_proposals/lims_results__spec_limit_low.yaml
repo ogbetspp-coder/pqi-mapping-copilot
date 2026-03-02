@@ -144,11 +144,13 @@ candidates:
       params:
         units_detected:
 
+disposition: IN_SCOPE
 domain:
   primary: batch_analysis
   scores:
     batch_analysis: 0.910448
     batch_lot_information: 0.089552
+    out_of_scope: 0.089552
 run_id: run-7d04bdb40872a797
 source:
   column: spec_limit_low

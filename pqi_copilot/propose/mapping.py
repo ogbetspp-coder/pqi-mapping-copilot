@@ -6,7 +6,7 @@ from typing import Any
 
 from pqi_copilot.common import normalize_token, similarity, split_identifier, stable_hash_obj
 from pqi_copilot.models import validate_mapping_proposal_payload
-from pqi_copilot.propose.hard_rules import apply_hard_rules
+from pqi_copilot.propose.hard_rules import anchor_domain, apply_hard_rules
 from pqi_copilot.propose.target_spaces import curated_targets_for_domain, is_denied_target_path
 
 TRANSFORM_WHITELIST = {
@@ -302,7 +302,7 @@ def _calibration_label(confidence: float, status: str, flags: list[str]) -> str:
     return "REQUIRES_SME"
 
 
-def _unknown_candidate(reason: str) -> dict[str, Any]:
+def _unknown_candidate(reason: str, flags: list[str] | None = None) -> dict[str, Any]:
     return {
         "target": {
             "profileUrl": "UNKNOWN",
@@ -320,7 +320,7 @@ def _unknown_candidate(reason: str) -> dict[str, Any]:
             "rules_fired": {},
             "component_scores": {},
         },
-        "flags": ["no_viable_candidate"],
+        "flags": flags or ["no_viable_candidate"],
         "label": "REQUIRES_SME",
         "status": "REQUIRES_REVIEW",
     }
@@ -353,9 +353,41 @@ def build_mapping_proposals(
         )
         primary_resource = str(resource_info.get("primary_resource", "REQUIRES_REVIEW"))
 
-        element_candidates = _element_candidates(catalog, primary_domain, primary_resource)
-
         for column, stats in sorted(table.get("columns", {}).items()):
+            effective_domain = primary_domain
+            if primary_domain == "out_of_scope":
+                inferred_domain = anchor_domain(column, stats)
+                if inferred_domain:
+                    effective_domain = inferred_domain
+                else:
+                    proposals.append(
+                        {
+                            "run_id": run_id,
+                            "source": {
+                                "file": str(table.get("source_file")),
+                                "table": table_name,
+                                "column": column,
+                            },
+                            "domain": {
+                                "primary": primary_domain,
+                                "scores": domain_info.get("scores", {}),
+                            },
+                            "table_model": {
+                                "primary_resource": primary_resource,
+                                "resource_scores": resource_info.get("scores", {}),
+                            },
+                            "disposition": "OUT_OF_SCOPE",
+                            "candidates": [
+                                _unknown_candidate(
+                                    reason="Table classified out_of_scope and column has no wedge anchor",
+                                    flags=["out_of_scope_non_anchor"],
+                                )
+                            ],
+                        }
+                    )
+                    continue
+
+            element_candidates = _element_candidates(catalog, effective_domain, primary_resource)
             scored_candidates = []
 
             for target in element_candidates:
@@ -392,7 +424,7 @@ def build_mapping_proposals(
                     6,
                 )
 
-                confidence, hard_notes, hard_banned, filtered_by_required = apply_hard_rules(
+                confidence, hard_notes, hard_banned, filtered_by_required, hard_cap = apply_hard_rules(
                     source_column=column,
                     stats=stats,
                     candidate={
@@ -418,6 +450,10 @@ def build_mapping_proposals(
                 if is_denied_target_path(target_path):
                     confidence = min(confidence, 0.30)
                     flags.append("structural_noise_cap_0_30")
+
+                if hard_cap is not None:
+                    confidence = min(confidence, hard_cap)
+                    flags.append(f"hard_rule_confidence_cap_{hard_cap}")
 
                 confidence = round(max(0.0, min(1.0, confidence)), 6)
                 status = "PROPOSED" if confidence >= 0.6 else "REQUIRES_REVIEW"
@@ -488,13 +524,14 @@ def build_mapping_proposals(
                     "column": column,
                 },
                 "domain": {
-                    "primary": primary_domain,
+                    "primary": effective_domain,
                     "scores": domain_info.get("scores", {}),
                 },
                 "table_model": {
                     "primary_resource": primary_resource,
                     "resource_scores": resource_info.get("scores", {}),
                 },
+                "disposition": "IN_SCOPE" if primary_domain != "out_of_scope" else "ANCHOR_MAPPED_FROM_OUT_OF_SCOPE",
                 "candidates": scored_candidates[:top_k],
             }
             proposals.append(proposal)
@@ -511,7 +548,10 @@ def build_mapping_proposals(
 
     labels = {}
     requires_review = 0
+    out_of_scope = 0
     for proposal in payload.get("proposals", []):
+        if proposal.get("disposition") == "OUT_OF_SCOPE":
+            out_of_scope += 1
         for candidate in proposal.get("candidates", []):
             label = candidate.get("label", "REQUIRES_SME")
             labels[label] = labels.get(label, 0) + 1
@@ -522,6 +562,7 @@ def build_mapping_proposals(
         "proposal_count": len(payload["proposals"]),
         "requires_review": requires_review,
         "label_counts": labels,
+        "out_of_scope": out_of_scope,
     }
     payload["hash"] = stable_hash_obj(payload)
     return payload
