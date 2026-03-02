@@ -1,0 +1,8 @@
+<specifications>
+  <spec>
+    <spec_id>SPEC-API-001</spec_id>
+    <material_id>MAT-1001</material_id>
+    <specification_type>assay</specification_type>
+    <acceptance_criteria>95.0-105.0</acceptance_criteria>
+  </spec>
+</specifications>

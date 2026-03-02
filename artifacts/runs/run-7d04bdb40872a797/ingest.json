@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "row_count": 9,
+    "table_count": 4,
+    "unsupported_count": 0
+  },
+  "tables": [
+    {
+      "format": "csv",
+      "hash": "1b620f1f2a81a808b71e4e12ddbb3e90b3f1770cf1a5768991642879be63996b",
+      "notes": "CSV loaded as tabular rows",
+      "row_count": 3,
+      "rows": [
+        {
+          "analysis_time": "2026-01-19T11:00:00Z",
+          "batch_id": "B-1001",
+          "method": "HPLC",
+          "result_unit": "%",
+          "result_value": "99.1",
+          "spec_limit_high": "105",
+          "spec_limit_low": "95",
+          "test_code": "ASSAY",
+          "test_name": "Assay"
+        },
+        {
+          "analysis_time": "2026-01-19T11:15:00Z",
+          "batch_id": "B-1001",
+          "method": "KF",
+          "result_unit": "%",
+          "result_value": "1.9",
+          "spec_limit_high": "3",
+          "spec_limit_low": "0",
+          "test_code": "WATER",
+          "test_name": "Water"
+        },
+        {
+          "analysis_time": "2026-02-20T10:20:00Z",
+          "batch_id": "B-1002",
+          "method": "HPLC",
+          "result_unit": "%",
+          "result_value": "98.7",
+          "spec_limit_high": "105",
+          "spec_limit_low": "95",
+          "test_code": "ASSAY",
+          "test_name": "Assay"
+        }
+      ],
+      "source_file": "data/examples/lims_results.csv",
+      "table": "lims_results"
+    },
+    {
+      "format": "json",
+      "hash": "b5cd3137cc9b930ebeb2ab018522ff8cff044338cb89bfa213801eab46c0acec",
+      "notes": "JSON list-of-objects ingested as one table",
+      "row_count": 2,
+      "rows": [
+        {
+          "batch_id": "B-1001",
+          "duration_hr": "2.5",
+          "equipment_id": "EQ-12",
+          "step_name": "Blend"
+        },
+        {
+          "batch_id": "B-1002",
+          "duration_hr": "2.4",
+          "equipment_id": "EQ-12",
+          "step_name": "Blend"
+        }
+      ],
+      "source_file": "data/examples/mes_steps.json",
+      "table": "mes_steps"
+    },
+    {
+      "format": "xml",
+      "guidance": "",
+      "hash": "d67a50fb9fae69e05d4281412f131c4fd7c691451738e86265d890ffabc6caf9",
+      "notes": "Repeated XML nodes 'deviation' extracted as rows",
+      "row_count": 2,
+      "rows": [
+        {
+          "batch_id": "B-1001",
+          "category": "process",
+          "deviation_id": "DEV-100",
+          "status": "closed"
+        },
+        {
+          "batch_id": "B-1002",
+          "category": "analytical",
+          "deviation_id": "DEV-101",
+          "status": "open"
+        }
+      ],
+      "source_file": "data/examples/qms_deviations.xml",
+      "table": "qms_deviations",
+      "unsupported": false
+    },
+    {
+      "format": "csv",
+      "hash": "f3523e96a289b899644035444966e8c5a6d4415b972a758e5d3936c4500e2ab9",
+      "notes": "CSV loaded as tabular rows",
+      "row_count": 2,
+      "rows": [
+        {
+          "batch_id": "B-1001",
+          "batch_quantity": "125000",
+          "batch_uom": "tablet",
+          "lot_number": "LOT-77A",
+          "manufacturing_date": "2026-01-04",
+          "material_id": "MAT-001",
+          "packaging_date": "2026-01-20",
+          "release_date": "2026-01-18"
+        },
+        {
+          "batch_id": "B-1002",
+          "batch_quantity": "124500",
+          "batch_uom": "tablet",
+          "lot_number": "LOT-77B",
+          "manufacturing_date": "2026-02-05",
+          "material_id": "MAT-001",
+          "packaging_date": "2026-02-21",
+          "release_date": "2026-02-19"
+        }
+      ],
+      "source_file": "data/examples/sap_batch.csv",
+      "table": "sap_batch"
+    }
+  ],
+  "unsupported": []
+}

@@ -1,0 +1,140 @@
+candidates:
+  -
+    confidence: 0.483333
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.238095
+        value_pattern_fit: 0.0
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.2381
+        value_pattern:
+
+      samples:
+        - closed
+        - open
+      top_values:
+        -
+          count: 1
+          value: closed
+        -
+          count: 1
+          value: open
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: DiagnosticReport.code
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+      resourceType: DiagnosticReport
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq"
+      conceptMapSuggested: null
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+  -
+    confidence: 0.476087
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.217391
+        value_pattern_fit: 0.0
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.2174
+        value_pattern:
+
+      samples:
+        - closed
+        - open
+      top_values:
+        -
+          count: 1
+          value: closed
+        -
+          count: 1
+          value: open
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Medication.code
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/medication-codes"
+      conceptMapSuggested: null
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+  -
+    confidence: 0.47
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.2
+        value_pattern_fit: 0.0
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.2
+        value_pattern:
+
+      samples:
+        - closed
+        - open
+      top_values:
+        -
+          count: 1
+          value: closed
+        -
+          count: 1
+          value: open
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Observation.code
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq"
+      conceptMapSuggested: null
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+domain:
+  primary: batch_lot_information
+  scores:
+    batch_analysis: 0.333333
+    batch_lot_information: 0.666667
+run_id: run-7d04bdb40872a797
+source:
+  column: status
+  file: data/examples/qms_deviations.xml
+  table: qms_deviations

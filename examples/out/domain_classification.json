@@ -1,0 +1,565 @@
+{
+  "summary": {
+    "classifiedTables": 5,
+    "reviewRequired": 1,
+    "unknown": 0
+  },
+  "tables": [
+    {
+      "columns": [
+        {
+          "column": "actual_yield",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        },
+        {
+          "column": "actual_yield_unit",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        },
+        {
+          "column": "batch_id",
+          "confidence": 0.833333,
+          "domains": [
+            "PQ5",
+            "PQ1"
+          ],
+          "evidence": [
+            "column='batch_id'",
+            "sampleValues=['BATCH-33445']"
+          ]
+        },
+        {
+          "column": "batch_quantity",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ5"
+          ],
+          "evidence": [
+            "column='batch_quantity'",
+            "sampleValues=['100100']"
+          ]
+        },
+        {
+          "column": "batch_quantity_unit",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ5"
+          ],
+          "evidence": [
+            "column='batch_quantity_unit'",
+            "sampleValues=['tablets']"
+          ]
+        },
+        {
+          "column": "manufacturer_name",
+          "confidence": 0.5,
+          "domains": [
+            "PQ4",
+            "PQ1"
+          ],
+          "evidence": [
+            "column='manufacturer_name'",
+            "sampleValues=['AAA Pharmaceutical Inc']"
+          ]
+        },
+        {
+          "column": "manufacturer_org_id",
+          "confidence": 0.5,
+          "domains": [
+            "PQ4",
+            "PQ1"
+          ],
+          "evidence": [
+            "column='manufacturer_org_id'",
+            "sampleValues=['ORG-MFG-001']"
+          ]
+        },
+        {
+          "column": "manufacturer_type",
+          "confidence": 0.5,
+          "domains": [
+            "PQ4",
+            "PQ1"
+          ],
+          "evidence": [
+            "column='manufacturer_type'",
+            "sampleValues=['drug-product-manufacture']"
+          ]
+        },
+        {
+          "column": "manufacturer_type_display",
+          "confidence": 0.5,
+          "domains": [
+            "PQ4",
+            "PQ1"
+          ],
+          "evidence": [
+            "column='manufacturer_type_display'",
+            "sampleValues=['Drug Product Manufacture']"
+          ]
+        },
+        {
+          "column": "manufacturing_date",
+          "confidence": 0.5,
+          "domains": [
+            "PQ8"
+          ],
+          "evidence": [
+            "column='manufacturing_date'",
+            "sampleValues=['2025-12']"
+          ]
+        },
+        {
+          "column": "material_id",
+          "confidence": 0.714286,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='material_id'",
+            "sampleValues=['MAT-1001']"
+          ]
+        },
+        {
+          "column": "packaging_date",
+          "confidence": 0.625,
+          "domains": [
+            "PQ11"
+          ],
+          "evidence": [
+            "column='packaging_date'",
+            "sampleValues=['2026-01']"
+          ]
+        },
+        {
+          "column": "release_date",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ5"
+          ],
+          "evidence": [
+            "column='release_date'",
+            "sampleValues=['2026-01-07']"
+          ]
+        }
+      ],
+      "confidence": 0.833333,
+      "domainLabels": {
+        "PQ1": "Identification",
+        "PQ4": "Organizations",
+        "PQ5": "Batch/Lot Information"
+      },
+      "domains": [
+        "PQ1",
+        "PQ5",
+        "PQ4"
+      ],
+      "sourceFile": "batch_record.csv",
+      "table": "batch_record"
+    },
+    {
+      "columns": [
+        {
+          "column": "analysis_time",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ6"
+          ],
+          "evidence": [
+            "column='analysis_time'",
+            "sampleValues=['2026-01-16T12:00:00Z', '2026-01-16T12:10:00Z']"
+          ]
+        },
+        {
+          "column": "batch_id",
+          "confidence": 0.833333,
+          "domains": [
+            "PQ5",
+            "PQ1"
+          ],
+          "evidence": [
+            "column='batch_id'",
+            "sampleValues=['BATCH-33445']"
+          ]
+        },
+        {
+          "column": "lab_org_id",
+          "confidence": 0.357143,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='lab_org_id'",
+            "sampleValues=['ORG-LAB-001']"
+          ]
+        },
+        {
+          "column": "lab_org_name",
+          "confidence": 0.357143,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='lab_org_name'",
+            "sampleValues=['AAA QC Lab']"
+          ]
+        },
+        {
+          "column": "method_code",
+          "confidence": 0.625,
+          "domains": [
+            "PQ10"
+          ],
+          "evidence": [
+            "column='method_code'",
+            "sampleValues=['DESC', 'WATER']"
+          ]
+        },
+        {
+          "column": "method_display",
+          "confidence": 0.625,
+          "domains": [
+            "PQ10"
+          ],
+          "evidence": [
+            "column='method_display'",
+            "sampleValues=['Karl Fischer', 'Visual Description']"
+          ]
+        },
+        {
+          "column": "result_code",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ6"
+          ],
+          "evidence": [
+            "column='result_code'",
+            "sampleValues=['DESC', 'WATER']"
+          ]
+        },
+        {
+          "column": "result_display",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ6"
+          ],
+          "evidence": [
+            "column='result_display'",
+            "sampleValues=['Description', 'Water']"
+          ]
+        },
+        {
+          "column": "result_unit",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ6"
+          ],
+          "evidence": [
+            "column='result_unit'",
+            "sampleValues=['%']"
+          ]
+        },
+        {
+          "column": "result_value",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ6"
+          ],
+          "evidence": [
+            "column='result_value'",
+            "sampleValues=['2.1', 'Complies']"
+          ]
+        },
+        {
+          "column": "sample_collection_date",
+          "confidence": 0.416667,
+          "domains": [
+            "PQ6"
+          ],
+          "evidence": [
+            "column='sample_collection_date'",
+            "sampleValues=['2026-01-15']"
+          ]
+        },
+        {
+          "column": "specimen_id",
+          "confidence": 0.357143,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='specimen_id'",
+            "sampleValues=['SPEC-01']"
+          ]
+        },
+        {
+          "column": "storage_condition",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        }
+      ],
+      "confidence": 0.972222,
+      "domainLabels": {
+        "PQ1": "Identification",
+        "PQ10": "Analytical Procedures",
+        "PQ6": "Batch Analysis"
+      },
+      "domains": [
+        "PQ6",
+        "PQ1",
+        "PQ10"
+      ],
+      "sourceFile": "lims_results.csv",
+      "table": "lims_results"
+    },
+    {
+      "columns": [
+        {
+          "column": "acceptance_criteria",
+          "confidence": 1.0,
+          "domains": [
+            "PQ13"
+          ],
+          "evidence": [
+            "column='acceptance_criteria'",
+            "sampleValues=['95.0-105.0']"
+          ]
+        },
+        {
+          "column": "material_id",
+          "confidence": 0.714286,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='material_id'",
+            "sampleValues=['MAT-1001']"
+          ]
+        },
+        {
+          "column": "spec_id",
+          "confidence": 0.357143,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='spec_id'",
+            "sampleValues=['SPEC-API-001']"
+          ]
+        },
+        {
+          "column": "specification_type",
+          "confidence": 0.625,
+          "domains": [
+            "PQ13",
+            "PQ6"
+          ],
+          "evidence": [
+            "column='specification_type'",
+            "sampleValues=['assay']"
+          ]
+        }
+      ],
+      "confidence": 0.625,
+      "domainLabels": {
+        "PQ1": "Identification",
+        "PQ13": "Drug Specifications",
+        "PQ6": "Batch Analysis"
+      },
+      "domains": [
+        "PQ13",
+        "PQ1",
+        "PQ6"
+      ],
+      "sourceFile": "plm_spec.xml",
+      "table": "plm_spec"
+    },
+    {
+      "columns": [
+        {
+          "column": "active_ingredient",
+          "confidence": 0.5,
+          "domains": [
+            "PQ2"
+          ],
+          "evidence": [
+            "column='active_ingredient'",
+            "sampleValues=['Stelbatolol']"
+          ]
+        },
+        {
+          "column": "dosage_form_code",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        },
+        {
+          "column": "dosage_form_display",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        },
+        {
+          "column": "ingredient_role",
+          "confidence": 0.5,
+          "domains": [
+            "PQ2"
+          ],
+          "evidence": [
+            "column='ingredient_role'",
+            "sampleValues=['active']"
+          ]
+        },
+        {
+          "column": "material_id",
+          "confidence": 0.714286,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='material_id'",
+            "sampleValues=['MAT-1001']"
+          ]
+        },
+        {
+          "column": "product_name",
+          "confidence": 0.714286,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='product_name'",
+            "sampleValues=['Stelbat Tablets 20mg']"
+          ]
+        },
+        {
+          "column": "route_code",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        },
+        {
+          "column": "route_display",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        }
+      ],
+      "confidence": 0.595238,
+      "domainLabels": {
+        "PQ1": "Identification",
+        "PQ2": "Composition"
+      },
+      "domains": [
+        "PQ1",
+        "PQ2"
+      ],
+      "sourceFile": "product_master.csv",
+      "table": "product_master"
+    },
+    {
+      "columns": [
+        {
+          "column": "batch_id",
+          "confidence": 0.833333,
+          "domains": [
+            "PQ5",
+            "PQ1"
+          ],
+          "evidence": [
+            "column='batch_id'",
+            "sampleValues=['BATCH-33445']"
+          ]
+        },
+        {
+          "column": "category",
+          "confidence": 0.5,
+          "domains": [
+            "PQ8"
+          ],
+          "evidence": [
+            "column='category'",
+            "sampleValues=['process']"
+          ]
+        },
+        {
+          "column": "deviation_id",
+          "confidence": 0.357143,
+          "domains": [
+            "PQ1"
+          ],
+          "evidence": [
+            "column='deviation_id'",
+            "sampleValues=['DEV-001']"
+          ]
+        },
+        {
+          "column": "severity",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        },
+        {
+          "column": "status",
+          "confidence": 0.0,
+          "domains": [
+            "UNKNOWN"
+          ],
+          "evidence": [
+            "No domain keywords matched"
+          ]
+        }
+      ],
+      "confidence": 0.277778,
+      "domainLabels": {
+        "PQ1": "Identification",
+        "PQ5": "Batch/Lot Information",
+        "PQ8": "Manufacturing Process"
+      },
+      "domains": [
+        "REQUIRES_REVIEW",
+        "PQ5",
+        "PQ1",
+        "PQ8"
+      ],
+      "sourceFile": "qms_deviation.json",
+      "table": "qms_deviation"
+    }
+  ]
+}

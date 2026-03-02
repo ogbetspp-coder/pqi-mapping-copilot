@@ -1,0 +1,5784 @@
+{
+  "approvals": [],
+  "artifactId": "mappings-aa6872bad8f5",
+  "artifactKind": "mappings",
+  "changelog": "Automated triage: proposed->reviewed/approved by confidence",
+  "content": {
+    "artifactType": "MappingProposalSet",
+    "proposals": [
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ5"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "number",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "4.81"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "4.81"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "actual_yield",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "4.81"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-61acdcb0e9d1ddc4",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "actual_yield",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "batch.extension[Extension-actual-yield-pq]",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "4.81",
+              "display": "4.81",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-actual_yield",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "cast_number",
+          "params": {
+            "type": "number"
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [
+              "kg"
+            ],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "kg"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "kg"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "actual_yield_unit",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "kg"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-7ea6bd2d2cb67500",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "actual_yield_unit",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "kg",
+              "display": "kg",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-actual_yield_unit",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "normalize_quantity",
+          "params": {
+            "defaultUnit": "kg",
+            "detectedUnits": [
+              "kg"
+            ]
+          }
+        }
+      },
+      {
+        "confidence": 0.95,
+        "domain": [
+          "PQ5"
+        ],
+        "evidence": {
+          "candidateJoins": [
+            {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            }
+          ],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "BATCH-33445"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "BATCH-33445"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "batch_id",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "BATCH-33445"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-0333f7dfc361d61a",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "batch_id",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "batch.lotNumber",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "BATCH-33445",
+              "display": "BATCH-33445",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-batch_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "join_lookup",
+          "params": {
+            "canonicalKey": "batch",
+            "left": {
+              "column": "batch_id",
+              "table": "batch_record"
+            },
+            "right": {
+              "column": "batch_id",
+              "table": "lims_results"
+            }
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "integer",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "100100"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "100100"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "batch_quantity",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "100100"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-7ef674af24fc6b63",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "batch_quantity",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "100100",
+              "display": "100100",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-batch_quantity",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "cast_number",
+          "params": {
+            "type": "integer"
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [
+              "tablets"
+            ],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "tablets"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "tablets"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "batch_quantity_unit",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "tablets"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-395ad6dac86d8fcc",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "batch_quantity_unit",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "tablets",
+              "display": "tablets",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-batch_quantity_unit",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "normalize_quantity",
+          "params": {
+            "defaultUnit": "tablets",
+            "detectedUnits": [
+              "tablets"
+            ]
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "AAA Pharmaceutical Inc"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "AAA Pharmaceutical Inc"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "manufacturer_name",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "AAA Pharmaceutical Inc"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-776d7b92db9f4477",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "manufacturer_name",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "AAA Pharmaceutical Inc",
+              "display": "AAA Pharmaceutical Inc",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-manufacturer_name",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "ORG-MFG-001"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "ORG-MFG-001"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "manufacturer_org_id",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "ORG-MFG-001"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-d81896a9eba934f7",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "manufacturer_org_id",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "ORG-MFG-001",
+              "display": "ORG-MFG-001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-manufacturer_org_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "drug-product-manufacture"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "drug-product-manufacture"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "manufacturer_type",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "drug-product-manufacture"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-cbc3c579b294c1f9",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "manufacturer_type",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "drug-product-manufacture",
+              "display": "drug-product-manufacture",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-manufacturer_type",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "Drug Product Manufacture"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "Drug Product Manufacture"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "manufacturer_type_display",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "Drug Product Manufacture"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-f0a6c4ab6099cc69",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "manufacturer_type_display",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "Drug Product Manufacture",
+              "display": "Drug Product Manufacture",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-manufacturer_type_display",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ5"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "date",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "2025-12"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "2025-12"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "manufacturing_date",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "2025-12"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-d7003e0f5f389842",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "manufacturing_date",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "batch.extension[medication-manufacturingBatch].manufacturingDate",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "2025-12",
+              "display": "2025-12",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-manufacturing_date",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "parse_date",
+          "params": {
+            "acceptedFormats": [
+              "YYYY-MM-DD",
+              "YYYY-MM"
+            ]
+          }
+        }
+      },
+      {
+        "confidence": 0.95,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [
+            {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            }
+          ],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "MAT-1001"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "MAT-1001"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "material_id",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "MAT-1001"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-4d0b16c04dee83e3",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "material_id",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "identifier[0].value",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "MAT-1001",
+              "display": "MAT-1001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-material_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "join_lookup",
+          "params": {
+            "canonicalKey": "material",
+            "left": {
+              "column": "material_id",
+              "table": "batch_record"
+            },
+            "right": {
+              "column": "material_id",
+              "table": "plm_spec"
+            }
+          }
+        }
+      },
+      {
+        "confidence": 0.65,
+        "domain": [
+          "PQ11"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "date",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "2026-01"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "2026-01"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "packaging_date",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "2026-01"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-73b07d83503d7850",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "packaging_date",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "batch.extension[Extension-packaging-date-pq]",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "2026-01",
+              "display": "2026-01",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-packaging_date",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "parse_date",
+          "params": {
+            "acceptedFormats": [
+              "YYYY-MM-DD",
+              "YYYY-MM"
+            ]
+          }
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ5"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "date",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "2026-01-07"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "2026-01-07"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "release_date",
+            "source": "batch_record.csv",
+            "table": "batch_record"
+          },
+          "sampleValues": [
+            "2026-01-07"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-2147173a9cf49a0b",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "release_date",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "batch.extension[Extension-batch-release-date-pq]",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "2026-01-07",
+              "display": "2026-01-07",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-release_date",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "parse_date",
+          "params": {
+            "acceptedFormats": [
+              "YYYY-MM-DD",
+              "YYYY-MM"
+            ]
+          }
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 2,
+            "inferredType": "datetime",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "2026-01-16T12:00:00Z",
+              "2026-01-16T12:10:00Z"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "2026-01-16T12:00:00Z"
+              },
+              {
+                "count": 1,
+                "value": "2026-01-16T12:10:00Z"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "analysis_time",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "2026-01-16T12:00:00Z",
+            "2026-01-16T12:10:00Z"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-e5e117780ba2a061",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "analysis_time",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "effectiveDateTime",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "2026-01-16T12:00:00Z",
+              "display": "2026-01-16T12:00:00Z",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            },
+            {
+              "code": "2026-01-16T12:10:00Z",
+              "display": "2026-01-16T12:10:00Z",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-analysis_time",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "parse_date",
+          "params": {
+            "acceptedFormats": [
+              "YYYY-MM-DD",
+              "YYYY-MM"
+            ]
+          }
+        }
+      },
+      {
+        "confidence": 0.7,
+        "domain": [
+          "PQ5"
+        ],
+        "evidence": {
+          "candidateJoins": [
+            {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            }
+          ],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "BATCH-33445"
+            ],
+            "topValues": [
+              {
+                "count": 2,
+                "value": "BATCH-33445"
+              }
+            ],
+            "uniqueRatio": 0.5
+          },
+          "provenance": {
+            "column": "batch_id",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "BATCH-33445"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-56ba6a4695520f15",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "batch_id",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "batch.lotNumber",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "BATCH-33445",
+              "display": "BATCH-33445",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-batch_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "join_lookup",
+          "params": {
+            "canonicalKey": "batch",
+            "left": {
+              "column": "batch_id",
+              "table": "batch_record"
+            },
+            "right": {
+              "column": "batch_id",
+              "table": "lims_results"
+            }
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "ORG-LAB-001"
+            ],
+            "topValues": [
+              {
+                "count": 2,
+                "value": "ORG-LAB-001"
+              }
+            ],
+            "uniqueRatio": 0.5
+          },
+          "provenance": {
+            "column": "lab_org_id",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "ORG-LAB-001"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-40233aeaf7f511be",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "lab_org_id",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "ORG-LAB-001",
+              "display": "ORG-LAB-001",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-lab_org_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "AAA QC Lab"
+            ],
+            "topValues": [
+              {
+                "count": 2,
+                "value": "AAA QC Lab"
+              }
+            ],
+            "uniqueRatio": 0.5
+          },
+          "provenance": {
+            "column": "lab_org_name",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "AAA QC Lab"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-2052f4d2cffa01e1",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "lab_org_name",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "AAA QC Lab",
+              "display": "AAA QC Lab",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-lab_org_name",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ10"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 2,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "DESC",
+              "WATER"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "DESC"
+              },
+              {
+                "count": 1,
+                "value": "WATER"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "method_code",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "DESC",
+            "WATER"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-97de56a1d7909176",
+        "relationships": [],
+        "source": {
+          "column": "method_code",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "code.coding[0].code",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
+          "resourceType": "ObservationDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "DESC",
+              "display": "DESC",
+              "system": "UNKNOWN"
+            },
+            {
+              "code": "WATER",
+              "display": "WATER",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observationdefinition-method_code",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 2,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "Karl Fischer",
+              "Visual Description"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "Karl Fischer"
+              },
+              {
+                "count": 1,
+                "value": "Visual Description"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "method_display",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "Karl Fischer",
+            "Visual Description"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-02c7c6504fde2e80",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "method_display",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "Karl Fischer",
+              "display": "Karl Fischer",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            },
+            {
+              "code": "Visual Description",
+              "display": "Visual Description",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-method_display",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 2,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "DESC",
+              "WATER"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "DESC"
+              },
+              {
+                "count": 1,
+                "value": "WATER"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "result_code",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "DESC",
+            "WATER"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-cce2399f4a8aced5",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "result_code",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "code.coding[0].code",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "DESC",
+              "display": "DESC",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            },
+            {
+              "code": "WATER",
+              "display": "WATER",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-result_code",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 2,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "Description",
+              "Water"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "Description"
+              },
+              {
+                "count": 1,
+                "value": "Water"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "result_display",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "Description",
+            "Water"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-a4017d0f649de10c",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "result_display",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "code.coding[0].display",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "Description",
+              "display": "Description",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            },
+            {
+              "code": "Water",
+              "display": "Water",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-result_display",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [
+              "%"
+            ],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.5,
+            "sampleValues": [
+              "%"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "%"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "result_unit",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "%"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-358f89e81a3ef3c1",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "result_unit",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "valueQuantity.unit",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "%",
+              "display": "%",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-result_unit",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "normalize_quantity",
+          "params": {
+            "defaultUnit": "%",
+            "detectedUnits": [
+              "%"
+            ]
+          }
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 2,
+            "inferredType": "number",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "2.1",
+              "Complies"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "2.1"
+              },
+              {
+                "count": 1,
+                "value": "Complies"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "result_value",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "2.1",
+            "Complies"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-4bb824b03377a364",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "result_value",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "value[x]",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "2.1",
+              "display": "2.1",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            },
+            {
+              "code": "Complies",
+              "display": "Complies",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-result_value",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "cast_number",
+          "params": {
+            "type": "number"
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "date",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "2026-01-15"
+            ],
+            "topValues": [
+              {
+                "count": 2,
+                "value": "2026-01-15"
+              }
+            ],
+            "uniqueRatio": 0.5
+          },
+          "provenance": {
+            "column": "sample_collection_date",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "2026-01-15"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-f5b1d2d8eef24a01",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "sample_collection_date",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "2026-01-15",
+              "display": "2026-01-15",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-sample_collection_date",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "SPEC-01"
+            ],
+            "topValues": [
+              {
+                "count": 2,
+                "value": "SPEC-01"
+              }
+            ],
+            "uniqueRatio": 0.5
+          },
+          "provenance": {
+            "column": "specimen_id",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "SPEC-01"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-96755091edfd304f",
+        "relationships": [],
+        "source": {
+          "column": "specimen_id",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "id",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
+          "resourceType": "Specimen"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "SPEC-01",
+              "display": "SPEC-01",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-specimen-specimen_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ6"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "25C/60RH"
+            ],
+            "topValues": [
+              {
+                "count": 2,
+                "value": "25C/60RH"
+              }
+            ],
+            "uniqueRatio": 0.5
+          },
+          "provenance": {
+            "column": "storage_condition",
+            "source": "lims_results.csv",
+            "table": "lims_results"
+          },
+          "sampleValues": [
+            "25C/60RH"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-923d08b5371cd145",
+        "relationships": [
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "DiagnosticReport",
+            "joinEvidence": {
+              "reason": "PQI batch analysis/stability pattern"
+            },
+            "referencePath": "DiagnosticReport.result.reference",
+            "toResource": "Observation"
+          }
+        ],
+        "source": {
+          "column": "storage_condition",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+          "resourceType": "Observation"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "25C/60RH",
+              "display": "25C/60RH",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-observation-storage_condition",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ13"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "95.0-105.0"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "95.0-105.0"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "acceptance_criteria",
+            "source": "plm_spec.xml",
+            "table": "plm_spec"
+          },
+          "sampleValues": [
+            "95.0-105.0"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-da6a51e7a8340899",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "acceptance_criteria",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "95.0-105.0",
+              "display": "95.0-105.0",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-acceptance_criteria",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.95,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [
+            {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            }
+          ],
+          "fileHash": "591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "MAT-1001"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "MAT-1001"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "material_id",
+            "source": "plm_spec.xml",
+            "table": "plm_spec"
+          },
+          "sampleValues": [
+            "MAT-1001"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-6f8a104cd0673234",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "material_id",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "identifier[0].value",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "MAT-1001",
+              "display": "MAT-1001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-material_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "join_lookup",
+          "params": {
+            "canonicalKey": "material",
+            "left": {
+              "column": "material_id",
+              "table": "batch_record"
+            },
+            "right": {
+              "column": "material_id",
+              "table": "plm_spec"
+            }
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ13"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "SPEC-API-001"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "SPEC-API-001"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "spec_id",
+            "source": "plm_spec.xml",
+            "table": "plm_spec"
+          },
+          "sampleValues": [
+            "SPEC-API-001"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-4f9384afbb37ae70",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "spec_id",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "SPEC-API-001",
+              "display": "SPEC-API-001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-spec_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ13"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "assay"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "assay"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "specification_type",
+            "source": "plm_spec.xml",
+            "table": "plm_spec"
+          },
+          "sampleValues": [
+            "assay"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-07188325d0e20b01",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "specification_type",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "assay",
+              "display": "assay",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-specification_type",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "Stelbatolol"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "Stelbatolol"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "active_ingredient",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "Stelbatolol"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-c515b9afb2a4a367",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "active_ingredient",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "Stelbatolol",
+              "display": "Stelbatolol",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-active_ingredient",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "integer",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "10225000"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "10225000"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "dosage_form_code",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "10225000"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-864eabc924512a05",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "dosage_form_code",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "combinedPharmaceuticalDoseForm.coding[0].code",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "10225000",
+              "display": "10225000",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-dosage_form_code",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "cast_number",
+          "params": {
+            "type": "integer"
+          }
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "Gastro-resistant tablet"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "Gastro-resistant tablet"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "dosage_form_display",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "Gastro-resistant tablet"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-db02660102c3deea",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "dosage_form_display",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "combinedPharmaceuticalDoseForm.coding[0].display",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "Gastro-resistant tablet",
+              "display": "Gastro-resistant tablet",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-dosage_form_display",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "active"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "active"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "ingredient_role",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "active"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-36f3185f7198b3ee",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "ingredient_role",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "active",
+              "display": "active",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-ingredient_role",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.95,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [
+            {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            }
+          ],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "MAT-1001"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "MAT-1001"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "material_id",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "MAT-1001"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-7aa86e96ff16395c",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "material_id",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "identifier[0].value",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "MAT-1001",
+              "display": "MAT-1001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-material_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "join_lookup",
+          "params": {
+            "canonicalKey": "material",
+            "left": {
+              "column": "material_id",
+              "table": "batch_record"
+            },
+            "right": {
+              "column": "material_id",
+              "table": "product_master"
+            }
+          }
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "Stelbat Tablets 20mg"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "Stelbat Tablets 20mg"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "product_name",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "Stelbat Tablets 20mg"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-b612005ccbf7435e",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "product_name",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "name[0].productName",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "Stelbat Tablets 20mg",
+              "display": "Stelbat Tablets 20mg",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-product_name",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "integer",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "20053000"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "20053000"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "route_code",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "20053000"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-04574357f1e7abcc",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "route_code",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "route[0].coding[0].code",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "20053000",
+              "display": "20053000",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-route_code",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "cast_number",
+          "params": {
+            "type": "integer"
+          }
+        }
+      },
+      {
+        "confidence": 0.9,
+        "domain": [
+          "PQ1"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "Oral use"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "Oral use"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "route_display",
+            "source": "product_master.csv",
+            "table": "product_master"
+          },
+          "sampleValues": [
+            "Oral use"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-740d667db39a047d",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "route_display",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "route[0].coding[0].display",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "Oral use",
+              "display": "Oral use",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-route_display",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.95,
+        "domain": [
+          "PQ5"
+        ],
+        "evidence": {
+          "candidateJoins": [
+            {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            }
+          ],
+          "fileHash": "a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "BATCH-33445"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "BATCH-33445"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "batch_id",
+            "source": "qms_deviation.json",
+            "table": "qms_deviation"
+          },
+          "sampleValues": [
+            "BATCH-33445"
+          ]
+        },
+        "needsReview": false,
+        "proposalId": "mp-61a9deafa46c233e",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Observation",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "lims_results"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Observation.subject.reference",
+            "toResource": "Medication"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "batch_id",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "approved",
+        "target": {
+          "elementPath": "batch.lotNumber",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+          "resourceType": "Medication"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "BATCH-33445",
+              "display": "BATCH-33445",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medication-batch_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "join_lookup",
+          "params": {
+            "canonicalKey": "batch",
+            "left": {
+              "column": "batch_id",
+              "table": "batch_record"
+            },
+            "right": {
+              "column": "batch_id",
+              "table": "qms_deviation"
+            }
+          }
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "REQUIRES_REVIEW"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "process"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "process"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "category",
+            "source": "qms_deviation.json",
+            "table": "qms_deviation"
+          },
+          "sampleValues": [
+            "process"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-7c1b0e350de06a45",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "category",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "process",
+              "display": "process",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-category",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-testCategory-pq"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "REQUIRES_REVIEW"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "DEV-001"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "DEV-001"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "deviation_id",
+            "source": "qms_deviation.json",
+            "table": "qms_deviation"
+          },
+          "sampleValues": [
+            "DEV-001"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-f47e2999826c82d4",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "deviation_id",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "DEV-001",
+              "display": "DEV-001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-deviation_id",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "REQUIRES_REVIEW"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "minor"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "minor"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "severity",
+            "source": "qms_deviation.json",
+            "table": "qms_deviation"
+          },
+          "sampleValues": [
+            "minor"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-fbdee25f087277ac",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "severity",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "minor",
+              "display": "minor",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-severity",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      },
+      {
+        "confidence": 0.0,
+        "domain": [
+          "REQUIRES_REVIEW"
+        ],
+        "evidence": {
+          "candidateJoins": [],
+          "fileHash": "a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7",
+          "profiling": {
+            "detectedUnits": [],
+            "distinctCount": 1,
+            "inferredType": "string",
+            "nullRatio": 0.0,
+            "sampleValues": [
+              "closed"
+            ],
+            "topValues": [
+              {
+                "count": 1,
+                "value": "closed"
+              }
+            ],
+            "uniqueRatio": 1.0
+          },
+          "provenance": {
+            "column": "status",
+            "source": "qms_deviation.json",
+            "table": "qms_deviation"
+          },
+          "sampleValues": [
+            "closed"
+          ]
+        },
+        "needsReview": true,
+        "proposalId": "mp-8b123ed09422da2c",
+        "relationships": [
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "plm_spec"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "batch",
+              "left": {
+                "column": "batch_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "batch_id",
+                "table": "qms_deviation"
+              },
+              "sampleOverlapValues": [
+                "BATCH-33445"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          },
+          {
+            "fromResource": "Medication",
+            "joinEvidence": {
+              "canonicalKey": "material",
+              "left": {
+                "column": "material_id",
+                "table": "batch_record"
+              },
+              "overlapCount": 1,
+              "overlapRatio": 1.0,
+              "right": {
+                "column": "material_id",
+                "table": "product_master"
+              },
+              "sampleOverlapValues": [
+                "MAT-1001"
+              ]
+            },
+            "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+            "toResource": "MedicinalProductDefinition"
+          }
+        ],
+        "source": {
+          "column": "status",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+          "resourceType": "MedicinalProductDefinition"
+        },
+        "terminology": {
+          "codingSuggestions": [
+            {
+              "code": "closed",
+              "display": "closed",
+              "system": "UNKNOWN"
+            }
+          ],
+          "conceptMap": "http://example.org/fhir/ConceptMap/local-to-medicinalproductdefinition-status",
+          "valueSet": "UNKNOWN"
+        },
+        "transform": {
+          "function": "identity",
+          "params": {}
+        }
+      }
+    ],
+    "relationshipGraph": [
+      {
+        "fromResource": "Medication",
+        "joinEvidence": {
+          "canonicalKey": "material",
+          "left": {
+            "column": "material_id",
+            "table": "batch_record"
+          },
+          "overlapCount": 1,
+          "overlapRatio": 1.0,
+          "right": {
+            "column": "material_id",
+            "table": "plm_spec"
+          },
+          "sampleOverlapValues": [
+            "MAT-1001"
+          ]
+        },
+        "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+        "toResource": "MedicinalProductDefinition"
+      },
+      {
+        "fromResource": "Observation",
+        "joinEvidence": {
+          "canonicalKey": "batch",
+          "left": {
+            "column": "batch_id",
+            "table": "lims_results"
+          },
+          "overlapCount": 1,
+          "overlapRatio": 1.0,
+          "right": {
+            "column": "batch_id",
+            "table": "qms_deviation"
+          },
+          "sampleOverlapValues": [
+            "BATCH-33445"
+          ]
+        },
+        "referencePath": "Observation.subject.reference",
+        "toResource": "Medication"
+      },
+      {
+        "fromResource": "DiagnosticReport",
+        "joinEvidence": {
+          "reason": "PQI batch analysis/stability pattern"
+        },
+        "referencePath": "DiagnosticReport.result.reference",
+        "toResource": "Observation"
+      },
+      {
+        "fromResource": "Medication",
+        "joinEvidence": {
+          "canonicalKey": "batch",
+          "left": {
+            "column": "batch_id",
+            "table": "batch_record"
+          },
+          "overlapCount": 1,
+          "overlapRatio": 1.0,
+          "right": {
+            "column": "batch_id",
+            "table": "qms_deviation"
+          },
+          "sampleOverlapValues": [
+            "BATCH-33445"
+          ]
+        },
+        "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+        "toResource": "MedicinalProductDefinition"
+      },
+      {
+        "fromResource": "Medication",
+        "joinEvidence": {
+          "canonicalKey": "material",
+          "left": {
+            "column": "material_id",
+            "table": "batch_record"
+          },
+          "overlapCount": 1,
+          "overlapRatio": 1.0,
+          "right": {
+            "column": "material_id",
+            "table": "product_master"
+          },
+          "sampleOverlapValues": [
+            "MAT-1001"
+          ]
+        },
+        "referencePath": "Medication.code.extension[Extension-medication-definition-pq].valueReference",
+        "toResource": "MedicinalProductDefinition"
+      }
+    ],
+    "status": "proposed",
+    "summary": {
+      "highConfidenceCount": 20,
+      "lifecycleCounts": {
+        "approved": 20,
+        "deprecated": 0,
+        "proposed": 21,
+        "reviewed": 2
+      },
+      "needsReviewCount": 23,
+      "proposalCount": 43
+    },
+    "version": "0.1.0"
+  },
+  "contentHash": "d849fcf337a185b649c4f10765960c48894536d25c318e23312497e4f44e93cf",
+  "previousVersion": "v4",
+  "status": "reviewed",
+  "version": "v5"
+}

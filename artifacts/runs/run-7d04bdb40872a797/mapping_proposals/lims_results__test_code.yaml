@@ -1,0 +1,140 @@
+candidates:
+  -
+    confidence: 0.695192
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.557692
+        value_pattern_fit: 0.5
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=['analysis', 'assay', 'method', 'test']"
+          - text_similarity=0.5577
+        value_pattern:
+          - code_like_values->coded_target
+      samples:
+        - ASSAY
+        - WATER
+      top_values:
+        -
+          count: 2
+          value: ASSAY
+        -
+          count: 1
+          value: WATER
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Observation.method
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-methods"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: trim_string
+      params:
+
+  -
+    confidence: 0.6736
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.496
+        value_pattern_fit: 0.5
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=['analysis', 'assay', 'code', 'method', 'test']"
+          - text_similarity=0.496
+        value_pattern:
+          - code_like_values->coded_target
+      samples:
+        - ASSAY
+        - WATER
+      top_values:
+        -
+          count: 2
+          value: ASSAY
+        -
+          count: 1
+          value: WATER
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: DiagnosticReport.conclusionCode
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+      resourceType: DiagnosticReport
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/clinical-findings"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+  -
+    confidence: 0.672131
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.491803
+        value_pattern_fit: 0.5
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=['analysis', 'assay', 'method', 'test']"
+          - text_similarity=0.4918
+        value_pattern:
+          - code_like_values->coded_target
+      samples:
+        - ASSAY
+        - WATER
+      top_values:
+        -
+          count: 2
+          value: ASSAY
+        -
+          count: 1
+          value: WATER
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Specimen.collection.method
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+      resourceType: Specimen
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/specimen-collection-method"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: trim_string
+      params:
+
+domain:
+  primary: batch_analysis
+  scores:
+    batch_analysis: 0.910448
+    batch_lot_information: 0.089552
+run_id: run-7d04bdb40872a797
+source:
+  column: test_code
+  file: data/examples/lims_results.csv
+  table: lims_results

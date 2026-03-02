@@ -1,0 +1,141 @@
+candidates:
+  -
+    confidence: 0.543284
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.552239
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['criteria', 'limit', 'low', 'spec', 'specification']"
+          - text_similarity=0.5522
+        value_pattern:
+
+      samples:
+        - 0
+        - 95
+      top_values:
+        -
+          count: 2
+          value: 95
+        -
+          count: 1
+          value: 0
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: ObservationDefinition.qualifiedValue.range.low
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+      resourceType: ObservationDefinition
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+  -
+    confidence: 0.531482
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.518519
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['criteria', 'limit', 'spec', 'specification']"
+          - text_similarity=0.5185
+        value_pattern:
+
+      samples:
+        - 0
+        - 95
+      top_values:
+        -
+          count: 2
+          value: 95
+        -
+          count: 1
+          value: 0
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: ObservationDefinition.qualifiedValue.range.high
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+      resourceType: ObservationDefinition
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+  -
+    confidence: 0.482432
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.378378
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.3784
+        value_pattern:
+
+      samples:
+        - 0
+        - 95
+      top_values:
+        -
+          count: 2
+          value: 95
+        -
+          count: 1
+          value: 0
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Specimen.container.specimenQuantity
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+      resourceType: Specimen
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: to_quantity
+      params:
+        units_detected:
+
+domain:
+  primary: batch_analysis
+  scores:
+    batch_analysis: 0.910448
+    batch_lot_information: 0.089552
+run_id: run-7d04bdb40872a797
+source:
+  column: spec_limit_low
+  file: data/examples/lims_results.csv
+  table: lims_results

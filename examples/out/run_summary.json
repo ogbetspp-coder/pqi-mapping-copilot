@@ -1,0 +1,14 @@
+{
+  "bundles": [
+    "examples/out/bundles/bundle-pq5.json",
+    "examples/out/bundles/bundle-pq6.json"
+  ],
+  "catalog": "examples/out/ig_catalog.json",
+  "domains": "examples/out/domain_classification.json",
+  "evidence": "examples/out/evidence_manifest.json",
+  "governance": "governance",
+  "mappings": "examples/out/mapping_proposals.json",
+  "profile": "examples/out/profiling_report.json",
+  "terminology": "examples/out/terminology_scaffold.json",
+  "validation": "examples/out/validation_report.json"
+}

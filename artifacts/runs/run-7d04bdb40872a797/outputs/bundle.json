@@ -1,0 +1,115 @@
+{
+  "entry": [
+    {
+      "resource": {
+        "batch": {
+          "lotNumber": "B-1001"
+        },
+        "id": "med-63f0af8cdceca3",
+        "resourceType": "Medication"
+      }
+    },
+    {
+      "resource": {
+        "batch": {
+          "lotNumber": "B-1002"
+        },
+        "id": "med-72be8d41933ecf",
+        "resourceType": "Medication"
+      }
+    },
+    {
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "water",
+              "display": "WATER",
+              "system": "http://example.org/fhir/CodeSystem/local-cmc-pqi"
+            }
+          ],
+          "text": "WATER"
+        },
+        "effectiveDateTime": "2026-01-19T11:15:00Z",
+        "id": "obs-7e45284189055e",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+          ]
+        },
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Medication/med-63f0af8cdceca3"
+        },
+        "valueQuantity": {
+          "unit": "%",
+          "value": 1.9
+        }
+      }
+    },
+    {
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "assay",
+              "display": "ASSAY",
+              "system": "http://example.org/fhir/CodeSystem/local-cmc-pqi"
+            }
+          ],
+          "text": "ASSAY"
+        },
+        "effectiveDateTime": "2026-02-20T10:20:00Z",
+        "id": "obs-8a7eca1a798968",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+          ]
+        },
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Medication/med-72be8d41933ecf"
+        },
+        "valueQuantity": {
+          "unit": "%",
+          "value": 98.7
+        }
+      }
+    },
+    {
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "assay",
+              "display": "ASSAY",
+              "system": "http://example.org/fhir/CodeSystem/local-cmc-pqi"
+            }
+          ],
+          "text": "ASSAY"
+        },
+        "effectiveDateTime": "2026-01-19T11:00:00Z",
+        "id": "obs-a3d3abc43dd0c3",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+          ]
+        },
+        "resourceType": "Observation",
+        "status": "final",
+        "subject": {
+          "reference": "Medication/med-63f0af8cdceca3"
+        },
+        "valueQuantity": {
+          "unit": "%",
+          "value": 99.1
+        }
+      }
+    }
+  ],
+  "id": "bundle-d0f72a713b23e4",
+  "resourceType": "Bundle",
+  "type": "collection"
+}

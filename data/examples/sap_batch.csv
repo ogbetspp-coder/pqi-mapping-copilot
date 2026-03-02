@@ -1,0 +1,3 @@
+batch_id,material_id,lot_number,manufacturing_date,release_date,batch_quantity,batch_uom,packaging_date
+B-1001,MAT-001,LOT-77A,2026-01-04,2026-01-18,125000,tablet,2026-01-20
+B-1002,MAT-001,LOT-77B,2026-02-05,2026-02-19,124500,tablet,2026-02-21

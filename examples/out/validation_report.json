@@ -1,0 +1,404 @@
+{
+  "externalValidator": {
+    "bundleFiles": [],
+    "message": "Hook provided; integrate with Java validator_cli.jar in production.",
+    "status": "SKIPPED",
+    "validatorId": "external-fhir-validator-stub",
+    "validatorVersion": "TODO"
+  },
+  "issues": [
+    {
+      "bundleId": "bundle-449e720ec940c9",
+      "message": "Missing required profile elements (MVP check): ['Medication.ingredient.item']",
+      "resource": "Medication/med-dca37714f23815",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-449e720ec940c9",
+      "message": "Missing required profile elements (MVP check): ['MedicinalProductDefinition.characteristic.type', 'MedicinalProductDefinition.contact.contact', 'MedicinalProductDefinition.crossReference.product']",
+      "resource": "MedicinalProductDefinition/mpd-a683b78425b856",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-449e720ec940c9",
+      "message": "Missing required profile elements (MVP check): ['Organization.contact.address.city', 'Organization.contact.address.country', 'Organization.contact.address.line', 'Organization.contact.telecom.system', 'Organization.qualification.code']",
+      "resource": "Organization/org-e2b65aefbdad88",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-449e720ec940c9",
+      "message": "Missing required profile elements (MVP check): ['Organization.contact.address.city', 'Organization.contact.address.country', 'Organization.contact.address.line', 'Organization.contact.telecom.system', 'Organization.qualification.code']",
+      "resource": "Organization/org-f6dedddae2e0c6",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['DiagnosticReport.media.link', 'DiagnosticReport.supportingInfo.reference', 'DiagnosticReport.supportingInfo.type']",
+      "resource": "DiagnosticReport/dr-dca37714f23815",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['Medication.ingredient.item']",
+      "resource": "Medication/med-dca37714f23815",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['Observation.component.code', 'Observation.triggeredBy.observation', 'Observation.triggeredBy.type']",
+      "resource": "Observation/obs-706aa8ed7aca29",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['Observation.component.code', 'Observation.triggeredBy.observation', 'Observation.triggeredBy.type']",
+      "resource": "Observation/obs-d80fcfba93e03d",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['ObservationDefinition.component.code']",
+      "resource": "ObservationDefinition/obsdef-556728f7f45600",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['ObservationDefinition.component.code']",
+      "resource": "ObservationDefinition/obsdef-984da4fe6930ac",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['Organization.contact.address.city', 'Organization.contact.address.country', 'Organization.contact.address.line', 'Organization.contact.telecom.system', 'Organization.qualification.code']",
+      "resource": "Organization/org-e2b65aefbdad88",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['Organization.contact.address.city', 'Organization.contact.address.country', 'Organization.contact.address.line', 'Organization.contact.telecom.system', 'Organization.qualification.code']",
+      "resource": "Organization/org-f6dedddae2e0c6",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "bundle-5b3627f47a4985",
+      "message": "Missing required profile elements (MVP check): ['Specimen.container.device', 'Specimen.feature.description', 'Specimen.feature.type']",
+      "resource": "Specimen/specimen-0f64f63ada9395",
+      "severity": "warning",
+      "type": "structural"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element batch.extension[Extension-actual-yield-pq]; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element batch.extension[Extension-batch-release-date-pq]; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element batch.extension[Extension-packaging-date-pq]; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element batch.extension[medication-manufacturingBatch].manufacturingDate; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element batch.lotNumber; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element batch.lotNumber; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element batch.lotNumber; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element combinedPharmaceuticalDoseForm.coding[0].code; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element combinedPharmaceuticalDoseForm.coding[0].display; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element identifier[0].value; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element identifier[0].value; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element identifier[0].value; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element name[0].productName; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element route[0].coding[0].code; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element route[0].coding[0].display; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element UNKNOWN; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element code.coding[0].code; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element code.coding[0].display; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element effectiveDateTime; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element valueQuantity.unit; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element value[x]; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element code.coding[0].code; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    },
+    {
+      "bundleId": "N/A",
+      "message": "Binding unresolved for element id; REQUIRES_REVIEW.",
+      "resource": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
+      "severity": "warning",
+      "type": "terminology"
+    }
+  ],
+  "summary": {
+    "errors": 0,
+    "issueCount": 55,
+    "status": "PASS",
+    "validatorId": "local-minimal-fhir-r5-validator",
+    "validatorVersion": "0.1.0",
+    "warnings": 55
+  }
+}

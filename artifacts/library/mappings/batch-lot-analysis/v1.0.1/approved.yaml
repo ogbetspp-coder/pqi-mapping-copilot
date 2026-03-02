@@ -1,0 +1,398 @@
+approval_rules:
+  confidence_threshold: 0.72
+  require_status_proposed: true
+content_hash: 72d9650f666266843bedb76878ec0dc7d9fc1fb1e10fa0f208f8a85f8156b394
+created_at_utc: deterministic
+decisions_required:
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: analysis_time
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_id
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: result_unit
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: result_value
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: spec_limit_high
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: spec_limit_low
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: test_code
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: test_name
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_id
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: duration_hr
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: equipment_id
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: step_name
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_id
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: category
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: deviation_id
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: status
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_id
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_quantity
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: batch_uom
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: lot_number
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: manufacturing_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: material_id
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: packaging_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    reason: No candidate meets approval threshold
+    source:
+      column: release_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+deterministic_id: 4f1066f1298f80ba
+entries:
+  -
+    selected: null
+    source:
+      column: analysis_time
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_id
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected:
+      confidence: 0.766949
+      evidence:
+        component_scores:
+          binding_fit: 1.0
+          datatype_fit: 0.8
+          name_similarity: 0.762712
+          value_pattern_fit: 0.5
+        inferred_type: string
+        rules_fired:
+          binding:
+            - binding available and source appears code-like
+          datatype:
+            - string compatible
+          name:
+            - "token_overlap=['analysis', 'assay', 'method', 'procedure', 'protocol', 'test']"
+            - text_similarity=0.7627
+          value_pattern:
+            - code_like_values->coded_target
+        samples:
+          - HPLC
+          - KF
+        top_values:
+          -
+            count: 2
+            value: HPLC
+          -
+            count: 1
+            value: KF
+        units:
+
+      status: PROPOSED
+      target:
+        elementPath: Observation.method
+        profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+        resourceType: Observation
+      terminology:
+        bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-methods"
+        conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+      transform:
+        name: trim_string
+        params:
+
+    source:
+      column: method
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: APPROVED
+  -
+    selected: null
+    source:
+      column: result_unit
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: result_value
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: spec_limit_high
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: spec_limit_low
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: test_code
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: test_name
+      file: data/examples/lims_results.csv
+      table: lims_results
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_id
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: duration_hr
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: equipment_id
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: step_name
+      file: data/examples/mes_steps.json
+      table: mes_steps
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_id
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: category
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: deviation_id
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: status
+      file: data/examples/qms_deviations.xml
+      table: qms_deviations
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_id
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_quantity
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: batch_uom
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: lot_number
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: manufacturing_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: material_id
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: packaging_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+  -
+    selected: null
+    source:
+      column: release_date
+      file: data/examples/sap_batch.csv
+      table: sap_batch
+    status: UNMAPPED
+lifecycle: APPROVED
+mapping_name: batch-lot-analysis
+run_id: run-7d04bdb40872a797
+version: v1.0.1
+version_id: "batch-lot-analysis:v1.0.1"

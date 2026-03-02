@@ -1,0 +1,4264 @@
+{
+  "codeSystems": [
+    {
+      "id": "cs-deviceType-pq-example",
+      "name": "CsDeviceTypePQ",
+      "source": "package/CodeSystem-cs-deviceType-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-deviceType-pq-example"
+    },
+    {
+      "id": "cs-goalPriority-pq-example",
+      "name": "CsGoalPriorityPQ",
+      "source": "package/CodeSystem-cs-goalPriority-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-goalPriority-pq-example"
+    },
+    {
+      "id": "cs-local-codes-drug-pq-example",
+      "name": "CsLocalCodesDrugPQ",
+      "source": "package/CodeSystem-cs-local-codes-drug-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+    },
+    {
+      "id": "cs-manufactured-item-property-pq-example",
+      "name": "CsManufacturedItemPropertyPQ",
+      "source": "package/CodeSystem-cs-manufactured-item-property-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-manufactured-item-property-pq-example"
+    },
+    {
+      "id": "cs-productNameType-pq-example",
+      "name": "CsProductNameTypePQ",
+      "source": "package/CodeSystem-cs-productNameType-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example"
+    },
+    {
+      "id": "cs-specification-type-pq-example",
+      "name": "CsSpecificationTypePQ",
+      "source": "package/CodeSystem-cs-specification-type-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-specification-type-pq-example"
+    },
+    {
+      "id": "cs-substance-property-pq-example",
+      "name": "CsSubstancePropertyPQ",
+      "source": "package/CodeSystem-cs-substance-property-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-pq-example"
+    },
+    {
+      "id": "cs-substance-property-value-pq-example",
+      "name": "CsSubstancePropertyValuePQ",
+      "source": "package/CodeSystem-cs-substance-property-value-pq-example.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-substance-property-value-pq-example"
+    },
+    {
+      "id": "batch-designation",
+      "name": "CsBatchDesignationPQ",
+      "source": "package/CodeSystem-batch-designation.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/batch-designation"
+    },
+    {
+      "id": "container-closure-type",
+      "name": "CsClosureType",
+      "source": "package/CodeSystem-container-closure-type.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/container-closure-type"
+    },
+    {
+      "id": "container-orientation",
+      "name": "CsContainerOrientation",
+      "source": "package/CodeSystem-container-orientation.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/container-orientation"
+    },
+    {
+      "id": "device-property",
+      "name": "CsDeviceProperty",
+      "source": "package/CodeSystem-device-property.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/device-property"
+    },
+    {
+      "id": "diagram-type",
+      "name": "CsDiagramType",
+      "source": "package/CodeSystem-diagram-type.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/diagram-type"
+    },
+    {
+      "id": "drug-substance-or-product-color",
+      "name": "CsDrugSubstanceProductColor",
+      "source": "package/CodeSystem-drug-substance-or-product-color.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/drug-substance-or-product-color"
+    },
+    {
+      "id": "impurity-origin",
+      "name": "CsImpurityOrigin",
+      "source": "package/CodeSystem-impurity-origin.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/impurity-origin"
+    },
+    {
+      "id": "impurity-type",
+      "name": "CsImpurityType",
+      "source": "package/CodeSystem-impurity-type.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/impurity-type"
+    },
+    {
+      "id": "ingredient-function",
+      "name": "CsIngredientFunction",
+      "source": "package/CodeSystem-ingredient-function.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/ingredient-function"
+    },
+    {
+      "id": "manufacturing-participant-role",
+      "name": "CsManufacturingParticipantRole",
+      "source": "package/CodeSystem-manufacturing-participant-role.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/manufacturing-participant-role"
+    },
+    {
+      "id": "manufacturing-step",
+      "name": "CsManufacturingStep",
+      "source": "package/CodeSystem-manufacturing-step.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/manufacturing-step"
+    },
+    {
+      "id": "manufacturing-step-scale",
+      "name": "CsManufacturingStepScale",
+      "source": "package/CodeSystem-manufacturing-step-scale.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/manufacturing-step-scale"
+    },
+    {
+      "id": "observation-qualified-value-criticality",
+      "name": "CsObsQualifiedValueCriticalityPQ",
+      "source": "package/CodeSystem-observation-qualified-value-criticality.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/observation-qualified-value-criticality"
+    },
+    {
+      "id": "package-grade",
+      "name": "CsPackageGrade",
+      "source": "package/CodeSystem-package-grade.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/package-grade"
+    },
+    {
+      "id": "package-property",
+      "name": "CsPackageProperty",
+      "source": "package/CodeSystem-package-property.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/package-property"
+    },
+    {
+      "id": "pharmaceutical-manufacturing-equipment-class",
+      "name": "CsPharmMnfEquipmentClass",
+      "source": "package/CodeSystem-pharmaceutical-manufacturing-equipment-class.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/pharmaceutical-manufacturing-equipment-class"
+    },
+    {
+      "id": "pharmaceutical-organization-type",
+      "name": "CsPharmOrganizationType",
+      "source": "package/CodeSystem-pharmaceutical-organization-type.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type"
+    },
+    {
+      "id": "pharmaceutical-plan-type",
+      "name": "CsPharmPlanType",
+      "source": "package/CodeSystem-pharmaceutical-plan-type.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/pharmaceutical-plan-type"
+    },
+    {
+      "id": "pharmaceutical-report-type",
+      "name": "CsPharmReportType",
+      "source": "package/CodeSystem-pharmaceutical-report-type.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type"
+    },
+    {
+      "id": "pharmaceutical-test-category",
+      "name": "CsPharmTestCategory",
+      "source": "package/CodeSystem-pharmaceutical-test-category.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/pharmaceutical-test-category"
+    },
+    {
+      "id": "process-parameter",
+      "name": "CsProcessParameter",
+      "source": "package/CodeSystem-process-parameter.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/process-parameter"
+    },
+    {
+      "id": "product-site-utilization-type",
+      "name": "CsProductSiteUtilizationType",
+      "source": "package/CodeSystem-product-site-utilization-type.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/product-site-utilization-type"
+    },
+    {
+      "id": "structure-characterization-technique",
+      "name": "CsStructureCharacterizationTechnique",
+      "source": "package/CodeSystem-structure-characterization-technique.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/structure-characterization-technique"
+    },
+    {
+      "id": "time-point-description",
+      "name": "CsTimePointDescription",
+      "source": "package/CodeSystem-time-point-description.json",
+      "status": "active",
+      "url": "http://terminology.hl7.org/CodeSystem/time-point-description"
+    }
+  ],
+  "conceptMaps": [],
+  "domainProfileMap": {
+    "PQ1": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-batch-info-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-compatibility-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-composition-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-excipients-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-microbiological-attributes-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-specification-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-impurities-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-manufacturing-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-process-validation-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+    ],
+    "PQ10": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-analytical-procedure-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
+    ],
+    "PQ11": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-container-closure-system-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-container-orientation-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-packaging-date-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-packaging-site-pq"
+    ],
+    "PQ12": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-stability-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-time-point-description-pq"
+    ],
+    "PQ13": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-specification-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-specification-pq"
+    ],
+    "PQ14": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-compatibility-pq"
+    ],
+    "PQ2": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-composition-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-excipients-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Composition-drug-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+    ],
+    "PQ3": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq"
+    ],
+    "PQ4": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-organizations-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-packaging-site-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+    ],
+    "PQ5": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-analysis-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-formula-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-batch-info-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-batch-info-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-derived-from-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-designation-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-full-shelves-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-partial-shelves-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-vials-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-release-date-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-retest-date-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-storage-duration-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+    ],
+    "PQ6": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-analysis-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-microbiological-attributes-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-retest-date-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-test-comment-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+    ],
+    "PQ7": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-formula-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-formulation-number-pq"
+    ],
+    "PQ8": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-manufacturing-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-process-validation-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-history-of-process-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq"
+    ],
+    "PQ9": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-process-validation-pq"
+    ]
+  },
+  "exampleBundles": [
+    {
+      "id": "bundle-analytical-procedure-pq-ex1-prod",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-analytical-procedure-pq",
+      "source": "package/example/Bundle-bundle-analytical-procedure-pq-ex1-prod.json",
+      "url": null
+    },
+    {
+      "id": "bundle-analytical-procedure-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-analytical-procedure-pq",
+      "source": "package/example/Bundle-bundle-analytical-procedure-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-batch-analysis-pq-ex1-prod",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-analysis-pq",
+      "source": "package/example/Bundle-bundle-batch-analysis-pq-ex1-prod.json",
+      "url": null
+    },
+    {
+      "id": "bundle-batch-analysis-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-analysis-pq",
+      "source": "package/example/Bundle-bundle-batch-analysis-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-batch-formula-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-formula-pq",
+      "source": "package/example/Bundle-bundle-batch-formula-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-container-closure-system-pq-ex1-prod",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-container-closure-system-pq",
+      "source": "package/example/Bundle-bundle-container-closure-system-pq-ex1-prod.json",
+      "url": null
+    },
+    {
+      "id": "bundle-container-closure-system-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-container-closure-system-pq",
+      "source": "package/example/Bundle-bundle-container-closure-system-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-product-batch-info-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-batch-info-pq",
+      "source": "package/example/Bundle-bundle-drug-product-batch-info-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-product-compatibility-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-compatibility-pq",
+      "source": "package/example/Bundle-bundle-drug-product-compatibility-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-product-composition-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-composition-pq",
+      "source": "package/example/Bundle-bundle-drug-product-composition-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-product-excipients-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-excipients-pq",
+      "source": "package/example/Bundle-bundle-drug-product-excipients-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-product-microbiological-attributes-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-microbiological-attributes-pq",
+      "source": "package/example/Bundle-bundle-drug-product-microbiological-attributes-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-product-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-pq",
+      "source": "package/example/Bundle-bundle-drug-product-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-product-specification-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-specification-pq",
+      "source": "package/example/Bundle-bundle-drug-product-specification-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-reference-standards-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-reference-standards-pq",
+      "source": "package/example/Bundle-bundle-drug-reference-standards-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-stability-pq-ex1-prod",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-stability-pq",
+      "source": "package/example/Bundle-bundle-drug-stability-pq-ex1-prod.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-stability-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-stability-pq",
+      "source": "package/example/Bundle-bundle-drug-stability-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-substance-batch-info-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-batch-info-pq",
+      "source": "package/example/Bundle-bundle-drug-substance-batch-info-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-substance-characterization-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-characterization-pq",
+      "source": "package/example/Bundle-bundle-drug-substance-characterization-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-substance-general-properties-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-general-properties-pq",
+      "source": "package/example/Bundle-bundle-drug-substance-general-properties-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-drug-substance-specification-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-specification-pq",
+      "source": "package/example/Bundle-bundle-drug-substance-specification-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-organizations-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-organizations-pq",
+      "source": "package/example/Bundle-bundle-organizations-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-product-impurities-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-impurities-pq",
+      "source": "package/example/Bundle-bundle-product-impurities-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-product-impurities-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-impurities-pq",
+      "source": "package/example/Bundle-bundle-product-impurities-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-product-manufacturing-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-manufacturing-pq",
+      "source": "package/example/Bundle-bundle-product-manufacturing-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-product-manufacturing-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-manufacturing-pq",
+      "source": "package/example/Bundle-bundle-product-manufacturing-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-product-process-validation-pq-ex1",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-process-validation-pq",
+      "source": "package/example/Bundle-bundle-product-process-validation-pq-ex1.json",
+      "url": null
+    },
+    {
+      "id": "bundle-product-process-validation-pq-ex2-sub",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-process-validation-pq",
+      "source": "package/example/Bundle-bundle-product-process-validation-pq-ex2-sub.json",
+      "url": null
+    },
+    {
+      "id": "bundle-product-process-validation-pq-ex3-prod-bio",
+      "profile": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-process-validation-pq",
+      "source": "package/example/Bundle-bundle-product-process-validation-pq-ex3-prod-bio.json",
+      "url": null
+    }
+  ],
+  "fhirVersion": "5.0.0",
+  "generatedFrom": "assets/pqi/package.tgz",
+  "igCanonical": "http://hl7.org/fhir/uv/pharm-quality/ImplementationGuide/hl7.fhir.uv.pharm-quality",
+  "implementationGuideId": "hl7.fhir.uv.pharm-quality",
+  "package": "hl7.fhir.uv.pharm-quality",
+  "packageVersion": "1.0.0",
+  "profiles": [
+    {
+      "bindings": [
+        {
+          "path": "ActivityDefinition.asNeeded[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-as-needed-reason"
+        },
+        {
+          "path": "ActivityDefinition.bodySite",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        {
+          "path": "ActivityDefinition.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-code"
+        },
+        {
+          "path": "ActivityDefinition.intent",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-intent|5.0.0"
+        },
+        {
+          "path": "ActivityDefinition.jurisdiction",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        },
+        {
+          "path": "ActivityDefinition.kind",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-resource-types|5.0.0"
+        },
+        {
+          "path": "ActivityDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "ActivityDefinition.participant.function",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-participant-function"
+        },
+        {
+          "path": "ActivityDefinition.participant.role",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/action-participant-role"
+        },
+        {
+          "path": "ActivityDefinition.participant.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-participant-type|5.0.0"
+        },
+        {
+          "path": "ActivityDefinition.priority",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-priority|5.0.0"
+        },
+        {
+          "path": "ActivityDefinition.product[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+        },
+        {
+          "path": "ActivityDefinition.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0"
+        },
+        {
+          "path": "ActivityDefinition.subject[x]",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/participant-resource-types"
+        },
+        {
+          "path": "ActivityDefinition.topic",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/definition-topic"
+        },
+        {
+          "path": "ActivityDefinition.versionAlgorithm[x]",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/version-algorithm"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ6"
+      ],
+      "id": "ActivityDefinition-test-drug-pq",
+      "kind": "resource",
+      "name": "ActivityDefinitionDrugTestPq",
+      "requiredElements": [
+        "ActivityDefinition.dynamicValue.expression",
+        "ActivityDefinition.dynamicValue.path",
+        "ActivityDefinition.status"
+      ],
+      "source": "package/StructureDefinition-ActivityDefinition-test-drug-pq.json",
+      "title": "ActivityDefinition - Test Drug PQ",
+      "type": "ActivityDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ10"
+      ],
+      "id": "Bundle-analytical-procedure-pq",
+      "kind": "resource",
+      "name": "BundleAnalyticalProcedurePq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-analytical-procedure-pq.json",
+      "title": "Bundle \u2013 Analytical Procedure PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-analytical-procedure-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5",
+        "PQ6"
+      ],
+      "id": "Bundle-batch-analysis-pq",
+      "kind": "resource",
+      "name": "BundleBatchAnalysisPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-batch-analysis-pq.json",
+      "title": "Bundle \u2013 Batch Analysis PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-analysis-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5",
+        "PQ7"
+      ],
+      "id": "Bundle-batch-formula-pq",
+      "kind": "resource",
+      "name": "BundleBatchFormulaPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-batch-formula-pq.json",
+      "title": "Bundle \u2013 Batch Formula PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-formula-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ11"
+      ],
+      "id": "Bundle-container-closure-system-pq",
+      "kind": "resource",
+      "name": "BundleContainerClosureSystemPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-container-closure-system-pq.json",
+      "title": "Bundle \u2013 Container Closure System PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-container-closure-system-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ5"
+      ],
+      "id": "Bundle-drug-product-batch-info-pq",
+      "kind": "resource",
+      "name": "BundleDrugProductBatchInfoPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-product-batch-info-pq.json",
+      "title": "Bundle \u2013 drug Product Batch Information PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-batch-info-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ14"
+      ],
+      "id": "Bundle-drug-product-compatibility-pq",
+      "kind": "resource",
+      "name": "BundleDrugProductCompatibilityPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-product-compatibility-pq.json",
+      "title": "Bundle - Drug Product Compatibility PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-compatibility-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ2"
+      ],
+      "id": "Bundle-drug-product-composition-pq",
+      "kind": "resource",
+      "name": "BundleDrugProductCompositionPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-product-composition-pq.json",
+      "title": "Bundle \u2013 Drug Product Composition PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-composition-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ2"
+      ],
+      "id": "Bundle-drug-product-excipients-pq",
+      "kind": "resource",
+      "name": "BundleDrugProductExcipientsPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-product-excipients-pq.json",
+      "title": "Bundle \u2013 Drug Product Excipients PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-excipients-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ6"
+      ],
+      "id": "Bundle-drug-product-microbiological-attributes-pq",
+      "kind": "resource",
+      "name": "BundleDrugProductMicrobiologicalAttributesPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-product-microbiological-attributes-pq.json",
+      "title": "Bundle \u2013 Drug Product Microbiological Attributes PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-microbiological-attributes-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1"
+      ],
+      "id": "Bundle-drug-product-pq",
+      "kind": "resource",
+      "name": "BundleDrugProductPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-product-pq.json",
+      "title": "Bundle - Drug Product PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ13"
+      ],
+      "id": "Bundle-drug-product-specification-pq",
+      "kind": "resource",
+      "name": "BundleDrugProductSpecificationPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-product-specification-pq.json",
+      "title": "Bundle \u2013 Drug Product Specification PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-product-specification-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Bundle-drug-reference-standards-pq",
+      "kind": "resource",
+      "name": "BundleDrugReferenceStandardsPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-reference-standards-pq.json",
+      "title": "Bundle \u2013 Drug Reference Standards PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-reference-standards-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ12"
+      ],
+      "id": "Bundle-drug-stability-pq",
+      "kind": "resource",
+      "name": "BundleDrugStabilityPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-stability-pq.json",
+      "title": "Bundle \u2013 Drug Stability PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-stability-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Bundle-drug-substance-batch-info-pq",
+      "kind": "resource",
+      "name": "BundleDrugSubstanceBatchInfoPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-substance-batch-info-pq.json",
+      "title": "Bundle \u2013 Drug Substance Batch Information PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-batch-info-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Bundle-drug-substance-characterization-pq",
+      "kind": "resource",
+      "name": "BundleDrugSubstanceCharacterizationPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-substance-characterization-pq.json",
+      "title": "Bundle \u2013 Drug Substance Characterization PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-characterization-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Bundle-drug-substance-general-properties-pq",
+      "kind": "resource",
+      "name": "BundleDrugSubstanceGeneralPropertiesPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-substance-general-properties-pq.json",
+      "title": "Bundle \u2013 Drug Substance General Properties PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-general-properties-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ13"
+      ],
+      "id": "Bundle-drug-substance-specification-pq",
+      "kind": "resource",
+      "name": "BundleDrugSubstanceSpecificationPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-drug-substance-specification-pq.json",
+      "title": "Bundle \u2013 Drug Substance Specification PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-drug-substance-specification-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ4"
+      ],
+      "id": "Bundle-organizations-pq",
+      "kind": "resource",
+      "name": "BundleOrganizationsPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-organizations-pq.json",
+      "title": "Bundle - Organizations PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-organizations-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1"
+      ],
+      "id": "Bundle-product-impurities-pq",
+      "kind": "resource",
+      "name": "BundleProductImpuritiesPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-product-impurities-pq.json",
+      "title": "Bundle - Product Impurities PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-impurities-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ8"
+      ],
+      "id": "Bundle-product-manufacturing-pq",
+      "kind": "resource",
+      "name": "BundleProductManufacturingPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-product-manufacturing-pq.json",
+      "title": "Bundle - Product Manufacturing PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-manufacturing-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Bundle.entry.request.method",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/http-verb|5.0.0"
+        },
+        {
+          "path": "Bundle.entry.search.mode",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/search-entry-mode|5.0.0"
+        },
+        {
+          "path": "Bundle.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Bundle.link.relation",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/iana-link-relations|5.0.0"
+        },
+        {
+          "path": "Bundle.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/bundle-type|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ8",
+        "PQ9"
+      ],
+      "id": "Bundle-product-process-validation-pq",
+      "kind": "resource",
+      "name": "BundleProductProcessValidationPq",
+      "requiredElements": [
+        "Bundle.entry",
+        "Bundle.entry.request.method",
+        "Bundle.entry.request.url",
+        "Bundle.entry.response.status",
+        "Bundle.link.relation",
+        "Bundle.link.url",
+        "Bundle.type"
+      ],
+      "source": "package/StructureDefinition-Bundle-product-process-validation-pq.json",
+      "title": "Bundle - Product Process Validation PQ",
+      "type": "Bundle",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-product-process-validation-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Composition.attester.mode",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/composition-attestation-mode"
+        },
+        {
+          "path": "Composition.category",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/referenced-item-category"
+        },
+        {
+          "path": "Composition.event.detail",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-ActCode"
+        },
+        {
+          "path": "Composition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Composition.section.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/doc-section-codes"
+        },
+        {
+          "path": "Composition.section.emptyReason",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-empty-reason"
+        },
+        {
+          "path": "Composition.section.orderedBy",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/list-order"
+        },
+        {
+          "path": "Composition.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/composition-status|5.0.0"
+        },
+        {
+          "path": "Composition.type",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/doc-typecodes"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ2"
+      ],
+      "id": "Composition-drug-pq",
+      "kind": "resource",
+      "name": "CompositionDrugPQ",
+      "requiredElements": [
+        "Composition.attester.mode",
+        "Composition.author",
+        "Composition.date",
+        "Composition.status",
+        "Composition.title",
+        "Composition.type"
+      ],
+      "source": "package/StructureDefinition-Composition-drug-pq.json",
+      "title": "Composition - Drug PQ",
+      "type": "Composition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Composition-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "DeviceDefinition.classification.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceType-pq"
+        },
+        {
+          "path": "DeviceDefinition.conformsTo.category",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-specification-category"
+        },
+        {
+          "path": "DeviceDefinition.conformsTo.specification",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-specification-type"
+        },
+        {
+          "path": "DeviceDefinition.correctiveAction.scope",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-correctiveactionscope|5.0.0"
+        },
+        {
+          "path": "DeviceDefinition.deviceName.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-nametype|5.0.0"
+        },
+        {
+          "path": "DeviceDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "DeviceDefinition.link.relation",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/devicedefinition-relationtype"
+        },
+        {
+          "path": "DeviceDefinition.productionIdentifierInUDI",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-productidentifierinudi|5.0.0"
+        },
+        {
+          "path": "DeviceDefinition.property.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq"
+        },
+        {
+          "path": "DeviceDefinition.regulatoryIdentifier.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/devicedefinition-regulatory-identifier-type|5.0.0"
+        },
+        {
+          "path": "DeviceDefinition.safety",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-safety"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "DeviceDefinition-drug-pq",
+      "kind": "resource",
+      "name": "DeviceDefinitionDrugPq",
+      "requiredElements": [
+        "DeviceDefinition.chargeItem.chargeItemCode",
+        "DeviceDefinition.chargeItem.count",
+        "DeviceDefinition.classification.type",
+        "DeviceDefinition.conformsTo.specification",
+        "DeviceDefinition.correctiveAction.period",
+        "DeviceDefinition.correctiveAction.recall",
+        "DeviceDefinition.deviceName.name",
+        "DeviceDefinition.deviceName.type",
+        "DeviceDefinition.hasPart.reference",
+        "DeviceDefinition.link.relatedDevice",
+        "DeviceDefinition.link.relation",
+        "DeviceDefinition.material.substance",
+        "DeviceDefinition.property.type",
+        "DeviceDefinition.property.value[x]",
+        "DeviceDefinition.regulatoryIdentifier.deviceIdentifier",
+        "DeviceDefinition.regulatoryIdentifier.issuer",
+        "DeviceDefinition.regulatoryIdentifier.jurisdiction",
+        "DeviceDefinition.regulatoryIdentifier.type",
+        "DeviceDefinition.udiDeviceIdentifier.deviceIdentifier",
+        "DeviceDefinition.udiDeviceIdentifier.issuer",
+        "DeviceDefinition.udiDeviceIdentifier.jurisdiction",
+        "DeviceDefinition.udiDeviceIdentifier.marketDistribution.marketPeriod",
+        "DeviceDefinition.udiDeviceIdentifier.marketDistribution.subJurisdiction",
+        "DeviceDefinition.version.value"
+      ],
+      "source": "package/StructureDefinition-DeviceDefinition-drug-pq.json",
+      "title": "DeviceDefinition - Drug PQ",
+      "type": "DeviceDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DeviceDefinition-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "DiagnosticReport.category",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/diagnostic-service-sections"
+        },
+        {
+          "path": "DiagnosticReport.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq"
+        },
+        {
+          "path": "DiagnosticReport.conclusionCode",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/clinical-findings"
+        },
+        {
+          "path": "DiagnosticReport.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "DiagnosticReport.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/diagnostic-report-status|5.0.0"
+        },
+        {
+          "path": "DiagnosticReport.supportingInfo.type",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0936"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ6"
+      ],
+      "id": "DiagnosticReport-analysis-drug-pq",
+      "kind": "resource",
+      "name": "DiagnosticReportAnalysisDrugPQ",
+      "requiredElements": [
+        "DiagnosticReport.code",
+        "DiagnosticReport.media.link",
+        "DiagnosticReport.status",
+        "DiagnosticReport.supportingInfo.reference",
+        "DiagnosticReport.supportingInfo.type"
+      ],
+      "source": "package/StructureDefinition-DiagnosticReport-analysis-drug-pq.json",
+      "title": "DiagnosticReport - Analysis Drug PQ",
+      "type": "DiagnosticReport",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "DocumentReference.attester.mode",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/composition-attestation-mode"
+        },
+        {
+          "path": "DocumentReference.bodySite",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        {
+          "path": "DocumentReference.category",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/referenced-item-category"
+        },
+        {
+          "path": "DocumentReference.content.profile.value[x]",
+          "strength": "preferred",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-HL7FormatCodes"
+        },
+        {
+          "path": "DocumentReference.docStatus",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/composition-status|5.0.0"
+        },
+        {
+          "path": "DocumentReference.event",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-ActCode"
+        },
+        {
+          "path": "DocumentReference.facilityType",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/c80-facilitycodes"
+        },
+        {
+          "path": "DocumentReference.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "DocumentReference.modality",
+          "strength": "extensible",
+          "valueSet": "http://dicom.nema.org/medical/dicom/current/output/chtml/part16/sect_CID_33.html"
+        },
+        {
+          "path": "DocumentReference.practiceSetting",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/c80-practice-codes"
+        },
+        {
+          "path": "DocumentReference.relatesTo.code",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/document-relationship-type"
+        },
+        {
+          "path": "DocumentReference.securityLabel",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/security-label-examples"
+        },
+        {
+          "path": "DocumentReference.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/document-reference-status|5.0.0"
+        },
+        {
+          "path": "DocumentReference.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-diagramType-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "DocumentReference-drug-pq",
+      "kind": "resource",
+      "name": "DocumentReferenceDrugPq",
+      "requiredElements": [
+        "DocumentReference.attester.mode",
+        "DocumentReference.content",
+        "DocumentReference.content.attachment",
+        "DocumentReference.content.profile.value[x]",
+        "DocumentReference.relatesTo.code",
+        "DocumentReference.relatesTo.target",
+        "DocumentReference.status"
+      ],
+      "source": "package/StructureDefinition-DocumentReference-drug-pq.json",
+      "title": "DocumentReference - Drug PQ",
+      "type": "DocumentReference",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DocumentReference-drug-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-actual-yield-pq",
+      "kind": "complex-type",
+      "name": "ExtensionActualYieldPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-actual-yield-pq.json",
+      "title": "Extension - Actual Yield PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-actual-yield-unfiltered-pq",
+      "kind": "complex-type",
+      "name": "ExtensionActualYieldUnfilteredPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-actual-yield-unfiltered-pq.json",
+      "title": "Extension - Actual Yield Unfiltered PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-unfiltered-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-derived-from-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchDerivedFromPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-derived-from-pq.json",
+      "title": "Extension - Batch Derived From PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-derived-from-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-batch-designation-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-designation-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchDesignationPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-designation-pq.json",
+      "title": "Extension - Batch Designation PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-designation-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-number-of-full-shelves-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchNumberOfFullShelvesPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-number-of-full-shelves-pq.json",
+      "title": "Extension - Batch Number of Full Shelves PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-full-shelves-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1",
+        "PQ5"
+      ],
+      "id": "Extension-batch-number-of-items-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchNumberOfItemsPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-number-of-items-pq.json",
+      "title": "Extension - Batch Number of Items PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-number-of-partial-shelves-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchNumberOfPartialShelvesPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-number-of-partial-shelves-pq.json",
+      "title": "Extension - Batch Number of Partial Shelves PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-partial-shelves-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-number-of-vials-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchNumberOfVialsPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-number-of-vials-pq.json",
+      "title": "Extension - Batch Number of Vials PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-vials-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-release-date-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchReleaseDatePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-release-date-pq.json",
+      "title": "Extension - Batch Release Date PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-release-date-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5",
+        "PQ6"
+      ],
+      "id": "Extension-batch-retest-date-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchRetestDatePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-retest-date-pq.json",
+      "title": "Extension - Batch Retest Date PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-retest-date-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-storage-duration-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchStorageDurationPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-storage-duration-pq.json",
+      "title": "Extension - Batch Storage Duration PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-storage-duration-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Extension-batch-substance-batch-pq",
+      "kind": "complex-type",
+      "name": "ExtensionBatchSubstanceBatchPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-batch-substance-batch-pq.json",
+      "title": "Extension - Batch Substance Batch PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-substance-batch-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-containerOrientation-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ11"
+      ],
+      "id": "Extension-container-orientation-pq",
+      "kind": "complex-type",
+      "name": "ExtensionContainerOrientationPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-container-orientation-pq.json",
+      "title": "Extension - Container Orientation PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-container-orientation-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ7"
+      ],
+      "id": "Extension-formulation-number-pq",
+      "kind": "complex-type",
+      "name": "ExtensionFormulationNumberPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-formulation-number-pq.json",
+      "title": "Extension - Formulation Number PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-formulation-number-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ8"
+      ],
+      "id": "Extension-history-of-process-pq",
+      "kind": "complex-type",
+      "name": "ExtensionHistoryOfProcessPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-history-of-process-pq.json",
+      "title": "Extension - History of Process PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-history-of-process-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-impurity-origin-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ3"
+      ],
+      "id": "Extension-impurity-origin-pq",
+      "kind": "complex-type",
+      "name": "ExtensionImpurityOriginPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-impurity-origin-pq.json",
+      "title": "Extension - Impurity Origin PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-impurity-origin-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ8"
+      ],
+      "id": "Extension-manufacturing-participant-pq",
+      "kind": "complex-type",
+      "name": "ExtensionManufacturingParticipantPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-manufacturing-participant-pq.json",
+      "title": "Extension - Manufacturing Participant PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-participant-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ8"
+      ],
+      "id": "Extension-manufacturing-process-pq",
+      "kind": "complex-type",
+      "name": "ExtensionManufacturingProcessPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-manufacturing-process-pq.json",
+      "title": "Extension - Manufacturing Process PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-manufacturing-process-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-medication-definition-pq",
+      "kind": "complex-type",
+      "name": "ExtensionMedicationDefinitionPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-medication-definition-pq.json",
+      "title": "Extension - Medication Definition PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ2"
+      ],
+      "id": "Extension-novel-excipient-pq",
+      "kind": "complex-type",
+      "name": "ExtensionNovelExcipientPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-novel-excipient-pq.json",
+      "title": "Extension - Novel Excipient PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-novel-excipient-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-package-definition-pq",
+      "kind": "complex-type",
+      "name": "ExtensionPackageDefinitionPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-package-definition-pq.json",
+      "title": "Extension - Package Definition PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-package-definition-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ11"
+      ],
+      "id": "Extension-packaging-date-pq",
+      "kind": "complex-type",
+      "name": "ExtensionPackagingDatePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-packaging-date-pq.json",
+      "title": "Extension - Packaging Date PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-packaging-date-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ11",
+        "PQ4"
+      ],
+      "id": "Extension-packaging-site-pq",
+      "kind": "complex-type",
+      "name": "ExtensionPackagingSitePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-packaging-site-pq.json",
+      "title": "Extension - Packaging Site PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-packaging-site-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-plan-document-reference-pq",
+      "kind": "complex-type",
+      "name": "ExtensionPlanDocumentReferencePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-plan-document-reference-pq.json",
+      "title": "Extension - Plan Document Reference PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-plan-document-reference-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-processParameter-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ8"
+      ],
+      "id": "Extension-process-parameters-pq",
+      "kind": "complex-type",
+      "name": "ExtensionProcessParametersPq",
+      "requiredElements": [
+        "Extension.extension",
+        "Extension.extension.url",
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-process-parameters-pq.json",
+      "title": "Extension - Process Parameters PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-parameters-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingStepScale-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ8"
+      ],
+      "id": "Extension-process-step-scale-pq",
+      "kind": "complex-type",
+      "name": "ExtensionProcessStepScalePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-process-step-scale-pq.json",
+      "title": "Extension - Process Step Scale PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-process-step-scale-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-qualifiedValueCriticality-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-qualified-value-criticality-pq",
+      "kind": "complex-type",
+      "name": "ExtensionQualifiedValueCriticalityPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-qualified-value-criticality-pq.json",
+      "title": "Extension - Qualified Value Criticality PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-criticality-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-qualified-value-display-pq",
+      "kind": "complex-type",
+      "name": "ExtensionQualifiedValueDisplayPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-qualified-value-display-pq.json",
+      "title": "Extension - Qualified Value Display PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-display-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-qualified-value-target-pq",
+      "kind": "complex-type",
+      "name": "ExtensionQualifiedValueTargetPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-qualified-value-target-pq.json",
+      "title": "Extension - Qualified Value Target PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-target-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-qualified-value-text-pq",
+      "kind": "complex-type",
+      "name": "ExtensionQualifiedValueTextPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-qualified-value-text-pq.json",
+      "title": "Extension - Qualified Value Text PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-qualified-value-text-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-productSiteUtilizationType-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ4"
+      ],
+      "id": "Extension-site-utilization-pq",
+      "kind": "complex-type",
+      "name": "ExtensionSiteUtilizationPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-site-utilization-pq.json",
+      "title": "Extension - Site Utilization PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-site-utilization-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-statistical-model-pq",
+      "kind": "complex-type",
+      "name": "ExtensionStatisticalModelPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-statistical-model-pq.json",
+      "title": "Extension - Statistical Model PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-statistical-model-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ8"
+      ],
+      "id": "Extension-substance-property-parameter-pq",
+      "kind": "complex-type",
+      "name": "ExtensionSubstancePropertyParameterPq",
+      "requiredElements": [
+        "Extension.extension",
+        "Extension.extension.url",
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-substance-property-parameter-pq.json",
+      "title": "Extension - Substance Property Parameter PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-parameter-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-substance-property-range-pq",
+      "kind": "complex-type",
+      "name": "ExtensionSubstancePropertyRangePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-substance-property-range-pq.json",
+      "title": "Extension - Substance Property Range PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-substance-property-range-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-suitability-for-use-pq",
+      "kind": "complex-type",
+      "name": "ExtensionSuitabilityForUsePq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-suitability-for-use-pq.json",
+      "title": "Extension - Suitability for Use PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-suitability-for-use-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Extension-target-fill-weight-pq",
+      "kind": "complex-type",
+      "name": "ExtensionTargetFillWeightPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-target-fill-weight-pq.json",
+      "title": "Extension Target Fill Weight PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-target-fill-weight-pq"
+    },
+    {
+      "bindings": [],
+      "derivation": "constraint",
+      "domains": [
+        "PQ6"
+      ],
+      "id": "Extension-test-comment-pq",
+      "kind": "complex-type",
+      "name": "ExtensionTestCommentPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-test-comment-pq.json",
+      "title": "Extension - Test Comment PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-test-comment-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Extension.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-timePointDescription-pq"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ12"
+      ],
+      "id": "Extension-time-point-description-pq",
+      "kind": "complex-type",
+      "name": "ExtensionTimePointDescriptionPq",
+      "requiredElements": [
+        "Extension.url"
+      ],
+      "source": "package/StructureDefinition-Extension-time-point-description-pq.json",
+      "title": "Extension - Time Point Description PQ",
+      "type": "Extension",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-time-point-description-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Ingredient.function",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-ingredientFunction-pq"
+        },
+        {
+          "path": "Ingredient.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Ingredient.manufacturer.role",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/ingredient-manufacturer-role|5.0.0"
+        },
+        {
+          "path": "Ingredient.role",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/ingredient-role"
+        },
+        {
+          "path": "Ingredient.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0"
+        },
+        {
+          "path": "Ingredient.substance.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-codes"
+        },
+        {
+          "path": "Ingredient.substance.strength.country",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/country"
+        },
+        {
+          "path": "Ingredient.substance.strength.referenceStrength.country",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/country"
+        },
+        {
+          "path": "Ingredient.substance.strength.referenceStrength.substance",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-codes"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ2"
+      ],
+      "id": "Ingredient-drug-pq",
+      "kind": "resource",
+      "name": "IngredientDrugPq",
+      "requiredElements": [
+        "Ingredient.manufacturer.manufacturer",
+        "Ingredient.role",
+        "Ingredient.status",
+        "Ingredient.substance",
+        "Ingredient.substance.code",
+        "Ingredient.substance.strength.referenceStrength.strength[x]",
+        "Ingredient.substance.strength.referenceStrength.substance"
+      ],
+      "source": "package/StructureDefinition-Ingredient-drug-pq.json",
+      "title": "Ingredient - Drug Pq",
+      "type": "Ingredient",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Ingredient-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "ManufacturedItemDefinition.ingredient",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-codes"
+        },
+        {
+          "path": "ManufacturedItemDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "ManufacturedItemDefinition.manufacturedDoseForm",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/manufactured-dose-form"
+        },
+        {
+          "path": "ManufacturedItemDefinition.property.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufactured-item-property-pq"
+        },
+        {
+          "path": "ManufacturedItemDefinition.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0"
+        },
+        {
+          "path": "ManufacturedItemDefinition.unitOfPresentation",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/unit-of-presentation"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1"
+      ],
+      "id": "ManufacturedItemDefinition-drug-pq",
+      "kind": "resource",
+      "name": "ManufacturedItemDefinitionDrugPq",
+      "requiredElements": [
+        "ManufacturedItemDefinition.component.type",
+        "ManufacturedItemDefinition.manufacturedDoseForm",
+        "ManufacturedItemDefinition.property.type",
+        "ManufacturedItemDefinition.status"
+      ],
+      "source": "package/StructureDefinition-ManufacturedItemDefinition-drug-pq.json",
+      "title": "ManufacturedItemDefinition - Drug PQ",
+      "type": "ManufacturedItemDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Medication.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+        },
+        {
+          "path": "Medication.doseForm",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-form-codes"
+        },
+        {
+          "path": "Medication.ingredient.item",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+        },
+        {
+          "path": "Medication.ingredient.strength[x]",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-ingredientstrength"
+        },
+        {
+          "path": "Medication.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Medication.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-status|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ5"
+      ],
+      "id": "Medication-batch-information-drug-pq",
+      "kind": "resource",
+      "name": "MedicationBatchInformationDrugPq",
+      "requiredElements": [
+        "Medication.ingredient.item"
+      ],
+      "source": "package/StructureDefinition-Medication-batch-information-drug-pq.json",
+      "title": "Medication - Batch Information Drug PQ",
+      "type": "Medication",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "MedicinalProductDefinition.additionalMonitoringIndicator",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-additional-monitoring"
+        },
+        {
+          "path": "MedicinalProductDefinition.characteristic.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicinalproduct-characteristic-type"
+        },
+        {
+          "path": "MedicinalProductDefinition.characteristic.value[x].code",
+          "strength": "required",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-UnitsOfMeasureCaseSensitive"
+        },
+        {
+          "path": "MedicinalProductDefinition.characteristic.value[x].comparator",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator|5.0.0"
+        },
+        {
+          "path": "MedicinalProductDefinition.classification",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-classification"
+        },
+        {
+          "path": "MedicinalProductDefinition.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-codes"
+        },
+        {
+          "path": "MedicinalProductDefinition.combinedPharmaceuticalDoseForm",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicine-doseform"
+        },
+        {
+          "path": "MedicinalProductDefinition.contact.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-contact-type"
+        },
+        {
+          "path": "MedicinalProductDefinition.crossReference.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-cross-reference-type"
+        },
+        {
+          "path": "MedicinalProductDefinition.domain",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-domain"
+        },
+        {
+          "path": "MedicinalProductDefinition.impurity",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-codes"
+        },
+        {
+          "path": "MedicinalProductDefinition.ingredient",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-codes"
+        },
+        {
+          "path": "MedicinalProductDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "MedicinalProductDefinition.legalStatusOfSupply",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/legal-status-of-supply"
+        },
+        {
+          "path": "MedicinalProductDefinition.name.part.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-name-part-type"
+        },
+        {
+          "path": "MedicinalProductDefinition.name.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-productNameType-pq"
+        },
+        {
+          "path": "MedicinalProductDefinition.name.usage.country",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/country"
+        },
+        {
+          "path": "MedicinalProductDefinition.name.usage.jurisdiction",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        },
+        {
+          "path": "MedicinalProductDefinition.name.usage.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "MedicinalProductDefinition.operation.confidentialityIndicator",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-confidentiality"
+        },
+        {
+          "path": "MedicinalProductDefinition.packagedMedicinalProduct",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-package-type"
+        },
+        {
+          "path": "MedicinalProductDefinition.pediatricUseIndicator",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-pediatric-use"
+        },
+        {
+          "path": "MedicinalProductDefinition.route",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicine-route-of-administration"
+        },
+        {
+          "path": "MedicinalProductDefinition.specialMeasures",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-special-measures"
+        },
+        {
+          "path": "MedicinalProductDefinition.status",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
+        {
+          "path": "MedicinalProductDefinition.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-type"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1"
+      ],
+      "id": "MedicinalProductDefinition-drug-product-pq",
+      "kind": "resource",
+      "name": "MedicinalProductDefinitionDrugProductPq",
+      "requiredElements": [
+        "MedicinalProductDefinition.characteristic.type",
+        "MedicinalProductDefinition.contact.contact",
+        "MedicinalProductDefinition.crossReference.product",
+        "MedicinalProductDefinition.name",
+        "MedicinalProductDefinition.name.part.part",
+        "MedicinalProductDefinition.name.part.type",
+        "MedicinalProductDefinition.name.productName",
+        "MedicinalProductDefinition.name.usage.country",
+        "MedicinalProductDefinition.name.usage.language"
+      ],
+      "source": "package/StructureDefinition-MedicinalProductDefinition-drug-product-pq.json",
+      "title": "MedicinalProductDefinition - Drug Product PQ",
+      "type": "MedicinalProductDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Observation.bodySite",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        {
+          "path": "Observation.category",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-category"
+        },
+        {
+          "path": "Observation.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq"
+        },
+        {
+          "path": "Observation.component.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-codes"
+        },
+        {
+          "path": "Observation.component.dataAbsentReason",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/data-absent-reason"
+        },
+        {
+          "path": "Observation.component.interpretation",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-interpretation"
+        },
+        {
+          "path": "Observation.dataAbsentReason",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/data-absent-reason"
+        },
+        {
+          "path": "Observation.interpretation",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-interpretation"
+        },
+        {
+          "path": "Observation.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Observation.method",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-methods"
+        },
+        {
+          "path": "Observation.referenceRange.appliesTo",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/referencerange-appliesto"
+        },
+        {
+          "path": "Observation.referenceRange.normalValue",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue"
+        },
+        {
+          "path": "Observation.referenceRange.type",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/referencerange-meaning"
+        },
+        {
+          "path": "Observation.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-status|5.0.0"
+        },
+        {
+          "path": "Observation.triggeredBy.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-triggeredbytype|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ6"
+      ],
+      "id": "Observation-test-result-drug-pq",
+      "kind": "resource",
+      "name": "ObservationTestResultDrugPq",
+      "requiredElements": [
+        "Observation.code",
+        "Observation.component.code",
+        "Observation.status",
+        "Observation.triggeredBy.observation",
+        "Observation.triggeredBy.type"
+      ],
+      "source": "package/StructureDefinition-Observation-test-result-drug-pq.json",
+      "title": "Observation - Test Result Drug PQ",
+      "type": "Observation",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "ObservationDefinition.bodySite",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        {
+          "path": "ObservationDefinition.category",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-category"
+        },
+        {
+          "path": "ObservationDefinition.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-test-method-pq"
+        },
+        {
+          "path": "ObservationDefinition.component.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-codes"
+        },
+        {
+          "path": "ObservationDefinition.component.permittedDataType",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/permitted-data-type|5.0.0"
+        },
+        {
+          "path": "ObservationDefinition.component.permittedUnit",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/ucum-units"
+        },
+        {
+          "path": "ObservationDefinition.jurisdiction",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        },
+        {
+          "path": "ObservationDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "ObservationDefinition.method",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-methods"
+        },
+        {
+          "path": "ObservationDefinition.permittedDataType",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/permitted-data-type|5.0.0"
+        },
+        {
+          "path": "ObservationDefinition.permittedUnit",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/ucum-units"
+        },
+        {
+          "path": "ObservationDefinition.qualifiedValue.appliesTo",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/referencerange-appliesto"
+        },
+        {
+          "path": "ObservationDefinition.qualifiedValue.context",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/referencerange-meaning"
+        },
+        {
+          "path": "ObservationDefinition.qualifiedValue.gender",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/administrative-gender|5.0.0"
+        },
+        {
+          "path": "ObservationDefinition.qualifiedValue.rangeCategory",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-range-category|5.0.0"
+        },
+        {
+          "path": "ObservationDefinition.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0"
+        },
+        {
+          "path": "ObservationDefinition.versionAlgorithm[x]",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/version-algorithm"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ10",
+        "PQ6"
+      ],
+      "id": "ObservationDefinition-test-method-drug-pq",
+      "kind": "resource",
+      "name": "ObservationDefinitionTestMethodPq",
+      "requiredElements": [
+        "ObservationDefinition.code",
+        "ObservationDefinition.component.code",
+        "ObservationDefinition.status"
+      ],
+      "source": "package/StructureDefinition-ObservationDefinition-test-method-drug-pq.json",
+      "title": "ObservationDefinition - Test Method PQ",
+      "type": "ObservationDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Organization.contact.address.country",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-country-pq"
+        },
+        {
+          "path": "Organization.contact.address.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/address-type|5.0.0"
+        },
+        {
+          "path": "Organization.contact.address.use",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/address-use|5.0.0"
+        },
+        {
+          "path": "Organization.contact.purpose",
+          "strength": "preferred",
+          "valueSet": "http://terminology.hl7.org/ValueSet/contactentity-type"
+        },
+        {
+          "path": "Organization.contact.telecom.system",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-system|5.0.0"
+        },
+        {
+          "path": "Organization.contact.telecom.use",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/contact-point-use|5.0.0"
+        },
+        {
+          "path": "Organization.identifier.type",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/identifier-type"
+        },
+        {
+          "path": "Organization.identifier.use",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/identifier-use|5.0.0"
+        },
+        {
+          "path": "Organization.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Organization.qualification.code",
+          "strength": "example",
+          "valueSet": ""
+        },
+        {
+          "path": "Organization.type",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-pharmaceutical-organization-type"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ4"
+      ],
+      "id": "Organization-drug-pq",
+      "kind": "resource",
+      "name": "OrganizationDrugPq",
+      "requiredElements": [
+        "Organization.contact.address.city",
+        "Organization.contact.address.country",
+        "Organization.contact.address.line",
+        "Organization.contact.telecom.system",
+        "Organization.identifier",
+        "Organization.identifier.system",
+        "Organization.identifier.value",
+        "Organization.qualification.code",
+        "Organization.type"
+      ],
+      "source": "package/StructureDefinition-Organization-drug-pq.json",
+      "title": "Organization - Drug PQ",
+      "type": "Organization",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "PackagedProductDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "PackagedProductDefinition.legalStatusOfSupply.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/legal-status-of-supply"
+        },
+        {
+          "path": "PackagedProductDefinition.legalStatusOfSupply.jurisdiction",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        },
+        {
+          "path": "PackagedProductDefinition.packaging.alternateMaterial",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/package-material"
+        },
+        {
+          "path": "PackagedProductDefinition.packaging.material",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/package-material"
+        },
+        {
+          "path": "PackagedProductDefinition.packaging.property.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-packageProperty-pq"
+        },
+        {
+          "path": "PackagedProductDefinition.packaging.property.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-grade-pq"
+        },
+        {
+          "path": "PackagedProductDefinition.packaging.property.value[x].code",
+          "strength": "required",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v3-UnitsOfMeasureCaseSensitive"
+        },
+        {
+          "path": "PackagedProductDefinition.packaging.property.value[x].comparator",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/quantity-comparator|5.0.0"
+        },
+        {
+          "path": "PackagedProductDefinition.packaging.type",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/packaging-type"
+        },
+        {
+          "path": "PackagedProductDefinition.status",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
+        {
+          "path": "PackagedProductDefinition.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/package-type"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ1"
+      ],
+      "id": "PackagedProductDefinition-drug-pq",
+      "kind": "resource",
+      "name": "PackagedProductDefinitionDrugPq",
+      "requiredElements": [
+        "PackagedProductDefinition.packaging.containedItem.item",
+        "PackagedProductDefinition.packaging.property.type"
+      ],
+      "source": "package/StructureDefinition-PackagedProductDefinition-drug-pq.json",
+      "title": "PackagedProductDefinition - Drug PQ",
+      "type": "PackagedProductDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "PlanDefinition.action.cardinalityBehavior",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-cardinality-behavior|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-code"
+        },
+        {
+          "path": "PlanDefinition.action.condition.kind",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-condition-kind|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.groupingBehavior",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-grouping-behavior|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.participant.function",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-participant-function"
+        },
+        {
+          "path": "PlanDefinition.action.participant.role",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingParticipantRole-pq"
+        },
+        {
+          "path": "PlanDefinition.action.participant.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-participant-type|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.participant.typeReference.type",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"
+        },
+        {
+          "path": "PlanDefinition.action.precheckBehavior",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-precheck-behavior|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.priority",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/request-priority|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.reason",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-reason-code"
+        },
+        {
+          "path": "PlanDefinition.action.relatedAction.endRelationship",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-relationship-type|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.relatedAction.relationship",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-relationship-type|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.requiredBehavior",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-required-behavior|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.selectionBehavior",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-selection-behavior|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.action.subject[x]",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/participant-resource-types"
+        },
+        {
+          "path": "PlanDefinition.action.type",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-type"
+        },
+        {
+          "path": "PlanDefinition.actor.option.role",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-testCategory-pq"
+        },
+        {
+          "path": "PlanDefinition.actor.option.type",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/action-participant-type|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.asNeeded[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medication-as-needed-reason"
+        },
+        {
+          "path": "PlanDefinition.goal.addresses",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-code"
+        },
+        {
+          "path": "PlanDefinition.goal.category",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-equipmentClass-pq"
+        },
+        {
+          "path": "PlanDefinition.goal.description",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/clinical-findings"
+        },
+        {
+          "path": "PlanDefinition.goal.priority",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-goalPriority-pq"
+        },
+        {
+          "path": "PlanDefinition.goal.start",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/goal-start-event"
+        },
+        {
+          "path": "PlanDefinition.goal.target.measure",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/observation-codes"
+        },
+        {
+          "path": "PlanDefinition.jurisdiction",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        },
+        {
+          "path": "PlanDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0"
+        },
+        {
+          "path": "PlanDefinition.subject[x]",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/participant-resource-types"
+        },
+        {
+          "path": "PlanDefinition.topic",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/definition-topic"
+        },
+        {
+          "path": "PlanDefinition.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-planType-pq"
+        },
+        {
+          "path": "PlanDefinition.versionAlgorithm[x]",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/version-algorithm"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "PlanDefinition-drug-pq",
+      "kind": "resource",
+      "name": "PlanDefinitionDrugPq",
+      "requiredElements": [
+        "PlanDefinition.action.condition.kind",
+        "PlanDefinition.action.relatedAction.relationship",
+        "PlanDefinition.action.relatedAction.targetId",
+        "PlanDefinition.actor.option",
+        "PlanDefinition.goal.description",
+        "PlanDefinition.status"
+      ],
+      "source": "package/StructureDefinition-PlanDefinition-drug-pq.json",
+      "title": "PlanDefinition - Drug PQ",
+      "type": "PlanDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PlanDefinition-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Procedure.bodySite",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        {
+          "path": "Procedure.category",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-category"
+        },
+        {
+          "path": "Procedure.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-process-validation-procedure-pq"
+        },
+        {
+          "path": "Procedure.complication",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/condition-code"
+        },
+        {
+          "path": "Procedure.focalDevice.action",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-action"
+        },
+        {
+          "path": "Procedure.followUp",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-followup"
+        },
+        {
+          "path": "Procedure.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Procedure.outcome",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-outcome"
+        },
+        {
+          "path": "Procedure.performer.function",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/performer-role"
+        },
+        {
+          "path": "Procedure.reason",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-reason"
+        },
+        {
+          "path": "Procedure.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/event-status|5.0.0"
+        },
+        {
+          "path": "Procedure.statusReason",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/procedure-not-performed-reason"
+        },
+        {
+          "path": "Procedure.subject.type",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"
+        },
+        {
+          "path": "Procedure.used",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/device-type"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ10"
+      ],
+      "id": "Procedure-drug-pq",
+      "kind": "resource",
+      "name": "ProcedureDrugPq",
+      "requiredElements": [
+        "Procedure.focalDevice.manipulated",
+        "Procedure.performer.actor",
+        "Procedure.status",
+        "Procedure.subject"
+      ],
+      "source": "package/StructureDefinition-Procedure-drug-pq.json",
+      "title": "Procedure - Drug PQ",
+      "type": "Procedure",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Procedure-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Specimen.collection.bodySite",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        {
+          "path": "Specimen.collection.device",
+          "strength": "example",
+          "valueSet": ""
+        },
+        {
+          "path": "Specimen.collection.fastingStatus[x]",
+          "strength": "extensible",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0916"
+        },
+        {
+          "path": "Specimen.collection.method",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-collection-method"
+        },
+        {
+          "path": "Specimen.combined",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-combined|5.0.0"
+        },
+        {
+          "path": "Specimen.condition",
+          "strength": "extensible",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0493"
+        },
+        {
+          "path": "Specimen.feature.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/body-site"
+        },
+        {
+          "path": "Specimen.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Specimen.processing.method",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-processing-method"
+        },
+        {
+          "path": "Specimen.role",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-role"
+        },
+        {
+          "path": "Specimen.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-status|5.0.0"
+        },
+        {
+          "path": "Specimen.type",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0487"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Specimen-drug-pq",
+      "kind": "resource",
+      "name": "SpecimenDrugPq",
+      "requiredElements": [
+        "Specimen.container.device",
+        "Specimen.feature.description",
+        "Specimen.feature.type"
+      ],
+      "source": "package/StructureDefinition-Specimen-drug-pq.json",
+      "title": "Specimen - Drug PQ",
+      "type": "Specimen",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "SpecimenDefinition.collection",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-collection"
+        },
+        {
+          "path": "SpecimenDefinition.jurisdiction",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        },
+        {
+          "path": "SpecimenDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "SpecimenDefinition.patientPreparation",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/prepare-patient-prior-specimen-collection"
+        },
+        {
+          "path": "SpecimenDefinition.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status|5.0.0"
+        },
+        {
+          "path": "SpecimenDefinition.typeCollected",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0487"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.container.additive.additive[x]",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0371"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.container.cap",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/container-cap"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.container.material",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/container-material"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.container.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-container-type"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.handling.temperatureQualifier",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/handling-condition"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.preference",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/specimen-contained-preference|5.0.0"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.rejectionCriterion",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/rejection-criteria"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.testingDestination",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/diagnostic-service-sections"
+        },
+        {
+          "path": "SpecimenDefinition.typeTested.type",
+          "strength": "example",
+          "valueSet": "http://terminology.hl7.org/ValueSet/v2-0487"
+        },
+        {
+          "path": "SpecimenDefinition.versionAlgorithm[x]",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/version-algorithm"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "SpecimenDefinition-drug-pq",
+      "kind": "resource",
+      "name": "SpecimenDefinitionDrugPq",
+      "requiredElements": [
+        "SpecimenDefinition.status",
+        "SpecimenDefinition.typeTested.container.additive.additive[x]",
+        "SpecimenDefinition.typeTested.preference"
+      ],
+      "source": "package/StructureDefinition-SpecimenDefinition-drug-pq.json",
+      "title": "SpecimenDefinition - Drug PQ",
+      "type": "SpecimenDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "Substance.category",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-category"
+        },
+        {
+          "path": "Substance.code",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-code"
+        },
+        {
+          "path": "Substance.ingredient.substance[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-code"
+        },
+        {
+          "path": "Substance.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "Substance.status",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-status|5.0.0"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [],
+      "id": "Substance-drug-pq",
+      "kind": "resource",
+      "name": "SubstanceDrugPq",
+      "requiredElements": [
+        "Substance.code",
+        "Substance.ingredient.substance[x]",
+        "Substance.instance"
+      ],
+      "source": "package/StructureDefinition-Substance-drug-pq.json",
+      "title": "Substance - Drug PQ",
+      "type": "Substance",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Substance-drug-pq"
+    },
+    {
+      "bindings": [
+        {
+          "path": "SubstanceDefinition.characterization.form",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-form"
+        },
+        {
+          "path": "SubstanceDefinition.characterization.technique",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-structure-technique"
+        },
+        {
+          "path": "SubstanceDefinition.code.status",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
+        {
+          "path": "SubstanceDefinition.domain",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/medicinal-product-domain"
+        },
+        {
+          "path": "SubstanceDefinition.grade",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-grade"
+        },
+        {
+          "path": "SubstanceDefinition.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "SubstanceDefinition.manufacturer.type",
+          "strength": "extensible",
+          "valueSet": "http://hl7.org/fhir/ValueSet/resource-types"
+        },
+        {
+          "path": "SubstanceDefinition.moiety.measurementType",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-amount-type"
+        },
+        {
+          "path": "SubstanceDefinition.moiety.opticalActivity",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-optical-activity"
+        },
+        {
+          "path": "SubstanceDefinition.moiety.stereochemistry",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-stereochemistry"
+        },
+        {
+          "path": "SubstanceDefinition.molecularWeight.method",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-weight-method"
+        },
+        {
+          "path": "SubstanceDefinition.molecularWeight.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-weight-type"
+        },
+        {
+          "path": "SubstanceDefinition.name.domain",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-name-domain"
+        },
+        {
+          "path": "SubstanceDefinition.name.jurisdiction",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/jurisdiction"
+        },
+        {
+          "path": "SubstanceDefinition.name.language",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/all-languages|5.0.0"
+        },
+        {
+          "path": "SubstanceDefinition.name.official.authority",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-name-authority"
+        },
+        {
+          "path": "SubstanceDefinition.name.official.status",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
+        {
+          "path": "SubstanceDefinition.name.status",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
+        {
+          "path": "SubstanceDefinition.name.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-name-type"
+        },
+        {
+          "path": "SubstanceDefinition.property.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-substance-property-pq"
+        },
+        {
+          "path": "SubstanceDefinition.property.value[x]",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-substance-property-value-pq"
+        },
+        {
+          "path": "SubstanceDefinition.relationship.comparator",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-amount-type"
+        },
+        {
+          "path": "SubstanceDefinition.relationship.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-impurity-type-pq"
+        },
+        {
+          "path": "SubstanceDefinition.sourceMaterial.countryOfOrigin",
+          "strength": "required",
+          "valueSet": "http://hl7.org/fhir/ValueSet/country|5.0.0"
+        },
+        {
+          "path": "SubstanceDefinition.sourceMaterial.genus",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-source-material-genus"
+        },
+        {
+          "path": "SubstanceDefinition.sourceMaterial.part",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-source-material-part"
+        },
+        {
+          "path": "SubstanceDefinition.sourceMaterial.species",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-source-material-species"
+        },
+        {
+          "path": "SubstanceDefinition.sourceMaterial.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-source-material-type"
+        },
+        {
+          "path": "SubstanceDefinition.status",
+          "strength": "preferred",
+          "valueSet": "http://hl7.org/fhir/ValueSet/publication-status"
+        },
+        {
+          "path": "SubstanceDefinition.structure.opticalActivity",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-optical-activity"
+        },
+        {
+          "path": "SubstanceDefinition.structure.representation.format",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-representation-format"
+        },
+        {
+          "path": "SubstanceDefinition.structure.representation.type",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-representation-type"
+        },
+        {
+          "path": "SubstanceDefinition.structure.stereochemistry",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-stereochemistry"
+        },
+        {
+          "path": "SubstanceDefinition.structure.technique",
+          "strength": "example",
+          "valueSet": "http://hl7.org/fhir/ValueSet/substance-structure-technique"
+        }
+      ],
+      "derivation": "constraint",
+      "domains": [
+        "PQ2"
+      ],
+      "id": "SubstanceDefinition-component-substance-drug-pq",
+      "kind": "resource",
+      "name": "SubstanceDefinitionComponentSubstanceDrugPq",
+      "requiredElements": [
+        "SubstanceDefinition.molecularWeight.amount",
+        "SubstanceDefinition.name.name",
+        "SubstanceDefinition.property.type",
+        "SubstanceDefinition.relationship.type"
+      ],
+      "source": "package/StructureDefinition-SubstanceDefinition-component-substance-drug-pq.json",
+      "title": "SubstanceDefinition - Component Substance Drug PQ",
+      "type": "SubstanceDefinition",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SubstanceDefinition-component-substance-drug-pq"
+    }
+  ],
+  "valueSets": [
+    {
+      "id": "vs-batch-designation-pq",
+      "name": "VsBatchDesignationPQ",
+      "source": "package/ValueSet-vs-batch-designation-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-batch-designation-pq"
+    },
+    {
+      "id": "vs-characterizationStep-pq",
+      "name": "VsCharacterizationStepPQ",
+      "source": "package/ValueSet-vs-characterizationStep-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-characterizationStep-pq"
+    },
+    {
+      "id": "vs-closureTypes-pq",
+      "name": "VsClosureTypesPQ",
+      "source": "package/ValueSet-vs-closureTypes-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-closureTypes-pq"
+    },
+    {
+      "id": "vs-color-pq",
+      "name": "VsColorPQ",
+      "source": "package/ValueSet-vs-color-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-color-pq"
+    },
+    {
+      "id": "vs-containerOrientation-pq",
+      "name": "VsContainerOrientationPQ",
+      "source": "package/ValueSet-vs-containerOrientation-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-containerOrientation-pq"
+    },
+    {
+      "id": "vs-country-pq",
+      "name": "VsCountryPQ",
+      "source": "package/ValueSet-vs-country-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-country-pq"
+    },
+    {
+      "id": "vs-deviceProperty-pq",
+      "name": "VsDevicePropertyPQ",
+      "source": "package/ValueSet-vs-deviceProperty-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq"
+    },
+    {
+      "id": "vs-deviceType-pq",
+      "name": "VsDeviceTypePQ",
+      "source": "package/ValueSet-vs-deviceType-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceType-pq"
+    },
+    {
+      "id": "vs-diagramType-pq",
+      "name": "VsDiagramTypePQ",
+      "source": "package/ValueSet-vs-diagramType-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-diagramType-pq"
+    },
+    {
+      "id": "vs-equipmentClass-pq",
+      "name": "VsEquipmentClassPQ",
+      "source": "package/ValueSet-vs-equipmentClass-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-equipmentClass-pq"
+    },
+    {
+      "id": "vs-goalPriority-pq",
+      "name": "VsGoalPriorityPQ",
+      "source": "package/ValueSet-vs-goalPriority-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-goalPriority-pq"
+    },
+    {
+      "id": "vs-grade-pq",
+      "name": "VsGradePQ",
+      "source": "package/ValueSet-vs-grade-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-grade-pq"
+    },
+    {
+      "id": "vs-impurity-origin-pq",
+      "name": "VsImpurityOriginPQ",
+      "source": "package/ValueSet-vs-impurity-origin-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-impurity-origin-pq"
+    },
+    {
+      "id": "vs-impurity-type-pq",
+      "name": "VsImpurityTypePQ",
+      "source": "package/ValueSet-vs-impurity-type-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-impurity-type-pq"
+    },
+    {
+      "id": "vs-ingredientFunction-pq",
+      "name": "VsIngredientFunctionPQ",
+      "source": "package/ValueSet-vs-ingredientFunction-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-ingredientFunction-pq"
+    },
+    {
+      "id": "vs-manufactured-item-property-pq",
+      "name": "VsManufacturedItemPropertyPQ",
+      "source": "package/ValueSet-vs-manufactured-item-property-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufactured-item-property-pq"
+    },
+    {
+      "id": "vs-manufacturingParticipantRole-pq",
+      "name": "VsManufacturingParticipantRolePQ",
+      "source": "package/ValueSet-vs-manufacturingParticipantRole-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingParticipantRole-pq"
+    },
+    {
+      "id": "vs-manufacturingStep-pq",
+      "name": "VsManufacturingStepPQ",
+      "source": "package/ValueSet-vs-manufacturingStep-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingStep-pq"
+    },
+    {
+      "id": "vs-manufacturingStepScale-pq",
+      "name": "VsManufacturingStepScalePQ",
+      "source": "package/ValueSet-vs-manufacturingStepScale-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingStepScale-pq"
+    },
+    {
+      "id": "vs-medicinalproduct-characteristic-type",
+      "name": "MedicinalProductCharacteristicType",
+      "source": "package/ValueSet-vs-medicinalproduct-characteristic-type.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicinalproduct-characteristic-type"
+    },
+    {
+      "id": "vs-medicine-doseform",
+      "name": "MedicineDoseFormEDQM",
+      "source": "package/ValueSet-vs-medicine-doseform.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicine-doseform"
+    },
+    {
+      "id": "vs-medicine-route-of-administration",
+      "name": "MedicineRouteOfAdministrationEDQM",
+      "source": "package/ValueSet-vs-medicine-route-of-administration.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicine-route-of-administration"
+    },
+    {
+      "id": "vs-packageProperty-pq",
+      "name": "VsPackagePropertyPQ",
+      "source": "package/ValueSet-vs-packageProperty-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-packageProperty-pq"
+    },
+    {
+      "id": "vs-pharmaceutical-organization-type",
+      "name": "PharmaceuticalOrganizationType",
+      "source": "package/ValueSet-vs-pharmaceutical-organization-type.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-pharmaceutical-organization-type"
+    },
+    {
+      "id": "vs-planType-pq",
+      "name": "VsPlanTypePQ",
+      "source": "package/ValueSet-vs-planType-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-planType-pq"
+    },
+    {
+      "id": "vs-process-validation-procedure-pq",
+      "name": "VsProcessValidationProcedurePQ",
+      "source": "package/ValueSet-vs-process-validation-procedure-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-process-validation-procedure-pq"
+    },
+    {
+      "id": "vs-processParameter-pq",
+      "name": "VsProcessParameterPQ",
+      "source": "package/ValueSet-vs-processParameter-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-processParameter-pq"
+    },
+    {
+      "id": "vs-productNameType-pq",
+      "name": "VsProductNameTypePQ",
+      "source": "package/ValueSet-vs-productNameType-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-productNameType-pq"
+    },
+    {
+      "id": "vs-productSiteUtilizationType-pq",
+      "name": "VsProductSiteUtilizationPQ",
+      "source": "package/ValueSet-vs-productSiteUtilizationType-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-productSiteUtilizationType-pq"
+    },
+    {
+      "id": "vs-qualifiedValueCriticality-pq",
+      "name": "VsQualifiedValueCriticalityPQ",
+      "source": "package/ValueSet-vs-qualifiedValueCriticality-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-qualifiedValueCriticality-pq"
+    },
+    {
+      "id": "vs-reportType-pq",
+      "name": "VsReportTypePQ",
+      "source": "package/ValueSet-vs-reportType-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq"
+    },
+    {
+      "id": "vs-specification-type-pq",
+      "name": "VsSpecificationTypePQ",
+      "source": "package/ValueSet-vs-specification-type-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-specification-type-pq"
+    },
+    {
+      "id": "vs-substance-property-pq",
+      "name": "VsSubstancePropertyPQ",
+      "source": "package/ValueSet-vs-substance-property-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-substance-property-pq"
+    },
+    {
+      "id": "vs-substance-property-value-pq",
+      "name": "VsSubstancePropertyValuePQ",
+      "source": "package/ValueSet-vs-substance-property-value-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-substance-property-value-pq"
+    },
+    {
+      "id": "vs-test-method-pq",
+      "name": "VsTestMethodPQ",
+      "source": "package/ValueSet-vs-test-method-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-test-method-pq"
+    },
+    {
+      "id": "vs-testCategory-pq",
+      "name": "VsTestCategoryPQ",
+      "source": "package/ValueSet-vs-testCategory-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-testCategory-pq"
+    },
+    {
+      "id": "vs-timePointDescription-pq",
+      "name": "VsTimePointDescriptionPQ",
+      "source": "package/ValueSet-vs-timePointDescription-pq.json",
+      "status": "active",
+      "url": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-timePointDescription-pq"
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:93c2f4d0a3024cfcb81744938aeb14de",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "Batch Analysis Report",
+              "display": "Batch Analysis Report",
+              "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-report-type"
+            }
+          ]
+        },
+        "effectiveDateTime": "2026-01-16T12:10:00Z",
+        "id": "dr-dca37714f23815",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/org-f6dedddae2e0c6"
+          }
+        ],
+        "resourceType": "DiagnosticReport",
+        "result": [
+          {
+            "reference": "Observation/obs-706aa8ed7aca29"
+          },
+          {
+            "reference": "Observation/obs-d80fcfba93e03d"
+          }
+        ],
+        "status": "final"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:534730b0f95e31ddb4d014566219d376",
+      "resource": {
+        "batch": {
+          "extension": [
+            {
+              "extension": [
+                {
+                  "url": "manufacturingDate",
+                  "valueDateTime": "2025-12"
+                },
+                {
+                  "url": "batchQuantity",
+                  "valueQuantity": {
+                    "unit": "tablets",
+                    "value": 100100.0
+                  }
+                },
+                {
+                  "url": "assignedManufacturer",
+                  "valueReference": {
+                    "reference": "Organization/org-e2b65aefbdad88"
+                  }
+                }
+              ],
+              "url": "http://hl7.org/fhir/StructureDefinition/medication-manufacturingBatch"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-release-date-pq",
+              "valueDateTime": "2026-01-07"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-packaging-date-pq",
+              "valueDateTime": "2026-01"
+            },
+            {
+              "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-pq",
+              "valueQuantity": {
+                "unit": "kg",
+                "value": 4.81
+              }
+            }
+          ],
+          "lotNumber": "BATCH-33445"
+        },
+        "code": {
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-medication-definition-pq",
+              "valueReference": {
+                "reference": "MedicinalProductDefinition/mpd-a683b78425b856"
+              }
+            }
+          ]
+        },
+        "id": "med-dca37714f23815",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+          ]
+        },
+        "resourceType": "Medication"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:062d036b84cbcf3e5973082745cb6326",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "DESC",
+              "display": "Description",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ]
+        },
+        "effectiveDateTime": "2026-01-16T12:00:00Z",
+        "id": "obs-706aa8ed7aca29",
+        "instantiatesReference": {
+          "reference": "ObservationDefinition/obsdef-984da4fe6930ac"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/org-f6dedddae2e0c6"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen-0f64f63ada9395"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Medication/med-dca37714f23815"
+        },
+        "valueCodeableConcept": {
+          "coding": [
+            {
+              "code": "complies",
+              "display": "Complies",
+              "system": "http://example.org/fhir/CodeSystem/local-cmc-pqi"
+            }
+          ],
+          "text": "Complies"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:da9bc9385acc803778601300d90bb61d",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "WATER",
+              "display": "Water",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ]
+        },
+        "effectiveDateTime": "2026-01-16T12:10:00Z",
+        "id": "obs-d80fcfba93e03d",
+        "instantiatesReference": {
+          "reference": "ObservationDefinition/obsdef-556728f7f45600"
+        },
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+          ]
+        },
+        "performer": [
+          {
+            "reference": "Organization/org-f6dedddae2e0c6"
+          }
+        ],
+        "resourceType": "Observation",
+        "specimen": {
+          "reference": "Specimen/specimen-0f64f63ada9395"
+        },
+        "status": "final",
+        "subject": {
+          "reference": "Medication/med-dca37714f23815"
+        },
+        "valueQuantity": {
+          "unit": "%",
+          "value": 2.1
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9cc2d2a29c4b755af0122240cf75eaaa",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "WATER",
+              "display": "Water",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ]
+        },
+        "id": "obsdef-556728f7f45600",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+          ]
+        },
+        "resourceType": "ObservationDefinition",
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cf2fbac08004bf7e464b05b8889bab06",
+      "resource": {
+        "code": {
+          "coding": [
+            {
+              "code": "DESC",
+              "display": "Description",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ]
+        },
+        "id": "obsdef-984da4fe6930ac",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+          ]
+        },
+        "resourceType": "ObservationDefinition",
+        "status": "active"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ca05eaedd697fa264a9c3d928a7c7da6",
+      "resource": {
+        "active": true,
+        "id": "org-e2b65aefbdad88",
+        "identifier": [
+          {
+            "system": "urn:example:org",
+            "value": "ORG-MFG-001"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+          ]
+        },
+        "name": "AAA Pharmaceutical Inc",
+        "resourceType": "Organization",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "drug-product-manufacture",
+                "display": "Drug Product Manufacture",
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d0c63d1f10011095005d0b2d02674199",
+      "resource": {
+        "active": true,
+        "id": "org-f6dedddae2e0c6",
+        "identifier": [
+          {
+            "system": "urn:example:org",
+            "value": "ORG-LAB-001"
+          }
+        ],
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+          ]
+        },
+        "name": "AAA QC Lab",
+        "resourceType": "Organization",
+        "type": [
+          {
+            "coding": [
+              {
+                "code": "UNKNOWN",
+                "display": "UNKNOWN",
+                "system": "http://terminology.hl7.org/CodeSystem/pharmaceutical-organization-type"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d4e1911f9f06f1a79beccc0e4a9b056f",
+      "resource": {
+        "collection": {
+          "collectedDateTime": "2026-01-15"
+        },
+        "id": "specimen-0f64f63ada9395",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+          ]
+        },
+        "processing": [
+          {
+            "description": "25C/60RH"
+          }
+        ],
+        "resourceType": "Specimen"
+      }
+    }
+  ],
+  "extension": [
+    {
+      "url": "http://example.org/fhir/StructureDefinition/mapping-version-id",
+      "valueString": "mappings-aa6872bad8f5@c9b480720aac"
+    },
+    {
+      "url": "http://example.org/fhir/StructureDefinition/terminology-version-id",
+      "valueString": "terminology-bd10974acda9@48d8964a688f"
+    },
+    {
+      "url": "http://example.org/fhir/StructureDefinition/input-hashes",
+      "valueString": "batch_record.csv:fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154,lims_results.csv:60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df,plm_spec.xml:591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc,product_master.csv:b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a,qms_deviation.json:a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7"
+    }
+  ],
+  "id": "bundle-5b3627f47a4985",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-batch-analysis-pq"
+    ]
+  },
+  "resourceType": "Bundle",
+  "type": "collection"
+}

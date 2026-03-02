@@ -1,0 +1,918 @@
+{
+  "candidateJoins": [
+    {
+      "canonicalKey": "batch",
+      "left": {
+        "column": "batch_id",
+        "table": "batch_record"
+      },
+      "overlapCount": 1,
+      "overlapRatio": 1.0,
+      "right": {
+        "column": "batch_id",
+        "table": "lims_results"
+      },
+      "sampleOverlapValues": [
+        "BATCH-33445"
+      ]
+    },
+    {
+      "canonicalKey": "material",
+      "left": {
+        "column": "material_id",
+        "table": "batch_record"
+      },
+      "overlapCount": 1,
+      "overlapRatio": 1.0,
+      "right": {
+        "column": "material_id",
+        "table": "plm_spec"
+      },
+      "sampleOverlapValues": [
+        "MAT-1001"
+      ]
+    },
+    {
+      "canonicalKey": "material",
+      "left": {
+        "column": "material_id",
+        "table": "batch_record"
+      },
+      "overlapCount": 1,
+      "overlapRatio": 1.0,
+      "right": {
+        "column": "material_id",
+        "table": "product_master"
+      },
+      "sampleOverlapValues": [
+        "MAT-1001"
+      ]
+    },
+    {
+      "canonicalKey": "batch",
+      "left": {
+        "column": "batch_id",
+        "table": "batch_record"
+      },
+      "overlapCount": 1,
+      "overlapRatio": 1.0,
+      "right": {
+        "column": "batch_id",
+        "table": "qms_deviation"
+      },
+      "sampleOverlapValues": [
+        "BATCH-33445"
+      ]
+    },
+    {
+      "canonicalKey": "batch",
+      "left": {
+        "column": "batch_id",
+        "table": "lims_results"
+      },
+      "overlapCount": 1,
+      "overlapRatio": 1.0,
+      "right": {
+        "column": "batch_id",
+        "table": "qms_deviation"
+      },
+      "sampleOverlapValues": [
+        "BATCH-33445"
+      ]
+    },
+    {
+      "canonicalKey": "material",
+      "left": {
+        "column": "material_id",
+        "table": "plm_spec"
+      },
+      "overlapCount": 1,
+      "overlapRatio": 1.0,
+      "right": {
+        "column": "material_id",
+        "table": "product_master"
+      },
+      "sampleOverlapValues": [
+        "MAT-1001"
+      ]
+    }
+  ],
+  "profileStats": {
+    "containsMixedFormats": true,
+    "joinCount": 6,
+    "tableCount": 5,
+    "totalRows": 6
+  },
+  "tables": [
+    {
+      "candidateKeys": [
+        "actual_yield",
+        "actual_yield_unit",
+        "batch_id",
+        "batch_quantity",
+        "batch_quantity_unit",
+        "manufacturer_name",
+        "manufacturer_org_id",
+        "manufacturer_type",
+        "manufacturer_type_display",
+        "manufacturing_date",
+        "material_id",
+        "packaging_date",
+        "release_date"
+      ],
+      "columns": {
+        "actual_yield": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "number",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "4.81"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "4.81"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "actual_yield_unit": {
+          "detectedUnits": [
+            "kg"
+          ],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "kg"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "kg"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "batch_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "BATCH-33445"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "BATCH-33445"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "batch_quantity": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "integer",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "100100"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "100100"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "batch_quantity_unit": {
+          "detectedUnits": [
+            "tablets"
+          ],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "tablets"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "tablets"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "manufacturer_name": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "AAA Pharmaceutical Inc"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "AAA Pharmaceutical Inc"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "manufacturer_org_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "ORG-MFG-001"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "ORG-MFG-001"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "manufacturer_type": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "drug-product-manufacture"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "drug-product-manufacture"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "manufacturer_type_display": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "Drug Product Manufacture"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "Drug Product Manufacture"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "manufacturing_date": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "date",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "2025-12"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "2025-12"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "material_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "MAT-1001"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "MAT-1001"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "packaging_date": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "date",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "2026-01"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "2026-01"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "release_date": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "date",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "2026-01-07"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "2026-01-07"
+            }
+          ],
+          "uniqueRatio": 1.0
+        }
+      },
+      "fileHash": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+      "rowCount": 1,
+      "sourceFile": "batch_record.csv",
+      "table": "batch_record"
+    },
+    {
+      "candidateKeys": [
+        "analysis_time",
+        "method_code",
+        "method_display",
+        "result_code",
+        "result_display",
+        "result_value"
+      ],
+      "columns": {
+        "analysis_time": {
+          "detectedUnits": [],
+          "distinctCount": 2,
+          "inferredType": "datetime",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "2026-01-16T12:00:00Z",
+            "2026-01-16T12:10:00Z"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "2026-01-16T12:00:00Z"
+            },
+            {
+              "count": 1,
+              "value": "2026-01-16T12:10:00Z"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "batch_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "BATCH-33445"
+          ],
+          "topValues": [
+            {
+              "count": 2,
+              "value": "BATCH-33445"
+            }
+          ],
+          "uniqueRatio": 0.5
+        },
+        "lab_org_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "ORG-LAB-001"
+          ],
+          "topValues": [
+            {
+              "count": 2,
+              "value": "ORG-LAB-001"
+            }
+          ],
+          "uniqueRatio": 0.5
+        },
+        "lab_org_name": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "AAA QC Lab"
+          ],
+          "topValues": [
+            {
+              "count": 2,
+              "value": "AAA QC Lab"
+            }
+          ],
+          "uniqueRatio": 0.5
+        },
+        "method_code": {
+          "detectedUnits": [],
+          "distinctCount": 2,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "DESC",
+            "WATER"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "DESC"
+            },
+            {
+              "count": 1,
+              "value": "WATER"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "method_display": {
+          "detectedUnits": [],
+          "distinctCount": 2,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "Karl Fischer",
+            "Visual Description"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "Karl Fischer"
+            },
+            {
+              "count": 1,
+              "value": "Visual Description"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "result_code": {
+          "detectedUnits": [],
+          "distinctCount": 2,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "DESC",
+            "WATER"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "DESC"
+            },
+            {
+              "count": 1,
+              "value": "WATER"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "result_display": {
+          "detectedUnits": [],
+          "distinctCount": 2,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "Description",
+            "Water"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "Description"
+            },
+            {
+              "count": 1,
+              "value": "Water"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "result_unit": {
+          "detectedUnits": [
+            "%"
+          ],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.5,
+          "sampleValues": [
+            "%"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "%"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "result_value": {
+          "detectedUnits": [],
+          "distinctCount": 2,
+          "inferredType": "number",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "2.1",
+            "Complies"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "2.1"
+            },
+            {
+              "count": 1,
+              "value": "Complies"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "sample_collection_date": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "date",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "2026-01-15"
+          ],
+          "topValues": [
+            {
+              "count": 2,
+              "value": "2026-01-15"
+            }
+          ],
+          "uniqueRatio": 0.5
+        },
+        "specimen_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "SPEC-01"
+          ],
+          "topValues": [
+            {
+              "count": 2,
+              "value": "SPEC-01"
+            }
+          ],
+          "uniqueRatio": 0.5
+        },
+        "storage_condition": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "25C/60RH"
+          ],
+          "topValues": [
+            {
+              "count": 2,
+              "value": "25C/60RH"
+            }
+          ],
+          "uniqueRatio": 0.5
+        }
+      },
+      "fileHash": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+      "rowCount": 2,
+      "sourceFile": "lims_results.csv",
+      "table": "lims_results"
+    },
+    {
+      "candidateKeys": [
+        "acceptance_criteria",
+        "material_id",
+        "spec_id",
+        "specification_type"
+      ],
+      "columns": {
+        "acceptance_criteria": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "95.0-105.0"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "95.0-105.0"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "material_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "MAT-1001"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "MAT-1001"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "spec_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "SPEC-API-001"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "SPEC-API-001"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "specification_type": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "assay"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "assay"
+            }
+          ],
+          "uniqueRatio": 1.0
+        }
+      },
+      "fileHash": "591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc",
+      "rowCount": 1,
+      "sourceFile": "plm_spec.xml",
+      "table": "plm_spec"
+    },
+    {
+      "candidateKeys": [
+        "active_ingredient",
+        "dosage_form_code",
+        "dosage_form_display",
+        "ingredient_role",
+        "material_id",
+        "product_name",
+        "route_code",
+        "route_display"
+      ],
+      "columns": {
+        "active_ingredient": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "Stelbatolol"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "Stelbatolol"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "dosage_form_code": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "integer",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "10225000"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "10225000"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "dosage_form_display": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "Gastro-resistant tablet"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "Gastro-resistant tablet"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "ingredient_role": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "active"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "active"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "material_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "MAT-1001"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "MAT-1001"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "product_name": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "Stelbat Tablets 20mg"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "Stelbat Tablets 20mg"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "route_code": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "integer",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "20053000"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "20053000"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "route_display": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "Oral use"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "Oral use"
+            }
+          ],
+          "uniqueRatio": 1.0
+        }
+      },
+      "fileHash": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+      "rowCount": 1,
+      "sourceFile": "product_master.csv",
+      "table": "product_master"
+    },
+    {
+      "candidateKeys": [
+        "batch_id",
+        "category",
+        "deviation_id",
+        "severity",
+        "status"
+      ],
+      "columns": {
+        "batch_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "BATCH-33445"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "BATCH-33445"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "category": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "process"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "process"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "deviation_id": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "DEV-001"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "DEV-001"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "severity": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "minor"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "minor"
+            }
+          ],
+          "uniqueRatio": 1.0
+        },
+        "status": {
+          "detectedUnits": [],
+          "distinctCount": 1,
+          "inferredType": "string",
+          "nullRatio": 0.0,
+          "sampleValues": [
+            "closed"
+          ],
+          "topValues": [
+            {
+              "count": 1,
+              "value": "closed"
+            }
+          ],
+          "uniqueRatio": 1.0
+        }
+      },
+      "fileHash": "a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7",
+      "rowCount": 1,
+      "sourceFile": "qms_deviation.json",
+      "table": "qms_deviation"
+    }
+  ]
+}

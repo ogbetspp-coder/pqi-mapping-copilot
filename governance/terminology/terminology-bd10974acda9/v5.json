@@ -1,0 +1,2643 @@
+{
+  "approvals": [],
+  "artifactId": "terminology-bd10974acda9",
+  "artifactKind": "terminology",
+  "changelog": "Terminology reviewed for explicit coding.system/code/display",
+  "content": {
+    "bindingSuggestions": [
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "batch.extension[Extension-actual-yield-pq]",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "batch.extension[Extension-batch-release-date-pq]",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "batch.extension[Extension-packaging-date-pq]",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "batch.extension[medication-manufacturingBatch].manufacturingDate",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "batch.lotNumber",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "batch.lotNumber",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "batch.lotNumber",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-testCategory-pq"
+      },
+      {
+        "elementPath": "combinedPharmaceuticalDoseForm.coding[0].code",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "combinedPharmaceuticalDoseForm.coding[0].display",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "identifier[0].value",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "identifier[0].value",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "identifier[0].value",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "name[0].productName",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "route[0].coding[0].code",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "route[0].coding[0].display",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "UNKNOWN",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "REQUIRES_REVIEW",
+        "strength": "preferred",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "code.coding[0].code",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "code.coding[0].display",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "effectiveDateTime",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "valueQuantity.unit",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "value[x]",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "code.coding[0].code",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      },
+      {
+        "elementPath": "id",
+        "profileUrl": "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq",
+        "status": "CANDIDATE",
+        "strength": "required",
+        "suggestedValueSet": "UNKNOWN"
+      }
+    ],
+    "codeSystem": {
+      "concept": [
+        {
+          "code": "100100",
+          "definition": "Derived from source column batch_quantity",
+          "display": "100100",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "batch_quantity"
+            }
+          ]
+        },
+        {
+          "code": "10225000",
+          "definition": "Derived from source column dosage_form_code",
+          "display": "10225000",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "dosage_form_code"
+            }
+          ]
+        },
+        {
+          "code": "20053000",
+          "definition": "Derived from source column route_code",
+          "display": "20053000",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "route_code"
+            }
+          ]
+        },
+        {
+          "code": "2025_12",
+          "definition": "Derived from source column manufacturing_date",
+          "display": "2025-12",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "manufacturing_date"
+            }
+          ]
+        },
+        {
+          "code": "2026_01",
+          "definition": "Derived from source column packaging_date",
+          "display": "2026-01",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "packaging_date"
+            }
+          ]
+        },
+        {
+          "code": "2026_01_07",
+          "definition": "Derived from source column release_date",
+          "display": "2026-01-07",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "release_date"
+            }
+          ]
+        },
+        {
+          "code": "2026_01_15",
+          "definition": "Derived from source column sample_collection_date",
+          "display": "2026-01-15",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "sample_collection_date"
+            }
+          ]
+        },
+        {
+          "code": "2026_01_16t12_00_00z",
+          "definition": "Derived from source column analysis_time",
+          "display": "2026-01-16T12:00:00Z",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "analysis_time"
+            }
+          ]
+        },
+        {
+          "code": "2026_01_16t12_10_00z",
+          "definition": "Derived from source column analysis_time",
+          "display": "2026-01-16T12:10:00Z",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "analysis_time"
+            }
+          ]
+        },
+        {
+          "code": "25c_60rh",
+          "definition": "Derived from source column storage_condition",
+          "display": "25C/60RH",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "storage_condition"
+            }
+          ]
+        },
+        {
+          "code": "2_1",
+          "definition": "Derived from source column result_value",
+          "display": "2.1",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "result_value"
+            }
+          ]
+        },
+        {
+          "code": "4_81",
+          "definition": "Derived from source column actual_yield",
+          "display": "4.81",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "actual_yield"
+            }
+          ]
+        },
+        {
+          "code": "95_0_105_0",
+          "definition": "Derived from source column acceptance_criteria",
+          "display": "95.0-105.0",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "acceptance_criteria"
+            }
+          ]
+        },
+        {
+          "code": "aaa_pharmaceutical_inc",
+          "definition": "Derived from source column manufacturer_name",
+          "display": "AAA Pharmaceutical Inc",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "manufacturer_name"
+            }
+          ]
+        },
+        {
+          "code": "aaa_qc_lab",
+          "definition": "Derived from source column lab_org_name",
+          "display": "AAA QC Lab",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "lab_org_name"
+            }
+          ]
+        },
+        {
+          "code": "active",
+          "definition": "Derived from source column ingredient_role",
+          "display": "active",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "ingredient_role"
+            }
+          ]
+        },
+        {
+          "code": "assay",
+          "definition": "Derived from source column specification_type",
+          "display": "assay",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "specification_type"
+            }
+          ]
+        },
+        {
+          "code": "batch_33445",
+          "definition": "Derived from source column batch_id",
+          "display": "BATCH-33445",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "batch_id"
+            }
+          ]
+        },
+        {
+          "code": "closed",
+          "definition": "Derived from source column status",
+          "display": "closed",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "status"
+            }
+          ]
+        },
+        {
+          "code": "complies",
+          "definition": "Derived from source column result_value",
+          "display": "Complies",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "result_value"
+            }
+          ]
+        },
+        {
+          "code": "desc",
+          "definition": "Derived from source column method_code",
+          "display": "DESC",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "method_code"
+            }
+          ]
+        },
+        {
+          "code": "description",
+          "definition": "Derived from source column result_display",
+          "display": "Description",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "result_display"
+            }
+          ]
+        },
+        {
+          "code": "dev_001",
+          "definition": "Derived from source column deviation_id",
+          "display": "DEV-001",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "deviation_id"
+            }
+          ]
+        },
+        {
+          "code": "drug_product_manufacture",
+          "definition": "Derived from source column manufacturer_type",
+          "display": "drug-product-manufacture",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "manufacturer_type"
+            }
+          ]
+        },
+        {
+          "code": "gastro_resistant_tablet",
+          "definition": "Derived from source column dosage_form_display",
+          "display": "Gastro-resistant tablet",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "dosage_form_display"
+            }
+          ]
+        },
+        {
+          "code": "karl_fischer",
+          "definition": "Derived from source column method_display",
+          "display": "Karl Fischer",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "method_display"
+            }
+          ]
+        },
+        {
+          "code": "kg",
+          "definition": "Derived from source column actual_yield_unit",
+          "display": "kg",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "actual_yield_unit"
+            }
+          ]
+        },
+        {
+          "code": "mat_1001",
+          "definition": "Derived from source column material_id",
+          "display": "MAT-1001",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "material_id"
+            }
+          ]
+        },
+        {
+          "code": "minor",
+          "definition": "Derived from source column severity",
+          "display": "minor",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "severity"
+            }
+          ]
+        },
+        {
+          "code": "oral_use",
+          "definition": "Derived from source column route_display",
+          "display": "Oral use",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "route_display"
+            }
+          ]
+        },
+        {
+          "code": "org_lab_001",
+          "definition": "Derived from source column lab_org_id",
+          "display": "ORG-LAB-001",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "lab_org_id"
+            }
+          ]
+        },
+        {
+          "code": "org_mfg_001",
+          "definition": "Derived from source column manufacturer_org_id",
+          "display": "ORG-MFG-001",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "manufacturer_org_id"
+            }
+          ]
+        },
+        {
+          "code": "process",
+          "definition": "Derived from source column category",
+          "display": "process",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "category"
+            }
+          ]
+        },
+        {
+          "code": "spec_01",
+          "definition": "Derived from source column specimen_id",
+          "display": "SPEC-01",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "specimen_id"
+            }
+          ]
+        },
+        {
+          "code": "spec_api_001",
+          "definition": "Derived from source column spec_id",
+          "display": "SPEC-API-001",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "spec_id"
+            }
+          ]
+        },
+        {
+          "code": "stelbat_tablets_20mg",
+          "definition": "Derived from source column product_name",
+          "display": "Stelbat Tablets 20mg",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "product_name"
+            }
+          ]
+        },
+        {
+          "code": "stelbatolol",
+          "definition": "Derived from source column active_ingredient",
+          "display": "Stelbatolol",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "active_ingredient"
+            }
+          ]
+        },
+        {
+          "code": "tablets",
+          "definition": "Derived from source column batch_quantity_unit",
+          "display": "tablets",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "batch_quantity_unit"
+            }
+          ]
+        },
+        {
+          "code": "unknown",
+          "definition": "Derived from source column result_unit",
+          "display": "%",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "result_unit"
+            }
+          ]
+        },
+        {
+          "code": "visual_description",
+          "definition": "Derived from source column method_display",
+          "display": "Visual Description",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "method_display"
+            }
+          ]
+        },
+        {
+          "code": "water",
+          "definition": "Derived from source column method_code",
+          "display": "WATER",
+          "property": [
+            {
+              "code": "source-column",
+              "valueString": "method_code"
+            }
+          ]
+        }
+      ],
+      "content": "complete",
+      "id": "local-cmc-pqi",
+      "name": "LocalCmcPqiCodes",
+      "resourceType": "CodeSystem",
+      "status": "draft",
+      "title": "Local CMC to PQI Codes",
+      "url": "http://example.org/fhir/CodeSystem/local-cmc-pqi",
+      "version": "0.1.0"
+    },
+    "codeableConceptRecommendations": [
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "4.81",
+              "display": "4.81",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "4.81"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "actual_yield",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "batch.extension[Extension-actual-yield-pq]",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "kg",
+              "display": "kg",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "kg"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "actual_yield_unit",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "BATCH-33445",
+              "display": "BATCH-33445",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "BATCH-33445"
+        },
+        "confidence": 0.95,
+        "source": {
+          "column": "batch_id",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "batch.lotNumber",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "100100",
+              "display": "100100",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "100100"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "batch_quantity",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "tablets",
+              "display": "tablets",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "tablets"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "batch_quantity_unit",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "AAA Pharmaceutical Inc",
+              "display": "AAA Pharmaceutical Inc",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "AAA Pharmaceutical Inc"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "manufacturer_name",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "ORG-MFG-001",
+              "display": "ORG-MFG-001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "ORG-MFG-001"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "manufacturer_org_id",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "drug-product-manufacture",
+              "display": "drug-product-manufacture",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "drug-product-manufacture"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "manufacturer_type",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Drug Product Manufacture",
+              "display": "Drug Product Manufacture",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "Drug Product Manufacture"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "manufacturer_type_display",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "2025-12",
+              "display": "2025-12",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "2025-12"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "manufacturing_date",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "batch.extension[medication-manufacturingBatch].manufacturingDate",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "MAT-1001",
+              "display": "MAT-1001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "MAT-1001"
+        },
+        "confidence": 0.95,
+        "source": {
+          "column": "material_id",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "identifier[0].value",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "2026-01",
+              "display": "2026-01",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "2026-01"
+        },
+        "confidence": 0.65,
+        "source": {
+          "column": "packaging_date",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "batch.extension[Extension-packaging-date-pq]",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "2026-01-07",
+              "display": "2026-01-07",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "2026-01-07"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "release_date",
+          "file": "batch_record.csv",
+          "table": "batch_record"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "batch.extension[Extension-batch-release-date-pq]",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "2026-01-16T12:00:00Z",
+              "display": "2026-01-16T12:00:00Z",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "2026-01-16T12:00:00Z"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "analysis_time",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "effectiveDateTime",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "2026-01-16T12:10:00Z",
+              "display": "2026-01-16T12:10:00Z",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "2026-01-16T12:10:00Z"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "analysis_time",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "effectiveDateTime",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "BATCH-33445",
+              "display": "BATCH-33445",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "BATCH-33445"
+        },
+        "confidence": 0.7,
+        "source": {
+          "column": "batch_id",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "batch.lotNumber",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "ORG-LAB-001",
+              "display": "ORG-LAB-001",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "ORG-LAB-001"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "lab_org_id",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "AAA QC Lab",
+              "display": "AAA QC Lab",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "AAA QC Lab"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "lab_org_name",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "DESC",
+              "display": "DESC",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "DESC"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "method_code",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "code.coding[0].code",
+          "resourceType": "ObservationDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "WATER",
+              "display": "WATER",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "WATER"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "method_code",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "code.coding[0].code",
+          "resourceType": "ObservationDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Karl Fischer",
+              "display": "Karl Fischer",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "Karl Fischer"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "method_display",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Visual Description",
+              "display": "Visual Description",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "Visual Description"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "method_display",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "DESC",
+              "display": "DESC",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "DESC"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "result_code",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "code.coding[0].code",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "WATER",
+              "display": "WATER",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "WATER"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "result_code",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "code.coding[0].code",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Description",
+              "display": "Description",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "Description"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "result_display",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "code.coding[0].display",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Water",
+              "display": "Water",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "Water"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "result_display",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "code.coding[0].display",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "%",
+              "display": "%",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "%"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "result_unit",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "valueQuantity.unit",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "2.1",
+              "display": "2.1",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "2.1"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "result_value",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "value[x]",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Complies",
+              "display": "Complies",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "Complies"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "result_value",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "value[x]",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "2026-01-15",
+              "display": "2026-01-15",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "2026-01-15"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "sample_collection_date",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "SPEC-01",
+              "display": "SPEC-01",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "SPEC-01"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "specimen_id",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "id",
+          "resourceType": "Specimen"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "25C/60RH",
+              "display": "25C/60RH",
+              "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-local-codes-drug-pq-example"
+            }
+          ],
+          "text": "25C/60RH"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "storage_condition",
+          "file": "lims_results.csv",
+          "table": "lims_results"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "Observation"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "95.0-105.0",
+              "display": "95.0-105.0",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "95.0-105.0"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "acceptance_criteria",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "MAT-1001",
+              "display": "MAT-1001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "MAT-1001"
+        },
+        "confidence": 0.95,
+        "source": {
+          "column": "material_id",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "identifier[0].value",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "SPEC-API-001",
+              "display": "SPEC-API-001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "SPEC-API-001"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "spec_id",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "assay",
+              "display": "assay",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "assay"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "specification_type",
+          "file": "plm_spec.xml",
+          "table": "plm_spec"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Stelbatolol",
+              "display": "Stelbatolol",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "Stelbatolol"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "active_ingredient",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "10225000",
+              "display": "10225000",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "text": "10225000"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "dosage_form_code",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "combinedPharmaceuticalDoseForm.coding[0].code",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Gastro-resistant tablet",
+              "display": "Gastro-resistant tablet",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "text": "Gastro-resistant tablet"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "dosage_form_display",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "combinedPharmaceuticalDoseForm.coding[0].display",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "active",
+              "display": "active",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "active"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "ingredient_role",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "MAT-1001",
+              "display": "MAT-1001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "MAT-1001"
+        },
+        "confidence": 0.95,
+        "source": {
+          "column": "material_id",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "identifier[0].value",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Stelbat Tablets 20mg",
+              "display": "Stelbat Tablets 20mg",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "Stelbat Tablets 20mg"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "product_name",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "name[0].productName",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "20053000",
+              "display": "20053000",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "text": "20053000"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "route_code",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "route[0].coding[0].code",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "Oral use",
+              "display": "Oral use",
+              "system": "http://standardterms.edqm.eu"
+            }
+          ],
+          "text": "Oral use"
+        },
+        "confidence": 0.9,
+        "source": {
+          "column": "route_display",
+          "file": "product_master.csv",
+          "table": "product_master"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "route[0].coding[0].display",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "BATCH-33445",
+              "display": "BATCH-33445",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "BATCH-33445"
+        },
+        "confidence": 0.95,
+        "source": {
+          "column": "batch_id",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "reviewed",
+        "target": {
+          "elementPath": "batch.lotNumber",
+          "resourceType": "Medication"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "process",
+              "display": "process",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "process"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "category",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "DEV-001",
+              "display": "DEV-001",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "DEV-001"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "deviation_id",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "minor",
+              "display": "minor",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "minor"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "severity",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      },
+      {
+        "codeableConcept": {
+          "coding": [
+            {
+              "code": "closed",
+              "display": "closed",
+              "system": "UNKNOWN"
+            }
+          ],
+          "text": "closed"
+        },
+        "confidence": 0.0,
+        "source": {
+          "column": "status",
+          "file": "qms_deviation.json",
+          "table": "qms_deviation"
+        },
+        "status": "proposed",
+        "target": {
+          "elementPath": "UNKNOWN",
+          "resourceType": "MedicinalProductDefinition"
+        }
+      }
+    ],
+    "conceptMap": {
+      "group": [
+        {
+          "element": [
+            {
+              "code": "100100",
+              "target": [
+                {
+                  "code": "100100",
+                  "comment": "Mapped from local code '100100'",
+                  "display": "100100",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "10225000",
+              "target": [
+                {
+                  "code": "10225000",
+                  "comment": "Mapped from local code '10225000'",
+                  "display": "10225000",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "20053000",
+              "target": [
+                {
+                  "code": "20053000",
+                  "comment": "Mapped from local code '20053000'",
+                  "display": "20053000",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "2025_12",
+              "target": [
+                {
+                  "code": "2025-12",
+                  "comment": "Mapped from local code '2025_12'",
+                  "display": "2025-12",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "2026_01",
+              "target": [
+                {
+                  "code": "2026-01",
+                  "comment": "Mapped from local code '2026_01'",
+                  "display": "2026-01",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "2026_01_07",
+              "target": [
+                {
+                  "code": "2026-01-07",
+                  "comment": "Mapped from local code '2026_01_07'",
+                  "display": "2026-01-07",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "2026_01_15",
+              "target": [
+                {
+                  "code": "2026-01-15",
+                  "comment": "Mapped from local code '2026_01_15'",
+                  "display": "2026-01-15",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "2026_01_16t12_00_00z",
+              "target": [
+                {
+                  "code": "2026-01-16T12:00:00Z",
+                  "comment": "Mapped from local code '2026_01_16t12_00_00z'",
+                  "display": "2026-01-16T12:00:00Z",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "2026_01_16t12_10_00z",
+              "target": [
+                {
+                  "code": "2026-01-16T12:10:00Z",
+                  "comment": "Mapped from local code '2026_01_16t12_10_00z'",
+                  "display": "2026-01-16T12:10:00Z",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "25c_60rh",
+              "target": [
+                {
+                  "code": "25C/60RH",
+                  "comment": "Mapped from local code '25c_60rh'",
+                  "display": "25C/60RH",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "2_1",
+              "target": [
+                {
+                  "code": "2.1",
+                  "comment": "Mapped from local code '2_1'",
+                  "display": "2.1",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "4_81",
+              "target": [
+                {
+                  "code": "4.81",
+                  "comment": "Mapped from local code '4_81'",
+                  "display": "4.81",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "95_0_105_0",
+              "target": [
+                {
+                  "code": "95.0-105.0",
+                  "comment": "Mapped from local code '95_0_105_0'",
+                  "display": "95.0-105.0",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "aaa_pharmaceutical_inc",
+              "target": [
+                {
+                  "code": "AAA Pharmaceutical Inc",
+                  "comment": "Mapped from local code 'aaa_pharmaceutical_inc'",
+                  "display": "AAA Pharmaceutical Inc",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "aaa_qc_lab",
+              "target": [
+                {
+                  "code": "AAA QC Lab",
+                  "comment": "Mapped from local code 'aaa_qc_lab'",
+                  "display": "AAA QC Lab",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "active",
+              "target": [
+                {
+                  "code": "active",
+                  "comment": "Mapped from local code 'active'",
+                  "display": "active",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "assay",
+              "target": [
+                {
+                  "code": "assay",
+                  "comment": "Mapped from local code 'assay'",
+                  "display": "assay",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "batch_33445",
+              "target": [
+                {
+                  "code": "BATCH-33445",
+                  "comment": "Mapped from local code 'batch_33445'",
+                  "display": "BATCH-33445",
+                  "equivalence": "relatedto"
+                },
+                {
+                  "code": "BATCH-33445",
+                  "comment": "Mapped from local code 'batch_33445'",
+                  "display": "BATCH-33445",
+                  "equivalence": "relatedto"
+                },
+                {
+                  "code": "BATCH-33445",
+                  "comment": "Mapped from local code 'batch_33445'",
+                  "display": "BATCH-33445",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "closed",
+              "target": [
+                {
+                  "code": "closed",
+                  "comment": "Mapped from local code 'closed'",
+                  "display": "closed",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "complies",
+              "target": [
+                {
+                  "code": "Complies",
+                  "comment": "Mapped from local code 'complies'",
+                  "display": "Complies",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "desc",
+              "target": [
+                {
+                  "code": "DESC",
+                  "comment": "Mapped from local code 'desc'",
+                  "display": "DESC",
+                  "equivalence": "relatedto"
+                },
+                {
+                  "code": "DESC",
+                  "comment": "Mapped from local code 'desc'",
+                  "display": "DESC",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "description",
+              "target": [
+                {
+                  "code": "Description",
+                  "comment": "Mapped from local code 'description'",
+                  "display": "Description",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "dev_001",
+              "target": [
+                {
+                  "code": "DEV-001",
+                  "comment": "Mapped from local code 'dev_001'",
+                  "display": "DEV-001",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "drug_product_manufacture",
+              "target": [
+                {
+                  "code": "Drug Product Manufacture",
+                  "comment": "Mapped from local code 'drug_product_manufacture'",
+                  "display": "Drug Product Manufacture",
+                  "equivalence": "relatedto"
+                },
+                {
+                  "code": "drug-product-manufacture",
+                  "comment": "Mapped from local code 'drug_product_manufacture'",
+                  "display": "drug-product-manufacture",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "gastro_resistant_tablet",
+              "target": [
+                {
+                  "code": "Gastro-resistant tablet",
+                  "comment": "Mapped from local code 'gastro_resistant_tablet'",
+                  "display": "Gastro-resistant tablet",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "karl_fischer",
+              "target": [
+                {
+                  "code": "Karl Fischer",
+                  "comment": "Mapped from local code 'karl_fischer'",
+                  "display": "Karl Fischer",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "kg",
+              "target": [
+                {
+                  "code": "kg",
+                  "comment": "Mapped from local code 'kg'",
+                  "display": "kg",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "mat_1001",
+              "target": [
+                {
+                  "code": "MAT-1001",
+                  "comment": "Mapped from local code 'mat_1001'",
+                  "display": "MAT-1001",
+                  "equivalence": "relatedto"
+                },
+                {
+                  "code": "MAT-1001",
+                  "comment": "Mapped from local code 'mat_1001'",
+                  "display": "MAT-1001",
+                  "equivalence": "relatedto"
+                },
+                {
+                  "code": "MAT-1001",
+                  "comment": "Mapped from local code 'mat_1001'",
+                  "display": "MAT-1001",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "minor",
+              "target": [
+                {
+                  "code": "minor",
+                  "comment": "Mapped from local code 'minor'",
+                  "display": "minor",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "oral_use",
+              "target": [
+                {
+                  "code": "Oral use",
+                  "comment": "Mapped from local code 'oral_use'",
+                  "display": "Oral use",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "org_lab_001",
+              "target": [
+                {
+                  "code": "ORG-LAB-001",
+                  "comment": "Mapped from local code 'org_lab_001'",
+                  "display": "ORG-LAB-001",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "org_mfg_001",
+              "target": [
+                {
+                  "code": "ORG-MFG-001",
+                  "comment": "Mapped from local code 'org_mfg_001'",
+                  "display": "ORG-MFG-001",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "process",
+              "target": [
+                {
+                  "code": "process",
+                  "comment": "Mapped from local code 'process'",
+                  "display": "process",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "spec_01",
+              "target": [
+                {
+                  "code": "SPEC-01",
+                  "comment": "Mapped from local code 'spec_01'",
+                  "display": "SPEC-01",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "spec_api_001",
+              "target": [
+                {
+                  "code": "SPEC-API-001",
+                  "comment": "Mapped from local code 'spec_api_001'",
+                  "display": "SPEC-API-001",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "stelbat_tablets_20mg",
+              "target": [
+                {
+                  "code": "Stelbat Tablets 20mg",
+                  "comment": "Mapped from local code 'stelbat_tablets_20mg'",
+                  "display": "Stelbat Tablets 20mg",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "stelbatolol",
+              "target": [
+                {
+                  "code": "Stelbatolol",
+                  "comment": "Mapped from local code 'stelbatolol'",
+                  "display": "Stelbatolol",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "tablets",
+              "target": [
+                {
+                  "code": "tablets",
+                  "comment": "Mapped from local code 'tablets'",
+                  "display": "tablets",
+                  "equivalence": "relatedto"
+                }
+              ]
+            },
+            {
+              "code": "unknown",
+              "target": [
+                {
+                  "code": "%",
+                  "comment": "Mapped from local code 'unknown'",
+                  "display": "%",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "visual_description",
+              "target": [
+                {
+                  "code": "Visual Description",
+                  "comment": "Mapped from local code 'visual_description'",
+                  "display": "Visual Description",
+                  "equivalence": "equivalent"
+                }
+              ]
+            },
+            {
+              "code": "water",
+              "target": [
+                {
+                  "code": "WATER",
+                  "comment": "Mapped from local code 'water'",
+                  "display": "WATER",
+                  "equivalence": "relatedto"
+                },
+                {
+                  "code": "WATER",
+                  "comment": "Mapped from local code 'water'",
+                  "display": "WATER",
+                  "equivalence": "equivalent"
+                },
+                {
+                  "code": "Water",
+                  "comment": "Mapped from local code 'water'",
+                  "display": "Water",
+                  "equivalence": "equivalent"
+                }
+              ]
+            }
+          ],
+          "source": "http://example.org/fhir/CodeSystem/local-cmc-pqi",
+          "target": "http://hl7.org/fhir/uv/pharm-quality"
+        }
+      ],
+      "id": "local-to-pqi",
+      "name": "LocalToPqiConceptMap",
+      "resourceType": "ConceptMap",
+      "status": "draft",
+      "url": "http://example.org/fhir/ConceptMap/local-to-pqi",
+      "version": "0.1.0"
+    },
+    "knownValueSetsFromPqi": [
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-batch-designation-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-characterizationStep-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-closureTypes-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-color-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-containerOrientation-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-country-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceType-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-diagramType-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-equipmentClass-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-goalPriority-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-grade-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-impurity-origin-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-impurity-type-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-ingredientFunction-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufactured-item-property-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingParticipantRole-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingStep-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-manufacturingStepScale-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicinalproduct-characteristic-type",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicine-doseform",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-medicine-route-of-administration",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-packageProperty-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-pharmaceutical-organization-type",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-planType-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-process-validation-procedure-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-processParameter-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-productNameType-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-productSiteUtilizationType-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-qualifiedValueCriticality-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-specification-type-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-substance-property-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-substance-property-value-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-test-method-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-testCategory-pq",
+      "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-timePointDescription-pq"
+    ],
+    "terminologyVersionId": "term-3c85349837a9",
+    "valueSet": {
+      "compose": {
+        "include": [
+          {
+            "concept": [
+              {
+                "code": "100100",
+                "display": "100100"
+              },
+              {
+                "code": "10225000",
+                "display": "10225000"
+              },
+              {
+                "code": "20053000",
+                "display": "20053000"
+              },
+              {
+                "code": "2025_12",
+                "display": "2025-12"
+              },
+              {
+                "code": "2026_01",
+                "display": "2026-01"
+              },
+              {
+                "code": "2026_01_07",
+                "display": "2026-01-07"
+              },
+              {
+                "code": "2026_01_15",
+                "display": "2026-01-15"
+              },
+              {
+                "code": "2026_01_16t12_00_00z",
+                "display": "2026-01-16T12:00:00Z"
+              },
+              {
+                "code": "2026_01_16t12_10_00z",
+                "display": "2026-01-16T12:10:00Z"
+              },
+              {
+                "code": "25c_60rh",
+                "display": "25C/60RH"
+              },
+              {
+                "code": "2_1",
+                "display": "2.1"
+              },
+              {
+                "code": "4_81",
+                "display": "4.81"
+              },
+              {
+                "code": "95_0_105_0",
+                "display": "95.0-105.0"
+              },
+              {
+                "code": "aaa_pharmaceutical_inc",
+                "display": "AAA Pharmaceutical Inc"
+              },
+              {
+                "code": "aaa_qc_lab",
+                "display": "AAA QC Lab"
+              },
+              {
+                "code": "active",
+                "display": "active"
+              },
+              {
+                "code": "assay",
+                "display": "assay"
+              },
+              {
+                "code": "batch_33445",
+                "display": "BATCH-33445"
+              },
+              {
+                "code": "closed",
+                "display": "closed"
+              },
+              {
+                "code": "complies",
+                "display": "Complies"
+              },
+              {
+                "code": "desc",
+                "display": "DESC"
+              },
+              {
+                "code": "description",
+                "display": "Description"
+              },
+              {
+                "code": "dev_001",
+                "display": "DEV-001"
+              },
+              {
+                "code": "drug_product_manufacture",
+                "display": "drug-product-manufacture"
+              },
+              {
+                "code": "gastro_resistant_tablet",
+                "display": "Gastro-resistant tablet"
+              },
+              {
+                "code": "karl_fischer",
+                "display": "Karl Fischer"
+              },
+              {
+                "code": "kg",
+                "display": "kg"
+              },
+              {
+                "code": "mat_1001",
+                "display": "MAT-1001"
+              },
+              {
+                "code": "minor",
+                "display": "minor"
+              },
+              {
+                "code": "oral_use",
+                "display": "Oral use"
+              },
+              {
+                "code": "org_lab_001",
+                "display": "ORG-LAB-001"
+              },
+              {
+                "code": "org_mfg_001",
+                "display": "ORG-MFG-001"
+              },
+              {
+                "code": "process",
+                "display": "process"
+              },
+              {
+                "code": "spec_01",
+                "display": "SPEC-01"
+              },
+              {
+                "code": "spec_api_001",
+                "display": "SPEC-API-001"
+              },
+              {
+                "code": "stelbat_tablets_20mg",
+                "display": "Stelbat Tablets 20mg"
+              },
+              {
+                "code": "stelbatolol",
+                "display": "Stelbatolol"
+              },
+              {
+                "code": "tablets",
+                "display": "tablets"
+              },
+              {
+                "code": "unknown",
+                "display": "%"
+              },
+              {
+                "code": "visual_description",
+                "display": "Visual Description"
+              },
+              {
+                "code": "water",
+                "display": "WATER"
+              }
+            ],
+            "system": "http://example.org/fhir/CodeSystem/local-cmc-pqi"
+          }
+        ]
+      },
+      "id": "local-cmc-pqi",
+      "name": "LocalCmcPqiValueSet",
+      "resourceType": "ValueSet",
+      "status": "draft",
+      "url": "http://example.org/fhir/ValueSet/local-cmc-pqi",
+      "version": "0.1.0"
+    }
+  },
+  "contentHash": "48d8964a688f024735413253b1d8da20cb526795a0bc1aa4680edd36e1acf546",
+  "previousVersion": "v4",
+  "status": "reviewed",
+  "version": "v5"
+}

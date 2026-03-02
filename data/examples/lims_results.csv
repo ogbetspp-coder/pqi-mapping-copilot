@@ -1,0 +1,4 @@
+batch_id,test_code,test_name,result_value,result_unit,spec_limit_low,spec_limit_high,analysis_time,method
+B-1001,ASSAY,Assay,99.1,%,95,105,2026-01-19T11:00:00Z,HPLC
+B-1001,WATER,Water,1.9,%,0,3,2026-01-19T11:15:00Z,KF
+B-1002,ASSAY,Assay,98.7,%,95,105,2026-02-20T10:20:00Z,HPLC

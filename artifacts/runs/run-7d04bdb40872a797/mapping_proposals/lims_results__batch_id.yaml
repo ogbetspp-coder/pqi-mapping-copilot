@@ -1,0 +1,143 @@
+candidates:
+  -
+    confidence: 0.671304
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.26087
+        value_pattern_fit: 0.9
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.2609
+        value_pattern:
+          - code_like_values->coded_target
+          - id_column->identifier_or_reference
+      samples:
+        - B-1001
+        - B-1002
+      top_values:
+        -
+          count: 2
+          value: B-1001
+        -
+          count: 1
+          value: B-1002
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Observation.referenceRange.appliesTo
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/referencerange-appliesto"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: to_reference
+      params:
+        lookup: REQUIRES_REVIEW
+  -
+    confidence: 0.668889
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.253968
+        value_pattern_fit: 0.9
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.254
+        value_pattern:
+          - code_like_values->coded_target
+          - id_column->identifier_or_reference
+      samples:
+        - B-1001
+        - B-1002
+      top_values:
+        -
+          count: 2
+          value: B-1001
+        -
+          count: 1
+          value: B-1002
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Organization.identifier.type
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Organization-drug-pq"
+      resourceType: Organization
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/identifier-type"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: trim_string
+      params:
+
+  -
+    confidence: 0.66046
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.229885
+        value_pattern_fit: 0.9
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.2299
+        value_pattern:
+          - code_like_values->coded_target
+          - id_column->identifier_or_reference
+      samples:
+        - B-1001
+        - B-1002
+      top_values:
+        -
+          count: 2
+          value: B-1001
+        -
+          count: 1
+          value: B-1002
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Observation.referenceRange.normalValue
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-referencerange-normalvalue"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: to_reference
+      params:
+        lookup: REQUIRES_REVIEW
+domain:
+  primary: batch_analysis
+  scores:
+    batch_analysis: 0.910448
+    batch_lot_information: 0.089552
+run_id: run-7d04bdb40872a797
+source:
+  column: batch_id
+  file: data/examples/lims_results.csv
+  table: lims_results

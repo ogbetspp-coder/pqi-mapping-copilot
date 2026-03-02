@@ -1,0 +1,3 @@
+batch_id,specimen_id,sample_collection_date,storage_condition,result_code,result_display,result_value,result_unit,analysis_time,lab_org_id,lab_org_name,method_code,method_display
+BATCH-33445,SPEC-01,2026-01-15,25C/60RH,DESC,Description,Complies,,2026-01-16T12:00:00Z,ORG-LAB-001,AAA QC Lab,DESC,Visual Description
+BATCH-33445,SPEC-01,2026-01-15,25C/60RH,WATER,Water,2.1,%,2026-01-16T12:10:00Z,ORG-LAB-001,AAA QC Lab,WATER,Karl Fischer

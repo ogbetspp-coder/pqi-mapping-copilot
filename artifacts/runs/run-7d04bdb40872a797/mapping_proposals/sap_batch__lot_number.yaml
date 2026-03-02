@@ -1,0 +1,140 @@
+candidates:
+  -
+    confidence: 0.62
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.342857
+        value_pattern_fit: 0.5
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.3429
+        value_pattern:
+          - code_like_values->coded_target
+      samples:
+        - LOT-77A
+        - LOT-77B
+      top_values:
+        -
+          count: 1
+          value: LOT-77A
+        -
+          count: 1
+          value: LOT-77B
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Observation.interpretation
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-interpretation"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: trim_string
+      params:
+
+  -
+    confidence: 0.618644
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.338983
+        value_pattern_fit: 0.5
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.339
+        value_pattern:
+          - code_like_values->coded_target
+      samples:
+        - LOT-77A
+        - LOT-77B
+      top_values:
+        -
+          count: 1
+          value: LOT-77A
+        -
+          count: 1
+          value: LOT-77B
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Observation.bodySite
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/body-site"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: trim_string
+      params:
+
+  -
+    confidence: 0.614925
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.328358
+        value_pattern_fit: 0.5
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.3284
+        value_pattern:
+          - code_like_values->coded_target
+      samples:
+        - LOT-77A
+        - LOT-77B
+      top_values:
+        -
+          count: 1
+          value: LOT-77A
+        -
+          count: 1
+          value: LOT-77B
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Observation.category
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/observation-category"
+      conceptMapSuggested: LOCAL_TO_PQI_REQUIRES_REVIEW
+    transform:
+      name: trim_string
+      params:
+
+domain:
+  primary: batch_lot_information
+  scores:
+    batch_analysis: 0.134021
+    batch_lot_information: 0.865979
+run_id: run-7d04bdb40872a797
+source:
+  column: lot_number
+  file: data/examples/sap_batch.csv
+  table: sap_batch

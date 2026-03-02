@@ -1,0 +1,11 @@
+{
+  "records": [
+    {
+      "deviation_id": "DEV-001",
+      "batch_id": "BATCH-33445",
+      "category": "process",
+      "severity": "minor",
+      "status": "closed"
+    }
+  ]
+}

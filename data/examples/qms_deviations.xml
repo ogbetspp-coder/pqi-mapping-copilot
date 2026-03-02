@@ -1,0 +1,14 @@
+<deviations>
+  <deviation>
+    <deviation_id>DEV-100</deviation_id>
+    <batch_id>B-1001</batch_id>
+    <category>process</category>
+    <status>closed</status>
+  </deviation>
+  <deviation>
+    <deviation_id>DEV-101</deviation_id>
+    <batch_id>B-1002</batch_id>
+    <category>analytical</category>
+    <status>open</status>
+  </deviation>
+</deviations>

@@ -1,0 +1,128 @@
+candidates:
+  -
+    confidence: 0.508889
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.311111
+        value_pattern_fit: 0.0
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=['name']"
+          - text_similarity=0.3111
+        value_pattern:
+
+      samples:
+        - Blend
+      top_values:
+        -
+          count: 2
+          value: Blend
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: DiagnosticReport.code
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/DiagnosticReport-analysis-drug-pq"
+      resourceType: DiagnosticReport
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-reportType-pq"
+      conceptMapSuggested: null
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+  -
+    confidence: 0.506061
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.30303
+        value_pattern_fit: 0.0
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.303
+        value_pattern:
+
+      samples:
+        - Blend
+      top_values:
+        -
+          count: 2
+          value: Blend
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Observation.code
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/uv/pharm-quality/ValueSet/vs-deviceProperty-pq"
+      conceptMapSuggested: null
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+  -
+    confidence: 0.4875
+    evidence:
+      component_scores:
+        binding_fit: 1.0
+        datatype_fit: 0.8
+        name_similarity: 0.25
+        value_pattern_fit: 0.0
+      inferred_type: string
+      rules_fired:
+        binding:
+          - binding available and source appears code-like
+        datatype:
+          - string compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.25
+        value_pattern:
+
+      samples:
+        - Blend
+      top_values:
+        -
+          count: 2
+          value: Blend
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: ActivityDefinition.code
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq"
+      resourceType: ActivityDefinition
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/procedure-code"
+      conceptMapSuggested: null
+    transform:
+      name: normalize_codeable_concept
+      params:
+        system_required: true
+domain:
+  primary: batch_lot_information
+  scores:
+    batch_analysis: 0.333333
+    batch_lot_information: 0.666667
+run_id: run-7d04bdb40872a797
+source:
+  column: step_name
+  file: data/examples/mes_steps.json
+  table: mes_steps

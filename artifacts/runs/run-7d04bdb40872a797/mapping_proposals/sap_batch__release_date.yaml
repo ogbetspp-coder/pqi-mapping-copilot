@@ -1,0 +1,149 @@
+candidates:
+  -
+    confidence: 0.584615
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.384615
+        value_pattern_fit: 0.5
+      inferred_type: date
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - date/datetime compatible
+        name:
+          - "token_overlap=['date']"
+          - text_similarity=0.3846
+        value_pattern:
+          - date_type->date_path
+      samples:
+        - 2026-01-18
+        - 2026-02-19
+      top_values:
+        -
+          count: 1
+          value: 2026-01-18
+        -
+          count: 1
+          value: 2026-02-19
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: ObservationDefinition.date
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ObservationDefinition-test-method-drug-pq"
+      resourceType: ObservationDefinition
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: parse_date
+      params:
+        accepted_formats:
+          - YYYY-MM-DD
+          - YYYY-MM
+          - ISO-8601
+  -
+    confidence: 0.578571
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.367347
+        value_pattern_fit: 0.5
+      inferred_type: date
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - date/datetime compatible
+        name:
+          - "token_overlap=['date']"
+          - text_similarity=0.3673
+        value_pattern:
+          - date_type->date_path
+      samples:
+        - 2026-01-18
+        - 2026-02-19
+      top_values:
+        -
+          count: 1
+          value: 2026-01-18
+        -
+          count: 1
+          value: 2026-02-19
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: ActivityDefinition.date
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ActivityDefinition-test-drug-pq"
+      resourceType: ActivityDefinition
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: parse_date
+      params:
+        accepted_formats:
+          - YYYY-MM-DD
+          - YYYY-MM
+          - ISO-8601
+  -
+    confidence: 0.576
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.36
+        value_pattern_fit: 0.5
+      inferred_type: date
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - date/datetime compatible
+        name:
+          - "token_overlap=['date']"
+          - text_similarity=0.36
+        value_pattern:
+          - date_type->date_path
+      samples:
+        - 2026-01-18
+        - 2026-02-19
+      top_values:
+        -
+          count: 1
+          value: 2026-01-18
+        -
+          count: 1
+          value: 2026-02-19
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: "Specimen.processing.time[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+      resourceType: Specimen
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: parse_date
+      params:
+        accepted_formats:
+          - YYYY-MM-DD
+          - YYYY-MM
+          - ISO-8601
+domain:
+  primary: batch_lot_information
+  scores:
+    batch_analysis: 0.134021
+    batch_lot_information: 0.865979
+run_id: run-7d04bdb40872a797
+source:
+  column: release_date
+  file: data/examples/sap_batch.csv
+  table: sap_batch

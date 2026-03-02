@@ -1,0 +1,2 @@
+batch_id,material_id,manufacturing_date,batch_quantity,batch_quantity_unit,release_date,packaging_date,actual_yield,actual_yield_unit,manufacturer_org_id,manufacturer_name,manufacturer_type,manufacturer_type_display
+BATCH-33445,MAT-1001,2025-12,100100,tablets,2026-01-07,2026-01,4.81,kg,ORG-MFG-001,AAA Pharmaceutical Inc,drug-product-manufacture,Drug Product Manufacture

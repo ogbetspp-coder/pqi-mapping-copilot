@@ -1,0 +1,142 @@
+candidates:
+  -
+    confidence: 0.495641
+    evidence:
+      component_scores:
+        binding_fit: 0.6
+        datatype_fit: 1.0
+        name_similarity: 0.358974
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - binding available but source not clearly code-like
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['quantity']"
+          - text_similarity=0.359
+        value_pattern:
+
+      samples:
+        - 124500
+        - 125000
+      top_values:
+        -
+          count: 1
+          value: 124500
+        -
+          count: 1
+          value: 125000
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: "Medication.ingredient.strength[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/medication-ingredientstrength"
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+  -
+    confidence: 0.488028
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.394366
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['quantity']"
+          - text_similarity=0.3944
+        value_pattern:
+
+      samples:
+        - 124500
+        - 125000
+      top_values:
+        -
+          count: 1
+          value: 124500
+        -
+          count: 1
+          value: 125000
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Specimen.collection.quantity
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+      resourceType: Specimen
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: to_quantity
+      params:
+        units_detected:
+
+  -
+    confidence: 0.483333
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.380952
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['quantity']"
+          - text_similarity=0.381
+        value_pattern:
+
+      samples:
+        - 124500
+        - 125000
+      top_values:
+        -
+          count: 1
+          value: 124500
+        -
+          count: 1
+          value: 125000
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Specimen.container.specimenQuantity
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+      resourceType: Specimen
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: to_quantity
+      params:
+        units_detected:
+
+domain:
+  primary: batch_lot_information
+  scores:
+    batch_analysis: 0.134021
+    batch_lot_information: 0.865979
+run_id: run-7d04bdb40872a797
+source:
+  column: batch_quantity
+  file: data/examples/sap_batch.csv
+  table: sap_batch

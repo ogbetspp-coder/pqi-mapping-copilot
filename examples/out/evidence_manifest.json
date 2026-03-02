@@ -1,0 +1,59 @@
+{
+  "canonicalManifestSha256": "45de1c94b53fd47b3e48d1768e82a81eda8ce8b3052f9fece95540686bac9ad0",
+  "determinismContract": {
+    "canonicalization": "JSON canonical form with sorted keys and deterministic ordering",
+    "statement": "Same inputs + mapping version + terminology version + validator version => identical outputs."
+  },
+  "governance": {
+    "mapping": {
+      "artifactId": "mappings-aa6872bad8f5",
+      "contentHash": "c9b480720aaccc30bc5dc2cf54734aa621f5976ec538f7b114dbf0369209e105",
+      "status": "approved",
+      "version": "v9"
+    },
+    "terminology": {
+      "artifactId": "terminology-bd10974acda9",
+      "contentHash": "48d8964a688f024735413253b1d8da20cb526795a0bc1aa4680edd36e1acf546",
+      "status": "approved",
+      "version": "v6"
+    }
+  },
+  "ig": {
+    "canonical": "http://hl7.org/fhir/uv/pharm-quality/ImplementationGuide/hl7.fhir.uv.pharm-quality",
+    "fhirVersion": "5.0.0",
+    "package": "hl7.fhir.uv.pharm-quality",
+    "packageVersion": "1.0.0"
+  },
+  "inputs": {
+    "fileHashes": {
+      "batch_record.csv": "fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154",
+      "lims_results.csv": "60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df",
+      "plm_spec.xml": "591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc",
+      "product_master.csv": "b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a",
+      "qms_deviation.json": "a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7"
+    }
+  },
+  "manifestType": "PQI-EvidenceManifest",
+  "manifestVersion": "0.1.0",
+  "outputs": {
+    "bundleHashes": {
+      "examples/out/bundles/bundle-pq5.json": "4dcedb08f95c228f4cd208a3377da1515de8a7e739cac7f730f082d1f5fabc59",
+      "examples/out/bundles/bundle-pq6.json": "63860cab22d9c9303b7a7effab8a24a80aef3d95652a330407ce4714b60823c0"
+    }
+  },
+  "runId": "run-45de1c94b53fd47b",
+  "signatureHooks": {
+    "algorithm": "SHA-256",
+    "canonicalJson": "{\"determinismContract\":{\"canonicalization\":\"JSON canonical form with sorted keys and deterministic ordering\",\"statement\":\"Same inputs + mapping version + terminology version + validator version => identical outputs.\"},\"governance\":{\"mapping\":{\"artifactId\":\"mappings-aa6872bad8f5\",\"contentHash\":\"c9b480720aaccc30bc5dc2cf54734aa621f5976ec538f7b114dbf0369209e105\",\"status\":\"approved\",\"version\":\"v9\"},\"terminology\":{\"artifactId\":\"terminology-bd10974acda9\",\"contentHash\":\"48d8964a688f024735413253b1d8da20cb526795a0bc1aa4680edd36e1acf546\",\"status\":\"approved\",\"version\":\"v6\"}},\"ig\":{\"canonical\":\"http://hl7.org/fhir/uv/pharm-quality/ImplementationGuide/hl7.fhir.uv.pharm-quality\",\"fhirVersion\":\"5.0.0\",\"package\":\"hl7.fhir.uv.pharm-quality\",\"packageVersion\":\"1.0.0\"},\"inputs\":{\"fileHashes\":{\"batch_record.csv\":\"fb57c76a1662d3c6ca465923bc163600bfa214de20993d3121380c7a820f8154\",\"lims_results.csv\":\"60d654a4fd919903a88749eccb4d27e18b0f1dd515689bb76bd7278eaa99c3df\",\"plm_spec.xml\":\"591745f08c8cf20188eb939f637e417e026155b33f7cb7283303c0f4c83caafc\",\"product_master.csv\":\"b0b343f5ca72d71a70eacf9c4e8febe9b5da587db13cb128fd88dc01c1c36a1a\",\"qms_deviation.json\":\"a42ca00df02bd6c05c45feadfe6dfbcf28a9a07c4cb869742371720c4bd93ec7\"}},\"manifestType\":\"PQI-EvidenceManifest\",\"manifestVersion\":\"0.1.0\",\"outputs\":{\"bundleHashes\":{\"examples/out/bundles/bundle-pq5.json\":\"4dcedb08f95c228f4cd208a3377da1515de8a7e739cac7f730f082d1f5fabc59\",\"examples/out/bundles/bundle-pq6.json\":\"63860cab22d9c9303b7a7effab8a24a80aef3d95652a330407ce4714b60823c0\"}},\"validator\":{\"errors\":0,\"issueCount\":55,\"status\":\"PASS\",\"validatorId\":\"local-minimal-fhir-r5-validator\",\"validatorVersion\":\"0.1.0\",\"warnings\":55}}",
+    "note": "PKI signing intentionally out-of-scope for MVP; hook provided.",
+    "signature": null
+  },
+  "validator": {
+    "errors": 0,
+    "issueCount": 55,
+    "status": "PASS",
+    "validatorId": "local-minimal-fhir-r5-validator",
+    "validatorVersion": "0.1.0",
+    "warnings": 55
+  }
+}

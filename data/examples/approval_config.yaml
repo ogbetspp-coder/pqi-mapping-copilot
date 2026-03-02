@@ -1,0 +1,3 @@
+# Approve exactly one candidate per source column if threshold met
+confidence_threshold: 0.72
+require_status_proposed: true

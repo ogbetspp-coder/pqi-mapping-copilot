@@ -1,0 +1,152 @@
+candidates:
+  -
+    confidence: 0.604546
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.727273
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['outcome', 'result', 'value']"
+          - text_similarity=0.7273
+        value_pattern:
+
+      samples:
+        - 1.9
+        - 98.7
+        - 99.1
+      top_values:
+        -
+          count: 1
+          value: 1.9
+        -
+          count: 1
+          value: 98.7
+        -
+          count: 1
+          value: 99.1
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: "Extension.value[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-pq"
+      resourceType: Extension
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+  -
+    confidence: 0.604546
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.727273
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['outcome', 'result', 'value']"
+          - text_similarity=0.7273
+        value_pattern:
+
+      samples:
+        - 1.9
+        - 98.7
+        - 99.1
+      top_values:
+        -
+          count: 1
+          value: 1.9
+        -
+          count: 1
+          value: 98.7
+        -
+          count: 1
+          value: 99.1
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: "Extension.value[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-actual-yield-unfiltered-pq"
+      resourceType: Extension
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+  -
+    confidence: 0.604546
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.727273
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=['outcome', 'result', 'value']"
+          - text_similarity=0.7273
+        value_pattern:
+
+      samples:
+        - 1.9
+        - 98.7
+        - 99.1
+      top_values:
+        -
+          count: 1
+          value: 1.9
+        -
+          count: 1
+          value: 98.7
+        -
+          count: 1
+          value: 99.1
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: "Extension.value[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Extension-batch-number-of-items-pq"
+      resourceType: Extension
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+domain:
+  primary: batch_analysis
+  scores:
+    batch_analysis: 0.910448
+    batch_lot_information: 0.089552
+run_id: run-7d04bdb40872a797
+source:
+  column: result_value
+  file: data/examples/lims_results.csv
+  table: lims_results

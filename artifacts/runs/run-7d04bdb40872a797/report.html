@@ -1,0 +1,85 @@
+<html><head><meta charset='utf-8'><title>PQI Mapping Copilot Report</title>
+<style>body{font-family:Arial,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;}table{border-collapse:collapse;width:100%;margin:1rem 0;}th,td{border:1px solid #ccc;padding:.4rem;text-align:left;}h1,h2{color:#0b3a57;} code{background:#f3f4f6;padding:2px 4px;}</style>
+</head><body>
+<h1>PQI Mapping Copilot Report - run-7d04bdb40872a797</h1>
+<br/>
+<h2>Dataset Overview</h2>
+<br/>
+<table>
+<tr><th>Table</th><th>Source File</th><th>Rows</th><th>Columns</th></tr>
+<tr><th>lims_results</th><th>data/examples/lims_results.csv</th><th>3</th><th>9</th></tr>
+<tr><th>mes_steps</th><th>data/examples/mes_steps.json</th><th>2</th><th>4</th></tr>
+<tr><th>qms_deviations</th><th>data/examples/qms_deviations.xml</th><th>2</th><th>4</th></tr>
+<tr><th>sap_batch</th><th>data/examples/sap_batch.csv</th><th>2</th><th>8</th></tr>
+</table>
+<h2>Domain Classification</h2>
+<br/>
+<table>
+<tr><th>Table</th><th>Primary Domain</th><th>Scores</th><th>Rationale (top)</th></tr>
+<tr><th>lims_results</th><th>batch_analysis</th><th>batch_analysis=0.91, batch_lot_information=0.09</th><th>batch_analysis:table-keyword:result(+0.90); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
+<tr><th>mes_steps</th><th>batch_lot_information</th><th>batch_analysis=0.33, batch_lot_information=0.67</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
+<tr><th>qms_deviations</th><th>batch_lot_information</th><th>batch_analysis=0.33, batch_lot_information=0.67</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:batch_id:keyword:batch(+1.2)</th></tr>
+<tr><th>sap_batch</th><th>batch_lot_information</th><th>batch_analysis=0.13, batch_lot_information=0.87</th><th>batch_analysis:batch_id:value-pattern:test_code_like(+0.3); batch_lot_information:table-keyword:batch(+0.90)</th></tr>
+</table>
+<h2>Top Mapping Candidates</h2>
+<br/>
+<table>
+<tr><th>Source</th><th>Domain</th><th>Candidate Target</th><th>Confidence</th><th>Status</th><th>Evidence</th></tr>
+<tr><th>lims_results.analysis_time</th><th>batch_analysis</th><th>Specimen::Specimen.receivedTime</th><th>0.61</th><th>PROPOSED</th><th>token_overlap=[&#x27;time&#x27;]; date/datetime compatible</th></tr>
+<tr><th>lims_results.batch_id</th><th>batch_analysis</th><th>Observation::Observation.referenceRange.appliesTo</th><th>0.67</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>lims_results.method</th><th>batch_analysis</th><th>Observation::Observation.method</th><th>0.77</th><th>PROPOSED</th><th>token_overlap=[&#x27;analysis&#x27;, &#x27;assay&#x27;, &#x27;method&#x27;, &#x27;procedure&#x27;, &#x27;protocol&#x27;, &#x27;test&#x27;]; string compatible</th></tr>
+<tr><th>lims_results.result_unit</th><th>batch_analysis</th><th>ObservationDefinition::ObservationDefinition.component.code</th><th>0.53</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>lims_results.result_value</th><th>batch_analysis</th><th>Extension::Extension.value[x]</th><th>0.60</th><th>PROPOSED</th><th>token_overlap=[&#x27;outcome&#x27;, &#x27;result&#x27;, &#x27;value&#x27;]; numeric compatible</th></tr>
+<tr><th>lims_results.spec_limit_high</th><th>batch_analysis</th><th>ObservationDefinition::ObservationDefinition.qualifiedValue.range.high</th><th>0.55</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;criteria&#x27;, &#x27;high&#x27;, &#x27;limit&#x27;, &#x27;spec&#x27;, &#x27;specification&#x27;]; numeric compatible</th></tr>
+<tr><th>lims_results.spec_limit_low</th><th>batch_analysis</th><th>ObservationDefinition::ObservationDefinition.qualifiedValue.range.low</th><th>0.54</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;criteria&#x27;, &#x27;limit&#x27;, &#x27;low&#x27;, &#x27;spec&#x27;, &#x27;specification&#x27;]; numeric compatible</th></tr>
+<tr><th>lims_results.test_code</th><th>batch_analysis</th><th>Observation::Observation.method</th><th>0.70</th><th>PROPOSED</th><th>token_overlap=[&#x27;analysis&#x27;, &#x27;assay&#x27;, &#x27;method&#x27;, &#x27;test&#x27;]; string compatible</th></tr>
+<tr><th>lims_results.test_name</th><th>batch_analysis</th><th>DiagnosticReport::DiagnosticReport.conclusionCode</th><th>0.56</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;analysis&#x27;, &#x27;assay&#x27;, &#x27;method&#x27;, &#x27;test&#x27;]; string compatible</th></tr>
+<tr><th>mes_steps.batch_id</th><th>batch_lot_information</th><th>Observation::Observation.referenceRange.appliesTo</th><th>0.67</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>mes_steps.duration_hr</th><th>batch_lot_information</th><th>Observation::Observation.value[x]</th><th>0.47</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; numeric compatible</th></tr>
+<tr><th>mes_steps.equipment_id</th><th>batch_lot_information</th><th>Organization::Organization.identifier.type</th><th>0.68</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>mes_steps.step_name</th><th>batch_lot_information</th><th>DiagnosticReport::DiagnosticReport.code</th><th>0.51</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;name&#x27;]; string compatible</th></tr>
+<tr><th>qms_deviations.batch_id</th><th>batch_lot_information</th><th>Observation::Observation.referenceRange.appliesTo</th><th>0.67</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>qms_deviations.category</th><th>batch_lot_information</th><th>Observation::Observation.code</th><th>0.49</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>qms_deviations.deviation_id</th><th>batch_lot_information</th><th>Organization::Organization.identifier.type</th><th>0.71</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>qms_deviations.status</th><th>batch_lot_information</th><th>DiagnosticReport::DiagnosticReport.code</th><th>0.48</th><th>REQUIRES_REVIEW</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>sap_batch.batch_id</th><th>batch_lot_information</th><th>Observation::Observation.referenceRange.appliesTo</th><th>0.67</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>sap_batch.batch_quantity</th><th>batch_lot_information</th><th>Medication::Medication.ingredient.strength[x]</th><th>0.50</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;quantity&#x27;]; numeric compatible</th></tr>
+<tr><th>sap_batch.batch_uom</th><th>batch_lot_information</th><th>PackagedProductDefinition::PackagedProductDefinition.packaging.property.value[x].code</th><th>0.52</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;unit&#x27;, &#x27;units&#x27;, &#x27;uom&#x27;]; string compatible</th></tr>
+<tr><th>sap_batch.lot_number</th><th>batch_lot_information</th><th>Observation::Observation.interpretation</th><th>0.62</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>sap_batch.manufacturing_date</th><th>batch_lot_information</th><th>Specimen::Specimen.processing.time[x]</th><th>0.57</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;date&#x27;]; date/datetime compatible</th></tr>
+<tr><th>sap_batch.material_id</th><th>batch_lot_information</th><th>Observation::Observation.referenceRange.normalValue</th><th>0.66</th><th>PROPOSED</th><th>token_overlap=[]; string compatible</th></tr>
+<tr><th>sap_batch.packaging_date</th><th>batch_lot_information</th><th>Specimen::Specimen.processing.time[x]</th><th>0.58</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;date&#x27;]; date/datetime compatible</th></tr>
+<tr><th>sap_batch.release_date</th><th>batch_lot_information</th><th>ObservationDefinition::ObservationDefinition.date</th><th>0.58</th><th>REQUIRES_REVIEW</th><th>token_overlap=[&#x27;date&#x27;]; date/datetime compatible</th></tr>
+</table>
+<h2>Relationship Suggestions</h2>
+<br/>
+<table>
+<tr><th>Join</th><th>Match Rate</th><th>Overlap</th></tr>
+<tr><th>lims_results.batch_id -&gt; mes_steps.batch_id</th><th>100.0%</th><th>2</th></tr>
+<tr><th>lims_results.batch_id -&gt; qms_deviations.batch_id</th><th>100.0%</th><th>2</th></tr>
+<tr><th>lims_results.batch_id -&gt; sap_batch.batch_id</th><th>100.0%</th><th>2</th></tr>
+<tr><th>qms_deviations.batch_id -&gt; mes_steps.batch_id</th><th>100.0%</th><th>2</th></tr>
+<tr><th>sap_batch.batch_id -&gt; mes_steps.batch_id</th><th>100.0%</th><th>2</th></tr>
+<tr><th>sap_batch.batch_id -&gt; qms_deviations.batch_id</th><th>100.0%</th><th>2</th></tr>
+</table>
+<h2>Unresolved / Ambiguous Items</h2>
+<br/>
+<p>&bull; lims_results.result_unit</p>
+<p>&bull; lims_results.spec_limit_high</p>
+<p>&bull; lims_results.spec_limit_low</p>
+<p>&bull; lims_results.test_name</p>
+<p>&bull; mes_steps.duration_hr</p>
+<p>&bull; mes_steps.step_name</p>
+<p>&bull; qms_deviations.category</p>
+<p>&bull; qms_deviations.status</p>
+<p>&bull; sap_batch.batch_quantity</p>
+<p>&bull; sap_batch.batch_uom</p>
+<p>&bull; sap_batch.manufacturing_date</p>
+<p>&bull; sap_batch.packaging_date</p>
+<p>&bull; sap_batch.release_date</p>
+<br/>
+<h2>Decisions Required From SMEs</h2>
+<br/>
+<p>&bull; Confirm target profile/element for unresolved columns listed above.</p>
+<p>&bull; Confirm terminology mapping for code-like fields lacking ValueSet bindings.</p>
+</body></html>

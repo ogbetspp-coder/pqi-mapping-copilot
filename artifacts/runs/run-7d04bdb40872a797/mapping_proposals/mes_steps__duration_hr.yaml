@@ -1,0 +1,140 @@
+candidates:
+  -
+    confidence: 0.471154
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.346154
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.3462
+        value_pattern:
+
+      samples:
+        - 2.4
+        - 2.5
+      top_values:
+        -
+          count: 1
+          value: 2.4
+        -
+          count: 1
+          value: 2.5
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: "Observation.value[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+  -
+    confidence: 0.458889
+    evidence:
+      component_scores:
+        binding_fit: 0.6
+        datatype_fit: 1.0
+        name_similarity: 0.253968
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - binding available but source not clearly code-like
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.254
+        value_pattern:
+
+      samples:
+        - 2.4
+        - 2.5
+      top_values:
+        -
+          count: 1
+          value: 2.4
+        -
+          count: 1
+          value: 2.5
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: "Medication.ingredient.strength[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Medication-batch-information-drug-pq"
+      resourceType: Medication
+    terminology:
+      bindingValueSetUrl: "http://hl7.org/fhir/ValueSet/medication-ingredientstrength"
+      conceptMapSuggested: null
+    transform:
+      name: identity
+      params:
+
+  -
+    confidence: 0.453704
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.296296
+        value_pattern_fit: 0.0
+      inferred_type: number
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - numeric compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.2963
+        value_pattern:
+
+      samples:
+        - 2.4
+        - 2.5
+      top_values:
+        -
+          count: 1
+          value: 2.4
+        -
+          count: 1
+          value: 2.5
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: Observation.referenceRange.low
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Observation-test-result-drug-pq"
+      resourceType: Observation
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: to_reference
+      params:
+        lookup: REQUIRES_REVIEW
+domain:
+  primary: batch_lot_information
+  scores:
+    batch_analysis: 0.333333
+    batch_lot_information: 0.666667
+run_id: run-7d04bdb40872a797
+source:
+  column: duration_hr
+  file: data/examples/mes_steps.json
+  table: mes_steps

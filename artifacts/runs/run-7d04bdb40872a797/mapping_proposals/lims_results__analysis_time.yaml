@@ -1,0 +1,161 @@
+candidates:
+  -
+    confidence: 0.610919
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.45977
+        value_pattern_fit: 0.5
+      inferred_type: datetime
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - date/datetime compatible
+        name:
+          - "token_overlap=['time']"
+          - text_similarity=0.4598
+        value_pattern:
+          - date_type->date_path
+      samples:
+        - "2026-01-19T11:00:00Z"
+        - "2026-01-19T11:15:00Z"
+        - "2026-02-20T10:20:00Z"
+      top_values:
+        -
+          count: 1
+          value: "2026-01-19T11:00:00Z"
+        -
+          count: 1
+          value: "2026-01-19T11:15:00Z"
+        -
+          count: 1
+          value: "2026-02-20T10:20:00Z"
+      units:
+
+    status: PROPOSED
+    target:
+      elementPath: Specimen.receivedTime
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+      resourceType: Specimen
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: parse_date
+      params:
+        accepted_formats:
+          - YYYY-MM-DD
+          - YYYY-MM
+          - ISO-8601
+  -
+    confidence: 0.581884
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.376812
+        value_pattern_fit: 0.5
+      inferred_type: datetime
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - date/datetime compatible
+        name:
+          - "token_overlap=['time']"
+          - text_similarity=0.3768
+        value_pattern:
+          - date_type->date_path
+      samples:
+        - "2026-01-19T11:00:00Z"
+        - "2026-01-19T11:15:00Z"
+        - "2026-02-20T10:20:00Z"
+      top_values:
+        -
+          count: 1
+          value: "2026-01-19T11:00:00Z"
+        -
+          count: 1
+          value: "2026-01-19T11:15:00Z"
+        -
+          count: 1
+          value: "2026-02-20T10:20:00Z"
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: "Specimen.processing.time[x]"
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Specimen-drug-pq"
+      resourceType: Specimen
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: parse_date
+      params:
+        accepted_formats:
+          - YYYY-MM-DD
+          - YYYY-MM
+          - ISO-8601
+  -
+    confidence: 0.578947
+    evidence:
+      component_scores:
+        binding_fit: 0.5
+        datatype_fit: 1.0
+        name_similarity: 0.368421
+        value_pattern_fit: 0.5
+      inferred_type: datetime
+      rules_fired:
+        binding:
+          - no binding
+        datatype:
+          - date/datetime compatible
+        name:
+          - "token_overlap=[]"
+          - text_similarity=0.3684
+        value_pattern:
+          - date_type->date_path
+      samples:
+        - "2026-01-19T11:00:00Z"
+        - "2026-01-19T11:15:00Z"
+        - "2026-02-20T10:20:00Z"
+      top_values:
+        -
+          count: 1
+          value: "2026-01-19T11:00:00Z"
+        -
+          count: 1
+          value: "2026-01-19T11:15:00Z"
+        -
+          count: 1
+          value: "2026-02-20T10:20:00Z"
+      units:
+
+    status: REQUIRES_REVIEW
+    target:
+      elementPath: SpecimenDefinition.date
+      profileUrl: "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/SpecimenDefinition-drug-pq"
+      resourceType: SpecimenDefinition
+    terminology:
+      bindingValueSetUrl: null
+      conceptMapSuggested: null
+    transform:
+      name: parse_date
+      params:
+        accepted_formats:
+          - YYYY-MM-DD
+          - YYYY-MM
+          - ISO-8601
+domain:
+  primary: batch_analysis
+  scores:
+    batch_analysis: 0.910448
+    batch_lot_information: 0.089552
+run_id: run-7d04bdb40872a797
+source:
+  column: analysis_time
+  file: data/examples/lims_results.csv
+  table: lims_results

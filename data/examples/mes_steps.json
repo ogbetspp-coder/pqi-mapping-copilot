@@ -1,0 +1,14 @@
+[
+  {
+    "batch_id": "B-1001",
+    "step_name": "Blend",
+    "equipment_id": "EQ-12",
+    "duration_hr": 2.5
+  },
+  {
+    "batch_id": "B-1002",
+    "step_name": "Blend",
+    "equipment_id": "EQ-12",
+    "duration_hr": 2.4
+  }
+]

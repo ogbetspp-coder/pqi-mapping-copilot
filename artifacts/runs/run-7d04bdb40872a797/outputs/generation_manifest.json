@@ -1,0 +1,10 @@
+{
+  "mapping_name": "batch-lot-analysis",
+  "mapping_version": "batch-lot-analysis:v1.0.1",
+  "profileMissing": false,
+  "resource_counts": {
+    "Medication": 2,
+    "Observation": 3
+  },
+  "run_id": "run-7d04bdb40872a797"
+}

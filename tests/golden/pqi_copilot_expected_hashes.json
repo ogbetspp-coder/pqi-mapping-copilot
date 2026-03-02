@@ -1,0 +1,9 @@
+{
+  "hashes": {
+    "domain_classification": "0b7eed755bff15b29169686c56ee9702fafb1da3d20ccc8d6aaa9b91eb0eb506",
+    "manifest": "53d1c47092e32fc34dc36ba70243314cc8b01465416521249465c339d70c2f4a",
+    "mapping_proposals": "df9659717962e964dfe6cd8874b8c51589f1f5303b46d82e8338db8c8a8d1874",
+    "relationship_proposals": "5e203dff591cfbff0003f143565a2ed41a27e4f4de0bd3cefa9b8cd91e488b26"
+  },
+  "run_id": "run-7d04bdb40872a797"
+}
