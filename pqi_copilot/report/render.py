@@ -59,14 +59,13 @@ def generate_markdown_report(run_id: str) -> str:
     top_labels: dict[str, int] = {}
     out_of_scope_fields = 0
     for item in tops:
+        candidates = item.get("candidates", [])
+        if candidates:
+            label = str(candidates[0].get("label", "REQUIRES_SME"))
+            top_labels[label] = top_labels.get(label, 0) + 1
         if item.get("disposition") == "OUT_OF_SCOPE":
             out_of_scope_fields += 1
             continue
-        candidates = item.get("candidates", [])
-        if not candidates:
-            continue
-        label = str(candidates[0].get("label", "REQUIRES_SME"))
-        top_labels[label] = top_labels.get(label, 0) + 1
 
     lines = [f"# PQI Mapping Copilot Report - {run_id}", ""]
     lines.append("## Workshop Summary")
@@ -75,6 +74,7 @@ def generate_markdown_report(run_id: str) -> str:
     lines.append(f"- Good candidates: {top_labels.get('GOOD_CANDIDATE', 0)}")
     lines.append(f"- SME decisions required: {int(decisions.get('summary', {}).get('decision_count', 0))}")
     lines.append(f"- Out-of-scope fields: {out_of_scope_fields}")
+    lines.append(f"- Out-of-scope labels: {top_labels.get('OUT_OF_SCOPE', 0)}")
     lines.append("")
     lines.append("## Dataset Overview")
     lines.append("")

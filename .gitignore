@@ -1,0 +1,12 @@
+# Python cache artifacts
+__pycache__/
+*.py[cod]
+
+# Local scratch/temp
+.tmp/
+
+# Runtime run outputs (deterministic examples can still be committed explicitly)
+artifacts/runs/
+
+# Local test mapping libraries created during override tests
+artifacts/library/mappings/test-overrides*/

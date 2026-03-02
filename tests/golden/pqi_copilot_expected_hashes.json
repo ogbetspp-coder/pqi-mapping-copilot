@@ -1,8 +1,8 @@
 {
   "hashes": {
     "domain_classification": "a495d60cc00c8188ad72598b783da851a9c310623f6cd0ec30545b99af926c72",
-    "manifest": "feda3f0bfc13ee297898c54fb7b0b57411d9319ae52458b6401c80e09732f480",
-    "mapping_proposals": "a698847d659a6e77b9d94545393ee816ddfaf408cf0ad5cee8379e3db99c838b",
+    "manifest": "6738c6520269df15d7788c6c13e0f2c055242e9c40896a8cecdb650f6c567490",
+    "mapping_proposals": "05fa9dfd8a004e7a0c46c5e31e55bca111cd01e6e8dce09921e5cbfd885bec00",
     "relationship_proposals": "5e203dff591cfbff0003f143565a2ed41a27e4f4de0bd3cefa9b8cd91e488b26"
   },
   "run_id": "run-7d04bdb40872a797"

@@ -23,6 +23,9 @@ ANCHOR_PATTERNS = {
     "process_event_date": [
         re.compile(r"(^|_)(manufacturing_date|mfg_date|packaging_date|release_date|pack_date)(_|$)", re.IGNORECASE),
     ],
+    "analysis_event_date": [
+        re.compile(r"(^|_)(analysis_time|analysis_date|test_date|tested_on)(_|$)", re.IGNORECASE),
+    ],
     "test_code": [
         re.compile(r"(^|_)(test_code|assay_code|analysis_code|test|assay)(_|$)", re.IGNORECASE),
     ],
@@ -49,6 +52,8 @@ def matched_anchor(source_column: str, stats: dict[str, Any]) -> str | None:
         return "process_event_date"
     if _match(ANCHOR_PATTERNS["expiration_date"], column):
         return "expiration_date"
+    if _match(ANCHOR_PATTERNS["analysis_event_date"], column) and inferred_type in {"date", "datetime"}:
+        return "analysis_event_date"
     if _match(ANCHOR_PATTERNS["batch_lot_id"], column):
         return "batch_lot_id"
     if _match(ANCHOR_PATTERNS["test_code"], column):
@@ -70,7 +75,7 @@ def is_anchor_column(source_column: str, stats: dict[str, Any]) -> bool:
 
 def anchor_domain(source_column: str, stats: dict[str, Any]) -> str | None:
     anchor = matched_anchor(source_column, stats)
-    if anchor in {"test_code", "result_unit", "result_value_numeric"}:
+    if anchor in {"test_code", "result_unit", "result_value_numeric", "analysis_event_date"}:
         return "batch_analysis"
     if anchor in {"batch_lot_id", "expiration_date", "process_event_date", "quantity_value", "material_id"}:
         return "batch_lot_information"
@@ -114,6 +119,17 @@ def hard_rule_context(source_column: str, stats: dict[str, Any]) -> dict[str, An
             "Medication.batch.extension": 0.05,
         }
         context["notes"].append("anchor:expiration_date")
+
+    if anchor == "analysis_event_date":
+        context["required_paths"] = {
+            "Observation.effectiveDateTime",
+            "DiagnosticReport.effectiveDateTime",
+        }
+        context["boost_by_path"] = {
+            "Observation.effectiveDateTime": 0.24,
+            "DiagnosticReport.effectiveDateTime": 0.12,
+        }
+        context["notes"].append("anchor:analysis_event_date")
 
     if anchor == "batch_lot_id":
         context["required_paths"] = {
@@ -243,6 +259,8 @@ def candidate_question_hint(source_column: str) -> str:
         return "Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it?"
     if _match(ANCHOR_PATTERNS["expiration_date"], col):
         return "Does this represent formal expiration/retest date for regulatory batch disposition?"
+    if _match(ANCHOR_PATTERNS["analysis_event_date"], col):
+        return "Should this timestamp be the observation effective time or report-level effective time?"
     if _match(ANCHOR_PATTERNS["batch_lot_id"], col):
         return "Is this the regulatory lot number or an internal batch surrogate?"
     if _match(ANCHOR_PATTERNS["quantity_value"], col):

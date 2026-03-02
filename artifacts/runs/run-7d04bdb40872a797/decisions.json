@@ -4,35 +4,6 @@
       "decision_id": "D-001",
       "proposed": [
         {
-          "confidence": 0.555376,
-          "label": "REQUIRES_SME",
-          "resourceType": "Observation",
-          "status": "REQUIRES_REVIEW",
-          "target": "Observation.effectiveDateTime"
-        },
-        {
-          "confidence": 0.375555,
-          "label": "REQUIRES_SME",
-          "resourceType": "Observation",
-          "status": "REQUIRES_REVIEW",
-          "target": "Observation.code.text"
-        },
-        {
-          "confidence": 0.347826,
-          "label": "REQUIRES_SME",
-          "resourceType": "Observation",
-          "status": "REQUIRES_REVIEW",
-          "target": "Observation.code.coding.code"
-        }
-      ],
-      "question_for_sme": "Which target path best matches regulatory intent for this field?",
-      "source": "lims_results.analysis_time",
-      "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
-    },
-    {
-      "decision_id": "D-002",
-      "proposed": [
-        {
           "confidence": 0.494828,
           "label": "REQUIRES_SME",
           "resourceType": "Observation",
@@ -45,7 +16,7 @@
       "why": "Field is a likely batch/lot join key; appears in 3 cross-table join proposals."
     },
     {
-      "decision_id": "D-003",
+      "decision_id": "D-002",
       "proposed": [
         {
           "confidence": 0.646949,
@@ -74,7 +45,7 @@
       "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
     },
     {
-      "decision_id": "D-004",
+      "decision_id": "D-003",
       "proposed": [
         {
           "confidence": 0.553054,
@@ -103,7 +74,7 @@
       "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
     },
     {
-      "decision_id": "D-005",
+      "decision_id": "D-004",
       "proposed": [
         {
           "confidence": 0.550775,
@@ -132,7 +103,7 @@
       "why": "Field has multiple plausible targets requiring SME choice for regulatory intent."
     },
     {
-      "decision_id": "D-006",
+      "decision_id": "D-005",
       "proposed": [
         {
           "confidence": 0.513846,
@@ -147,7 +118,7 @@
       "why": "Field appears to represent quantitative batch context that should be bound to explicit units."
     },
     {
-      "decision_id": "D-007",
+      "decision_id": "D-006",
       "proposed": [
         {
           "confidence": 0.3,
@@ -162,7 +133,7 @@
       "why": "Field appears to represent unit-of-measure semantics that need controlled coding/UOM treatment."
     },
     {
-      "decision_id": "D-008",
+      "decision_id": "D-007",
       "proposed": [
         {
           "confidence": 0.527541,
@@ -177,7 +148,7 @@
       "why": "Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics."
     },
     {
-      "decision_id": "D-009",
+      "decision_id": "D-008",
       "proposed": [
         {
           "confidence": 0.627123,
@@ -206,7 +177,7 @@
       "why": "Field appears to be a material/product identifier requiring business meaning confirmation."
     },
     {
-      "decision_id": "D-010",
+      "decision_id": "D-009",
       "proposed": [
         {
           "confidence": 0.507119,
@@ -221,7 +192,7 @@
       "why": "Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics."
     },
     {
-      "decision_id": "D-011",
+      "decision_id": "D-010",
       "proposed": [
         {
           "confidence": 0.496379,
@@ -238,6 +209,6 @@
   ],
   "run_id": "run-7d04bdb40872a797",
   "summary": {
-    "decision_count": 11
+    "decision_count": 10
   }
 }

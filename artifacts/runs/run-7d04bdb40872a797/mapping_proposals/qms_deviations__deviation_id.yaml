@@ -9,7 +9,7 @@ candidates:
 
     flags:
       - out_of_scope_non_anchor
-    label: REQUIRES_SME
+    label: OUT_OF_SCOPE
     status: REQUIRES_REVIEW
     target:
       elementPath: UNKNOWN

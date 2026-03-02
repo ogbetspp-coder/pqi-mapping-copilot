@@ -3,9 +3,10 @@
 ## Workshop Summary
 
 - Auto-approve candidates: 4
-- Good candidates: 4
-- SME decisions required: 11
+- Good candidates: 5
+- SME decisions required: 10
 - Out-of-scope fields: 6
+- Out-of-scope labels: 6
 
 ## Dataset Overview
 
@@ -45,23 +46,22 @@
 
 | Decision | Source | Why | Top Option | Question |
 |---|---|---|---|---|
-| D-001 | lims_results.analysis_time | Field has multiple plausible targets requiring SME choice for regulatory intent. | Observation.effectiveDateTime (0.56) | Which target path best matches regulatory intent for this field? |
-| D-002 | lims_results.batch_id | Field is a likely batch/lot join key; appears in 3 cross-table join proposals. | Observation.subject.reference (0.49) | Is this the regulatory lot number or an internal batch surrogate? |
-| D-003 | lims_results.method | Field has multiple plausible targets requiring SME choice for regulatory intent. | Observation.method.text (0.65) | Which target path best matches regulatory intent for this field? |
-| D-004 | lims_results.spec_limit_high | Field has multiple plausible targets requiring SME choice for regulatory intent. | Observation.referenceRange.high.value (0.55) | Which target path best matches regulatory intent for this field? |
-| D-005 | lims_results.spec_limit_low | Field has multiple plausible targets requiring SME choice for regulatory intent. | Observation.referenceRange.low.value (0.55) | Which target path best matches regulatory intent for this field? |
-| D-006 | sap_batch.batch_quantity | Field appears to represent quantitative batch context that should be bound to explicit units. | Medication.batch.extension (0.51) | Should this quantity be represented in a PQI batch extension with explicit UOM linkage? |
-| D-007 | sap_batch.batch_uom | Field appears to represent unit-of-measure semantics that need controlled coding/UOM treatment. | UNKNOWN (0.30) | Should this be represented as UCUM-compatible Observation.valueQuantity.unit? |
-| D-008 | sap_batch.manufacturing_date | Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics. | Medication.batch.extension (0.53) | Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it? |
-| D-009 | sap_batch.material_id | Field appears to be a material/product identifier requiring business meaning confirmation. | Medication.code.coding.code (0.63) | Is this a product code, material master code, or an internal identifier? |
-| D-010 | sap_batch.packaging_date | Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics. | Medication.batch.extension (0.51) | Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it? |
-| D-011 | sap_batch.release_date | Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics. | Medication.batch.extension (0.50) | Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it? |
+| D-001 | lims_results.batch_id | Field is a likely batch/lot join key; appears in 3 cross-table join proposals. | Observation.subject.reference (0.49) | Is this the regulatory lot number or an internal batch surrogate? |
+| D-002 | lims_results.method | Field has multiple plausible targets requiring SME choice for regulatory intent. | Observation.method.text (0.65) | Which target path best matches regulatory intent for this field? |
+| D-003 | lims_results.spec_limit_high | Field has multiple plausible targets requiring SME choice for regulatory intent. | Observation.referenceRange.high.value (0.55) | Which target path best matches regulatory intent for this field? |
+| D-004 | lims_results.spec_limit_low | Field has multiple plausible targets requiring SME choice for regulatory intent. | Observation.referenceRange.low.value (0.55) | Which target path best matches regulatory intent for this field? |
+| D-005 | sap_batch.batch_quantity | Field appears to represent quantitative batch context that should be bound to explicit units. | Medication.batch.extension (0.51) | Should this quantity be represented in a PQI batch extension with explicit UOM linkage? |
+| D-006 | sap_batch.batch_uom | Field appears to represent unit-of-measure semantics that need controlled coding/UOM treatment. | UNKNOWN (0.30) | Should this be represented as UCUM-compatible Observation.valueQuantity.unit? |
+| D-007 | sap_batch.manufacturing_date | Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics. | Medication.batch.extension (0.53) | Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it? |
+| D-008 | sap_batch.material_id | Field appears to be a material/product identifier requiring business meaning confirmation. | Medication.code.coding.code (0.63) | Is this a product code, material master code, or an internal identifier? |
+| D-009 | sap_batch.packaging_date | Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics. | Medication.batch.extension (0.51) | Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it? |
+| D-010 | sap_batch.release_date | Field appears to represent batch lifecycle timing (manufacturing/packaging/release) requiring extension semantics. | Medication.batch.extension (0.50) | Is this manufacturing, packaging, or release timing and which PQI batch extension should capture it? |
 
 ## Top Mapping Candidates
 
 | Source | Domain | Table Resource | Candidate Target | Confidence | Label | Status | Evidence |
 |---|---|---|---|---:|---|---|---|
-| lims_results.analysis_time | batch_analysis | Observation | Observation::Observation.effectiveDateTime | 0.56 | REQUIRES_SME | REQUIRES_REVIEW | token_overlap=['time']; date/datetime compatible |
+| lims_results.analysis_time | batch_analysis | Observation | Observation::Observation.effectiveDateTime | 0.80 | GOOD_CANDIDATE | PROPOSED | token_overlap=['time']; date/datetime compatible; boost:Observation.effectiveDateTime(+0.24) |
 | lims_results.batch_id | batch_analysis | Observation | Observation::Observation.subject.reference | 0.49 | REQUIRES_SME | REQUIRES_REVIEW | token_overlap=['batch', 'batchid', 'lot']; weak type fit; boost:Observation.subject.reference(+0.14) |
 | lims_results.method | batch_analysis | Observation | Observation::Observation.method.text | 0.65 | REQUIRES_SME | PROPOSED | token_overlap=['analysis', 'assay', 'method', 'procedure', 'protocol', 'test']; string compatible |
 | lims_results.result_unit | batch_analysis | Observation | Observation::Observation.valueQuantity.unit | 0.91 | AUTO_APPROVE_CANDIDATE | PROPOSED | token_overlap=['outcome', 'result', 'unit', 'units', 'uom', 'value']; string compatible; boost:Observation.valueQuantity.unit(+0.24) |
@@ -100,7 +100,6 @@
 
 ## Unresolved / Ambiguous Items
 
-- lims_results.analysis_time
 - lims_results.batch_id
 - lims_results.method
 - lims_results.spec_limit_high

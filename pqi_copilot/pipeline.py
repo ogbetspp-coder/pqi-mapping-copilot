@@ -113,5 +113,5 @@ def update_manifest_with_outputs(
     return manifest
 
 
-def ensure_catalog() -> dict[str, Any]:
-    return build_and_save_catalog()
+def ensure_catalog(ig_source: Path | None = None) -> dict[str, Any]:
+    return build_and_save_catalog(ig_override=ig_source)

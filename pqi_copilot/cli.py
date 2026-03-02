@@ -29,7 +29,8 @@ def _print(payload: Any) -> None:
 
 def _handle_ig(args: Any) -> int:
     if args.ig_command == "index":
-        catalog = build_and_save_catalog()
+        ig_source = Path(args.ig_source) if getattr(args, "ig_source", None) else None
+        catalog = build_and_save_catalog(ig_override=ig_source)
         _print(
             {
                 "catalog": "artifacts/library/ig_catalog.json",
@@ -74,7 +75,8 @@ def _handle_ig(args: Any) -> int:
 
 
 def _handle_propose(args: Any) -> int:
-    ensure_catalog()
+    ig_source = Path(args.ig_source) if getattr(args, "ig_source", None) else None
+    ensure_catalog(ig_source=ig_source)
     result = propose_run(Path(args.input_dir))
     _print(result)
     return 0
@@ -183,8 +185,8 @@ if TYPER_AVAILABLE:
     app.add_typer(library_app, name="library")
 
     @ig_app.command("index")
-    def ig_index() -> None:
-        _handle_ig(type("Args", (), {"ig_command": "index"}))
+    def ig_index(ig_source: str | None = None) -> None:
+        _handle_ig(type("Args", (), {"ig_command": "index", "ig_source": ig_source}))
 
     @ig_app.command("list-profiles")
     def ig_list_profiles(contains: str = "") -> None:
@@ -195,8 +197,8 @@ if TYPER_AVAILABLE:
         _handle_ig(type("Args", (), {"ig_command": "show-profile", "profile_url": profile_url}))
 
     @app.command("propose")
-    def propose(input_dir: str) -> None:
-        _handle_propose(type("Args", (), {"input_dir": input_dir}))
+    def propose(input_dir: str, ig_source: str | None = None) -> None:
+        _handle_propose(type("Args", (), {"input_dir": input_dir, "ig_source": ig_source}))
 
     @app.command("report")
     def report(run_id: str) -> None:

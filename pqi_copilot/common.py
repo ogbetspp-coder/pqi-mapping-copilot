@@ -204,6 +204,12 @@ def build_arg_parser() -> argparse.ArgumentParser:
     ig_sub = ig_parser.add_subparsers(dest="ig_command", required=True)
 
     ig_sub.add_parser("index", help="Build IG catalog")
+    ig_index = ig_sub.choices["index"]
+    ig_index.add_argument(
+        "--ig-source",
+        default=None,
+        help="Optional IG source path (.tgz/.zip). Overrides default discovery order.",
+    )
     p = ig_sub.add_parser("list-profiles", help="List indexed profiles")
     p.add_argument("--contains", default="", help="Case-insensitive filter")
     p = ig_sub.add_parser("show-profile", help="Show one profile")
@@ -211,6 +217,11 @@ def build_arg_parser() -> argparse.ArgumentParser:
 
     p = sub.add_parser("propose", help="Run ingest/profile/classify/propose")
     p.add_argument("input_dir", help="Folder containing CSV/JSON/XML extracts")
+    p.add_argument(
+        "--ig-source",
+        default=None,
+        help="Optional IG source path (.tgz/.zip) used to rebuild catalog before proposing.",
+    )
 
     p = sub.add_parser("report", help="Render report for run")
     p.add_argument("run_id", help="Run ID")

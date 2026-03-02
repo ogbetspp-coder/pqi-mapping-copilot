@@ -57,6 +57,16 @@ def test_batch_lifecycle_dates_and_quantities_require_extension_review() -> None
     assert "date" not in qty["target"]["elementPath"].lower()
 
 
+def test_analysis_time_prefers_observation_effective_datetime() -> None:
+    result = propose_run(Path("data/examples"))
+    payload = json.loads((Path(result["run_dir"]) / "mapping_proposals.json").read_text(encoding="utf-8"))
+    idx = _proposal_index(payload)
+
+    analysis_time = idx[("lims_results", "analysis_time")]["candidates"][0]
+    assert analysis_time["target"]["elementPath"] == "Observation.effectiveDateTime"
+    assert analysis_time["confidence"] >= 0.65
+
+
 def test_out_of_scope_tables_emit_out_of_scope_non_anchor() -> None:
     result = propose_run(Path("data/examples"))
     payload = json.loads((Path(result["run_dir"]) / "mapping_proposals.json").read_text(encoding="utf-8"))
@@ -71,4 +81,5 @@ def test_out_of_scope_tables_emit_out_of_scope_non_anchor() -> None:
     assert target is not None
     assert target.get("disposition") == "OUT_OF_SCOPE"
     top = target["candidates"][0]
+    assert top.get("label") == "OUT_OF_SCOPE"
     assert "out_of_scope_non_anchor" in top.get("flags", [])

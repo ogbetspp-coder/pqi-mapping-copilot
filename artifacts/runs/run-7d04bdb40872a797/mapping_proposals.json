@@ -1,10 +1,10 @@
 {
-  "hash": "3d00ce201d502a4f9bf6ed850cb3804307cc1fe0a2ad4a795ff0497221ec0c97",
+  "hash": "872fea11e034296493400ae2d83324100edd467aef7ee43ab7bd5acbd23ea494",
   "proposals": [
     {
       "candidates": [
         {
-          "confidence": 0.555376,
+          "confidence": 0.795376,
           "evidence": {
             "component_scores": {
               "binding_fit": 0.5,
@@ -20,7 +20,10 @@
               "datatype": [
                 "date/datetime compatible"
               ],
-              "hard_rules": [],
+              "hard_rules": [
+                "boost:Observation.effectiveDateTime(+0.24)",
+                "anchor_applied:analysis_event_date"
+              ],
               "name": [
                 "token_overlap=['time']",
                 "text_similarity=0.301075"
@@ -51,146 +54,10 @@
             "units": []
           },
           "flags": [],
-          "label": "REQUIRES_SME",
-          "status": "REQUIRES_REVIEW",
+          "label": "GOOD_CANDIDATE",
+          "status": "PROPOSED",
           "target": {
             "elementPath": "Observation.effectiveDateTime",
-            "profileUrl": "BASE_FHIR_R5",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": null,
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "parse_date",
-            "params": {
-              "accepted_formats": [
-                "YYYY-MM-DD",
-                "YYYY-MM",
-                "ISO-8601"
-              ]
-            }
-          }
-        },
-        {
-          "confidence": 0.375555,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 0.5,
-              "datatype_fit": 0.2,
-              "name_similarity": 0.644444,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "datetime",
-            "rules_fired": {
-              "binding": [
-                "no binding"
-              ],
-              "datatype": [
-                "weak type fit"
-              ],
-              "hard_rules": [],
-              "name": [
-                "token_overlap=['analysis', 'assay', 'method', 'test']",
-                "text_similarity=0.644444"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "2026-01-19T11:00:00Z",
-              "2026-01-19T11:15:00Z",
-              "2026-02-20T10:20:00Z"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "2026-01-19T11:00:00Z"
-              },
-              {
-                "count": 1,
-                "value": "2026-01-19T11:15:00Z"
-              },
-              {
-                "count": 1,
-                "value": "2026-02-20T10:20:00Z"
-              }
-            ],
-            "units": []
-          },
-          "flags": [],
-          "label": "REQUIRES_SME",
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "Observation.code.text",
-            "profileUrl": "BASE_FHIR_R5",
-            "resourceType": "Observation"
-          },
-          "terminology": {
-            "bindingValueSetUrl": null,
-            "conceptMapSuggested": null
-          },
-          "transform": {
-            "name": "parse_date",
-            "params": {
-              "accepted_formats": [
-                "YYYY-MM-DD",
-                "YYYY-MM",
-                "ISO-8601"
-              ]
-            }
-          }
-        },
-        {
-          "confidence": 0.347826,
-          "evidence": {
-            "component_scores": {
-              "binding_fit": 0.5,
-              "datatype_fit": 0.2,
-              "name_similarity": 0.565217,
-              "value_pattern_fit": 0.0
-            },
-            "inferred_type": "datetime",
-            "rules_fired": {
-              "binding": [
-                "no binding"
-              ],
-              "datatype": [
-                "weak type fit"
-              ],
-              "hard_rules": [],
-              "name": [
-                "token_overlap=['analysis', 'assay', 'method', 'test']",
-                "text_similarity=0.565217"
-              ],
-              "value_pattern": []
-            },
-            "samples": [
-              "2026-01-19T11:00:00Z",
-              "2026-01-19T11:15:00Z",
-              "2026-02-20T10:20:00Z"
-            ],
-            "top_values": [
-              {
-                "count": 1,
-                "value": "2026-01-19T11:00:00Z"
-              },
-              {
-                "count": 1,
-                "value": "2026-01-19T11:15:00Z"
-              },
-              {
-                "count": 1,
-                "value": "2026-02-20T10:20:00Z"
-              }
-            ],
-            "units": []
-          },
-          "flags": [],
-          "label": "REQUIRES_SME",
-          "status": "REQUIRES_REVIEW",
-          "target": {
-            "elementPath": "Observation.code.coding.code",
             "profileUrl": "BASE_FHIR_R5",
             "resourceType": "Observation"
           },
@@ -1669,7 +1536,7 @@
           "flags": [
             "out_of_scope_non_anchor"
           ],
-          "label": "REQUIRES_SME",
+          "label": "OUT_OF_SCOPE",
           "status": "REQUIRES_REVIEW",
           "target": {
             "elementPath": "UNKNOWN",
@@ -1723,7 +1590,7 @@
           "flags": [
             "out_of_scope_non_anchor"
           ],
-          "label": "REQUIRES_SME",
+          "label": "OUT_OF_SCOPE",
           "status": "REQUIRES_REVIEW",
           "target": {
             "elementPath": "UNKNOWN",
@@ -1777,7 +1644,7 @@
           "flags": [
             "out_of_scope_non_anchor"
           ],
-          "label": "REQUIRES_SME",
+          "label": "OUT_OF_SCOPE",
           "status": "REQUIRES_REVIEW",
           "target": {
             "elementPath": "UNKNOWN",
@@ -1981,7 +1848,7 @@
           "flags": [
             "out_of_scope_non_anchor"
           ],
-          "label": "REQUIRES_SME",
+          "label": "OUT_OF_SCOPE",
           "status": "REQUIRES_REVIEW",
           "target": {
             "elementPath": "UNKNOWN",
@@ -2035,7 +1902,7 @@
           "flags": [
             "out_of_scope_non_anchor"
           ],
-          "label": "REQUIRES_SME",
+          "label": "OUT_OF_SCOPE",
           "status": "REQUIRES_REVIEW",
           "target": {
             "elementPath": "UNKNOWN",
@@ -2089,7 +1956,7 @@
           "flags": [
             "out_of_scope_non_anchor"
           ],
-          "label": "REQUIRES_SME",
+          "label": "OUT_OF_SCOPE",
           "status": "REQUIRES_REVIEW",
           "target": {
             "elementPath": "UNKNOWN",
@@ -3067,11 +2934,12 @@
   "summary": {
     "label_counts": {
       "AUTO_APPROVE_CANDIDATE": 4,
-      "GOOD_CANDIDATE": 5,
-      "REQUIRES_SME": 33
+      "GOOD_CANDIDATE": 6,
+      "OUT_OF_SCOPE": 6,
+      "REQUIRES_SME": 24
     },
     "out_of_scope": 6,
     "proposal_count": 25,
-    "requires_review": 27
+    "requires_review": 24
   }
 }

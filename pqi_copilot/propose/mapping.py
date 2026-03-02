@@ -302,7 +302,11 @@ def _calibration_label(confidence: float, status: str, flags: list[str]) -> str:
     return "REQUIRES_SME"
 
 
-def _unknown_candidate(reason: str, flags: list[str] | None = None) -> dict[str, Any]:
+def _unknown_candidate(
+    reason: str,
+    flags: list[str] | None = None,
+    label: str = "REQUIRES_SME",
+) -> dict[str, Any]:
     return {
         "target": {
             "profileUrl": "UNKNOWN",
@@ -321,7 +325,7 @@ def _unknown_candidate(reason: str, flags: list[str] | None = None) -> dict[str,
             "component_scores": {},
         },
         "flags": flags or ["no_viable_candidate"],
-        "label": "REQUIRES_SME",
+        "label": label,
         "status": "REQUIRES_REVIEW",
     }
 
@@ -381,6 +385,7 @@ def build_mapping_proposals(
                                 _unknown_candidate(
                                     reason="Table classified out_of_scope and column has no wedge anchor",
                                     flags=["out_of_scope_non_anchor"],
+                                    label="OUT_OF_SCOPE",
                                 )
                             ],
                         }

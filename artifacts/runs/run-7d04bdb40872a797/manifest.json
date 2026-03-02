@@ -1,5 +1,5 @@
 {
-  "approved_mapping_version_id": "batch-lot-analysis:v1.0.2",
+  "approved_mapping_version_id": null,
   "determinism_contract": "Same inputs + same approved mapping version + same terminology version => identical outputs.",
   "generated_at_utc": "deterministic",
   "ig_catalog_hash": "ae3f09f6804458ffadbdb8cf18877a2c91e16bd5397b83ae3e5f2c9d81850a3f",
@@ -9,8 +9,8 @@
     "qms_deviations.xml": "d67a50fb9fae69e05d4281412f131c4fd7c691451738e86265d890ffabc6caf9",
     "sap_batch.csv": "f3523e96a289b899644035444966e8c5a6d4415b972a758e5d3936c4500e2ab9"
   },
-  "manifest_hash": "06f85acf731c63254c9b351ca6c2370cd9d822f4bd7bec29669dff48e7322aec",
-  "mapping_proposal_hash": "3d00ce201d502a4f9bf6ed850cb3804307cc1fe0a2ad4a795ff0497221ec0c97",
+  "manifest_hash": "76ed7cc50951aec318982fa86f1b2f0bbafb5ae7b5ab03314ebfd4442e52bd53",
+  "mapping_proposal_hash": "872fea11e034296493400ae2d83324100edd467aef7ee43ab7bd5acbd23ea494",
   "output_hashes": {},
   "run_id": "run-7d04bdb40872a797",
   "terminology_version_id": null

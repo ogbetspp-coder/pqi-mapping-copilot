@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import tarfile
 import zipfile
 from pathlib import Path
@@ -11,8 +12,10 @@ from typing import Any, Iterable
 
 from pqi_copilot.common import ensure_dir, stable_hash_obj, write_json
 
+ENV_IG_SOURCE = "PQI_IG_SOURCE"
+PRIMARY_PACKAGE = Path("ig/pqi-package.tgz")
+SECONDARY_PACKAGE = Path("assets/pqi/package.tgz")
 DEFAULT_IG_ZIP = Path("/mnt/data/full-ig.zip")
-FALLBACK_PACKAGE = Path("ig/pqi-package.tgz")
 CATALOG_PATH = Path("artifacts/library/ig_catalog.json")
 
 
@@ -220,35 +223,79 @@ def _build_catalog(resources: list[tuple[str, dict[str, Any]]], source: str) -> 
     return catalog
 
 
-def discover_ig_resources(
-    preferred_zip: Path = DEFAULT_IG_ZIP,
-    fallback_tgz: Path = FALLBACK_PACKAGE,
-) -> tuple[list[tuple[str, dict[str, Any]]], str]:
+def _load_from_path(path: Path) -> tuple[list[tuple[str, dict[str, Any]]], str]:
     resources: list[tuple[str, dict[str, Any]]] = []
+    if not path.exists():
+        return [], "NOT_FOUND"
 
-    if preferred_zip.exists():
-        resources = list(_iter_json_from_zip(preferred_zip))
-        if any(r[1].get("resourceType") == "StructureDefinition" for r in resources):
-            return resources, str(preferred_zip)
+    suffixes = {s.lower() for s in path.suffixes}
+    if ".zip" in suffixes:
+        resources = list(_iter_json_from_zip(path))
+    elif ".tgz" in suffixes or (".tar" in suffixes and ".gz" in suffixes):
+        resources = list(_iter_json_from_tgz(path))
+    else:
+        # best-effort fallback
+        try:
+            resources = list(_iter_json_from_tgz(path))
+        except Exception:
+            try:
+                resources = list(_iter_json_from_zip(path))
+            except Exception:
+                resources = []
 
-    if fallback_tgz.exists():
-        resources = list(_iter_json_from_tgz(fallback_tgz))
-        if any(r[1].get("resourceType") == "StructureDefinition" for r in resources):
-            return resources, str(fallback_tgz)
+    if any(r[1].get("resourceType") == "StructureDefinition" for r in resources):
+        return resources, str(path)
+    return [], str(path)
+
+
+def discover_ig_resources(
+    ig_override: Path | None = None,
+    primary_package: Path = PRIMARY_PACKAGE,
+    secondary_package: Path = SECONDARY_PACKAGE,
+    fallback_zip: Path = DEFAULT_IG_ZIP,
+) -> tuple[list[tuple[str, dict[str, Any]]], str]:
+    candidates: list[Path] = []
+
+    if ig_override is not None:
+        candidates.append(ig_override)
+
+    env_override = os.environ.get(ENV_IG_SOURCE, "").strip()
+    if env_override:
+        candidates.append(Path(env_override))
+
+    candidates.extend([primary_package, secondary_package, fallback_zip])
+
+    seen: set[str] = set()
+    for path in candidates:
+        key = str(path)
+        if key in seen:
+            continue
+        seen.add(key)
+        resources, source = _load_from_path(path)
+        if resources:
+            return resources, source
 
     return [], "NOT_FOUND"
 
 
 def build_and_save_catalog(
-    preferred_zip: Path = DEFAULT_IG_ZIP,
-    fallback_tgz: Path = FALLBACK_PACKAGE,
+    ig_override: Path | None = None,
+    primary_package: Path = PRIMARY_PACKAGE,
+    secondary_package: Path = SECONDARY_PACKAGE,
+    fallback_zip: Path = DEFAULT_IG_ZIP,
     output_path: Path = CATALOG_PATH,
 ) -> dict[str, Any]:
-    resources, source = discover_ig_resources(preferred_zip, fallback_tgz)
+    resources, source = discover_ig_resources(
+        ig_override=ig_override,
+        primary_package=primary_package,
+        secondary_package=secondary_package,
+        fallback_zip=fallback_zip,
+    )
     if not resources:
         raise FileNotFoundError(
-            "No machine-readable PQI artifacts found. Provide /mnt/data/full-ig.zip "
-            "or place package at ./ig/pqi-package.tgz."
+            "No machine-readable PQI artifacts found. "
+            "Set PQI_IG_SOURCE or provide ig/pqi-package.tgz "
+            "or assets/pqi/package.tgz or /mnt/data/full-ig.zip."
         )
     catalog = _build_catalog(resources, source)
     ensure_dir(output_path.parent)

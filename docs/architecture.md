@@ -57,6 +57,4 @@ Accelerate consultant mapping workshops for PQI Step I-III exchange by producing
 - Run artifacts: `artifacts/runs/<run_id>/...`
 - Library mappings: `artifacts/library/mappings/<mapping_name>/vX.Y.Z/approved.yaml`
 
-## Legacy Note
-- `src/pqi_twin/` is legacy from an earlier prototype and is deprecated for active development.
-- All active implementation for this tool is under `pqi_copilot/`.
+All active implementation for this tool is under `pqi_copilot/`.

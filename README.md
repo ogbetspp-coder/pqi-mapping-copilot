@@ -39,9 +39,6 @@ Scope of this MVP wedge:
 - `ig/` fallback package location (`ig/pqi-package.tgz`)
 - `tests/` pytest tests
 
-Legacy note:
-- `src/pqi_twin/` is deprecated legacy code and not used for active `pqi_copilot` workflows.
-
 ## Mapping Quality Controls
 - Curated target spaces per wedge domain:
   - `pqi_copilot/propose/target_spaces.py`
@@ -61,9 +58,13 @@ Recommended dependencies (declared in `pyproject.toml`):
 
 ## IG Loading Priority
 `pqi-copilot` follows this order:
-1. `/mnt/data/full-ig.zip` (if present)
-   - searches for `package/` JSON, nested `package.tgz`, and loose FHIR artifacts
-2. `./ig/pqi-package.tgz`
+1. `./ig/pqi-package.tgz` (repo-pinned, preferred)
+2. `./assets/pqi/package.tgz` (repo-pinned fallback)
+3. `/mnt/data/full-ig.zip` (optional dev/test override source)
+
+Override options:
+- Environment variable: `PQI_IG_SOURCE=/absolute/path/to/package.tgz`
+- CLI option: `--ig-source /absolute/path/to/package.tgz`
 
 If neither is available, place the package manually:
 - `ig/pqi-package.tgz` containing `hl7.fhir.uv.pharm-quality#1.0.0`
@@ -79,6 +80,11 @@ Manual fallback from IG downloads page:
 python3 -m pqi_copilot ig index
 ```
 
+Build catalog from explicit source:
+```bash
+python3 -m pqi_copilot ig index --ig-source /path/to/pqi-package.tgz
+```
+
 ### 2) List profiles
 ```bash
 python3 -m pqi_copilot ig list-profiles --contains Batch
@@ -92,6 +98,11 @@ python3 -m pqi_copilot ig show-profile "http://hl7.org/fhir/uv/pharm-quality/Str
 ### 4) Run propose pipeline
 ```bash
 python3 -m pqi_copilot propose data/examples
+```
+
+Run propose using explicit IG source:
+```bash
+python3 -m pqi_copilot propose data/examples --ig-source /path/to/pqi-package.tgz
 ```
 
 ### 5) Generate stakeholder report
