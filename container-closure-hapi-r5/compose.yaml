@@ -1,0 +1,5 @@
+services:
+  hapi:
+    image: hapiproject/hapi:v8.6.5-1
+    ports:
+      - "8080:8080"

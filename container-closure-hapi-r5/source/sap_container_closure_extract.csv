@@ -1,0 +1,7 @@
+row_id,parent_row_id,source_string,entity_kind,local_type,product_code,product_name,strength,dose_form,market,material,supplier,contained_count,contained_unit,regulatory_scope,change_control_scope,notes
+prod-1,,BOTTLE AVELOR 10MG 28 TABS, US,PRODUCT,PRODUCT,AVL10,AVELOR,10 mg,tablet,US,,,,regulatory-relevant,change-controlled,Product anchor derived from source pattern
+pkg-1,,BOTTLE AVELOR 10MG 28 TABS, US,PACKAGE,BOTTLE,,,,US,High-density polyethylene (HDPE),Container Co. of America,28,tablet,regulatory-relevant,change-controlled,Primary bottle presentation; supplier is a fictional demo master-data placeholder
+clo-1,pkg-1,BOTTLE AVELOR 10MG 28 TABS, US,COMPONENT,CHILD_RESISTANT_CLOSURE,,,,US,Polypropylene,CapSafe Components,,,regulatory-relevant,change-controlled,Child-resistant closure; supplier is a fictional demo master-data placeholder
+lin-1,clo-1,BOTTLE AVELOR 10MG 28 TABS, US,COMPONENT,PULP_LINER,,,,US,Pulp,FiberSeal Labs,,,regulatory-relevant,change-controlled,Pulp liner; supplier is a fictional demo master-data placeholder
+seal-1,clo-1,BOTTLE AVELOR 10MG 28 TABS, US,COMPONENT,INDUCTION_SEAL,,,,US,Aluminum foil,SealTech North America,,,regulatory-relevant,change-controlled,Aluminum foil induction seal; supplier is a fictional demo master-data placeholder
+carton-1,,BOTTLE AVELOR 10MG 28 TABS, US,PACKAGE,CARTON,,,,US,Paperboard,CartonPrint Co.,1,carton,reference-only,not-subject-to-change-control,Secondary paperboard carton modeled as carton; reference-only; supplier is a fictional demo master-data placeholder

@@ -1,0 +1,314 @@
+{
+  "resourceType": "Bundle",
+  "id": "bundle-container-closure-avelor-bottle-update",
+  "meta": {
+    "profile": [
+      "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/Bundle-container-closure-system-pq"
+    ],
+    "lastUpdated": "2026-03-28T00:15:00Z"
+  },
+  "type": "collection",
+  "timestamp": "2026-03-28T00:15:00Z",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:mpd-avelor-10mg",
+      "resource": {
+        "resourceType": "MedicinalProductDefinition",
+        "id": "mpd-avelor-10mg",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "urn:example:sap:product-code",
+            "value": "AVL10"
+          }
+        ],
+        "description": "Fictional product anchor used to demonstrate a reusable canonical product definition feeding package-level variants.",
+        "combinedPharmaceuticalDoseForm": {
+          "text": "Tablet"
+        },
+        "name": [
+          {
+            "productName": "AVELOR 10 mg tablets",
+            "type": {
+              "text": "Proprietary"
+            },
+            "part": [
+              {
+                "part": "10 mg",
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/medicinal-product-name-part-type",
+                      "code": "StrengthPart",
+                      "display": "Strength part"
+                    }
+                  ]
+                }
+              },
+              {
+                "part": "tablets",
+                "type": {
+                  "text": "Dose form part"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:mid-avelor-10mg-tablet",
+      "resource": {
+        "resourceType": "ManufacturedItemDefinition",
+        "id": "mid-avelor-10mg-tablet",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq"
+          ]
+        },
+        "status": "active",
+        "name": "AVELOR 10 mg tablet",
+        "manufacturedDoseForm": {
+          "text": "Tablet"
+        },
+        "unitOfPresentation": {
+          "text": "Tablet"
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ppd-avelor-10mg-28ct-us",
+      "resource": {
+        "resourceType": "PackagedProductDefinition",
+        "id": "ppd-avelor-10mg-28ct-us",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+          ]
+        },
+        "name": "AVELOR 10 mg tablets bottle presentation (28 tablets) - US",
+        "description": "Bottle-first container closure demo aligned to the CTD bottle pattern: HDPE bottle, child-resistant closure, pulp liner, aluminum foil induction seal, and an optional secondary paperboard carton modeled as reference-only.",
+        "packageFor": [
+          {
+            "reference": "MedicinalProductDefinition/mpd-avelor-10mg"
+          }
+        ],
+        "containedItemQuantity": [
+          {
+            "value": 28,
+            "unit": "tablets"
+          }
+        ],
+        "marketingStatus": [
+          {
+            "country": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:3166",
+                  "code": "US",
+                  "display": "United States"
+                }
+              ]
+            },
+            "status": {
+              "text": "active"
+            }
+          }
+        ],
+        "packaging": {
+          "packaging": [
+            {
+              "type": {
+                "text": "Bottle"
+              },
+              "material": [
+                {
+                  "text": "High-density polyethylene (HDPE)"
+                }
+              ],
+              "manufacturer": [
+                {
+                  "display": "Container Co. of America"
+                }
+              ],
+              "property": [
+                {
+                  "type": {
+                    "text": "Regulatory scope"
+                  },
+                  "valueCodeableConcept": {
+                    "text": "regulatory-relevant"
+                  }
+                },
+                {
+                  "type": {
+                    "text": "Change control scope"
+                  },
+                  "valueCodeableConcept": {
+                    "text": "change-controlled"
+                  }
+                }
+              ],
+              "containedItem": [
+                {
+                  "item": {
+                    "reference": {
+                      "reference": "ManufacturedItemDefinition/mid-avelor-10mg-tablet"
+                    }
+                  },
+                  "amount": {
+                    "value": 28,
+                    "unit": "tablets"
+                  }
+                }
+              ],
+              "packaging": [
+                {
+                  "type": {
+                    "text": "Child-resistant closure"
+                  },
+                  "componentPart": true,
+                  "material": [
+                    {
+                      "text": "Polypropylene"
+                    }
+                  ],
+                  "manufacturer": [
+                    {
+                      "display": "CapSafe Components"
+                    }
+                  ],
+                  "property": [
+                    {
+                      "type": {
+                        "text": "Regulatory scope"
+                      },
+                      "valueCodeableConcept": {
+                        "text": "regulatory-relevant"
+                      }
+                    },
+                    {
+                      "type": {
+                        "text": "Change control scope"
+                      },
+                      "valueCodeableConcept": {
+                        "text": "change-controlled"
+                      }
+                    }
+                  ],
+                  "packaging": [
+                    {
+                      "type": {
+                        "text": "Pulp liner"
+                      },
+                      "componentPart": true,
+                      "material": [
+                        {
+                          "text": "Pulp"
+                        }
+                      ],
+                      "manufacturer": [
+                        {
+                          "display": "FiberSeal Labs"
+                        }
+                      ],
+                      "property": [
+                        {
+                          "type": {
+                            "text": "Regulatory scope"
+                          },
+                          "valueCodeableConcept": {
+                            "text": "regulatory-relevant"
+                          }
+                        },
+                        {
+                          "type": {
+                            "text": "Change control scope"
+                          },
+                          "valueCodeableConcept": {
+                            "text": "change-controlled"
+                          }
+                        }
+                      ]
+                    },
+                    {
+                      "type": {
+                        "text": "Induction seal"
+                      },
+                      "componentPart": true,
+                      "material": [
+                        {
+                          "text": "Aluminum foil"
+                        }
+                      ],
+                      "manufacturer": [
+                        {
+                          "display": "BarrierSeal Systems"
+                        }
+                      ],
+                      "property": [
+                        {
+                          "type": {
+                            "text": "Regulatory scope"
+                          },
+                          "valueCodeableConcept": {
+                            "text": "regulatory-relevant"
+                          }
+                        },
+                        {
+                          "type": {
+                            "text": "Change control scope"
+                          },
+                          "valueCodeableConcept": {
+                            "text": "change-controlled"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": {
+                "text": "Carton"
+              },
+              "material": [
+                {
+                  "text": "Paperboard"
+                }
+              ],
+              "manufacturer": [
+                {
+                  "display": "CartonPrint Co."
+                }
+              ],
+              "property": [
+                {
+                  "type": {
+                    "text": "Regulatory scope"
+                  },
+                  "valueCodeableConcept": {
+                    "text": "reference-only"
+                  }
+                },
+                {
+                  "type": {
+                    "text": "Change control scope"
+                  },
+                  "valueCodeableConcept": {
+                    "text": "not-subject-to-change-control"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
