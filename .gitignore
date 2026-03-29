@@ -12,3 +12,4 @@ artifacts/runs/
 
 # Local test mapping libraries created during override tests
 artifacts/library/mappings/test-overrides*/
+.claude/

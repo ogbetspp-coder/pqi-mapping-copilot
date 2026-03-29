@@ -38,7 +38,7 @@ Source-supported bottle facts carried into this demo:
 - pulp liner
 - aluminum foil induction seal
 - 28 tablets
-- secondary paperboard package modeled as a `Carton` and marked reference-only
+- secondary paperboard carton described in the `PackagedProductDefinition.description` narrative but excluded from the structured packaging hierarchy (secondary packaging is out of scope for a container closure system description)
 
 Fictional demo placeholders:
 
@@ -71,6 +71,9 @@ container-closure-hapi-r5/
 │   ├── container-closure.transaction.json
 │   ├── container-closure-update.collection.json
 │   └── container-closure-update.transaction.json
+├── ig/
+│   ├── hl7.fhir.uv.pharm-quality-1.0.0.tgz
+│   └── BASELINE.md
 ├── load_bundle.sh
 └── README.md
 ```
@@ -91,6 +94,10 @@ container-closure-hapi-r5/
   The canonical PQI-aligned bundle for the controlled update state.
 - [fhir/container-closure-update.transaction.json](fhir/container-closure-update.transaction.json)
   The prebuilt HAPI load bundle for the update state.
+- [ig/hl7.fhir.uv.pharm-quality-1.0.0.tgz](ig/hl7.fhir.uv.pharm-quality-1.0.0.tgz)
+  Vendored IG NPM package. Used as the frozen validation baseline in CI. Do not replace without an explicit version bump.
+- [ig/BASELINE.md](ig/BASELINE.md)
+  Records the package ID, version, SHA-256, adoption date, and conformance statement.
 - [load_bundle.sh](load_bundle.sh)
   A tiny helper that posts either the initial or update transaction bundle to HAPI.
 - [README.md](README.md)
@@ -106,6 +113,8 @@ container-closure-hapi-r5/
 - Package profile: `http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq`
 - Manufactured item profile: `http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/ManufacturedItemDefinition-drug-pq`
 
+> **Conformance statement:** This service is validated against an internally frozen implementation baseline: `hl7.fhir.uv.pharm-quality#1.0.0` (FHIR R5), vendored in `ig/` with recorded SHA-256 and adoption date, with pinned validation dependencies matching the IG-declared package versions. It is used as an internal canonical exchange contract and is not represented as formal conformance to an HL7 authorized publication. The upstream package carries `"notForPublication": true`. Upstream changes are assessed and adopted deliberately — see [ig/BASELINE.md](ig/BASELINE.md).
+
 ## Resource Ownership
 
 - `MedicinalProductDefinition`
@@ -118,29 +127,27 @@ container-closure-hapi-r5/
 ## Packaging Hierarchy
 
 ```text
-Neutral packaging wrapper
-- Bottle
-  - Child-resistant closure
-    - Pulp liner
-    - Induction seal
-- Carton (optional sibling, reference-only)
+Bottle (HDPE)                         ← PPD.packaging root
+  └─ Child Proof Cap (PP)             ← componentPart: true
+       └─ Multi-layer Foil Seal Liner ← componentPart: true
+            (Aluminium)
 ```
 
-Modeling note:
+The packaging root is the Bottle itself — there is no neutral wrapper. The closure sub-hierarchy uses the two available codes from the `container-closure-type` CodeSystem.
 
-- The source wording is effectively a secondary paperboard package.
-- For simple FHIR readability in this MVP, it is modeled as a `Carton` packaging node with `Paperboard` as the material.
+The source design has separate pulp liner and aluminum foil induction seal components. The IG `container-closure-type` CodeSystem does not define distinct codes for these elements. They are collapsed into `Multi-layer Foil Seal Liner`, which is the closest available coded concept, and the physical detail is preserved in the `PackagedProductDefinition.description` narrative.
 
-## Governance Encoding
+The secondary paperboard carton is out of scope for the structured closure hierarchy. It is described in the PPD narrative.
 
-Governance is explicit in both the CSV and the FHIR output.
+## Property Encoding
 
-- `regulatory-relevant` + `change-controlled`
-  Applied to the bottle and closure-system components.
-- `reference-only` + `not-subject-to-change-control`
-  Applied to the secondary paperboard carton.
+Packaging properties use coded values from the PQI IG CodeSystems, matching the bottle-first IG example pattern:
 
-This is stored on packaging nodes as lightweight `property` elements. HAPI persists the governed facts, but HAPI does not create governance automatically.
+- **Bottle:** Color (`white`) and Quality Standard (`USP <661>`, `PhEur 3.1.3 Polyolefins`)
+- **Child Proof Cap:** Quality Standard (`16 CFR 1700`)
+- **Multi-layer Foil Seal Liner:** Quality Standard (`21 CFR 175.300`, `EU 94/62/EC`)
+
+The earlier free-text governance markers (`regulatory-relevant`, `change-controlled`, `reference-only`) have been removed. The container closure scope boundary — primary packaging in, secondary carton out — is now expressed structurally (carton absent from hierarchy) and narratively (PPD `description`).
 
 ## Exact Source Inputs
 
@@ -214,17 +221,19 @@ What to expect:
 - the product anchor stays stable
 - the manufactured item stays stable
 - the packaged presentation shows the bottle and closure hierarchy
-- `_history` shows version `1` after the initial load and version `2` after the update load
+- `_history` on the PPD shows version `1` after the initial load and version `2` after the update load
+- `_history` on the MPD and MID show only version `1` — the update transaction PUTs only the PPD, so unchanged resources accumulate no spurious version bumps
 
 ## The Controlled Update
 
 The update is deliberately small and semantically credible for the same packaged presentation:
 
-- only the induction seal supplier changes
+- only the foil seal liner supplier changes
 - initial state: `SealTech North America`
 - updated state: `BarrierSeal Systems`
 - the logical ids stay the same
 - the package is not re-modeled as a new presentation
+- the update transaction bundle (`container-closure-update.transaction.json`) PUTs **only the PPD** — MPD and MID are unchanged and do not receive a new version
 
 ## Demo Talk Track
 
@@ -239,6 +248,8 @@ The update is deliberately small and semantically credible for the same packaged
 
 - The canonical bundle and the HAPI ingestion bundle are intentionally separate because the PQI bundle profile patterns `collection`, while HAPI loading is safest with a prebuilt `transaction` bundle.
 - The model is intentionally partial and expandable. PQI cardinality flexibility is treated as an advantage, not a gap.
+- CI validates the two canonical collection bundles against the vendored IG package. The transaction bundles are deployment artifacts and are not validated against the profile.
+- The validator CLI version is pinned to `latest` at download time. For production, pin to a specific release tag.
 - The stable ids are the main review point:
   - `mpd-avelor-10mg`
   - `mid-avelor-10mg-tablet`
