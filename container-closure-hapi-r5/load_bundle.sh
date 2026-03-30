@@ -1,26 +1,15 @@
 #!/bin/sh
-
 set -eu
 
 SERVER_BASE="${FHIR_BASE_URL:-http://localhost:8080/fhir}"
-MODE="${1:-initial}"
 
-case "$MODE" in
-  initial)
-    BUNDLE_PATH="fhir/container-closure.transaction.json"
-    ;;
-  update)
-    BUNDLE_PATH="fhir/container-closure-update.transaction.json"
-    ;;
-  *)
-    echo "Usage: ./load_bundle.sh [initial|update]" >&2
-    exit 1
-    ;;
-esac
-
-echo "Posting $BUNDLE_PATH to $SERVER_BASE"
+echo "Loading RINVOQ 45MG 28 TABS BOTTLE CANADA -> $SERVER_BASE"
 curl --fail --silent --show-error \
   -X POST "$SERVER_BASE" \
   -H "Content-Type: application/fhir+json" \
-  --data-binary "@$BUNDLE_PATH"
+  --data-binary "@fhir/rinvoq-45mg-28tabs-bottle-ca.transaction.json"
 echo
+
+echo "Verify:"
+echo "  $SERVER_BASE/MedicinalProductDefinition/mpd-rinvoq-45mg"
+echo "  $SERVER_BASE/PackagedProductDefinition/ppd-rinvoq-45mg-28tabs-bottle-ca"
