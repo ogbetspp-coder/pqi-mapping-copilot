@@ -26,3 +26,43 @@ jobs:
       - name: Run tests
         run: |
           pytest -q
+
+  validate-fhir:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: "21"
+          distribution: "temurin"
+
+      - name: Download FHIR validator CLI
+        # TODO: pin to a specific release tag once you have a known-good run.
+        # Replace the URL with:
+        #   https://github.com/hapifhir/org.hl7.fhir.core/releases/download/X.Y.Z/validator_cli.jar
+        # and record X.Y.Z in ig/BASELINE.md under "Validator CLI version".
+        run: |
+          curl -fsSL https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar \
+            -o validator_cli.jar
+          java -jar validator_cli.jar -version 2>&1 | head -1
+
+      - name: Validate initial collection bundle
+        run: |
+          java -jar validator_cli.jar \
+            container-closure-hapi-r5/fhir/container-closure.collection.json \
+            -version 5.0 \
+            -ig container-closure-hapi-r5/ig/hl7.fhir.uv.pharm-quality-1.0.0.tgz \
+            -ig hl7.fhir.uv.extensions.r5#5.1.0 \
+            -ig hl7.terminology.r5#5.0.0
+
+      - name: Validate update collection bundle
+        run: |
+          java -jar validator_cli.jar \
+            container-closure-hapi-r5/fhir/container-closure-update.collection.json \
+            -version 5.0 \
+            -ig container-closure-hapi-r5/ig/hl7.fhir.uv.pharm-quality-1.0.0.tgz \
+            -ig hl7.fhir.uv.extensions.r5#5.1.0 \
+            -ig hl7.terminology.r5#5.0.0

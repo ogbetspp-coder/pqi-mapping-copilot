@@ -1,0 +1,135 @@
+{
+  "resourceType": "Bundle",
+  "id": "transaction-rinvoq-45mg-28tabs-bottle-ca",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:mpd-rinvoq-45mg",
+      "resource": {
+        "resourceType": "MedicinalProductDefinition",
+        "id": "mpd-rinvoq-45mg",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/MedicinalProductDefinition-drug-product-pq"
+          ]
+        },
+        "description": "Product anchor derived from source string: RINVOQ 45MG 28 TABS BOTTLE CANADA. Product name RINVOQ and strength 45MG parsed directly. Dose form token TABS normalised to Tablet (EDQM 10219000). Route excluded: not present in source string.",
+        "combinedPharmaceuticalDoseForm": {
+          "coding": [
+            {
+              "system": "http://standardterms.edqm.eu",
+              "code": "10219000",
+              "display": "Tablet"
+            }
+          ]
+        },
+        "name": [
+          {
+            "productName": "RINVOQ 45 mg tablets",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/uv/pharm-quality/CodeSystem/cs-productNameType-pq-example",
+                  "code": "Proprietary",
+                  "display": "Proprietary"
+                }
+              ]
+            },
+            "part": [
+              {
+                "part": "45 mg",
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/medicinal-product-name-part-type",
+                      "code": "StrengthPart",
+                      "display": "Strength part"
+                    }
+                  ]
+                }
+              },
+              {
+                "part": "tablets",
+                "type": {
+                  "coding": [
+                    {
+                      "system": "http://hl7.org/fhir/medicinal-product-name-part-type",
+                      "code": "DoseFormPart",
+                      "display": "Dose form part"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "PUT",
+        "url": "MedicinalProductDefinition/mpd-rinvoq-45mg"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:ppd-rinvoq-45mg-28tabs-bottle-ca",
+      "resource": {
+        "resourceType": "PackagedProductDefinition",
+        "id": "ppd-rinvoq-45mg-28tabs-bottle-ca",
+        "meta": {
+          "profile": [
+            "http://hl7.org/fhir/uv/pharm-quality/StructureDefinition/PackagedProductDefinition-drug-pq"
+          ]
+        },
+        "name": "RINVOQ 45 mg tablets bottle presentation (28 tablets) - CA",
+        "description": "Package presentation derived from source string: RINVOQ 45MG 28 TABS BOTTLE CANADA. Count 28 tablets, packaging family BOTTLE, market Canada. No material, closure type, manufacturer, or quality standard information is present in the source string and none has been added.",
+        "packageFor": [
+          {
+            "reference": "MedicinalProductDefinition/mpd-rinvoq-45mg"
+          }
+        ],
+        "containedItemQuantity": [
+          {
+            "value": 28,
+            "unit": "tablets"
+          }
+        ],
+        "marketingStatus": [
+          {
+            "country": {
+              "coding": [
+                {
+                  "system": "urn:iso:std:iso:3166",
+                  "code": "CA",
+                  "display": "Canada"
+                }
+              ]
+            },
+            "status": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/publication-status",
+                  "code": "unknown",
+                  "display": "Unknown"
+                }
+              ]
+            }
+          }
+        ],
+        "packaging": {
+          "type": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/packaging-type",
+                "code": "100000073497",
+                "display": "Bottle"
+              }
+            ]
+          }
+        }
+      },
+      "request": {
+        "method": "PUT",
+        "url": "PackagedProductDefinition/ppd-rinvoq-45mg-28tabs-bottle-ca"
+      }
+    }
+  ]
+}
